@@ -67,7 +67,11 @@
 								}
 							?>
 						</select>
-					</dd>
+					</dd>	
+					<dt><?php echo $lang->line('commodity_freight_price'); ?></dt>					
+					<dd><input type="number" placeholder="" class="input-large" name="freight_price" min="0" value="0" ></dd>						
+					<dt><?php echo $lang->line('commodity_free_freight_quantity'); ?></dt>
+					<dd><input type="number" placeholder="" class="input-large" name="free_freight_quantity" min="0" value="0" ></dd>							
 					<dt><?php echo $lang->line('commodity_item_stop_sale_status'); ?></dt>
 					<dd>
 						<select name="stop_sale_status" id="stop_sale_status">

@@ -11,16 +11,19 @@ class Items_information extends CI_Model {
 	public function Select($limit=array(0,50)) {
 		$this->db->limit($limit[1], $limit[0]);
 		
-		$this->db->select($this->tab.'.id AS id, item_name, item_number, buy_price, sell_price,
-		safe_stock, bread_name, stock_quantity, item_content, item_bonus,
-		area_name, category_second_name, category_name, stop_sale_status');
+		$this->db->select('item_A.id AS id, item_name, item_number, buy_price, sell_price,safe_stock,
+		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
+		freight_price,free_freight_quantity, stop_sale_status, 
+		(SELECT (stock_quantity-safe_stock) FROM '.$this->tab.' AS item_B WHERE item_A.id = item_B.id) AS warn_stock');
 		
-		$this->db->where('items_information.area_id = items_area.id');
-		$this->db->where('items_information.bread_id = items_bread.id');
-		$this->db->where('items_information.category_second_id = items_category_second.id');
+		$this->db->where('item_A.area_id = items_area.id');
+		$this->db->where('item_A.bread_id = items_bread.id');
+		$this->db->where('item_A.category_second_id = items_category_second.id');
 		$this->db->where('items_category_second.category = items_category.id');
 		
-		$this->db->from($this->tab.', items_area,items_bread, items_category, items_category_second');
+		$this->db->order_by('warn_stock', 'asc');
+		
+		$this->db->from($this->tab.' AS item_A, items_area,items_bread, items_category, items_category_second');
 		return $this->db->get();
 	}
 	

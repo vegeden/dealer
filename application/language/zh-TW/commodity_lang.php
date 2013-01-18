@@ -50,5 +50,7 @@
 	$lang['commodity_item_content']					= '商品內容';
 	$lang['commodity_item_bonus']					= '商品紅利';
 	$lang['commodity_item_stop_sale_status']		= '上下架狀態';
+	$lang['commodity_freight_price']				= '運費';
+	$lang['commodity_free_freight_quantity']		= '免運費數量';
 	$lang['commodity_item_sale_status']				= '上架';
 	$lang['commodity_item_stop_status']				= '下架';

@@ -509,20 +509,24 @@ class Commodity extends CI_Controller {
 		$item_bonus = $this->input->post('item_bonus', TRUE );
 		$area_class = $this->input->post('area_class', TRUE );
 		$category_second_class = $this->input->post('category_second_class', TRUE );
+		$freight_price = $this->input->post('freight_price', TRUE );
+		$free_freight_quantity = $this->input->post('free_freight_quantity', TRUE );
 		$stop_sale_status = $this->input->post('stop_sale_status', TRUE );
-		
-		if(isset($item_name) && isset($item_number) && isset($buy_price) && isset($sell_price) 
-		&& isset($safe_stock) && isset($bread_class) && isset($stock_quantity) && isset($item_content) 
-		&& isset($item_bonus) && isset($area_class) && isset($category_second_class) && isset($stop_sale_status)) {
-			if(strlen($item_name) != 0 && strlen($item_number) != 0 && strlen($buy_price) != 0 && strlen($sell_price) != 0 
-			&& strlen($safe_stock) != 0 && strlen($bread_class) != 0 && strlen($stock_quantity) != 0 && strlen($item_content) != 0 
-			&& strlen($item_bonus) != 0 && strlen($area_class) != 0 && strlen($category_second_class) != 0 && strlen($stop_sale_status) != 0 )
-			{
-				$data = array('item_name' =>$item_name,'item_number' =>$item_number,'buy_price' =>$buy_price,'sell_price' =>$sell_price
-				,'safe_stock' =>$safe_stock,'bread_id' =>$bread_class,'stock_quantity' =>$stock_quantity,'item_content' =>$item_content
-				,'item_bonus' =>$item_bonus,'area_id' =>$area_class,'category_second_id' =>$category_second_class,'stop_sale_status' =>$stop_sale_status);
+		if(strlen($id)==0) {
+			if(isset($item_name) && isset($item_number) && isset($buy_price) && isset($sell_price) 
+			&& isset($safe_stock) && isset($bread_class) && isset($stock_quantity) && isset($item_content) 
+			&& isset($item_bonus) && isset($area_class) && isset($category_second_class) && isset($freight_price)
+			&& isset($free_freight_quantity)&& isset($stop_sale_status)) {
+				if(strlen($item_name) != 0 && strlen($item_number) != 0 && strlen($buy_price) != 0 && strlen($sell_price) != 0 
+				&& strlen($safe_stock) != 0 && strlen($bread_class) != 0 && strlen($stock_quantity) != 0 && strlen($item_content) != 0 
+				&& strlen($item_bonus) != 0 && strlen($area_class) != 0 && strlen($category_second_class) != 0 && strlen($freight_price) != 0
+				&& strlen($free_freight_quantity) != 0 && strlen($stop_sale_status) != 0 )
+				{
+					$data = array('item_name' =>$item_name,'item_number' =>$item_number,'buy_price' =>$buy_price,'sell_price' =>$sell_price
+					,'safe_stock' =>$safe_stock,'bread_id' =>$bread_class,'stock_quantity' =>$stock_quantity,'item_content' =>$item_content
+					,'item_bonus' =>$item_bonus,'area_id' =>$area_class,'category_second_id' =>$category_second_class,'freight_price' =>$freight_price
+					,'free_freight_quantity' =>$free_freight_quantity,'stop_sale_status' =>$stop_sale_status);
 				
-				if(strlen($id)==0) {
 					if($this->items_information->verify($item_name)) {
 						// Add level
 						$this->items_information->Add($data);
@@ -530,10 +534,28 @@ class Commodity extends CI_Controller {
 					} else {
 						$this->parames['error'] = "";
 					}
-				} else {
+				}
+			}
+		} else {
+			if(isset($item_name) && isset($item_number) && isset($buy_price) && isset($sell_price) 
+			&& isset($safe_stock) && isset($bread_class) && isset($item_content) && isset($item_bonus) 
+			&& isset($area_class) && isset($category_second_class) && isset($freight_price) && isset($free_freight_quantity) 
+			&& isset($stop_sale_status)) {
+				if(strlen($item_name) != 0 && strlen($item_number) != 0 && strlen($buy_price) != 0 && strlen($sell_price) != 0 
+				&& strlen($safe_stock) != 0 && strlen($bread_class) != 0 && strlen($item_content) != 0 
+				&& strlen($item_bonus) != 0 && strlen($area_class) != 0 && strlen($category_second_class) != 0 
+				&& strlen($freight_price) != 0 && strlen($free_freight_quantity) != 0 && strlen($stop_sale_status) != 0 )
+				{
+					$data = array('item_name' =>$item_name,'item_number' =>$item_number,'buy_price' =>$buy_price,'sell_price' =>$sell_price
+					,'safe_stock' =>$safe_stock,'bread_id' =>$bread_class,'item_content' =>$item_content
+					,'item_bonus' =>$item_bonus,'area_id' =>$area_class,'category_second_id' =>$category_second_class,'freight_price' =>$freight_price
+					,'free_freight_quantity' =>$free_freight_quantity,'stop_sale_status' =>$stop_sale_status);
+				
 					// Edit level
 					$this->items_information->Update($id, $data);
 					$this->Parames->redirect($this->Url.'itemList/');
+				}else{
+					print('a');
 				}
 			}
 		}
