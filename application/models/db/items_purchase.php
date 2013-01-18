@@ -9,8 +9,10 @@ class Items_purchase extends CI_Model {
 	}
 	
 	public function Select($limit=array(0,50)) {
+		$this->db->select('item_name,name,original_quantity,purchase_quantity,ip,datetime');
+		$this->db->from($this->tab.',items_infromation,user_infromation');
 		$this->db->limit($limit[1], $limit[0]);
-		return $this->db->get($this->tab);
+		return $this->db->get();
 	}
 	
 	public function SWhere($id) {

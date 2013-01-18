@@ -330,22 +330,37 @@ class Commodity extends CI_Controller {
 	}		
 	
 	/* invoicing */
-	public function invoicingLog($page=0) {
+	public function invoicingLog($kind=0, $page=1) {
 		/*	-------------------------------------------	*/
 		$this->Parames->init('nav_commodity_invoicingLog');
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
 		
-		$count = $this->items_information->SelectCount();
-		$limit = $this->pages->init($count, $page);
-		$this->parames['Items_information'] = $this->items_information->Select($limit);
-		
-		$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
-		$this->parames['page_previous'] 	= $this->pages->getPrevious();
-		$this->parames['page_next'] 		= $this->pages->getNext();
-		
-		$this->load->view('index', $this->parames);
+		$this->parames['kind'] = $kind;
+		if($kind == 0) { 
+			$count = $this->items_purchase->SelectCount();
+			$limit = $this->pages->init($count, $page);
+			$this->parames['items_purchase_stock'] 	= $this->items_purchase->Select($limit);
+			
+			$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
+			$this->parames['page_previous'] 	= $this->pages->getPrevious();
+			$this->parames['page_next'] 		= $this->pages->getNext();
+			$this->load->view('index', $this->parames);
+		}
+		else if($kind == 1) { 
+			$count = $this->items_stock->SelectCount();
+			$limit = $this->pages->init($count, $page);
+			$this->parames['items_purchase_stock'] 	= $this->items_stock->Select($limit);
+			
+			$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
+			$this->parames['page_previous'] 	= $this->pages->getPrevious();
+			$this->parames['page_next'] 		= $this->pages->getNext();
+			$this->load->view('index', $this->parames);
+		}
+		else { 
+			show_404();
+		}
 	}	
 	
 	public function invoicingAdd($items_id) {

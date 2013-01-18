@@ -1,5 +1,7 @@
 <?php
 	$lang['commodity_Error']					 = 'Error!!';
+	$lang['commodity_account']					 = '操作者';
+	$lang['commodity_IP']					 	 = 'IP位址';
 	
 	/*	area */
 	$lang['commodity_areaAdd_ErrorMsg']			 = '分區重複';
@@ -26,6 +28,8 @@
 	$lang['commodity_categorySecond_name']	 	 = '小類名稱';
 	
 	/* invoicing */
+	$lang['commodity_invoicing_static0']	 	 = '進貨';
+	$lang['commodity_invoicing_static1']	 	 = '庫調';
 	$lang['commodity_invoicingAdd_quantity']	 = '進貨數量';
 	$lang['commodity_invoicingAdd_time']	 	 = '進貨時間';
 	

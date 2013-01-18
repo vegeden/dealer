@@ -1,8 +1,8 @@
 <article>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info">
-			<td></td>
-			<td><?php echo $lang->line('nav_commodity_invoicing');?></td>
+			<td><?php echo $lang->line('edit').$lang->line('del');?></td>
+			<td><?php echo $lang->line('item_in').$lang->line('item_up');?></td>
 			<td><?php echo $lang->line('commodity_item_name'); ?></td>
 			<td><?php echo $lang->line('commodity_item_number'); ?></td>
 			<td><?php echo $lang->line('commodity_item_buy_price'); ?></td>
@@ -27,8 +27,8 @@
 				<a href="<?php echo $row->id;?>" class="itemDel"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
 			</td>
 			<td class="items">
-				<a href="/dealer/commodity/invoicingAdd/<?php echo $row->id;?>/"><i class="icon-shopping-cart"></i></a>
-				<a href="/dealer/commodity/invoicingEdit/<?php echo $row->id;?>/"><i class="icon-retweet"></i></a>
+				<a href="/dealer/commodity/invoicingAdd/<?php echo $row->id;?>/"><img src="/dealer/statics/img/ic_action_ldpi_upload_file.png"/></a>
+				<a href="/dealer/commodity/invoicingEdit/<?php echo $row->id;?>/"><img src="/dealer/statics/img/ic_action_ldpi_retweet.png"/></a>
 			</td>			
 			<td><?php echo $row->item_name;?></td>
 			<td><?php echo $row->item_number;?></td>
