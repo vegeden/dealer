@@ -21,7 +21,7 @@
 			<div class="row">
 				<div class="span1"><h3><?php echo $lang->line('account_name');?></h3></div>
 				<div class="span1 name"><h3><?php echo $UserInfo->name;?></h3></div>
-				<div class="span1 link"><a href="<?php echo $url.'editInfo/';?>"><?php echo $lang->line('account_editinfo');?></a></div>
+				<div class="span1 link"><a href="<?php echo $url.'editInfo/';?>"><?php echo $lang->line('edit');?></a></div>
 			</div>
 			<div class="row">
 				<div class="span1"><h3><?php echo $lang->line('account_gender');?></h3></div>

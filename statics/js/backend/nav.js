@@ -19,6 +19,7 @@ function init_nav_page( item ) {
 }
 
 $(function(){
+	/**		bootstrap		**/
 	$("[rel='tooltip']").tooltip();
 });
 

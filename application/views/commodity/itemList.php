@@ -23,8 +23,8 @@
 		?>
 		<tr class="info">
 			<td class="items">
-				<a href="/dealer/commodity/itemEdit/<?php echo $row->id;?>/"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
-				<a href="<?php echo $row->id;?>" class="itemDel"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
+				<a href="/dealer/commodity/itemEdit/<?php echo $row->id;?>/"  rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
+				<a href="<?php echo $row->id;?>" class="itemDel"  rel="tooltip" title="<?php echo $lang->line('del'); ?>"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
 			</td>
 			<td class="items">
 				<a href="/dealer/commodity/invoicingAdd/<?php echo $row->id;?>/"><img src="/dealer/statics/img/ic_action_ldpi_upload_file.png"/></a>

@@ -96,6 +96,8 @@ footer{
 	display: none;
 }
 
+article input[type="number"] {height:30px;}
+
 /* --		account 		--*/
 /* 		  listAdd Edit	 	  */
 dl.level dt{ padding-top:5px;}
@@ -142,3 +144,6 @@ article#apply div.pay_direction {overflow: auto; height: 300px; border: 1px dash
 
 /* 			  lists	 		  */
 article#storedvalue-lists input#search_bar {width: 100px;}
+
+
+

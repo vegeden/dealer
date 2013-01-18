@@ -11,8 +11,8 @@
 		?>
 		<tr class="info">
 			<td class="items">
-				<a href="/dealer/account/levelEdit/<?php echo $row->id;?>/"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
-				<a href="<?php echo $row->id;?>" class="levelDel"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
+				<a href="/dealer/account/levelEdit/<?php echo $row->id;?>/" rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
+				<a href="<?php echo $row->id;?>" class="levelDel" rel="tooltip" title="<?php echo $lang->line('del'); ?>"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
 			</td>
 			<td><?php echo $row->type_name;?></td>
 			<td><?php if($row->upper!=0) echo $upLevelName[$row->upper];?></td>

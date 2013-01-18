@@ -15,7 +15,6 @@
 						<select name="upper" id="upper">
 							<option value="1"><?php echo $lang->line('account_levelAdd_myself'); ?></option>
 							<?php 
-								
 								if($LevelList->num_rows() > 0) {
 									foreach($LevelList->result() as $row) {	
 										if($row->id == $query->id) continue;
