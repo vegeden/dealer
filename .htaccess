@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond $1 !^(index\.php|statics|robots\.txt|$)
+RewriteRule ^(.*)$ dealer/index.php/$1 [L,QSA]

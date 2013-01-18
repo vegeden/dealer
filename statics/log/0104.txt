@@ -1,0 +1,2 @@
+AccessControlList SQL Query
+INSERT INTO `dealer`.`AccessControlList` (`id`, `group`, `access`, `permission`, `publicPage`) VALUES (NULL, 'storedvalue', 'apply', '2,3,4', '1');

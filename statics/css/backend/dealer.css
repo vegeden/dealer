@@ -1,0 +1,261 @@
+body {
+	background-color: #405768;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.A_text {
+    font-family: Verdana,新細明體;
+	font-size: 13px;
+	color: #313131;
+	line-height: 140%;
+}
+.A_text a:link {
+    color: #313131;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+}
+.A_text a:visited {
+    color: #e45000;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+}
+.A_text a:hover {
+    color: #0465c0;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+	text-decoration: underline;
+}
+.A_text a:active {
+    color: #e45000;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;*/
+	text-decoration: none;
+}
+.A_text_s {
+    font-family: Verdana,新細明體;
+	font-size: 10px;
+	color: #313131;
+	line-height: 140%;
+}
+
+.A_Number {
+    font-family: Verdana,新細明體;
+	font-size: 15px;
+	color: #fd0000;
+	font-weight: bold;
+	line-height: 140%;
+}
+
+.A_Gray {
+    font-family: Verdana,新細明體;
+	font-size: 13px;
+	color: #bcbcbc;
+	/*line-height: 140%;*/
+}
+.A_Gray a:link {
+    color: #bcbcbc;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+}
+.A_Gray a:visited {
+    color: #bcbcbc;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+}
+.A_Gray a:hover {
+    color: #bcbcbc;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+	text-decoration: underline;
+}
+.A_Gray a:active {
+    color: #bcbcbc;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;*/
+	text-decoration: none;
+}
+
+
+
+.A_Yellow {
+    font-family: Verdana,新細明體;
+	font-size: 13px;
+	color: #e6c45b;
+	line-height: 140%;
+}
+.A_Yellow a:link {
+    color: #e6c45b;
+    font-family: Verdana,新細明體;
+	font-weight: bold;
+	font-size: 12px;
+}
+.A_Yellow a:visited {
+    color: #e6c45b;
+    font-family: Verdana,新細明體;
+	font-weight: bold;
+	font-size: 12px;
+}
+.A_Yellow a:hover {
+    color: #e6c45b;
+    font-family: Verdana,新細明體;
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: underline;
+}
+.A_Yellow a:active {
+    color: #e6c45b;
+    font-family: Verdana,新細明體;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+
+.A_Title {
+    font-family: Verdana,新細明體;
+	font-size: 16px;
+	color: #0460b7;
+	line-height: 140%;
+}
+.A_Title a:link {
+    color: #0460b7;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+}
+.A_Title a:visited {
+    color: #0460b7;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+}
+.A_Title a:hover {
+    color: #0460b7;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;
+	font-size: 12px;*/
+	text-decoration: underline;
+}
+.A_Title a:active {
+    color: #0460b7;
+    font-family: Verdana,新細明體;
+	/*font-weight: bold;*/
+	text-decoration: none;
+}
+
+
+.A_Title_White {
+    font-family: Verdana,新細明體;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+	line-height: 120%;
+}
+
+
+.A_Mark {
+    font-family: Verdana,新細明體;
+	font-size: 12px;
+	color: #0460b7;
+	line-height: 80%;
+}
+
+.Td_line {
+	height: 35px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #828181;
+	padding:5px 0;
+}
+.Td_form {
+	height: 35px;
+	border-bottom-width: 1px;
+	border-bottom-color: #828181;
+}
+
+#tb-border {
+width: 96%; 
+border-collapse: collapse;
+margin: 10px;	
+}
+#tb-border caption {
+font-family: "Century Gothic";
+font-size: 16px;
+color: #243541;
+padding: 2px;
+margin: 0px;
+}
+#tb-border th {
+font-size: 13px;
+font-family: Verdana,新細明體;
+font-weight: bold;
+color: #fff;
+text-align: center;
+padding: 3px;
+margin: 0px;
+background-color: #243541; 
+}
+#tb-border td {
+font-family: Verdana,新細明體;
+font-size: 13px;
+color: #555;
+text-align: center;
+padding: 3px;
+margin: 0px;
+background-color: #fff; 
+border-bottom: 1px solid  #bbb;
+}
+
+#corner_mix {
+ border: solid #2e3f4b 1px;
+/*-moz-border-radius: 6px;*/
+/*-webkit-border-radius: 6px;*/
+border-radius: 6px;
+/*-webkit-box-shadow: 0 1px 1px #ccc;*/
+/*-moz-box-shadow: 0 1px 1px #ccc;*/
+/*box-shadow: 0 1px 1px #ccc; */
+}
+
+#corner_mix_bg {
+	height:40px;
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #183e6a 0%, #2989d8 50%, #207cca 51%, #678da9 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+ /*border: solid #173145 1px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 1px 1px #173145;
+-moz-box-shadow: 0 1px 1px #173145;
+box-shadow: 0 1px 1px #ccc; */
+}
+.wrapper {margin:0px auto;font-size:14px;overflow:hidden;margin-bottom:30px;}
+.left {float:center;width:390px;}
+.left1 {font-size:14px;}
+.left1 h3{margin:0;padding:5px 0;}
+.img {float:left;display:inline;margin:10px 0 0px 10px;}
+.left2 {font-size:12px;overflow:hidden;margin-top:10px;}
+
+
+.button_a{display:inline-block; border-width:1px 0; border-color:#BBBBBB; border-style:solid; vertical-align:middle;text-decoration:none; color:#333333;}
+.button_b{float:left; background:#e3e3e3; border-width:0 1px; border-color:#BBBBBB; border-style:solid; margin:0 -1px; position:relative;}
+.button_c{display:block; line-height:0.6em; background:#f9f9f9; border-bottom:2px solid #eeeeee;}
+.button_d{display:block; padding:0.1em 0.6em; cursor:pointer; /*margin-top:-0.6em;*/ font-family: Verdana,新細明體; }
+.button_a:hover{border-color:#999999;text-decoration:none;}
+.button_a:hover .button_b{border-color:#999999;text-decoration:none;}
+input[type="text"],input[type="password"] { margin:0;}
+
