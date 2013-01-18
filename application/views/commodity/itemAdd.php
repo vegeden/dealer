@@ -37,7 +37,7 @@
 					<dt><?php echo $lang->line('commodity_item_stock_quantity'); ?></dt>					
 					<dd><input type="number" placeholder="" class="input-large" name="stock_quantity" min="1" value="1" ></dd>	
 					<dt><?php echo $lang->line('commodity_item_content'); ?></dt>					
-					<dd><textarea name="item_content" placeholder="輸入商品內容" rows="5"></textarea></dd>						
+					<dd><textarea name="item_content" placeholder="<?php echo $lang->line('commodity_item_content');?>" rows="5"></textarea></dd>						
 					<dt><?php echo $lang->line('commodity_item_bonus'); ?></dt>
 					<dd><input type="number" placeholder="" class="input-large" name="item_bonus" min="0" value="0" ></dd>						
 					<dt><?php echo $lang->line('commodity_area_name'); ?></dt>
