@@ -96,6 +96,9 @@ footer{
 	display: none;
 }
 
+ul.nav-pills li a{background:#fff;}
+ul.nav-pills li a:hover{background:#eee;}
+
 article input[type="number"] {height:30px;}
 
 /* --		account 		--*/

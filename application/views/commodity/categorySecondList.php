@@ -1,4 +1,9 @@
 <article>
+	<ul class="nav nav-pills pull-left">
+		<li class="">
+			<a href="<?php echo $url.'../categorySecondAdd/';?>"><?php echo $lang->line('nav_commodity_categorySecondAdd');?></a>
+		</li>
+	</ul>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info">
 			<td></td>
