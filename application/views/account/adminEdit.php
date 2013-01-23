@@ -15,7 +15,7 @@
 					<dd>
 						<div class="input-prepend">
 							<span class="btn btn-success dropdown-toggle"><?php echo $UpperInfo->name; ?></span>
-							<input class="span2" id="prependedDropdownButton" type="text" placeholder="<?php echo $lang->line('account_register_please_input'); ?>">
+							<input class="span2" id="prependedDropdownButton" autocomplete="off" type="text" placeholder="<?php echo $lang->line('account_register_please_input'); ?>">
 							<input type="hidden" id="level" value="<?php echo $User_information->type_id; ?>" name="level">
 							<input type="hidden" id="upper" value="" name="upper">
 						</div>

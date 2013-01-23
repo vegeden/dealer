@@ -29,7 +29,7 @@
 									?>
 								</ul>
 							</div>
-							<input class="span2" id="prependedDropdownButton" type="text" placeholder="<?php echo $lang->line('account_register_please_input'); ?>">
+							<input class="span2" id="prependedDropdownButton" type="text" autocomplete="off" placeholder="<?php echo $lang->line('account_register_please_input'); ?>">
 							<input type="hidden" id="level" value="" name="level">
 							<input type="hidden" id="upper" value="" name="upper">
 						</div>
