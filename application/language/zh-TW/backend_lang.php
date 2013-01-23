@@ -14,8 +14,7 @@ $lang['nav_commodity_itemEdit']				= '商品修改';
 $lang['nav_commodity_itemDel']				= '商品刪除';
 
 $lang['nav_commodity_invoicing']			= '商品進銷存';
-$lang['nav_commodity_invoicingAdd']			= '商品進貨';
-$lang['nav_commodity_invoicingEdit']		= '商品庫調';
+$lang['nav_commodity_invoicingEditAdd']		= '商品庫調&進貨';
 $lang['nav_commodity_invoicingLog']		    = '進銷存紀錄';
 
 $lang['nav_commodity_areaList']			 	= '分區列表';

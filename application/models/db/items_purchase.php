@@ -13,6 +13,7 @@ class Items_purchase extends CI_Model {
 		$this->db->select('item_name,name,original_quantity,purchase_quantity,ip,datetime');
 		$this->db->from($this->tab.',items_information,user_information');
 		$this->db->where($where);
+		$this->db->order_by("datetime", "desc");
 		$this->db->limit($limit[1], $limit[0]);
 		return $this->db->get();
 		/*

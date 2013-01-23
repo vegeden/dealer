@@ -347,8 +347,7 @@ class Commodity extends CI_Controller {
 			$this->parames['page_previous'] 	= $this->pages->getPrevious();
 			$this->parames['page_next'] 		= $this->pages->getNext();
 			$this->load->view('index', $this->parames);
-		}
-		else if($kind == 1) { 
+		} else if($kind == 1) { 
 			$count = $this->items_stock->SelectCount();
 			$limit = $this->pages->init($count, $page);
 			$this->parames['items_purchase_stock'] 	= $this->items_stock->Select($limit);
@@ -357,43 +356,26 @@ class Commodity extends CI_Controller {
 			$this->parames['page_previous'] 	= $this->pages->getPrevious();
 			$this->parames['page_next'] 		= $this->pages->getNext();
 			$this->load->view('index', $this->parames);
-		}
-		else { 
+		} else { 
 			show_404();
 		}
 	}	
 	
-	public function invoicingAdd($items_id) {
+	public function invoicingEditAdd($items_id) {
 		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_commodity_invoicingAdd');
+		$this->Parames->init('nav_commodity_invoicingEditAdd');
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
-
+		
 		$this->parames['itemList'] = $this->items_information->SWhere($items_id);
 		
 		$stock_quantity = $this->parames['itemList']->stock_quantity;
 		$user_id = $this->parames['UserInfo']->id;
-		$this->oninvoicingAdd($items_id,$stock_quantity,$user_id);
+		$this->oninvoicingEditAdd($items_id,$stock_quantity,$user_id);
 		
 		$this->load->view('index', $this->parames);
 	}
-	
-	public function invoicingEdit($items_id) {
-		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_commodity_invoicingEdit');
-		$this->parames = $this->Parames->getParams();
-		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
-		/*	-------------------------------------------	*/
-		
-		$this->parames['itemList'] = $this->items_information->SWhere($items_id);
-		
-		$stock_quantity = $this->parames['itemList']->stock_quantity;
-		$user_id = $this->parames['UserInfo']->id;
-		$this->oninvoicingEdit($items_id,$stock_quantity,$user_id);
-		
-		$this->load->view('index', $this->parames);
-	}	
 	
 	/* Action on Click */	
 	/* area on */
@@ -527,20 +509,24 @@ class Commodity extends CI_Controller {
 		$item_bonus = $this->input->post('item_bonus', TRUE );
 		$area_class = $this->input->post('area_class', TRUE );
 		$category_second_class = $this->input->post('category_second_class', TRUE );
+		$freight_price = $this->input->post('freight_price', TRUE );
+		$free_freight_quantity = $this->input->post('free_freight_quantity', TRUE );
 		$stop_sale_status = $this->input->post('stop_sale_status', TRUE );
-		
-		if(isset($item_name) && isset($item_number) && isset($buy_price) && isset($sell_price) 
-		&& isset($safe_stock) && isset($bread_class) && isset($stock_quantity) && isset($item_content) 
-		&& isset($item_bonus) && isset($area_class) && isset($category_second_class) && isset($stop_sale_status)) {
-			if(strlen($item_name) != 0 && strlen($item_number) != 0 && strlen($buy_price) != 0 && strlen($sell_price) != 0 
-			&& strlen($safe_stock) != 0 && strlen($bread_class) != 0 && strlen($stock_quantity) != 0 && strlen($item_content) != 0 
-			&& strlen($item_bonus) != 0 && strlen($area_class) != 0 && strlen($category_second_class) != 0 && strlen($stop_sale_status) != 0 )
-			{
-				$data = array('item_name' =>$item_name,'item_number' =>$item_number,'buy_price' =>$buy_price,'sell_price' =>$sell_price
-				,'safe_stock' =>$safe_stock,'bread_id' =>$bread_class,'stock_quantity' =>$stock_quantity,'item_content' =>$item_content
-				,'item_bonus' =>$item_bonus,'area_id' =>$area_class,'category_second_id' =>$category_second_class,'stop_sale_status' =>$stop_sale_status);
+		if(strlen($id)==0) {
+			if(isset($item_name) && isset($item_number) && isset($buy_price) && isset($sell_price) 
+			&& isset($safe_stock) && isset($bread_class) && isset($stock_quantity) && isset($item_content) 
+			&& isset($item_bonus) && isset($area_class) && isset($category_second_class) && isset($freight_price)
+			&& isset($free_freight_quantity)&& isset($stop_sale_status)) {
+				if(strlen($item_name) != 0 && strlen($item_number) != 0 && strlen($buy_price) != 0 && strlen($sell_price) != 0 
+				&& strlen($safe_stock) != 0 && strlen($bread_class) != 0 && strlen($stock_quantity) != 0 && strlen($item_content) != 0 
+				&& strlen($item_bonus) != 0 && strlen($area_class) != 0 && strlen($category_second_class) != 0 && strlen($freight_price) != 0
+				&& strlen($free_freight_quantity) != 0 && strlen($stop_sale_status) != 0 )
+				{
+					$data = array('item_name' =>$item_name,'item_number' =>$item_number,'buy_price' =>$buy_price,'sell_price' =>$sell_price
+					,'safe_stock' =>$safe_stock,'bread_id' =>$bread_class,'stock_quantity' =>$stock_quantity,'item_content' =>$item_content
+					,'item_bonus' =>$item_bonus,'area_id' =>$area_class,'category_second_id' =>$category_second_class,'freight_price' =>$freight_price
+					,'free_freight_quantity' =>$free_freight_quantity,'stop_sale_status' =>$stop_sale_status);
 				
-				if(strlen($id)==0) {
 					if($this->items_information->verify($item_name)) {
 						// Add level
 						$this->items_information->Add($data);
@@ -548,65 +534,84 @@ class Commodity extends CI_Controller {
 					} else {
 						$this->parames['error'] = "";
 					}
-				} else {
+				}
+			}
+		} else {
+			if(isset($item_name) && isset($item_number) && isset($buy_price) && isset($sell_price) 
+			&& isset($safe_stock) && isset($bread_class) && isset($item_content) && isset($item_bonus) 
+			&& isset($area_class) && isset($category_second_class) && isset($freight_price) && isset($free_freight_quantity) 
+			&& isset($stop_sale_status)) {
+				if(strlen($item_name) != 0 && strlen($item_number) != 0 && strlen($buy_price) != 0 && strlen($sell_price) != 0 
+				&& strlen($safe_stock) != 0 && strlen($bread_class) != 0 && strlen($item_content) != 0 
+				&& strlen($item_bonus) != 0 && strlen($area_class) != 0 && strlen($category_second_class) != 0 
+				&& strlen($freight_price) != 0 && strlen($free_freight_quantity) != 0 && strlen($stop_sale_status) != 0 )
+				{
+					$data = array('item_name' =>$item_name,'item_number' =>$item_number,'buy_price' =>$buy_price,'sell_price' =>$sell_price
+					,'safe_stock' =>$safe_stock,'bread_id' =>$bread_class,'item_content' =>$item_content
+					,'item_bonus' =>$item_bonus,'area_id' =>$area_class,'category_second_id' =>$category_second_class,'freight_price' =>$freight_price
+					,'free_freight_quantity' =>$free_freight_quantity,'stop_sale_status' =>$stop_sale_status);
+				
 					// Edit level
 					$this->items_information->Update($id, $data);
 					$this->Parames->redirect($this->Url.'itemList/');
+				}else{
+					print('a');
 				}
 			}
 		}
 	}
-	/* invoicingAdd on */
-	private function oninvoicingAdd($item_id,$stock_quantity,$user_id) {
-		$cancel = $this->input->post('cancel', TRUE );
-		if(strlen($cancel)!=0) {
-			$this->Parames->redirect($this->Url.'itemList/');
-		}
-		
-		$purchase_quantity = $this->input->post('purchase_quantity', TRUE );
-		$total_quantity = $purchase_quantity+$stock_quantity;
-		
-		if(isset($purchase_quantity)) {
-			if(strlen($purchase_quantity) != 0)
-			{
-				$data = array('item_id' => $item_id, 'original_quantity' => $stock_quantity,
-				'purchase_quantity' => $purchase_quantity,'total_quantity' => $total_quantity,
-				'user_id' => $user_id,'ip' => $this->input->ip_address(),'datetime' => date(DateTime::ATOM, time()));
-				
-				$data_items = array('stock_quantity' => $total_quantity);
-				
-				$this->items_purchase->Add($data);
-				$this->items_information->Update($item_id, $data_items);
-				$this->Parames->redirect($this->Url.'itemList/');
-			}
-		}
-	}
 	
-	/* invoicingEdit on */
-	private function oninvoicingEdit($item_id,$stock_quantity,$user_id) {
+	/* invoicingEditAdd on */
+	private function oninvoicingEditAdd($item_id,$stock_quantity,$user_id) {
+	
 		$cancel = $this->input->post('cancel', TRUE );
 		if(strlen($cancel)!=0) {
 			$this->Parames->redirect($this->Url.'itemList/');
 		}
 		
-		$restock_quantity = $this->input->post('stock_quantity', TRUE );
-		$stock_content = $this->input->post('stock_content', TRUE );
+		$invoicing_status = $this->input->post('invoicing_status', TRUE );
 		
-		if(isset($restock_quantity) && isset($stock_content)) {
-			if(strlen($restock_quantity) != 0 && strlen($stock_content) != 0)
-			{
-				$data = array('item_id' => $item_id, 'user_id' => $user_id, 'stock_content' => $stock_content,
-				'original_quantity' => $stock_quantity,'stock_quantity' => $restock_quantity,
-				'ip' => $this->input->ip_address(),'datetime' => date(DateTime::ATOM, time()));
+		switch($invoicing_status){
+			case 0:
+				$stock_purchase_quantity = $this->input->post('stock_purchase_quantity', TRUE );
+				$total_quantity = $stock_purchase_quantity+$stock_quantity;
 				
-				$data_items = array('stock_quantity' => $restock_quantity);
+				if(isset($stock_purchase_quantity)) {
+					if(strlen($stock_purchase_quantity) != 0)
+					{
+						$data = array('item_id' => $item_id, 'original_quantity' => $stock_quantity,
+						'purchase_quantity' => $stock_purchase_quantity,'total_quantity' => $total_quantity,
+						'user_id' => $user_id,'ip' => $this->input->ip_address(),'datetime' => date(DateTime::ATOM, time()));
+						
+						$data_items = array('stock_quantity' => $total_quantity);
+						
+						$this->items_purchase->Add($data);
+						$this->items_information->Update($item_id, $data_items);
+						$this->Parames->redirect($this->Url.'itemList/');
+					}
+				}
+				break;
+			case 1:
+				$stock_purchase_quantity = $this->input->post('stock_purchase_quantity', TRUE );
+				$stock_content = $this->input->post('stock_content', TRUE );
 				
-				$this->items_stock->Add($data);
-				$this->items_information->Update($item_id, $data_items);
-				$this->Parames->redirect($this->Url.'itemList/');
-			}
+				if(isset($stock_purchase_quantity) && isset($stock_content)) {
+					if(strlen($stock_purchase_quantity) != 0 && strlen($stock_content) != 0)
+					{
+						$data = array('item_id' => $item_id, 'user_id' => $user_id, 'stock_content' => $stock_content,
+						'original_quantity' => $stock_quantity,'stock_quantity' => $stock_purchase_quantity,
+						'ip' => $this->input->ip_address(),'datetime' => date(DateTime::ATOM, time()));
+						
+						$data_items = array('stock_quantity' => $stock_purchase_quantity);
+						
+						$this->items_stock->Add($data);
+						$this->items_information->Update($item_id, $data_items);
+						$this->Parames->redirect($this->Url.'itemList/');
+					}
+				}
+				break;
 		}
-	}
+	}	
 	
 	public function ajaxGetLang() {
 		$this->Parames->init('nav_commodity_ajaxGetLang');

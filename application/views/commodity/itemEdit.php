@@ -35,9 +35,7 @@
 								}
 							?>
 						</select>
-					</dd>						
-					<dt><?php echo $lang->line('commodity_item_stock_quantity'); ?></dt>					
-					<dd><input type="number" placeholder="" class="input-large" name="stock_quantity" min="1" value="<?php echo $query->stock_quantity;?>" ></dd>	
+					</dd>	
 					<dt><?php echo $lang->line('commodity_item_content'); ?></dt>
 					<dd><textarea name="item_content" rows="5"><?php echo $query->item_content;?></textarea></dd>					
 					<dt><?php echo $lang->line('commodity_item_bonus'); ?></dt>
@@ -72,11 +70,21 @@
 							?>
 						</select>
 					</dd>
+					<dt><?php echo $lang->line('commodity_freight_price'); ?></dt>					
+					<dd><input type="number" placeholder="" class="input-large" name="freight_price" min="0" value="<?php echo $query->freight_price;?>" ></dd>						
+					<dt><?php echo $lang->line('commodity_free_freight_quantity'); ?></dt>
+					<dd><input type="number" placeholder="" class="input-large" name="free_freight_quantity" min="0" value="<?php echo $query->free_freight_quantity;?>" ></dd>				
 					<dt><?php echo $lang->line('commodity_item_stop_sale_status'); ?></dt>
 					<dd>
 						<select name="stop_sale_status" id="stop_sale_status">
+							<?php if($query->stop_sale_status == 0) {;
+							?>
 							<option value="0"><?php echo $lang->line('commodity_item_stop_status'); ?></option>
 							<option value="1"><?php echo $lang->line('commodity_item_sale_status'); ?></option>
+							<?php } else {?>
+							<option value="1"><?php echo $lang->line('commodity_item_sale_status'); ?></option>
+							<option value="0"><?php echo $lang->line('commodity_item_stop_status'); ?></option>
+							<?php }?>
 						</select>
 					</dd>
 				</dl>
