@@ -263,24 +263,29 @@ class Account extends CI_Controller {
 			$this->user_information->Update($id, $data);
 			$this->Parames->redirect($this->Url.'lists/');
 		} else {
-		/*
 			$password = $this->input->post('password', TRUE );
 			if(isset($password)) {
 				if(strlen($password) != 0) {
-					$data = array('password'=> hash('sha1', $password));
-					$this->user_information->Update($id, $data);
+					$user_information = $this->user_information->SWhere($id);
+					$dbpasswd = $user_information->password;
 					
-					// Email Notice
-					$EmailInfo = array(	'toWho'		=>$this->UserInfo->email,
-										'account' 	=> $this->UserInfo->account, 
-										'passwd' 	=> $password
-									);
-									
-					$this->Parames->sendEMail(Mail::ForgetPassword_Type, $EmailInfo );
+					if( $dbpasswd != hash('sha1', $password)) {
+						$data = array('password'=> hash('sha1', $password));
+						$this->user_information->Update($id, $data);
+						
+						/** 	Email Notice 	**/
+						$EmailInfo = array(	'toWho'		=>$user_information->email,
+											'account' 	=> $user_information->account, 
+											'passwd' 	=> $password
+										);
+										
+						$this->Parames->sendEMail(Mail::ForgetPassword_Type, $EmailInfo );
 
+						
+					}
 					$this->Parames->redirect($this->Url.'lists/');
 				}
-			}*/
+			}
 		}
 	}
 	
