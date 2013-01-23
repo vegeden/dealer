@@ -143,6 +143,11 @@ class Account extends CI_Controller {
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url;
 		/*	-------------------------------------------	*/
+		if(!empty($this->UserInfo->upper_id)) {
+			$upper_userInfo = $this->user_information->SWhere($this->UserInfo->upper_id);
+			$this->parames['UpperTypeName'] = $this->user_type->SWhere($upper_userInfo->type_id)->type_name;
+			$this->parames['UpperName'] 	= $upper_userInfo->name;
+		}
 		
 		$this->load->view('index', $this->parames);
 	}

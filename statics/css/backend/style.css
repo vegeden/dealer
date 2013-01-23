@@ -118,11 +118,11 @@ article#apply button.dropdown-toggle{width:68px;}
 input#prependedDropdownButton{width:143px;}
 
 /*			profiles		*/
-div.row hr{margin:10px 0;}
-div.row h3{margin:5px 0;}
-div.row div.link{margin:0;padding-top:20px;}
-div.row div.link a{color:#00aeff;}
-div.row div.name{width:auto;padding-right:10px;}
+article#profiles div.row hr{margin:10px 0;}
+article#profiles div.row h3{margin:5px 0;float:left;}
+article#profiles div.row .link {margin:0;margin-left:10px;padding-top:20px;}
+article#profiles div.row .link a{color:#00aeff;}
+article#profiles div.row div.name{width:auto;padding-right:10px;}
 
 /*			lists		*/
 div ul.dropdown-menu{min-width:80px;}
