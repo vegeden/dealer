@@ -6,8 +6,8 @@
 	</ul>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info">
-			<td><?php echo $lang->line('edit').$lang->line('del');?></td>
-			<td><?php echo $lang->line('commodity_invoicing_static1').$lang->line('commodity_invoicing_static0');?></td>
+			<td class="items"></td>
+			<td></td>
 			<td><?php echo $lang->line('commodity_item_name'); ?></td>
 			<td><?php echo $lang->line('commodity_item_number'); ?></td>
 			<td><?php echo $lang->line('commodity_item_buy_price'); ?></td>
@@ -33,12 +33,12 @@
 		<?php } else { ?>
 		<tr class="error">
 		<?php } ?>
-			<td class="items">
+			<td>
 				<a href="/dealer/commodity/itemEdit/<?php echo $row->id;?>/"  rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
 				<a href="<?php echo $row->id;?>" class="itemDel"  rel="tooltip" title="<?php echo $lang->line('del'); ?>"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
 			</td>
-			<td class="items">
-				<a href="/dealer/commodity/invoicingEditAdd/<?php echo $row->id;?>/"><img src="/dealer/statics/img/ic_action_ldpi_retweet.png"/></a>
+			<td class="invoice">
+				<a href="/dealer/commodity/invoicingEditAdd/<?php echo $row->id;?>/" rel="tooltip" title="<?php echo $lang->line('commodity_invoicing_static1').$lang->line('commodity_invoicing_static0');?>"><img src="/dealer/statics/img/ic_invoice.png" width="24" height="24"/></a>
 			</td>			
 			<td><?php echo $row->item_name;?></td>
 			<td><?php echo $row->item_number;?></td>

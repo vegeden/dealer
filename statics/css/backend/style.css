@@ -107,7 +107,7 @@ dl.level dt{ padding-top:5px;}
 input[type="text"], input[type="email"] , input[type="password"]{	height:30px;width:210px;}
 select[name="gender"] {width:210px;}
 div.row{margin-left:0;padding-left:0;}
-table tr td.items{width:55px;}
+table tr td.items{width:55px;text-align:center;}
 select#upper{width:210px;}
 
 /* 		 	register 	 	  */
@@ -128,7 +128,8 @@ article#profiles div.row div.name{width:auto;padding-right:10px;}
 div ul.dropdown-menu{min-width:80px;}
 div.btn-group a.dropdown-toggle{height:20px;}
 table tr.info td#option{width:90px;}
-table tr.info td{text-align:center;}
+table tr.info td, table tr.error td{text-align:center;}
+table tr.info td.invoice{width:24px;}
 
 /*			repasswd		*/
 article#adminEidt input#search_bar {width: 100px;}
