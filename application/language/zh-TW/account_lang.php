@@ -17,6 +17,7 @@
 	$lang['account_class']						= '層級';
 	$lang['account_uplevel']					= '上層';
 	$lang['account_editpasswd']					= '修改密碼';
+	$lang['account_bonusPercentage']			= '獎金%';
 	
 	
 	/*	level Add */

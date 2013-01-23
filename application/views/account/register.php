@@ -39,6 +39,8 @@
 					<dd><input type="text" placeholder="<?php echo $lang->line('account_account'); ?>" class="input-large" name="account" value=""></dd>
 					<dt><?php echo $lang->line('account_password'); ?></dt>
 					<dd><input type="password" placeholder="<?php echo $lang->line('account_password'); ?>" class="input-large" name="password" value=""></dd>
+					<dt><?php echo $lang->line('account_bonusPercentage'); ?></dt>
+					<dd><input type="text" placeholder="%" class="input-large" name="bonus" value="0"></dd>
 				</dl>
 			</div>
 			<div class="span8 offset2">

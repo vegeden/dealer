@@ -12,6 +12,7 @@ class Account extends CI_Controller {
 		
 		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
 		
+		$this->load->model('db/bonus');
 		$this->load->model('db/user_information');
 		$this->load->model('db/user_type');
 		$this->load->model('pages');
@@ -221,17 +222,18 @@ class Account extends CI_Controller {
 				$upper 		= $this->input->post('upper', TRUE );
 				$account 	= $this->input->post('account', TRUE );
 				$password	= $this->input->post('password', TRUE );
+				$bonus		= $this->input->post('bonus', TRUE );
 				
 				$haveUpper = $this->user_type->verifyHaveUpper($level);
-				if(isset($upper) || (isset($level) && isset($account) && isset($password))) {
-					if(strlen($level) != 0 && strlen($account) != 0 && strlen($password) != 0 ) {
+				if(isset($upper) || (isset($level) && isset($account) && isset($password) && isset($bonus))) {
+					if(!empty($level) && !empty($account) && !empty($password) && strlen($bonus) != 0 ) {
 						if( $this->user_information->verifyAccount($account) ) {
 							$data = array(	'account'		=> $account,
 											'password'		=> hash('sha1', $password),
 											'type_id'		=> $level,
 										);
 							
-							if ( $haveUpper == 1 && strlen($upper) != 0) {
+							if ( $haveUpper == 1 && !empty($upper)) {
 								/** have upper **/
 								$data['upper_id'] = $upper;
 								$this->user_information->Add($data);
@@ -241,6 +243,15 @@ class Account extends CI_Controller {
 								$this->user_information->Add($data);
 							} else {
 								$this->parames['error'] = $this->lang->line('account_error_needselectlevel');
+							}
+
+							if(empty($this->parames['error'])) {
+								$user_id = $this->user_information->verifyUser($account, $password);
+								$data = array(
+									'user_id' 			=> $user_id, 
+									'bonusPercentage' 	=> $bonus
+								);
+								$this->bonus->Add($data);
 							}
 						} else {
 							$this->parames['error'] = $this->lang->line('account_error_repeat');
