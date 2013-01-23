@@ -20,7 +20,6 @@
 	
 	
 	/*	level Add */
-	
 	$lang['account_levelAdd_myself']			= '自己';
 	$lang['account_levelAdd_ErrorMsg']			= '類別重複';
 	
@@ -45,9 +44,10 @@
 	/* profiles */
 	$lang['account_myprofiles']					= '個人資料';
 	
-	/* repasswd */
+	/* adminEdit */
 	$lang['account_repasswd_random']			= '亂數產生';
 	$lang['account_repasswd_note']				= '亂數產生';
+	$lang['account_change_level']				= '修改層級';
 	
 	
 	/* editPasswd */

@@ -35,7 +35,7 @@
 						<li><a href="#1,<?php echo $row->id;?>"><i class="icon-ok"></i> <span><?php echo $lang->line('account_status1'); ?></span></a></li>
 						<li><a href="#2,<?php echo $row->id;?>"><i class="icon-lock"></i> <span><?php echo $lang->line('account_status2'); ?></span></a></li>
 						<li class="divider"></li>
-						<li><a href="/dealer/account/repasswd/<?php echo $row->id;?>/"><i class="icon-pencil"></i> <?php echo $lang->line('edit'); ?></li>
+						<li><a href="/dealer/account/adminEdit/<?php echo $row->id;?>/"><i class="icon-pencil"></i> <?php echo $lang->line('edit'); ?></li>
 					</ul>
 				</div>
 				<?php 

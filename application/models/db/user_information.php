@@ -65,6 +65,7 @@ class User_information extends CI_Model {
 		$query =  $this->db->get($this->tab);
 		foreach($query->result() as $row) {
 			return $row;
+			break;
 		}
 	}
 	
@@ -106,7 +107,6 @@ class User_information extends CI_Model {
 		$this->db->select('id, account, user_status, name, email, gender, phone, address, type_id, upper_id');
 		$this->db->where('id', $id);
 		foreach( $this->db->get($this->tab)->result() as $row) {
-			
 			return $row;
 		}
 	}
@@ -119,8 +119,7 @@ class User_information extends CI_Model {
 			$user_type = $row;
 			break;
 		}
-			
-		
+
 		$data = array();
 		$this->db->select('id, name');
 		$this->db->where('type_id', $user_type->upper);

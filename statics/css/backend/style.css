@@ -114,7 +114,7 @@ select#upper{width:210px;}
 dd,dt{padding-bottom:5px;}
 dd{position:relative;}
 select#NameList{display:none;top:0;left:150px;position:absolute;margin-left:70px; width:205px;z-index:2;}
-button.dropdown-toggle{width:68px;}
+article#apply button.dropdown-toggle{width:68px;}
 input#prependedDropdownButton{width:143px;}
 
 /*			profiles		*/
@@ -131,7 +131,9 @@ table tr.info td#option{width:90px;}
 table tr.info td{text-align:center;}
 
 /*			repasswd		*/
-small cite span.label{cursor: pointer;}
+article#adminEidt input#search_bar {width: 100px;}
+article#adminEidt small cite span.label{cursor: pointer;}
+article#adminEidt .dropdown-toggle{width:42px;}
 
 /*			editPasswd		*/
 div.popover{color:#000;}
@@ -148,5 +150,6 @@ article#apply div.pay_direction {overflow: auto; height: 300px; border: 1px dash
 /* 			  lists	 		  */
 article#storedvalue-lists input#search_bar {width: 100px;}
 
+/* 			  lists	 		  */
 
 

@@ -18,10 +18,9 @@ $(function(){
 	$("div.register ul.dropdown-menu li a").click(function(){
 		var type_name = $(this).html();
 		var type_id = $(this);
-		$("button.dropdown-toggle").html(type_name).trigger('click').addClass('btn-success');
+		
 		$("input#level").attr('value', type_id.attr('href'));
-		
-		
+
 		$.post('/dealer/account/ajaxHaveUpper/',{
 					'level':type_id.attr('href')
 				},function(request){
@@ -37,6 +36,14 @@ $(function(){
 							break;
 					}
 				});
+				
+		$("button.dropdown-toggle")
+			.html(type_name)
+			.addClass('btn-success')
+			.parent().parent().find("input#prependedDropdownButton")
+			.trigger('focus')
+			.trigger('click');
+			
 		return false;
 	});
 	

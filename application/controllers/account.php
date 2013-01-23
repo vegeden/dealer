@@ -52,15 +52,18 @@ class Account extends CI_Controller {
 		$this->load->view('index', $this->parames);
 	}
 	
-	public function repasswd($id) {		
+	public function adminEdit($id) {		
 		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_account_repasswd');
+		$this->Parames->init('nav_account_adminEdit');
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/	
 		
-		$this->parames['User_information'] 	= $this->user_information->SWhere($id);
-		$this->onRepasswd($id);
+		$User_information 					= $this->user_information->SWhere($id);
+		$this->parames['User_information'] 	= $User_information;
+		$this->parames['UpperInfo'] 		= $this->user_information->SWhere($User_information->upper_id);
+		
+		$this->onAdminEdit($id);
 		
 		$this->load->view('index', $this->parames);
 	}
@@ -245,28 +248,39 @@ class Account extends CI_Controller {
 		}
 	}
 	
-	private function onRepasswd($id) {
+	private function onAdminEdit($id) {
 		$cancel = $this->input->post('cancel', TRUE );
 		if(strlen($cancel)!=0) {
 			$this->Parames->redirect($this->Url.'lists/');
 		}
 		
-		$password = $this->input->post('password', TRUE );
-		if(isset($password)) {
-			if(strlen($password) != 0) {
-				$data = array('password'=> hash('sha1', $password));
-				$this->user_information->Update($id, $data);
-				
-				// Email Notice
-				$EmailInfo = array(	'toWho'		=>$this->UserInfo->email,
-									'account' 	=> $this->UserInfo->account, 
-									'passwd' 	=> $password
-								);
-								
-				$this->Parames->sendEMail(Mail::ForgetPassword_Type, $EmailInfo );
+		$item = $this->input->post('item', TRUE );
+		if(!empty($item)) {
+			// $level 	= $this->input->post('level', TRUE );
+			$upper 	= $this->input->post('upper', TRUE );
+			
+			$data 	= array('upper_id' => $upper);
+			$this->user_information->Update($id, $data);
+			$this->Parames->redirect($this->Url.'lists/');
+		} else {
+		/*
+			$password = $this->input->post('password', TRUE );
+			if(isset($password)) {
+				if(strlen($password) != 0) {
+					$data = array('password'=> hash('sha1', $password));
+					$this->user_information->Update($id, $data);
+					
+					// Email Notice
+					$EmailInfo = array(	'toWho'		=>$this->UserInfo->email,
+										'account' 	=> $this->UserInfo->account, 
+										'passwd' 	=> $password
+									);
+									
+					$this->Parames->sendEMail(Mail::ForgetPassword_Type, $EmailInfo );
 
-				$this->Parames->redirect($this->Url.'lists/');
-			}
+					$this->Parames->redirect($this->Url.'lists/');
+				}
+			}*/
 		}
 	}
 	
@@ -364,6 +378,7 @@ class Account extends CI_Controller {
 		$this->Parames->init('nav_account_ajaxUpper');
 		$level 	= $this->input->post('level', TRUE );
 		$name	= $this->input->post('name', TRUE );
+
 		if( strlen($name) != 0 ) {
 			$result['count'] = 1;
 			$result['list'] = $this->user_information->SelectList($level, $name);
