@@ -23,9 +23,11 @@
 					</dd>
 				</dl>
 			</div>
-			<div class="span8 offset2">
-				<button type="submit" class="btn btn-primary span1" name="submit" value="submit"><?php echo $lang->line('edit'); ?></button>
-				<button type="submit" class="btn span1" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
+			<div class="row">
+				<div class="span3 offset3">
+					<button type="submit" class="btn btn-primary" name="submit" value="submit"><?php echo $lang->line('add'); ?></button>
+					<button type="submit" class="btn offset2" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
+				</div>
 			</div>
 		</div>
 		<input type="hidden" name="item" value="1">
@@ -40,9 +42,11 @@
 					<dd><input type="text" placeholder="%" class="input-large" name="bonus" value="<?php if(isset($Bonus->bonusPercentage)) echo $Bonus->bonusPercentage; else echo 0;?>"></dd>
 				</dl>
 			</div>
-			<div class="span8 offset2">
-				<button type="submit" class="btn btn-primary span1" name="submit" value="submit"><?php echo $lang->line('edit'); ?></button>
-				<button type="submit" class="btn span1" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
+			<div class="row">
+				<div class="span3 offset3">
+					<button type="submit" class="btn btn-primary" name="submit" value="submit"><?php echo $lang->line('add'); ?></button>
+					<button type="submit" class="btn offset2" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
+				</div>
 			</div>
 		</div>
 		<input type="hidden" name="item" value="2">
@@ -66,9 +70,11 @@
 					</dd>
 				</dl>
 			</div>
-			<div class="span8 offset2">
-				<button type="submit" class="btn btn-primary span1" name="submit" value="submit"><?php echo $lang->line('edit'); ?></button>
-				<button type="submit" class="btn span1" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
+			<div class="row">
+				<div class="span3 offset3">
+					<button type="submit" class="btn btn-primary" name="submit" value="submit"><?php echo $lang->line('add'); ?></button>
+					<button type="submit" class="btn offset2" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
+				</div>
 			</div>
 		</div>
 		<input type="hidden" name="item" value="3">

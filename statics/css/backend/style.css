@@ -1,8 +1,18 @@
 body {
-	font-family:Arial,"微軟正黑體", "Microsoft JhengHei",sans-serif;
 	padding-top: 60px;
 	padding-bottom: 40px;
+}
+body, button{
+	font-family:Arial,"微軟正黑體", "Microsoft JhengHei",sans-serif;
 }
 .sidebar-nav {
 	padding: 9px 0;
 }
+
+dd { position:relative;padding-bottom:10px; }
+dt { padding-top:5px; }
+
+/* 		 	register 	 	  */
+article#register select#NameList{display:none;top:0;left:150px;position:absolute;margin-left:70px; width:205px;z-index:2;}
+article#register button.dropdown-toggle{width:68px;}
+article#register input#prependedDropdownButton{width:157px;}

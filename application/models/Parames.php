@@ -25,7 +25,7 @@ class Parames extends CI_Model {
 		/**		Under code follow $nav_page 	**/
 		$navSplit		= preg_split('/_/',$nav_page);
 		$navclass 		= substr($nav_page,0,(strlen($nav_page)-strlen($navSplit[2])-1));
-		$topName 		= sprintf("%s > %s > %s", $this->lang->line('backendName'), $this->lang->line($navclass), $this->lang->line($nav_page));
+		$topName 		= $this->lang->line($nav_page);
 		$this->page = $navSplit;
 		
 		$this->loadlange($navSplit[1]);

@@ -40,6 +40,7 @@
 					<?php require_once 'backend_nav.php';?>
 				</div><!--/span-->
 				<div class="span10">
+					<?php require_once 'backend_main_top.php';?>
 					<?php require_once $ArticlePage;?>
 				</div><!--/span-->
 			</div><!--/row-->
