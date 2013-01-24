@@ -7,20 +7,13 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		
-		<link href="/dealer/statics/css/backend/normalize.css" rel="stylesheet" />
+		<link href="/dealer/statics/css/normalize.css" rel="stylesheet" />
 		<link href="/dealer/statics/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<style type="text/css">
-			body {
-				padding-top: 60px;
-				padding-bottom: 40px;
-			}
-			.sidebar-nav {
-				padding: 9px 0;
-			}
-		</style>
+		<link href="/dealer/statics/css/backend/style.css" rel="stylesheet" />
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="/dealer/statics/js/lib/bootstrap/bootstrap.min.js"></script>
+		<script src="/dealer/statics/js/backend/style.js"></script>
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
