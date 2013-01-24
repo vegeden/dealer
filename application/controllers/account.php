@@ -37,7 +37,7 @@ class Account extends CI_Controller {
 		$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
 		$this->parames['page_previous'] 	= $this->pages->getPrevious();
 		$this->parames['page_next'] 		= $this->pages->getNext();
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function register() {		
@@ -50,7 +50,7 @@ class Account extends CI_Controller {
 		
 		$this->parames['user_type'] = $this->user_type->Select();
 
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function adminEdit($id) {		
@@ -66,7 +66,7 @@ class Account extends CI_Controller {
 		$this->parames['User_information'] 	= $User_information;
 		$this->parames['UpperInfo'] 		= $this->user_information->SWhere($User_information->upper_id);
 
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function del() {		
@@ -98,7 +98,7 @@ class Account extends CI_Controller {
 		}
 		$this->parames['upLevelName'] = $upLevelName;
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function levelAdd() {
@@ -112,7 +112,7 @@ class Account extends CI_Controller {
 		$this->parames['LevelList'] = $this->user_type->SelectLevel();
 		
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function levelEdit($user_type_id) {
@@ -126,7 +126,7 @@ class Account extends CI_Controller {
 		$this->parames['LevelList'] = $this->user_type->SelectLevel();
 		$this->parames['query'] = $this->user_type->SWhere($user_type_id);
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function levelDel() {
@@ -151,7 +151,7 @@ class Account extends CI_Controller {
 			$this->parames['UpperName'] 	= $upper_userInfo->name;
 		}
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function editPasswd() {
@@ -162,7 +162,7 @@ class Account extends CI_Controller {
 		
 		$this->onEditPasswd();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function editInfo() {
@@ -173,7 +173,7 @@ class Account extends CI_Controller {
 		
 		$this->onEditInfo();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	private function onlevelAddEdit($id='') {
