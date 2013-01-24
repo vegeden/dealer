@@ -36,7 +36,7 @@
 						<select multiple="multiple" id="NameList"></select>
 					</dd>
 					<dt><?php echo $lang->line('account_account'); ?></dt>
-					<dd><input type="text" placeholder="<?php echo $lang->line('account_account'); ?>" class="input-large" name="account" value=""></dd>
+					<dd><input type="text" placeholder="<?php echo $lang->line('account_account'); ?>" class="input-large" name="account" autocomplete="off" value=""></dd>
 					<dt><?php echo $lang->line('account_password'); ?></dt>
 					<dd><input type="password" placeholder="<?php echo $lang->line('account_password'); ?>" class="input-large" name="password" value=""></dd>
 					<dt><?php echo $lang->line('account_bonusPercentage'); ?></dt>

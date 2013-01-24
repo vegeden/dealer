@@ -64,6 +64,8 @@
 	/* editPasswd */
 	$lang['account_error_notfull']				= '填寫不完整';
 	$lang['account_error_email_regular']		= 'Email格式不正確';
+	$lang['account_error_needSelectLevel']		= '需選擇等級';
+	$lang['account_error_needSelect']			= '請選擇列表';
 	
 	
 	

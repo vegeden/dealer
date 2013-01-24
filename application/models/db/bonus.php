@@ -7,9 +7,19 @@ class Bonus extends CI_Model {
 		
 		$this->tab = strtolower(get_class($this));
 	}
+	
+	public function verifyUser( $id ) {
+		$this->db->where('u_id', $id);
+		$query = $this->db->get($this->tab);
 		
+		if( $query->num_rows() > 0 ) {
+			return true;
+		}
+		return false;
+	}
+	
 	public function SWhere($id) {
-		$this->db->where('id', $id);
+		$this->db->where('u_id', $id);
 		$query =  $this->db->get($this->tab);
 		foreach($query->result() as $row) {
 			return $row;
@@ -22,8 +32,7 @@ class Bonus extends CI_Model {
 	}
 	
 	public function Update($id, $data) {
-		// $data = {};
-		$this->db->where('id', $id);
+		$this->db->where('u_id', $id);
 		$this->db->update($this->tab, $data);
 	}
 	

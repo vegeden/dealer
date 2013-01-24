@@ -46,10 +46,10 @@ class Account extends CI_Controller {
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
+		$this->onRegister();
 		
 		$this->parames['user_type'] = $this->user_type->Select();
-		
-		$this->onRegister();
+
 		$this->load->view('index', $this->parames);
 	}
 	
@@ -59,13 +59,13 @@ class Account extends CI_Controller {
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/	
-		
-		$User_information 					= $this->user_information->SWhere($id);
-		$this->parames['User_information'] 	= $User_information;
-		$this->parames['UpperInfo'] 		= $this->user_information->SWhere($User_information->upper_id);
-		
 		$this->onAdminEdit($id);
 		
+		$User_information 					= $this->user_information->SWhere($id);
+		$this->parames['Bonus'] 			= $this->bonus->SWhere($id);
+		$this->parames['User_information'] 	= $User_information;
+		$this->parames['UpperInfo'] 		= $this->user_information->SWhere($User_information->upper_id);
+
 		$this->load->view('index', $this->parames);
 	}
 	
@@ -108,8 +108,9 @@ class Account extends CI_Controller {
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
 		
-		$this->parames['LevelList'] = $this->user_type->SelectLevel();
 		$this->onlevelAddEdit();
+		$this->parames['LevelList'] = $this->user_type->SelectLevel();
+		
 		
 		$this->load->view('index', $this->parames);
 	}
@@ -121,8 +122,8 @@ class Account extends CI_Controller {
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
 		
-		$this->parames['LevelList'] = $this->user_type->SelectLevel();
 		$this->onlevelAddEdit($user_type_id);
+		$this->parames['LevelList'] = $this->user_type->SelectLevel();
 		$this->parames['query'] = $this->user_type->SWhere($user_type_id);
 		
 		$this->load->view('index', $this->parames);
@@ -242,13 +243,13 @@ class Account extends CI_Controller {
 								$data['upper_id'] = null;
 								$this->user_information->Add($data);
 							} else {
-								$this->parames['error'] = $this->lang->line('account_error_needselectlevel');
+								$this->parames['error'] = $this->lang->line('account_error_needSelectLevel');
 							}
 
 							if(empty($this->parames['error'])) {
 								$user_id = $this->user_information->verifyUser($account, $password);
 								$data = array(
-									'user_id' 			=> $user_id, 
+									'u_id' 			=> $user_id, 
 									'bonusPercentage' 	=> $bonus
 								);
 								$this->bonus->Add($data);
@@ -272,35 +273,62 @@ class Account extends CI_Controller {
 		
 		$item = $this->input->post('item', TRUE );
 		if(!empty($item)) {
-			// $level 	= $this->input->post('level', TRUE );
-			$upper 	= $this->input->post('upper', TRUE );
-			
-			$data 	= array('upper_id' => $upper);
-			$this->user_information->Update($id, $data);
-			$this->Parames->redirect($this->Url.'lists/');
-		} else {
-			$password = $this->input->post('password', TRUE );
-			if(isset($password)) {
-				if(strlen($password) != 0) {
-					$user_information = $this->user_information->SWhere($id);
-					$dbpasswd = $user_information->password;
+			switch($item) {
+				case 1:
+					// $level 	= $this->input->post('level', TRUE );
+					$upper 	= $this->input->post('upper', TRUE );
 					
-					if( $dbpasswd != hash('sha1', $password)) {
-						$data = array('password'=> hash('sha1', $password));
-						$this->user_information->Update($id, $data);
-						
-						/** 	Email Notice 	**/
-						$EmailInfo = array(	'toWho'		=>$user_information->email,
-											'account' 	=> $user_information->account, 
-											'passwd' 	=> $password
-										);
-										
-						$this->Parames->sendEMail(Mail::ForgetPassword_Type, $EmailInfo );
-
-						
+					if(!empty($upper)) {
+						$data 	= array('upper_id' => $upper);
+						// $this->user_information->Update($id, $data);
+					} else {
+						$this->parames['error'] = $this->lang->line('account_error_needSelect');
 					}
-					$this->Parames->redirect($this->Url.'lists/');
-				}
+					
+					break;
+				case 2:
+					$bonus 	= $this->input->post('bonus', TRUE );
+					$verifyUser = $this->bonus->verifyUser($id);
+					if($verifyUser) {
+						/**		add 	**/
+						$data = array(	'bonusPercentage' 	=> $bonus );
+						$this->bonus->Update($id, $data);
+					} else {
+						/**		add 	**/
+						$data = array(	'u_id'			=> $id,
+										'bonusPercentage' 	=> $bonus
+									);
+						$this->bonus->Add($data);
+					}
+					break;
+				case 3:
+					$password = $this->input->post('password', TRUE );
+					if(isset($password)) {
+						if(strlen($password) != 0) {
+							$user_information = $this->user_information->SWhere($id);
+							$dbpasswd = $user_information->password;
+							
+							if( $dbpasswd != hash('sha1', $password)) {
+								$data = array('password'=> hash('sha1', $password));
+								$this->user_information->Update($id, $data);
+								
+								/** 	Email Notice 	**/
+								$EmailInfo = array(	'toWho'		=>$user_information->email,
+													'account' 	=> $user_information->account, 
+													'passwd' 	=> $password
+												);
+												
+								$this->Parames->sendEMail(Mail::ForgetPassword_Type, $EmailInfo );
+
+								
+							}
+							
+						}
+					}
+					break;
+			}
+			if(empty($this->parames['error'])) {
+				$this->Parames->redirect($this->Url.'lists/');
 			}
 		}
 	}
