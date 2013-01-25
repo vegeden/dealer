@@ -10,7 +10,7 @@ class Items_purchase extends CI_Model {
 	
 	public function Select($limit=array(0,50)) {
 		$where = $this->tab.'.item_id = items_information.id and '.$this->tab.'.user_id = user_information.id';
-		$this->db->select('item_name,name,original_quantity,purchase_quantity,ip,datetime');
+		$this->db->select('item_name,name,original_quantity,purchase_quantity,datetime');
 		$this->db->from($this->tab.',items_information,user_information');
 		$this->db->where($where);
 		$this->db->order_by("datetime", "desc");
