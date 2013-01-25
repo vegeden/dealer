@@ -13,6 +13,8 @@ dd { position:relative;padding-bottom:10px; }
 dt { padding-top:5px; }
 td.items { width : 55px;}
 td.option { width : 50px;}
+td.invoice { width : 25px;}
+ul.nav-pills li a { background-color : #eee; }; 
 
 /* 		 	account 	 	  */
 /* 		 	register 	 	  */
