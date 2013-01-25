@@ -75,24 +75,6 @@ $(function(){
 					});
 		}
 		return false;
-	});	
-	/*		itemList		*/
-	$("a.itemDel").click(function(){
-		if(confirm("確定刪除?")) {
-			var uti = $(this).attr('href');
-			var opt = $(this).parent().parent();
-			$.post('/dealer/commodity/itemDel/',{
-						'uti':uti
-					},function(request){
-						var json = JSON.parse(request);
-						if(json.sale_count == 0){
-							opt.remove();
-						} else {
-							alert(lang.language['commodity_itemDel_ErrorMsg']);
-						}
-					});
-		}
-		return false;
 	});
 	/*		itemList		*/
 	$("a.itemDel").click(function(){

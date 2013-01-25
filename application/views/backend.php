@@ -13,10 +13,8 @@
 		<link href="/dealer/statics/css/lib/bootstrap/bootstrap-responsive.css" rel="stylesheet">
 		
 		
-		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="/dealer/statics/js/lib/bootstrap/bootstrap.min.js"></script>
-		<script src="/dealer/statics/js/lib/ckeditor/ckeditor.js"></script>
 		<script src="/dealer/statics/js/backend/style.js"></script>
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
