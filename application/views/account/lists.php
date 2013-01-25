@@ -4,8 +4,12 @@
 			<a href="<?php echo $url.'../register/';?>"><?php echo $lang->line('nav_account_register');?></a>
 		</li>
 	</ul>
+	<div class="input-append pull-right">
+		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('account_name');?>">
+		<span class="add-on"><?php echo $lang->line('search');?></span>
+	</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
-		<tr class="info">
+		<tr class="info firstRow">
 			<td class="option"><?php echo $lang->line('account_status');?></td>
 			<td><?php echo $lang->line('account_account');?></td>
 			<td><?php echo $lang->line('account_name');?></td>
@@ -26,14 +30,14 @@
 			<td>
 				<?php if($UserInfo->type_id == 1) { ?>
 				<div class="btn-group lists">
-					<a class="btn status" href="#">
+					<a class="btn status" id="user<?php echo $row->id;?>" href="#">
 						<?php echo $lang->line('account_status'.$row->user_status);?>
 					</a>
 					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#0,<?php echo $row->id;?>"><i class="icon-remove"></i> <span><?php echo $lang->line('account_status0'); ?></span></a></li>
-						<li><a href="#1,<?php echo $row->id;?>"><i class="icon-ok"></i> <span><?php echo $lang->line('account_status1'); ?></span></a></li>
-						<li><a href="#2,<?php echo $row->id;?>"><i class="icon-lock"></i> <span><?php echo $lang->line('account_status2'); ?></span></a></li>
+						<li><a href="0,<?php echo $row->id;?>"><i class="icon-remove"></i> <span><?php echo $lang->line('account_status0'); ?></span></a></li>
+						<li><a href="1,<?php echo $row->id;?>"><i class="icon-ok"></i> <span><?php echo $lang->line('account_status1'); ?></span></a></li>
+						<li><a href="2,<?php echo $row->id;?>"><i class="icon-lock"></i> <span><?php echo $lang->line('account_status2'); ?></span></a></li>
 						<li class="divider"></li>
 						<li><a href="/dealer/account/adminEdit/<?php echo $row->id;?>/"><i class="icon-pencil"></i> <?php echo $lang->line('edit'); ?></li>
 					</ul>
@@ -60,6 +64,7 @@
 			}
 		?>
 	</table>
+	<?php if($page_TotalPageNum != 1) { ?>
 	<div class="pagination pagination-centered">
 		<ul>
 			<li><a href="<?php echo $url.$page_previous.'/'; ?>">«</a></li>
@@ -73,4 +78,6 @@
 			<li><a href="<?php echo $url.$page_next.'/'; ?>">»</a></li>
 		</ul>
 	</div>
+	<?php } ?>
 </article>
+<script src="/dealer/statics/js/backend/account-lists.js"></script>

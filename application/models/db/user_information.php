@@ -144,6 +144,30 @@ class User_information extends CI_Model {
 			}
 		}
 	}
+	
+	public function FindUserName($id, $name) {
+		$level = $this->getUserStatus($id);
+		if(!empty($level)) {
+			switch($level) {
+				case '1':
+					$query = $this->db->query("select id, account, user_status, name, email, gender, phone, address, 
+									 (select type_name from user_type c where a.type_id = c.id) as type_id,
+									(select name from user_information b where a.upper_id = b.id) as upper_id 
+									from user_information a 
+									WHERE name LIKE '$name%'");
+					break;
+				default:
+					$query = $this->db->query("select id, account, user_status, name, email, gender, phone, address
+									from user_information  
+									where upper_id ='$id' and name LIKE '$name%'");
+					break;
+			}
+			return $query;
+		}
+		
+
+		
+	}
 }
 
 

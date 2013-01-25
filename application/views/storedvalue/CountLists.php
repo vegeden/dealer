@@ -10,8 +10,8 @@
 	<?php if($UserInfo->type_id == 1) { ?>
 	<div class="input-append pull-right">
 		<input id="kind" type="hidden" value="<?php echo $kind;?>">
-		<input class="" id="search_bar" type="text" name="search">
-		<button class="btn" type="button">Search</button>
+		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('storedvalue_bank_code');?>">
+		<span class="add-on"><?php echo $lang->line('search');?></span>
 	</div>
 	<?php } ?>
 	<table class="table table-condensed table-bordered table-hover table-striped">
@@ -86,7 +86,7 @@
 			}
 		?>
 	</table>
-	<?php if($page_TotalPageNum != 0) {?>
+	<?php if($page_TotalPageNum != 1) {?>
 	<div class="pagination pagination-centered">
 		<ul>
 			<li><a href="<?php echo $url.$kind.'/'.$page_previous.'/'; ?>">«</a></li>

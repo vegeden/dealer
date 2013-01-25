@@ -410,6 +410,29 @@ class Account extends CI_Controller {
 			$this->user_information->Update($id, $data);
 		}
 	}
+	
+	public function ajaxFindUserName() {
+		$this->Parames->init('nav_account_ajaxFindUserName');
+		$result['count'] = 0;
+		$name = $this->input->post('n', TRUE );
+		
+		if( !empty($name) ) {
+			$query = $this->user_information->FindUserName($this->UserInfo->id, $name);
+			if($query->num_rows() > 0) {
+				$result['count'] = 1;
+				$result['type_id'] = $this->UserInfo->type_id;
+				foreach($query->result() as $row) {
+					$result['user_information'][] = $row;
+				}
+			}
+		}
+		echo json_encode($result);
+	}
+	
+	public function ajaxGetLang() {
+		$this->Parames->init('nav_account_ajaxGetLang');
+		echo json_encode($this->lang);
+	}
 }
 /* End of file index.php */
 /* Location: ./dealer/controllers/account/index.php */
