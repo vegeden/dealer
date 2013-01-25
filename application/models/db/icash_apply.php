@@ -129,7 +129,7 @@ class Icash_apply extends CI_Model {
 		$this->db->select('type_id');
 		$this->db->where('id', $id);
 		$query = $this->db->get('user_information');
-		if($query->num_rows()>0) {
+		if($query->num_rows() > 0) {
 			foreach($query->result() as $row) {
 				return $row->type_id;
 			}

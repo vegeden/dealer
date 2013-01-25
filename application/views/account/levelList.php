@@ -1,7 +1,7 @@
 <article>
 	<ul class="nav nav-pills pull-left">
 		<li class="">
-			<a href="<?php echo $url.'../register/';?>"><?php echo $lang->line('nav_account_levelAdd');?></a>
+			<a href="<?php echo $url.'../levelAdd/';?>"><?php echo $lang->line('nav_account_levelAdd');?></a>
 		</li>
 	</ul>
 	<table class="table table-condensed table-bordered table-hover table-striped">

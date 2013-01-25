@@ -89,6 +89,7 @@ $lang['save']								= '儲存';
 $lang['del']								= '刪除';
 $lang['cancel']								= '取消';
 $lang['clear']								= '清除';
+$lang['search']								= '搜尋';
 
 $lang['item_in']							= '進貨';
 $lang['item_up']							= '庫調';
