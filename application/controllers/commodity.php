@@ -45,7 +45,7 @@ class Commodity extends CI_Controller {
 		$this->parames['page_previous']		= $this->pages->getPrevious();
 		$this->parames['page_next']			= $this->pages->getNext();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function areaAdd() {
@@ -57,7 +57,7 @@ class Commodity extends CI_Controller {
 		
 		$this->onareaAddEdit();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function areaEdit($items_area_id) {
@@ -70,7 +70,7 @@ class Commodity extends CI_Controller {
 		$this->onareaAddEdit($items_area_id);
 		$this->parames['query'] = $this->items_area->SWhere($items_area_id);
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function areaDel() {
@@ -106,7 +106,7 @@ class Commodity extends CI_Controller {
 		$this->parames['page_previous']		= $this->pages->getPrevious();
 		$this->parames['page_next']			= $this->pages->getNext();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function breadAdd() {
@@ -118,7 +118,7 @@ class Commodity extends CI_Controller {
 		
 		$this->onbreadAddEdit();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function breadEdit($items_bread_id) {
@@ -131,7 +131,7 @@ class Commodity extends CI_Controller {
 		$this->onbreadAddEdit($items_bread_id);
 		$this->parames['query'] = $this->items_bread->SWhere($items_bread_id);
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function breadDel() {
@@ -166,7 +166,7 @@ class Commodity extends CI_Controller {
 		$this->parames['page_previous']		= $this->pages->getPrevious();
 		$this->parames['page_next']			= $this->pages->getNext();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function categoryFirstAdd() {
@@ -178,7 +178,7 @@ class Commodity extends CI_Controller {
 		
 		$this->onCategoryFirstAddEdit();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function categoryFirstEdit($items_category_id) {
@@ -191,7 +191,7 @@ class Commodity extends CI_Controller {
 		$this->onCategoryFirstAddEdit($items_category_id);
 		$this->parames['query'] = $this->items_category->SWhere($items_category_id);
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function categoryFirstDel() {
@@ -225,7 +225,7 @@ class Commodity extends CI_Controller {
 		$this->parames['page_previous']			= $this->pages->getPrevious();
 		$this->parames['page_next']				= $this->pages->getNext();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function categorySecondAdd() {
@@ -238,7 +238,7 @@ class Commodity extends CI_Controller {
 		$this->parames['CategoryList'] = $this->items_category->SelectCategory();
 		$this->onCategorySecondAddEdit();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function categorySecondEdit($items_category_second_id) {
@@ -253,7 +253,7 @@ class Commodity extends CI_Controller {
 		
 		$this->onCategorySecondAddEdit($items_category_second_id);
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function categorySecondDel() {
@@ -289,7 +289,7 @@ class Commodity extends CI_Controller {
 		$this->parames['page_previous'] 	= $this->pages->getPrevious();
 		$this->parames['page_next'] 		= $this->pages->getNext();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function itemAdd() {
@@ -304,7 +304,7 @@ class Commodity extends CI_Controller {
 		$this->parames['CategorySecondList'] = $this->items_category_second->SelectCategorySecond();
 		$this->onitemAddEdit();
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function itemEdit($items_id) {
@@ -317,9 +317,9 @@ class Commodity extends CI_Controller {
 		$this->parames['AreaList']			 = $this->items_area->SelectArea();
 		$this->parames['BreadList']			 = $this->items_bread->SelectBread();
 		$this->parames['CategorySecondList'] = $this->items_category_second->SelectCategorySecond();
-				$this->parames['query']		 = $this->items_information->SWhere($items_id);
+		$this->parames['query']				 = $this->items_information->SWhere($items_id);
 		$this->onitemAddEdit($items_id);
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	public function itemDel() {
@@ -356,7 +356,7 @@ class Commodity extends CI_Controller {
 			$this->parames['page_TotalPageNum']	   = $this->pages->getTotalPageNum();
 			$this->parames['page_previous']		   = $this->pages->getPrevious();
 			$this->parames['page_next']			   = $this->pages->getNext();
-			$this->load->view('index', $this->parames);
+			$this->load->view('backend', $this->parames);
 		} else if($kind == 1) { 
 			$count = $this->items_stock->SelectCount();
 			$limit = $this->pages->init($count, $page);
@@ -365,7 +365,7 @@ class Commodity extends CI_Controller {
 			$this->parames['page_TotalPageNum']	   = $this->pages->getTotalPageNum();
 			$this->parames['page_previous']		   = $this->pages->getPrevious();
 			$this->parames['page_next']			   = $this->pages->getNext();
-			$this->load->view('index', $this->parames);
+			$this->load->view('backend', $this->parames);
 		} else { 
 			show_404();
 		}
@@ -384,7 +384,7 @@ class Commodity extends CI_Controller {
 		$user_id        = $this->parames['UserInfo']->id;
 		$this->oninvoicingEditAdd($items_id,$stock_quantity,$user_id);
 		
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	/* shelves */
@@ -404,14 +404,14 @@ class Commodity extends CI_Controller {
 			$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
 			$this->parames['page_previous']		= $this->pages->getPrevious();
 			$this->parames['page_next']			= $this->pages->getNext();
-			$this->load->view('index', $this->parames);
+			$this->load->view('backend', $this->parames);
 		} else if($kind == 1) { 
 			$this->parames['items_information_shelvers'] = $this->items_information->SelectShelves($limit,$kind);
 			
 			$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
 			$this->parames['page_previous']		= $this->pages->getPrevious();
 			$this->parames['page_next']			= $this->pages->getNext();
-			$this->load->view('index', $this->parames);
+			$this->load->view('backend', $this->parames);
 		} else { 
 			show_404();
 		}
@@ -444,7 +444,7 @@ class Commodity extends CI_Controller {
 		} else {
 			$this->onshelvesEditAdd($items_id,$this->parames['itemList']->item_image);
 		}
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}	
 	
 	/* Action on Click */	

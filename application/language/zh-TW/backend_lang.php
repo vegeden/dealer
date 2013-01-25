@@ -5,6 +5,7 @@ $lang['folder_name'] 						= 'dealer';
 // web parame
 $lang['web_title']							= '蔬食伊甸園-經銷網│後台管理系統';
 $lang['backendName']						= '商店後台';
+$lang['backFrontend']						= '回商店前台';
 
 // web nav
 $lang['nav_commodity']						= '商品管理';

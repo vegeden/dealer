@@ -34,7 +34,7 @@ class Storedvalue extends CI_Controller {
 		$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
 		$this->parames['page_previous'] 	= $this->pages->getPrevious();
 		$this->parames['page_next'] 		= $this->pages->getNext();
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function apply() {
@@ -46,7 +46,7 @@ class Storedvalue extends CI_Controller {
 		$this->parames['method'] = array($this->lang->line('storedvalue_method_ATM'), $this->lang->line('storedvalue_method_CreditCard'));
 		
 		$this->onApply();
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 	}
 	
 	public function log($page=1) {
@@ -63,7 +63,7 @@ class Storedvalue extends CI_Controller {
 		$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
 		$this->parames['page_previous'] 	= $this->pages->getPrevious();
 		$this->parames['page_next'] 		= $this->pages->getNext();
-		$this->load->view('index', $this->parames);
+		$this->load->view('backend', $this->parames);
 		
 	}
 	
