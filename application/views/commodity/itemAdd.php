@@ -35,9 +35,7 @@
 						</select>
 					</dd>						
 					<dt><?php echo $lang->line('commodity_item_stock_quantity'); ?></dt>					
-					<dd><input type="number" placeholder="" class="input-large" name="stock_quantity" min="1" value="1" ></dd>	
-					<dt><?php echo $lang->line('commodity_item_content'); ?></dt>					
-					<dd><textarea name="item_content" placeholder="<?php echo $lang->line('commodity_item_content');?>" rows="5"></textarea></dd>						
+					<dd><input type="number" placeholder="" class="input-large" name="stock_quantity" min="1" value="1" ></dd>			
 					<dt><?php echo $lang->line('commodity_item_bonus'); ?></dt>
 					<dd><input type="number" placeholder="" class="input-large" name="item_bonus" min="0" value="0" ></dd>						
 					<dt><?php echo $lang->line('commodity_area_name'); ?></dt>
@@ -72,13 +70,6 @@
 					<dd><input type="number" placeholder="" class="input-large" name="freight_price" min="0" value="0" ></dd>						
 					<dt><?php echo $lang->line('commodity_free_freight_quantity'); ?></dt>
 					<dd><input type="number" placeholder="" class="input-large" name="free_freight_quantity" min="0" value="0" ></dd>							
-					<dt><?php echo $lang->line('commodity_item_stop_sale_status'); ?></dt>
-					<dd>
-						<select name="stop_sale_status" id="stop_sale_status">
-							<option value="0"><?php echo $lang->line('commodity_item_stop_status'); ?></option>
-							<option value="1"><?php echo $lang->line('commodity_item_sale_status'); ?></option>
-						</select>
-					</dd>
 				</dl>
 			</div>
 			<div class="span8 offset2">

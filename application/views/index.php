@@ -12,6 +12,7 @@
 		<script src="/dealer/statics/js/lib/jquery.transit/jquery.transit.min.js"></script>
 		<script src="/dealer/statics/js/lib/jquery.easing/jquery.easing.1.3.js"></script>
 		<script src="/dealer/statics/js/lib/bootstrap/bootstrap.min.js"></script>
+		<script src="/dealer/statics/js/lib/ckeditor/ckeditor.js"></script>
 		<script src="/dealer/statics/js/backend/nav.js"></script>
 		<?php if(isset($js)) { ?>
 		<script src="/dealer/statics/js/backend/<?php echo $js; ?>"></script>

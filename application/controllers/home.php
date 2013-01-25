@@ -18,11 +18,6 @@ class Home extends CI_Controller {
     }	
 	
 	public function index() {
-		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_account_lists');
-		$this->parames = $this->Parames->getParams();
-		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
-		/*	-------------------------------------------	*/
 		
 	}
 	

@@ -62,6 +62,3 @@
 	</div>
 	<?php } ?>
 </article>
-<?php if($UserInfo->type_id == 1) { ?>
-<script src="/dealer/statics/js/backend/storedvalue-lists.js"></script>
-<?php } ?>

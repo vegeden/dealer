@@ -8,6 +8,7 @@ $lang['backendName']						= '商店後台';
 
 // web nav
 $lang['nav_commodity']						= '商品管理';
+
 $lang['nav_commodity_itemList']				= '商品總覽';
 $lang['nav_commodity_itemAdd']				= '商品新增';
 $lang['nav_commodity_itemEdit']				= '商品修改';
@@ -16,6 +17,9 @@ $lang['nav_commodity_itemDel']				= '商品刪除';
 $lang['nav_commodity_invoicing']			= '商品進銷存';
 $lang['nav_commodity_invoicingEditAdd']		= '商品庫調&進貨';
 $lang['nav_commodity_invoicingLog']		    = '進銷存紀錄';
+
+$lang['nav_commodity_shelvesList']			= '上下架列表';
+$lang['nav_commodity_shelvesEditAdd']		= '上下架設定';
 
 $lang['nav_commodity_areaList']			 	= '分區列表';
 $lang['nav_commodity_areaAdd']				= '分區新增';

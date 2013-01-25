@@ -40,17 +40,26 @@
 	/*	item  */
 	$lang['commodity_itemAdd_ErrorMsg']				= '商品重複';
 	$lang['commodity_itemDel_ErrorMsg']				= '商品刪除失敗';	
-	
 	$lang['commodity_item_name']					= '商品名稱';
 	$lang['commodity_item_number']					= '銷售數量';
 	$lang['commodity_item_buy_price']				= '進價';
 	$lang['commodity_item_sell_price']				= '售價';
 	$lang['commodity_item_safe_stock']				= '安全庫存量';
 	$lang['commodity_item_stock_quantity']			= '庫存數量';
-	$lang['commodity_item_content']					= '商品內容';
+	$lang['commodity_item_content']					= '商品簡介';
 	$lang['commodity_item_bonus']					= '商品紅利';
 	$lang['commodity_item_stop_sale_status']		= '上下架狀態';
 	$lang['commodity_freight_price']				= '運費';
 	$lang['commodity_free_freight_quantity']		= '免運費數量';
 	$lang['commodity_item_sale_status']				= '上架';
 	$lang['commodity_item_stop_status']				= '下架';
+	$lang['commodity_item_image']					= '商品圖片';
+	$lang['commodity_item_image_select']			= '選擇圖片';
+	$lang['commodity_item_image_remove']			= '移除圖片';
+	$lang['commodity_item_image_change']			= '交換圖片';
+	$lang['commodity_item_fulltext']				= '商品內容';
+	
+	/*	shelves  */
+	$lang['commodity_shelves_ErrorMsg']				= '設定失敗';
+	$lang['commodity_shelves_sale_status']			= '上架';
+	$lang['commodity_shelves_stop_status']			= '下架';

@@ -27,19 +27,41 @@ class Items_information extends CI_Model {
 		return $this->db->get();
 	}
 	
+	public function SelectShelves($limit=array(0,50),$status) {
+		$this->db->limit($limit[1], $limit[0]);
+		
+		$this->db->select($this->tab.'.id AS id, item_name, item_number, buy_price, sell_price,safe_stock,
+		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
+		freight_price,free_freight_quantity, stop_sale_status, item_image, fulltext');
+		
+		$this->db->where($this->tab.'.area_id = items_area.id');
+		$this->db->where($this->tab.'.bread_id = items_bread.id');
+		$this->db->where($this->tab.'.category_second_id = items_category_second.id');
+		$this->db->where('items_category_second.category = items_category.id');
+		$this->db->where('stop_sale_status', $status);
+		
+		$this->db->from($this->tab.', items_area,items_bread, items_category, items_category_second');
+		return $this->db->get();
+	}
+	
 	public function SWhere($id) {
 		$this->db->where('id', $id);
 		$query =  $this->db->get($this->tab);
 		foreach($query->result() as $row) {
 			return $row;
 		}
-	}
+	}	
 	
 	public function SelectItem() {
 		return $this->db->get($this->tab);
 	}
 	
 	public function SelectCount() {
+		return $this->db->count_all($this->tab);
+	}
+	
+	public function SelectCountWhere($status) {
+		$this->db->where('stop_sale_status', $status);
 		return $this->db->count_all($this->tab);
 	}
 	
