@@ -1,5 +1,5 @@
-<article>
-	<form method="POST" action="./"enctype="multipart/form-data" />
+<article id="shelvesEditAdd">
+	<form method="POST" action="" enctype="multipart/form-data" />
 		<dl class="dl-horizontal dlform level">
 			<dt><?php echo $lang->line('commodity_item_name'); ?></dt>
 			<dd><?php echo $itemList -> item_name;?></dd>
@@ -34,7 +34,7 @@
 			<dt><?php echo $lang->line('commodity_item_content'); ?></dt>
 			<dd><textarea name="item_content" rows="5"><?php echo $itemList->item_content;?></textarea></dd>	
 			<dt><?php echo $lang->line('commodity_item_fulltext'); ?></dt>
-			<dd><textarea class="ckeditor" cols="80" id="editor1" name="item_fulltext" rows="10"><?php echo $itemList -> fulltext;?></textarea></dd>
+			<dd><textarea class="ckeditor" id="editor1" name="item_fulltext" rows="10"><?php echo $itemList -> fulltext;?></textarea></dd>
 		</dl>
 		<div class="row">
 			<div class="span3 offset3">
