@@ -5,6 +5,9 @@ body {
 body, button{
 	font-family:Arial,"微軟正黑體", "Microsoft JhengHei",sans-serif;
 }
+footer {
+	text-align : center;
+}
 .sidebar-nav {
 	padding: 9px 0;
 }
@@ -14,15 +17,21 @@ dt { padding-top:5px; }
 td.items { width : 55px;}
 td.option { width : 50px;}
 td.invoice { width : 25px;}
-ul.nav-pills li a { background-color : #eee; }; 
+td.justedit { width : 25px;}
+ul.nav-pills li a { background-color : #eee; }
+div.input-append span.add-on { padding-left : 10px;padding-right : 10px;}
+
+
+input#search_bar{width : 70px;}
 
 /* 		 	account 	 	  */
 /* 		 	register 	 	  */
-article#register select#NameList{display : none;top : 0;left : 150px;position : absolute;margin-left : 70px; width : 205px;z-index : 2;}
+article#register select#NameList{display : none;top : 0;left : 170px;position : absolute;margin-left : 70px; width : 205px;z-index : 2;}
 article#register button.dropdown-toggle{width : 68px;}
 article#register input#prependedDropdownButton{width : 157px;}
 
 
-/* 		 storedvalue 	 	 */
-/* 		 storedvalue 	 	 */
-article#CountList input#search_bar{width : 100px;}
+/* 		 	commodity 	 	  */
+/* 		 	itemAdd 	 	  */
+article#itemAdd select, article#itemEdit select{width : 225px;}
+

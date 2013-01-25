@@ -7,16 +7,14 @@
 	</div>
 	<?php } ?>
 	<form action="" method="POST">
+		<dl class="dl-horizontal dlform level">
+			<dt><?php echo $lang->line('commodity_categoryFirst_name'); ?></dt>
+			<dd><input type="text" placeholder="" class="input-large" name="categoryName"></dd>
+		</dl>
 		<div class="row">
-			<div class="span8">
-				<dl class="dl-horizontal dlform level">
-					<dt><?php echo $lang->line('commodity_categoryFirst_name'); ?></dt>
-					<dd><input type="text" placeholder="" class="input-large" name="categoryName"></dd>
-				</dl>
-			</div>
-			<div class="span8 offset2">
-				<button type="submit" class="btn btn-primary span1"><?php echo $lang->line('add'); ?></button>
-				<button type="submit" class="btn span1" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
+			<div class="span3 offset3">	
+				<button type="submit" class="btn btn-primary"><?php echo $lang->line('add'); ?></button>
+				<button type="submit" class="btn offset2" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
 			</div>
 		</div>
 	</form>

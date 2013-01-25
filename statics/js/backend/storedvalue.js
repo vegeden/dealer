@@ -51,12 +51,13 @@ $(function(){
 	
 	$("input#search_bar").focusin(function(){
 		$(this).animate({ 
-			width: "200px",
+			width: "+=50",
 		  }, "slow", "easeOutQuart" );
+		  
 	})
 	.focusout(function(){
 		$(this).animate({ 
-			width: "100px",
+			width: "-=50",
 		  }, "slow", "easeOutQuart" );
 	});
 	
