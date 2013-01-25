@@ -11,8 +11,16 @@ body, button{
 
 dd { position:relative;padding-bottom:10px; }
 dt { padding-top:5px; }
+td.items { width : 55px;}
+td.option { width : 50px;}
 
+/* 		 	account 	 	  */
 /* 		 	register 	 	  */
-article#register select#NameList{display:none;top:0;left:150px;position:absolute;margin-left:70px; width:205px;z-index:2;}
-article#register button.dropdown-toggle{width:68px;}
-article#register input#prependedDropdownButton{width:157px;}
+article#register select#NameList{display : none;top : 0;left : 150px;position : absolute;margin-left : 70px; width : 205px;z-index : 2;}
+article#register button.dropdown-toggle{width : 68px;}
+article#register input#prependedDropdownButton{width : 157px;}
+
+
+/* 		 storedvalue 	 	 */
+/* 		 storedvalue 	 	 */
+article#CountList input#search_bar{width : 100px;}

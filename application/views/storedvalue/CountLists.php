@@ -1,4 +1,4 @@
-<article id="storedvalue-lists">
+<article id="CountList">
 	<ul class="nav nav-pills pull-left">
 		<li <?php if($kind == 0) { ?> class="active" <?php } ?>>
 			<a href="<?php echo $url.'0/';?>"><?php echo $lang->line('storedvalue_status0');?></a>
@@ -16,7 +16,7 @@
 	<?php } ?>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info firstRow">
-			<td><?php echo $lang->line('storedvalue_status');?></td>
+			<td  class="option"><?php echo $lang->line('storedvalue_status');?></td>
 			<?php if($kind == 1){ ?>
 			<td><?php echo $lang->line('storedvalue_user_level');?></td>
 			<?php } ?>
@@ -34,7 +34,7 @@
 				foreach($icash_apply->result() as $row) {
 		?>
 		<tr class="info row<?php echo $row->id;?>">
-			<td id="option">
+			<td class="option">
 				<?php 
 					if($UserInfo->type_id == 1 && $kind == 0) { 
 				?>

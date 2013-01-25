@@ -6,7 +6,7 @@
 	</ul>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info">
-			<td><?php echo $lang->line('account_status');?></td>
+			<td class="option"><?php echo $lang->line('account_status');?></td>
 			<td><?php echo $lang->line('account_account');?></td>
 			<td><?php echo $lang->line('account_name');?></td>
 			<td><?php echo $lang->line('account_email');?></td>
@@ -23,7 +23,7 @@
 				foreach($User_information->result() as $row) {
 		?>
 		<tr class="info">
-			<td id="option">
+			<td>
 				<?php if($UserInfo->type_id == 1) { ?>
 				<div class="btn-group lists">
 					<a class="btn status" href="#">

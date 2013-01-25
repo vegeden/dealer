@@ -139,43 +139,6 @@ class Account extends CI_Controller {
 		} 
 	}
 	
-	public function profiles() {
-		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_account_profiles');
-		$this->parames = $this->Parames->getParams();
-		$this->parames['url'] = $this->Url;
-		/*	-------------------------------------------	*/
-		if(!empty($this->UserInfo->upper_id)) {
-			$upper_userInfo = $this->user_information->SWhere($this->UserInfo->upper_id);
-			$this->parames['UpperTypeName'] = $this->user_type->SWhere($upper_userInfo->type_id)->type_name;
-			$this->parames['UpperName'] 	= $upper_userInfo->name;
-		}
-		
-		$this->load->view('backend', $this->parames);
-	}
-	
-	public function editPasswd() {
-		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_account_editPasswd');
-		$this->parames = $this->Parames->getParams();
-		/*	-------------------------------------------	*/
-		
-		$this->onEditPasswd();
-		
-		$this->load->view('backend', $this->parames);
-	}
-	
-	public function editInfo() {
-		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_account_editInfo');
-		$this->parames = $this->Parames->getParams();
-		/*	-------------------------------------------	*/
-		
-		$this->onEditInfo();
-		
-		$this->load->view('backend', $this->parames);
-	}
-	
 	private function onlevelAddEdit($id='') {
 		$cancel = $this->input->post('cancel', TRUE );
 		if(strlen($cancel)!=0) {

@@ -37,36 +37,6 @@ class Storedvalue extends CI_Controller {
 		$this->load->view('backend', $this->parames);
 	}
 	
-	public function apply() {
-		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_storedvalue_apply');
-		$this->parames = $this->Parames->getParams();
-		/*	-------------------------------------------	*/
-		
-		$this->parames['method'] = array($this->lang->line('storedvalue_method_ATM'), $this->lang->line('storedvalue_method_CreditCard'));
-		
-		$this->onApply();
-		$this->load->view('backend', $this->parames);
-	}
-	
-	public function log($page=1) {
-		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_storedvalue_log');
-		$this->parames = $this->Parames->getParams();
-		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
-		/*	-------------------------------------------	*/
-		
-		$count = $this->icash_log->SelectCount($this->UserInfo->id);
-		$limit = $this->pages->init($count, $page);
-		$this->parames['icash_log'] 	= $this->icash_log->SelectList($this->UserInfo->id, $limit);
-		
-		$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
-		$this->parames['page_previous'] 	= $this->pages->getPrevious();
-		$this->parames['page_next'] 		= $this->pages->getNext();
-		$this->load->view('backend', $this->parames);
-		
-	}
-	
 	private function verifyRemittance_status($id) {
 		$remittance_status;
 		$query = $this->icash_apply->Select($id);

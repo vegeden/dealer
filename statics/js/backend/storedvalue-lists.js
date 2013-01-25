@@ -28,7 +28,7 @@ $(function() {
 							var rows = '';
 							rows += '<tr class="info">';
 							if(k == 0) {
-							rows += 	'<td id="option">';
+							rows += 	'<td>';
 							rows += 		'<div class="btn-group lists">';
 							rows += 			'<a class="btn status">';
 							rows += 				lang.language['storedvalue_status'+json.icash_apply[i].remittance_status]
@@ -42,8 +42,8 @@ $(function() {
 							rows += 	'</td>';
 							} else {
 							rows += 	'<td>'+lang.language['storedvalue_status'+json.icash_apply[i].remittance_status]+'</td>';
-							}
 							rows += 	'<td>'+json.icash_apply[i].type_name+'</td>';
+							}
 							rows += 	'<td>'+json.icash_apply[i].apply_name+'</td>';
 							rows += 	'<td>'+json.icash_apply[i].bank_num+'</td>';
 							rows += 	'<td>'+json.icash_apply[i].apply_price+'</td>';
