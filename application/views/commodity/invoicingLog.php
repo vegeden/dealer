@@ -20,7 +20,6 @@
 			<td><?php echo $lang->line('commodity_invoicingAdd_quantity');?></td>
 			<td><?php echo $lang->line('commodity_invoicingAdd_time');?></td>
 			<?php } ?>
-			<td><?php echo $lang->line('commodity_IP');?></td>
 		</tr>
 		<?php 
 			if($items_purchase_stock->num_rows() > 0) {
@@ -34,11 +33,9 @@
 			<td><?php echo $row->stock_quantity;?></td>
 			<td><?php echo $row->stock_content;?></td>
 			<td><?php echo $row->datetime;?></td>
-			<td><?php echo $row->ip;?></td>
 			<?php }else{?>
 			<td><?php echo $row->purchase_quantity;?></td>
 			<td><?php echo $row->datetime;?></td>
-			<td><?php echo $row->ip;?></td>
 			<?php }?>
 		</tr>
 		<?php 
