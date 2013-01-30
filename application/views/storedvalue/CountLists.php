@@ -44,8 +44,8 @@
 					</a>
 					<a class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#1,<?php echo $row->id;?>"><i class="icon-ok"></i> <span><?php echo $lang->line('storedvalue_status1'); ?></span></a></li>
-						<li><a href="#2,<?php echo $row->id;?>"><i class="icon-remove"></i> <span><?php echo $lang->line('storedvalue_status2'); ?></span></a></li>
+						<li><a href="1,<?php echo $row->id;?>"><i class="icon-ok"></i> <span><?php echo $lang->line('storedvalue_status1'); ?></span></a></li>
+						<li><a href="2,<?php echo $row->id;?>"><i class="icon-remove"></i> <span><?php echo $lang->line('storedvalue_status2'); ?></span></a></li>
 					</ul>
 				</div>
 				

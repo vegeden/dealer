@@ -7,7 +7,7 @@
 								<?php 
 									foreach( $rows as $val) {
 								?>
-							<li><a href="/<?php echo $this->lang->line('folder_name')."/$key/$val/" ?>"><?php echo $lang->line('nav_'.$key.'_'.$val);?></a></li>
+							<li><a href="/<?php echo $this->lang->line('folder_name')."/backend/$key/$val/" ?>"><?php echo $lang->line('nav_'.$key.'_'.$val);?></a></li>
 							<?php
 										}
 									}

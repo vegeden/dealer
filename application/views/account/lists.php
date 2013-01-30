@@ -33,13 +33,13 @@
 					<a class="btn status" id="user<?php echo $row->id;?>" href="#">
 						<?php echo $lang->line('account_status'.$row->user_status);?>
 					</a>
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href=""><span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="0,<?php echo $row->id;?>"><i class="icon-remove"></i> <span><?php echo $lang->line('account_status0'); ?></span></a></li>
 						<li><a href="1,<?php echo $row->id;?>"><i class="icon-ok"></i> <span><?php echo $lang->line('account_status1'); ?></span></a></li>
 						<li><a href="2,<?php echo $row->id;?>"><i class="icon-lock"></i> <span><?php echo $lang->line('account_status2'); ?></span></a></li>
 						<li class="divider"></li>
-						<li><a href="/dealer/account/adminEdit/<?php echo $row->id;?>/"><i class="icon-pencil"></i> <?php echo $lang->line('edit'); ?></li>
+						<li><a href="/dealer/backend/account/adminEdit/<?php echo $row->id;?>/"><i class="icon-pencil"></i> <?php echo $lang->line('edit'); ?></li>
 					</ul>
 				</div>
 				<?php 

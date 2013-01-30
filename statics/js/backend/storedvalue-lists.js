@@ -9,7 +9,7 @@ $(function() {
 		var bn = $(this).val();
 		if(bn.length > 0) {
 			$.ajax({
-				url: '/dealer/storedvalue/ajaxFindBankCode/',
+				url: '/dealer/backend/storedvalue/ajaxFindBankCode/',
 				type: 'POST',
 				data: {
 					k: 	k,
@@ -67,7 +67,7 @@ $(function() {
 	});
 
 	function getLang() {
-		$.post('/dealer/storedvalue/ajaxGetLang/',{
+		$.post('/dealer/backend/storedvalue/ajaxGetLang/',{
 		},function(request) {	
 			// return JSON.parse(request);
 		}).done(function(request){

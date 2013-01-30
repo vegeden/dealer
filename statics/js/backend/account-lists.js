@@ -8,7 +8,7 @@ $(function() {
 		var n = $(this).val();
 		if(n.length > 0) {
 			$.ajax({
-				url: '/dealer/account/ajaxFindUserName/',
+				url: '/dealer/backend/account/ajaxFindUserName/',
 				type: 'POST',
 				data: {
 					n: 	n,
@@ -39,7 +39,7 @@ $(function() {
 							rows += 				'<li><a href="1,'+json.user_information[i].id+'"><i class="icon-ok"></i> <span>'+lang.language['account_status1']+'</span></a></li>';
 							rows += 				'<li><a href="2,'+json.user_information[i].id+'"><i class="icon-lock"></i> <span>'+lang.language['account_status2']+'</span></a></li>';
 							rows += 				'<li class="divider"></li>';
-							rows += 				'<li><a href="/dealer/account/adminEdit/'+json.user_information[i].id+'/"><i class="icon-pencil"></i> '+lang.language['edit']+'</li>';
+							rows += 				'<li><a href="/dealer/backend/account/adminEdit/'+json.user_information[i].id+'/"><i class="icon-pencil"></i> '+lang.language['edit']+'</li>';
 							rows += 			'</ul>';
 							rows += 		'</div>';
 							} else {
@@ -76,7 +76,7 @@ $(function() {
 	});
 
 	function getLang() {
-		$.post('/dealer/account/ajaxGetLang/',{
+		$.post('/dealer/backend/account/ajaxGetLang/',{
 		},function(request) {	
 			// return JSON.parse(request);
 		}).done(function(request){
