@@ -8,15 +8,15 @@ $(function(){
 ;(function($) {
 	/**		search_bar		**/
 	$.fn.search_easeOutQuart = function() {
-		$(this).focusin(function(){
+		$(this).on('focus', function(){
 			$(this).animate({ 
 				width: "120px",
 			  }, "slow", "easeOutQuart" );
 		})
-		.focusout(function(){
+		.on('blur',function() {
 			$(this).animate({ 
 				width: "70px",
-			  }, "slow", "easeOutQuart" );
+			}, "slow", "easeOutQuart" );
 		});
 	}
 })(jQuery);
