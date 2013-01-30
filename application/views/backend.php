@@ -13,7 +13,7 @@
 		<link href="/dealer/statics/css/lib/bootstrap/bootstrap-responsive.css" rel="stylesheet">
 		
 		
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script src="/dealer/statics/js/lib/bootstrap/bootstrap.min.js"></script>
 		<script src="/dealer/statics/js/lib/jquery.easing/jquery.easing.1.3.js"></script>
 		<script src="/dealer/statics/js/backend/style.js"></script>

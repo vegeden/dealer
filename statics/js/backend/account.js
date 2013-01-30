@@ -103,16 +103,7 @@ $(function(){
 		
 	});
 	
-	$("input#search_bar").focusin(function(){
-		$(this).animate({ 
-			width: "+=50",
-		  }, "slow", "easeOutQuart" );
-	})
-	.focusout(function(){
-		$(this).animate({ 
-			width: "-=50",
-		  }, "slow", "easeOutQuart" );
-	});
+	$("input#search_bar").search_easeOutQuart();
 	
 	/*		repasswd/		*/
 	$("small cite span.label").click(function() {

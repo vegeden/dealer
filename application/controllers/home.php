@@ -12,13 +12,16 @@ class Home extends CI_Controller {
 		
 		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
 		
-		$this->load->helper(array('form', 'url'));
 
-		$this->load->library('form_validation');
     }	
 	
 	public function index() {
+		/*	-------------------------------------------	*/
+		$this->parames = $this->Parames->getParams();
+		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
+		/*	-------------------------------------------	*/
 		
+		$this->load->view('index', $this->parames);
 	}
 	
 	public function logout() {

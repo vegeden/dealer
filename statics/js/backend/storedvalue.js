@@ -52,17 +52,7 @@ $(function(){
 		return false;
 	});
 	
-	$("input#search_bar").focusin(function(){
-		$(this).animate({ 
-			width: "+=50",
-		  }, "slow", "easeOutQuart" );
-		  
-	})
-	.focusout(function(){
-		$(this).animate({ 
-			width: "-=50",
-		  }, "slow", "easeOutQuart" );
-	});
+	$("input#search_bar").search_easeOutQuart();
 	
 	$(".cancel").click(function(){
 		var opt = $(this);
