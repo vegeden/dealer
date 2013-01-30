@@ -15,7 +15,7 @@
 		?>
 		<tr class="info">
 			<td class="items">
-				<a href="/dealer/commodity/areaEdit/<?php echo $row->id;?>/" rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
+				<a href="/dealer/backend/commodity/areaEdit/<?php echo $row->id;?>/" rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
 				<a href="<?php echo $row->id;?>" class="areaDel" rel="tooltip" title="<?php echo $lang->line('del'); ?>"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
 			</td>
 			<td><?php echo $row->area_name;?></td>

@@ -20,7 +20,7 @@ td.invoice { width : 25px;}
 td.justedit { width : 25px;}
 ul.nav-pills li a { background-color : #eee; }
 div.input-append span.add-on { padding-left : 10px;padding-right : 10px;}
-
+hr { border:0; height:1px; background-color:#d4d4d4; color:#d4d4d4	/* IE6 */}
 
 input#search_bar{width : 70px;}
 
@@ -34,4 +34,9 @@ article#register input#prependedDropdownButton{width : 157px;}
 /* 		 	commodity 	 	  */
 /* 		 	itemAdd 	 	  */
 article#itemAdd select, article#itemEdit select{width : 225px;}
+
+/* 		 	shelvesEditAdd 	 	  */
+article#shelvesEditAdd textarea {width:98%;}
+
+
 

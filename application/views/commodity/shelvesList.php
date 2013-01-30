@@ -23,7 +23,7 @@
 		?>
 		<tr class="info">		
 			<td>
-				<a href="/dealer/commodity/shelvesEditAdd/<?php echo $row->id;?>/"  rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
+				<a href="/dealer/backend/commodity/shelvesEditAdd/<?php echo $row->id;?>/"  rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
 			</td>
 			<td><?php echo $row->item_name;?></td>
 			<td><?php echo $row->item_content;?></td>

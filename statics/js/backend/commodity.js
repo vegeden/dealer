@@ -6,7 +6,7 @@ $(function(){
 		if(confirm("確定刪除?")) {
 			var uti = $(this).attr('href');
 			var opt = $(this).parent().parent();
-			$.post('/dealer/commodity/areaDel/',{
+			$.post('/dealer/backend/commodity/areaDel/',{
 						'uti':uti
 					},function(request){
 						var json = JSON.parse(request);
@@ -25,7 +25,7 @@ $(function(){
 		if(confirm("確定刪除?")) {
 			var uti = $(this).attr('href');
 			var opt = $(this).parent().parent();
-			$.post('/dealer/commodity/breadDel/',{
+			$.post('/dealer/backend/commodity/breadDel/',{
 						'uti':uti
 					},function(request){
 						var json = JSON.parse(request);
@@ -44,7 +44,7 @@ $(function(){
 		if(confirm("確定刪除?")) {
 			var uti = $(this).attr('href');
 			var opt = $(this).parent().parent();
-			$.post('/dealer/commodity/categoryFirstDel/',{
+			$.post('/dealer/backend/commodity/categoryFirstDel/',{
 						'uti':uti
 					},function(request) {
 						var json = JSON.parse(request);
@@ -63,7 +63,7 @@ $(function(){
 		if(confirm("確定刪除?")) {
 			var uti = $(this).attr('href');
 			var opt = $(this).parent().parent();
-			$.post('/dealer/commodity/categorySecondDel/',{
+			$.post('/dealer/backend/commodity/categorySecondDel/',{
 						'uti':uti
 					},function(request){
 						var json = JSON.parse(request);
@@ -81,7 +81,7 @@ $(function(){
 		if(confirm("確定刪除?")) {
 			var uti = $(this).attr('href');
 			var opt = $(this).parent().parent();
-			$.post('/dealer/commodity/itemDel/',{
+			$.post('/dealer/backend/commodity/itemDel/',{
 						'uti':uti
 					},function(request){
 						var json = JSON.parse(request);
@@ -105,7 +105,7 @@ $(function(){
 	});
 	
 	function getLang() {
-		$.post('/dealer/commodity/ajaxGetLang/',{
+		$.post('/dealer/backend/commodity/ajaxGetLang/',{
 		},function(request) {	
 			// return JSON.parse(request);
 		}).done(function(request){

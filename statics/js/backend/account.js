@@ -5,7 +5,7 @@ $(function(){
 		if(confirm("確定刪除?")) {
 			var uti = $(this).attr('href');
 			var opt = $(this).parent().parent();
-			$.post('/dealer/account/levelDel/',{
+			$.post('/dealer/backend/account/levelDel/',{
 						'uti':uti
 					},function(e){
 						opt.remove();
@@ -21,7 +21,7 @@ $(function(){
 		
 		$("input#level").attr('value', type_id.attr('href'));
 
-		$.post('/dealer/account/ajaxHaveUpper/',{
+		$.post('/dealer/backend/account/ajaxHaveUpper/',{
 					'level':type_id.attr('href')
 				},function(request){
 					
@@ -53,7 +53,7 @@ $(function(){
 		
 		// level 1 is admin!!
 		if(level != 1) {
-			$.post('/dealer/account/ajaxUpper/',{
+			$.post('/dealer/backend/account/ajaxUpper/',{
 						'level' : level,
 						'name' : name
 					},function(request){
@@ -90,7 +90,7 @@ $(function(){
 			var i 		= split[1];
 			
 			
-			 $.post('/dealer/account/ajaxSetUserStatus/',{
+			 $.post('/dealer/backend/account/ajaxSetUserStatus/',{
 						'st' : st,
 						'i' : i
 					},function(request) {	
@@ -103,16 +103,7 @@ $(function(){
 		
 	});
 	
-	$("input#search_bar").focusin(function(){
-		$(this).animate({ 
-			width: "+=50",
-		  }, "slow", "easeOutQuart" );
-	})
-	.focusout(function(){
-		$(this).animate({ 
-			width: "-=50",
-		  }, "slow", "easeOutQuart" );
-	});
+	$("input#search_bar").search_easeOutQuart();
 	
 	/*		repasswd/		*/
 	$("small cite span.label").click(function() {

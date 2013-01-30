@@ -33,39 +33,32 @@ $(function(){
 		var opt = $(this);
 		var href = opt.attr('href');
 		var clickName = opt.find('span').html();
-		if(href.substr(0,1)=='#') {
-			var split 	= href.substr(1).split(',');
+		
+		try {
+			var split 	= href.split(',');
 			var st 		= split[0];
 			var i 		= split[1];
 			
-			$.post('/dealer/storedvalue/ajaxSetStatus/',{
+			$.post('/dealer/backend/storedvalue/ajaxSetStatus/',{
 				'st' : st,
 				 'i' : i
 			},function(request) {	
 				var clickName = opt.find('span').html();
 				opt.parent().parent().parent().parent().parent().remove();
 			});
-			return false;
+		} catch(err) {
+			
 		}
+		return false;
 	});
 	
-	$("input#search_bar").focusin(function(){
-		$(this).animate({ 
-			width: "+=50",
-		  }, "slow", "easeOutQuart" );
-		  
-	})
-	.focusout(function(){
-		$(this).animate({ 
-			width: "-=50",
-		  }, "slow", "easeOutQuart" );
-	});
+	$("input#search_bar").search_easeOutQuart();
 	
 	$(".cancel").click(function(){
 		var opt = $(this);
 		var i = opt.attr('href');
 		
-		$.post('/dealer/storedvalue/ajaxCancel/',{
+		$.post('/dealer/backend/storedvalue/ajaxCancel/',{
 			'i' : i,
 		},function(request) {	
 			opt.parent().parent().remove();

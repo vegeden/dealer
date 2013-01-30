@@ -10,7 +10,7 @@ class Commodity extends CI_Controller {
 		$this->load->model('Parames');
 		$this->UserInfo = $this->Parames->getUserInfo();
 		
-		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
+		$this->Url = '/'.$this->lang->line('folder_name').'/backend/'.strtolower(get_class($this)).'/';
 		
 		$this->load->model('db/items_area');
 		$this->load->model('db/items_bread');

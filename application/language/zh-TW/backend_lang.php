@@ -79,6 +79,7 @@ $lang['web_login_passwd']					= '密&nbsp;&nbsp;&nbsp;碼：';
 $lang['web_login_passwd_prompt']			= '請輸入密碼';
 $lang['web_login_CheckCode']				= '驗證碼：';
 $lang['web_login_ButtonValue']				= '登入';
+$lang['web_logout']							= '登出';
 $lang['web_login_Error_CheckCode']			= '驗證碼錯誤';
 $lang['web_login_Error_account_passwd']		= '帳號或密碼錯誤';
 
