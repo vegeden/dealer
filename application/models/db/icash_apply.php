@@ -31,7 +31,7 @@ class Icash_apply extends CI_Model {
 														FROM (`icash_apply`) 
 														JOIN `user_information` ON `user_information`.`id` = `icash_apply`.`user_id` 
 														JOIN `user_type` ON `user_information`.`type_id` = `user_type`.`id` 
-														WHERE `remittance_status` = '$kind' ORDER BY `apply_datetime` desc Limit ".$limit[0].", ".$limit[1]);
+														WHERE `remittance_status` = '$kind' ORDER BY `audit_datetime` desc Limit ".$limit[0].", ".$limit[1]);
 							break;
 					}
 					
