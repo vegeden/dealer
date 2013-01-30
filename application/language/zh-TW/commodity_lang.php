@@ -2,6 +2,8 @@
 	$lang['commodity_Error']						= 'Error!!';
 	$lang['commodity_account']						= '操作者';
 	$lang['commodity_IP']					 	 	= 'IP位址';
+	$lang['commodity_yes']							= '是';
+	$lang['commodity_no']							= '否';
 	
 	/*	area */
 	$lang['commodity_areaAdd_ErrorMsg']				= '分區重複';
@@ -50,7 +52,8 @@
 	$lang['commodity_item_bonus']					= '商品紅利';
 	$lang['commodity_item_stop_sale_status']		= '上下架狀態';
 	$lang['commodity_freight_price']				= '運費';
-	$lang['commodity_free_freight_quantity']		= '免運費數量';
+	$lang['commodity_special_item']					= '特殊商品';
+	$lang['commodity_special_explain']				= '(該商品將設定為獨立運費)';
 	$lang['commodity_item_sale_status']				= '上架';
 	$lang['commodity_item_stop_status']				= '下架';
 	$lang['commodity_item_image']					= '商品圖片';

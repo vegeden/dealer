@@ -20,7 +20,7 @@
 			<td><?php echo $lang->line('commodity_categorySecond_name'); ?></td>
 			<td><?php echo $lang->line('commodity_categoryFirst_name'); ?></td>
 			<td><?php echo $lang->line('commodity_freight_price'); ?></td>
-			<td><?php echo $lang->line('commodity_free_freight_quantity'); ?></td>
+			<td><?php echo $lang->line('commodity_special_item'); ?></td>
 		</tr>
 		<?php 
 			if($Items_information->num_rows() > 0) {
@@ -50,7 +50,15 @@
 			<td><?php echo $row->category_second_name;?></td>
 			<td><?php echo $row->category_name;?></td>
 			<td><?php echo $row->freight_price;?></td>
-			<td><?php echo $row->free_freight_quantity;?></td>
+			<td>
+			<?php
+				if($row->special_status) {
+					echo $lang->line('commodity_yes');
+				} else {
+					echo $lang->line('commodity_no');
+				}
+			?>
+			</td>
 		</tr>
 		<?php 
 				}
