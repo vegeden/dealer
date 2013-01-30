@@ -52,7 +52,7 @@
 			<td><?php echo $row->freight_price;?></td>
 			<td>
 			<?php
-				if($row->special_status) {
+				if($row->special_commodity_status) {
 					echo $lang->line('commodity_yes');
 				} else {
 					echo $lang->line('commodity_no');

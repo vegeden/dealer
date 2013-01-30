@@ -579,9 +579,9 @@ class Commodity extends CI_Controller {
 		$area_class			   = $this->input->post('area_class', TRUE );
 		$category_second_class = $this->input->post('category_second_class', TRUE );
 		$freight_price		   = $this->input->post('freight_price', TRUE );
-		$special_status		   = 0;
-		if($this->input->post('special_status', TRUE )) {
-			$special_status = 1;
+		$special_commodity_status		   = 0;
+		if($this->input->post('special_commodity_status', TRUE )) {
+			$special_commodity_status = 1;
 		}
 		
 		if(strlen($id)==0) {
@@ -604,7 +604,7 @@ class Commodity extends CI_Controller {
 					'area_id'				=> $area_class,
 					'category_second_id'	=> $category_second_class,
 					'freight_price'			=> $freight_price,
-					'special_status'		=> $special_status);
+					'special_commodity_status'		=> $special_commodity_status);
 				
 					if($this->items_information->verify($item_name)) {
 
@@ -634,7 +634,7 @@ class Commodity extends CI_Controller {
 					'area_id'				=> $area_class
 					,'category_second_id'	=> $category_second_class,
 					'freight_price'			=> $freight_price,
-					'special_status'		=> $special_status);
+					'special_commodity_status'		=> $special_commodity_status);
 				
 					$this->items_information->Update($id, $data);
 					$this->Parames->redirect($this->Url.'itemList/');

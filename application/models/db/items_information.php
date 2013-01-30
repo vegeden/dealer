@@ -13,7 +13,7 @@ class Items_information extends CI_Model {
 		
 		$this->db->select('item_A.id AS id, item_name, item_number, buy_price, sell_price,safe_stock,
 		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
-		freight_price,special_status, stop_sale_status, 
+		freight_price,special_commodity_status, stop_sale_status, 
 		(SELECT (stock_quantity-safe_stock) FROM '.$this->tab.' AS item_B WHERE item_A.id = item_B.id) AS warn_stock');
 		
 		$this->db->where('item_A.area_id = items_area.id');
@@ -32,7 +32,7 @@ class Items_information extends CI_Model {
 		
 		$this->db->select($this->tab.'.id AS id, item_name, item_number, buy_price, sell_price,safe_stock,
 		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
-		freight_price,special_status, stop_sale_status, item_image, fulltext');
+		freight_price,special_commodity_status, stop_sale_status, item_image, fulltext');
 		
 		$this->db->where($this->tab.'.area_id = items_area.id');
 		$this->db->where($this->tab.'.bread_id = items_bread.id');

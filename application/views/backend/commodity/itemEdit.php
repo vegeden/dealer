@@ -69,7 +69,7 @@
 			<dt><?php echo $lang->line('commodity_special_item'); ?></dt>
 			<dd>
 				<label class="checkbox">
-					<input type="checkbox" name="special_status" <?php if($query->special_status){echo 'checked';}?>>
+					<input type="checkbox" name="special_commodity_status" <?php if($query->special_commodity_status){echo 'checked';}?>>
 					<?php echo $lang->line('commodity_special_explain'); ?>
 				</label>
 			</dd>
