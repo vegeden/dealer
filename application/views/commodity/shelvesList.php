@@ -7,6 +7,10 @@
 			<a href="<?php echo $url.'1/';?>"><?php echo $lang->line('commodity_shelves_sale_status');?></a>
 		</li>
 	</ul>	
+	<div class="input-append pull-right">
+		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('account_name');?>">
+		<span class="add-on"><?php echo $lang->line('search');?></span>
+	</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info firstRow">
 			<td class="justedit"></td>
