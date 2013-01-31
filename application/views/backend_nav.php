@@ -7,7 +7,21 @@
 								<?php 
 									foreach( $rows as $val) {
 								?>
-							<li><a href="/<?php echo $this->lang->line('folder_name')."/backend/$key/$val/" ?>"><?php echo $lang->line('nav_'.$key.'_'.$val);?></a></li>
+							<li>
+								<?php 
+									if($val == 'index') {
+								?>
+								<a href="/<?php echo $this->lang->line('folder_name')."/backend/$key/" ?>">
+								<?php 
+									} else {
+								?>
+								<a href="/<?php echo $this->lang->line('folder_name')."/backend/$key/$val/" ?>">
+								<?php 
+									}
+									echo $lang->line('nav_'.$key.'_'.$val);
+								?>
+								</a>
+							</li>
 							<?php
 										}
 									}
