@@ -593,17 +593,17 @@ class Commodity extends CI_Controller {
 				&& strlen($area_class) != 0 && strlen($category_second_class) != 0 && strlen($freight_price) != 0)
 				{
 					$data = array(
-					'item_name'				=> $item_name,
-					'item_number'			=> $item_number,
-					'buy_price'				=> $buy_price,
-					'sell_price'			=> $sell_price,
-					'safe_stock'			=> $safe_stock,
-					'bread_id'				=> $bread_class,
-					'stock_quantity'		=> $stock_quantity,
-					'item_bonus'			=> $item_bonus,
-					'area_id'				=> $area_class,
-					'category_second_id'	=> $category_second_class,
-					'freight_price'			=> $freight_price,
+					'item_name'						=> $item_name,
+					'item_number'					=> $item_number,
+					'buy_price'						=> $buy_price,
+					'sell_price'					=> $sell_price,
+					'safe_stock'					=> $safe_stock,
+					'bread_id'						=> $bread_class,
+					'stock_quantity'				=> $stock_quantity,
+					'item_bonus'					=> $item_bonus,
+					'area_id'						=> $area_class,
+					'category_second_id'			=> $category_second_class,
+					'freight_price'					=> $freight_price,
 					'special_commodity_status'		=> $special_commodity_status);
 				
 					if($this->items_information->verify($item_name)) {
@@ -624,17 +624,17 @@ class Commodity extends CI_Controller {
 				&& strlen($category_second_class) != 0 && strlen($freight_price) != 0 )
 				{
 					$data = array(
-					'item_name'				=> $item_name,
-					'item_number'			=> $item_number,
-					'buy_price'				=> $buy_price,
-					'sell_price'			=> $sell_price
-					,'safe_stock'			=> $safe_stock,
-					'bread_id'				=> $bread_class,
-					'item_bonus'			=> $item_bonus,
-					'area_id'				=> $area_class
-					,'category_second_id'	=> $category_second_class,
-					'freight_price'			=> $freight_price,
-					'special_commodity_status'		=> $special_commodity_status);
+					'item_name'				   => $item_name,
+					'item_number'			   => $item_number,
+					'buy_price'				   => $buy_price,
+					'sell_price'			   => $sell_price
+					,'safe_stock'			   => $safe_stock,
+					'bread_id'				   => $bread_class,
+					'item_bonus'			   => $item_bonus,
+					'area_id'				   => $area_class
+					,'category_second_id'	   => $category_second_class,
+					'freight_price'			   => $freight_price,
+					'special_commodity_status' => $special_commodity_status);
 				
 					$this->items_information->Update($id, $data);
 					$this->Parames->redirect($this->Url.'itemList/');
