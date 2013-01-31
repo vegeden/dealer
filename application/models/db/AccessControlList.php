@@ -5,7 +5,7 @@ class AccessControlList extends CI_Model {
 	public function __construct() {
 		parent::__construct();
 		
-		$this->tab = get_class($this);
+		$this->tab = strtolower(get_class($this));
 	}
 	
 	public function getNav() {		
