@@ -65,7 +65,9 @@ $lang['nav_storedvalue_CountLists']			= '儲值狀況';
 $lang['nav_storedvalue_apply']				= '點數儲值';
 $lang['nav_storedvalue_log']				= '點數紀錄';
 
-
+$lang['nav_SysSetting']						= '系統設定';
+$lang['nav_SysSetting_index']				= '基本設定';
+$lang['nav_SysSetting_ACL']					= 'Access Controller List';
 
 // web footer
 $lang['footer']								= '蔬食伊甸園 版權所有 © 2012 VegEden All Rights Reserved.';
