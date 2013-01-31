@@ -8,8 +8,14 @@ class SysConfig extends CI_Model {
 		$this->tab = strtolower(get_class($this));
 	}
 	
-	public function Select($limit=array(0,50)) {
-		$this->db->limit($limit[1], $limit[0]);
+	public function verify() {
+		$count = $this->db->count_all($this->tab);
+		if($count == 0) 
+			return true;
+		return false;
+	}
+	
+	public function Select() {
 		return $this->db->get($this->tab);
 	}
 	
@@ -21,11 +27,11 @@ class SysConfig extends CI_Model {
 		}
 	}
 	
-	public function Add($data ) {
+	public function Add($data) {
 		$this->db->insert($this->tab, $data);
 	}
 	
-	public function Update( $id, $data) {
+	public function Update($id, $data) {
 		$this->db->where('id', $id);
 		$this->db->update($this->tab, $data);
 	}
