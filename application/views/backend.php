@@ -16,7 +16,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script src="/dealer/statics/js/lib/bootstrap/bootstrap.min.js"></script>
 		<script src="/dealer/statics/js/lib/jquery.easing/jquery.easing.1.3.js"></script>
-		<script src="/dealer/statics/js/backend/style.js"></script>
+		<script src="/dealer/statics/js/backend/script.js"></script>
 		<script src="/dealer/statics/js/lib/ckeditor/ckeditor.js"></script>
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
