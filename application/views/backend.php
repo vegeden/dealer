@@ -16,8 +16,8 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script src="/dealer/statics/js/lib/bootstrap/bootstrap.min.js"></script>
 		<script src="/dealer/statics/js/lib/jquery.easing/jquery.easing.1.3.js"></script>
-		<script src="/dealer/statics/js/backend/style.js"></script>
-		
+		<script src="/dealer/statics/js/backend/script.js"></script>
+		<script src="/dealer/statics/js/lib/ckeditor/ckeditor.js"></script>
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -31,24 +31,24 @@
 
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
-				<?php require_once 'backend_header.php';?>
+				<?php require_once 'backend/_header.php';?>
 			</div>
 		</div>
 
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span2">
-					<?php require_once 'backend_nav.php';?>
+					<?php require_once 'backend/_nav.php';?>
 				</div><!--/span-->
 				<div class="span10">
-					<?php require_once 'backend_main_top.php';?>
+					<?php require_once 'backend/_main_top.php';?>
 					<?php require_once '/backend/'.$ArticlePage;?>
 				</div><!--/span-->
 			</div><!--/row-->
 
 			<hr>
 			
-			<?php require_once 'backend_footer.php';?>
+			<?php require_once 'backend/_footer.php';?>
 
 		</div><!--/.fluid-container-->
 
