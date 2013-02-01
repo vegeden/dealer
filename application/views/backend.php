@@ -17,7 +17,7 @@
 		<script src="/dealer/statics/js/lib/bootstrap/bootstrap.min.js"></script>
 		<script src="/dealer/statics/js/lib/jquery.easing/jquery.easing.1.3.js"></script>
 		<script src="/dealer/statics/js/backend/style.js"></script>
-		<script src="/dealer/statics/js/lib/ckeditor/ckeditor.js"></script>
+		
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

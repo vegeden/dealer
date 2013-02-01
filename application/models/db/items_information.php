@@ -84,7 +84,7 @@ class Items_information extends CI_Model {
 	
 	public function DelCheck($id) {
 		$this->db->where('item_id', $id);
-		$this->db->from('sales_item');
+		$this->db->from('sale_item');
 		return $this->db->count_all_results();
 	}	
 	

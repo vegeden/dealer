@@ -103,7 +103,15 @@ $(function(){
 			$('#stock_content').attr("disabled", true);
 		} 
 	});
+
+	/*	shelvesEditAdd.php	*/
+	CKEDITOR.replace( 'item_fulltext',
+    {
+        filebrowserBrowseUrl : '/dealer/statics/js/lib/ckfinder/ckfinder.html',
+		filebrowserImageUploadUrl : '/dealer/statics/js/lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+    });	
 	
+	/* Lang */
 	function getLang() {
 		$.post('/dealer/backend/commodity/ajaxGetLang/',{
 		},function(request) {	

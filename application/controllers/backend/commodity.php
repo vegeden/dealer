@@ -667,7 +667,6 @@ class Commodity extends CI_Controller {
 						'purchase_quantity' => $stock_purchase_quantity,
 						'total_quantity'	=> $total_quantity,
 						'user_id'			=> $user_id,
-						'ip'				=> $this->input->ip_address(),
 						'datetime'			=> date(DateTime::ATOM, time()));
 						
 						$data_items = array('stock_quantity' => $total_quantity);
@@ -691,7 +690,6 @@ class Commodity extends CI_Controller {
 						'stock_content'		=> $stock_content,
 						'original_quantity' => $stock_quantity,
 						'stock_quantity'	=> $stock_purchase_quantity,
-						'ip'				=> $this->input->ip_address(),
 						'datetime' => date(DateTime::ATOM, time()));
 						
 						$data_items = array('stock_quantity' => $stock_purchase_quantity);
