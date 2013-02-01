@@ -32,7 +32,8 @@ class Parames extends CI_Model {
 		$ArticlePage	= $navSplit[1].'\\'.$navSplit[2].'.php';
 		
 		$this->verifyFirstTime();
-		$this->verifyPage($nav_page);
+		/** verify ACL	**/
+		// $this->verifyPage($nav_page);
 		
 		$this->parame['UserInfo']		= $this->UserInfo;
 		$this->parame['js']				= $this->loadJS($navSplit[1]);
