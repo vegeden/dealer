@@ -65,7 +65,10 @@ $lang['nav_storedvalue_CountLists']			= '儲值狀況';
 $lang['nav_storedvalue_apply']				= '點數儲值';
 $lang['nav_storedvalue_log']				= '點數紀錄';
 
-
+$lang['nav_SysSetting']						= '系統設定';
+$lang['nav_SysSetting_index']				= '基本設定';
+$lang['nav_SysSetting_SysConfigEdit']		= '基本設定';
+$lang['nav_SysSetting_ACL']					= 'Access Controller List';
 
 // web footer
 $lang['footer']								= '蔬食伊甸園 版權所有 © 2012 VegEden All Rights Reserved.';
@@ -82,6 +85,7 @@ $lang['web_login_ButtonValue']				= '登入';
 $lang['web_logout']							= '登出';
 $lang['web_login_Error_CheckCode']			= '驗證碼錯誤';
 $lang['web_login_Error_account_passwd']		= '帳號或密碼錯誤';
+$lang['web_DoYouWantDel']					= '確定刪除?';
 
 // backend basic
 $lang['add']								= '新增';
@@ -91,6 +95,7 @@ $lang['del']								= '刪除';
 $lang['cancel']								= '取消';
 $lang['clear']								= '清除';
 $lang['search']								= '搜尋';
+$lang['submit']								= '確認';
 
 $lang['item_in']							= '進貨';
 $lang['item_up']							= '庫調';
