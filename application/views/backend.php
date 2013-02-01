@@ -31,24 +31,24 @@
 
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
-				<?php require_once 'backend_header.php';?>
+				<?php require_once 'backend/_header.php';?>
 			</div>
 		</div>
 
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span2">
-					<?php require_once 'backend_nav.php';?>
+					<?php require_once 'backend/_nav.php';?>
 				</div><!--/span-->
 				<div class="span10">
-					<?php require_once 'backend_main_top.php';?>
+					<?php require_once 'backend/_main_top.php';?>
 					<?php require_once '/backend/'.$ArticlePage;?>
 				</div><!--/span-->
 			</div><!--/row-->
 
 			<hr>
 			
-			<?php require_once 'backend_footer.php';?>
+			<?php require_once 'backend/_footer.php';?>
 
 		</div><!--/.fluid-container-->
 
