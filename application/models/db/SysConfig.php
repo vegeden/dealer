@@ -27,6 +27,14 @@ class SysConfig extends CI_Model {
 		}
 	}
 	
+	public function SWhereKey($key) {
+		$this->db->where('key', $key);
+		$query =  $this->db->get($this->tab);
+		foreach($query->result() as $row) {
+			return $row;
+		}
+	}
+	
 	public function Add($data) {
 		$this->db->insert($this->tab, $data);
 	}
