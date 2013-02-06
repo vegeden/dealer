@@ -65,6 +65,11 @@ class Items_information extends CI_Model {
 		return $this->db->count_all($this->tab);
 	}
 	
+	public function SelectOnShell() {
+		$this->db->where('stop_sale_status','1');
+		return $this->db->get($this->tab);
+	}
+	
 	public function verify( $item_name ) {
 		$this->db->where('item_name', $item_name);
 		$query = $this->db->get($this->tab);
