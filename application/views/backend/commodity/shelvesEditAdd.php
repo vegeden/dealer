@@ -5,8 +5,8 @@
 			<dd><?php echo $itemList -> item_name;?></dd>
 			<dt><?php echo $lang->line('commodity_item_stop_sale_status'); ?></dt>
 			<dd>
-				<select name="stop_sale_status" id="stop_sale_status">
-					<?php if($itemList->stop_sale_status == 0) {;
+				<select name="on_off_sale" id="on_off_sale">
+					<?php if($itemList->on_off_sale == 0) {;
 					?>
 					<option value="0"><?php echo $lang->line('commodity_item_stop_status'); ?></option>
 					<option value="1"><?php echo $lang->line('commodity_item_sale_status'); ?></option>
