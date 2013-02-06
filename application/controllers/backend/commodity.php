@@ -435,7 +435,7 @@ class Commodity extends CI_Controller {
 		$this->parames['itemList']		  = $this->items_information->SWhere($items_id);
 		$this->parames['item_image_info'] = explode(',',$this->parames['itemList']->item_image);
 		
-		$stop_sale_status = $this->parames['itemList']->stop_sale_status;	
+		$on_off_sale = $this->parames['itemList']->on_off_sale;	
 		
 		if ($this->upload->do_upload()) {
 			$image_file =$this->upload->data();
@@ -713,13 +713,13 @@ class Commodity extends CI_Controller {
 		
 		$item_content	  = $this->input->post('item_content', TRUE );
 		$item_fulltext	  = $this->input->post('item_fulltext', TRUE );
-		$stop_sale_status = $this->input->post('stop_sale_status', TRUE );
-		if(isset($item_content) && isset($stop_sale_status) && isset($item_image) && isset($item_fulltext)) {
-			if(strlen($item_content) != 0 && strlen($stop_sale_status) != 0 && strlen($item_image) != 0 && strlen($item_fulltext) != 0)	{
+		$on_off_sale 	  = $this->input->post('on_off_sale', TRUE );
+		if(isset($item_content) && isset($on_off_sale) && isset($item_image) && isset($item_fulltext)) {
+			if(strlen($item_content) != 0 && strlen($on_off_sale) != 0 && strlen($item_image) != 0 && strlen($item_fulltext) != 0)	{
 				$data = array(
 				'id'				=> $items_id,
 				'item_content'		=> $item_content,
-				'stop_sale_status' 	=> $stop_sale_status,
+				'on_off_sale' 		=> $on_off_sale,
 				'item_image' 		=> $item_image,
 				'fulltext' 			=> $item_fulltext,);
 				
