@@ -66,7 +66,7 @@ class Items_information extends CI_Model {
 	}
 	
 	public function SelectOnShell() {
-		$this->db->where('stop_sale_status','1');
+		$this->db->where('on_off_sale','1');
 		return $this->db->get($this->tab);
 	}
 	
