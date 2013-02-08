@@ -1,5 +1,7 @@
 <?php
 	$lang['commodity_Error']						= 'Error!!';
+	$lang['commodity_error_incomplete']				= '請輸入';
+	$lang['commodity_doupload_ErrorMsg']			= '上傳失敗';
 	$lang['commodity_account']						= '操作者';
 	$lang['commodity_IP']					 	 	= 'IP位址';
 	$lang['commodity_yes']							= '是';

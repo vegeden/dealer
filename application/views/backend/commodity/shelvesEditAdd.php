@@ -1,4 +1,11 @@
 <article id="shelvesEditAdd">
+	<?php if(isset($error)) {?>
+	<div class="alert alert-error">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4><?php echo $lang->line('commodity_Error'); ?></h4>
+		<?php echo $error; ?>
+	</div>
+	<?php } ?>
 	<form method="POST" action="" enctype="multipart/form-data" />
 		<dl class="dl-horizontal dlform level">
 			<dt><?php echo $lang->line('commodity_item_name'); ?></dt>
@@ -19,8 +26,8 @@
 			<dt><?php echo $lang->line('commodity_item_image'); ?></dt>
 			<dd>
 				<div class="fileupload fileupload-new" data-provides="fileupload">
-					<?php if($item_image_info[0]){ ?> 
-					<div class="fileupload-new thumbnail" style="width: <?php echo $item_image_info[1];?>px; height: <?php echo $item_image_info[2];?>px;"><img src="<?php echo $item_image_info[0];?>" /></div>
+					<?php if($img_exist){ ?> 
+					<div class="fileupload-new thumbnail" style="width: <?php echo $img_wh[0]; ?>px; height: <?php echo $img_wh[1]; ?>px;"><img src="<?php echo '/dealer/statics/img_commodity/main/'.$img_name;?>" /></div>
 					<?php } else {?>
 					<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
 					<?php } ?>
@@ -35,14 +42,15 @@
 			<dd><textarea name="item_content" rows="5"><?php echo $itemList->item_content;?></textarea></dd>	
 			<dt><?php echo $lang->line('commodity_item_fulltext'); ?></dt>
 			<dd><textarea name="item_fulltext" rows="10"><?php echo $itemList -> fulltext;?></textarea></dd>
-			
 		</dl>
 		<div class="row">
 			<div class="span3 offset3">
-				<button type="submit" class="btn btn-primary" name="submit" value="submit"><?php echo $lang->line('add'); ?></button>
+				<button type="submit" class="btn btn-primary" name="add" value="add"><?php echo $lang->line('add'); ?></button>
 				<button type="submit" class="btn offset2" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
 			</div>
 		</div>
 	</form>
 </article>
 <script src="/dealer/statics/js/lib/ckeditor/ckeditor.js"></script>
+<script src="/dealer/statics/js/lib/ckfinder/ckfinder.js"></script>
+<script src="/dealer/statics/js/lib/bootstrap/bootstrap-fileupload.js"></script>

@@ -32,7 +32,7 @@ class Items_information extends CI_Model {
 		
 		$this->db->select($this->tab.'.id AS id, item_name, item_number, buy_price, sell_price,safe_stock,
 		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
-		freight_price,special_commodity_status, on_off_sale, item_image, fulltext');
+		freight_price,special_commodity_status, on_off_sale, fulltext');
 		
 		$this->db->where($this->tab.'.area_id = items_area.id');
 		$this->db->where($this->tab.'.bread_id = items_bread.id');

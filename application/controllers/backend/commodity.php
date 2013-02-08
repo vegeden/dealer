@@ -22,6 +22,7 @@ class Commodity extends CI_Controller {
 		$this->load->model('pages');
 		
 		$this->load->helper('url');
+		$this->load->helper('file');
 		$this->load->helper('form');
     }	
 	
@@ -418,14 +419,6 @@ class Commodity extends CI_Controller {
 	}	
 	
 	public function shelvesEditAdd($items_id) {
-	
-		$config['upload_path']	 = './statics/img_commodity/';
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']		 = '0';
-		$config['max_width']	 = '0';
-		$config['max_height']	 = '0';
-		$this->load->library('upload',$config);
-		
 		/*	-------------------------------------------	*/
 		$this->Parames->init('nav_commodity_shelvesEditAdd');
 		$this->parames		  = $this->Parames->getParams();
@@ -433,17 +426,19 @@ class Commodity extends CI_Controller {
 		/*	-------------------------------------------	*/
 		
 		$this->parames['itemList']		  = $this->items_information->SWhere($items_id);
-		$this->parames['item_image_info'] = explode(',',$this->parames['itemList']->item_image);
-		
-		$on_off_sale = $this->parames['itemList']->on_off_sale;	
-		
-		if ($this->upload->do_upload()) {
-			$image_file =$this->upload->data();
-			$item_image = base_url().'statics/img_commodity/'.$image_file['file_name'].','.$image_file['image_width'].','.$image_file['image_height'];
-			$this->onshelvesEditAdd($items_id,$item_image);
-		} else {
-			$this->onshelvesEditAdd($items_id,$this->parames['itemList']->item_image);
+		$this->parames['img_exist']		  = FALSE;
+		$file_array = get_filenames('./statics/img_commodity/main/');
+		for($i=0 ; $i<count($file_array) ; $i++) {
+			$file_array_split = explode('.',$file_array[$i]);
+			if($file_array_split[0] == $items_id) {
+				$this->parames['img_exist']	= TRUE;
+				$this->parames['img_name']  = $file_array[$i];
+				$this->parames['img_wh'] = getimagesize('./statics/img_commodity/main/'.$file_array[$i]);
+				break;
+			}
 		}
+		$on_off_sale = $this->parames['itemList']->on_off_sale;	
+		$this->onshelvesEditAdd($items_id);
 		$this->load->view('backend', $this->parames);
 	}	
 	
@@ -457,24 +452,25 @@ class Commodity extends CI_Controller {
 		
 		$areaName 	= $this->input->post('areaName', TRUE );
 		
-		if(isset($areaName)) {
-			if(strlen($areaName) != 0)
-				if($this->items_area->verify($areaName)) {
-					$data = array('area_Name' =>$areaName);
-					
-					if(strlen($id)==0) {
-						// Add level
+		if($this->input->post('add', TRUE ) == 'add' || $this->input->post('edit', TRUE ) == 'edit') {
+			if(strlen($areaName) != 0) {
+			$data = array('area_Name' =>$areaName);
+				if(strlen($id)==0) {
+					if($this->items_area->verify($areaName)) {
 						$this->items_area->Add($data);
+						$this->Parames->redirect($this->Url.'areaList/');
 					} else {
-						// Edit level
-						$this->items_area->Update($id, $data);
+						$this->parames['error'] = $this->lang->line('commodity_areaAdd_ErrorMsg');
 					}
-					$this->Parames->redirect($this->Url.'areaList/');
 				} else {
-					$this->parames['error'] = "";
+					$this->items_area->Update($id, $data);
+					$this->Parames->redirect($this->Url.'areaList/');
 				}
+			} else {
+				$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
+			}
 		}
-	}	
+	}		
 	
 	/* bread on */
 	private function onbreadAddEdit($id='') {
@@ -485,23 +481,24 @@ class Commodity extends CI_Controller {
 		
 		$breadName 	= $this->input->post('breadName', TRUE );
 		
-		if(isset($breadName)) {
-			if(strlen($breadName) != 0)
-				if($this->items_area->verify($breadName)) {
-					$data = array('bread_Name' =>$breadName);
-					
-					if(strlen($id)==0) {
-						// Add level
+		if($this->input->post('add', TRUE ) == 'add' || $this->input->post('edit', TRUE ) == 'edit') {
+			if(strlen($breadName) != 0) {
+			$data = array('bread_Name' =>$breadName);
+				if(strlen($id)==0) {
+					if($this->items_bread->verify($breadName)) {
 						$this->items_bread->Add($data);
+						$this->Parames->redirect($this->Url.'breadList/');
 					} else {
-						// Edit level
-						$this->items_bread->Update($id, $data);
+						$this->parames['error'] = $this->lang->line('commodity_breadAdd_ErrorMsg');
 					}
-					$this->Parames->redirect($this->Url.'breadList/');
 				} else {
-					$this->parames['error'] = "";
+					$this->items_bread->Update($id, $data);
+					$this->Parames->redirect($this->Url.'breadList/');
 				}
-		}
+			} else {
+				$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
+			}
+		}		
 	}
 	
 	/* Category First on */
@@ -513,22 +510,23 @@ class Commodity extends CI_Controller {
 		
 		$categoryName = $this->input->post('categoryName', TRUE );
 		
-		if(isset($categoryName)) {
-			if(strlen($categoryName) != 0)
-				if($this->items_category->verify($categoryName)) {
-					$data = array('category_Name' =>$categoryName);
-					
-					if(strlen($id)==0) {
-						// Add level
+		if($this->input->post('add', TRUE ) == 'add' || $this->input->post('edit', TRUE ) == 'edit') {
+			if(strlen($categoryName) != 0) {
+			$data = array('category_Name' =>$categoryName);
+				if(strlen($id)==0) {
+					if($this->items_category->verify($categoryName)) {
 						$this->items_category->Add($data);
+						$this->Parames->redirect($this->Url.'categoryFirstList/');
 					} else {
-						// Edit level
-						$this->items_category->Update($id, $data);
+						$this->parames['error'] = $this->lang->line('commodity_categoryFirstAdd_ErrorMsg');
 					}
-					$this->Parames->redirect($this->Url.'categoryFirstList/');
 				} else {
-					$this->parames['error'] = "";
+					$this->items_category->Update($id, $data);
+					$this->Parames->redirect($this->Url.'categoryFirstList/');
 				}
+			} else {
+				$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
+			}
 		}
 	}	
 	
@@ -542,22 +540,23 @@ class Commodity extends CI_Controller {
 		$categorySecondName = $this->input->post('categorySecondName', TRUE );
 		$category_class		= $this->input->post('category_class', TRUE );
 		
-		if(isset($categorySecondName) && isset($category_class)) {
-			if(strlen($categorySecondName) != 0 && strlen($category_class) != 0)
-				if($this->items_category_second->verify($categorySecondName,$category_class)) {
-					$data = array('category_second_Name' =>$categorySecondName, 'category' =>$category_class);
-					
-					if(strlen($id)==0) {
-						// Add level
+		if($this->input->post('add', TRUE ) == 'add' || $this->input->post('edit', TRUE ) == 'edit') {
+			if(strlen($categorySecondName) != 0) {
+			$data = array('category_second_name' => $categorySecondName, 'category' => $category_class);
+				if(strlen($id)==0) {
+					if($this->items_category_second->verify($categorySecondName,$category_class)) {
 						$this->items_category_second->Add($data);
+						$this->Parames->redirect($this->Url.'categorySecondList/');
 					} else {
-						// Edit level
-						$this->items_category_second->Update($id, $data);
+						$this->parames['error'] = $this->lang->line('commodity_categorySecondAdd_ErrorMsg');
 					}
-					$this->Parames->redirect($this->Url.'categorySecondList/');
 				} else {
-					$this->parames['error'] = "";
+					$this->items_category_second->Update($id, $data);
+					$this->Parames->redirect($this->Url.'categorySecondList/');
 				}
+			} else {
+				$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
+			}
 		}
 	}	
 	
@@ -580,18 +579,16 @@ class Commodity extends CI_Controller {
 		$category_second_class = $this->input->post('category_second_class', TRUE );
 		$freight_price		   = $this->input->post('freight_price', TRUE );
 		$special_commodity_status		   = 0;
-		if($this->input->post('special_commodity_status', TRUE )) {
-			$special_commodity_status = 1;
-		}
 		
-		if(strlen($id)==0) {
-			if(isset($item_name) && isset($item_number) && isset($buy_price) && isset($sell_price) 
-			&& isset($safe_stock) && isset($bread_class) && isset($stock_quantity) && isset($item_bonus) 
-			&& isset($area_class) && isset($category_second_class) && isset($freight_price)) {
-				if(strlen($item_name) != 0 && strlen($item_number) != 0 && strlen($buy_price) != 0 && strlen($sell_price) != 0 
-				&& strlen($safe_stock) != 0 && strlen($bread_class) != 0 && strlen($stock_quantity) != 0 && strlen($item_bonus) != 0 
-				&& strlen($area_class) != 0 && strlen($category_second_class) != 0 && strlen($freight_price) != 0)
-				{
+		if($this->input->post('add', TRUE ) == 'add' || $this->input->post('edit', TRUE ) == 'edit') {
+			if($this->input->post('special_commodity_status', TRUE )) {
+				$special_commodity_status = 1;
+			}
+
+			if(strlen($id)==0) {
+				if(strlen($item_name) != 0 && strlen($item_number) !=0 && strlen($buy_price) !=0 && strlen($sell_price) !=0  
+				&& strlen($safe_stock) !=0 && strlen($bread_class) !=0 && strlen($stock_quantity) && strlen($item_bonus) !=0
+				&& strlen($area_class) !=0 && strlen($category_second_class) !=0 && strlen($freight_price) !=0) {
 					$data = array(
 					'item_name'						=> $item_name,
 					'item_number'					=> $item_number,
@@ -605,39 +602,35 @@ class Commodity extends CI_Controller {
 					'category_second_id'			=> $category_second_class,
 					'freight_price'					=> $freight_price,
 					'special_commodity_status'		=> $special_commodity_status);
-				
 					if($this->items_information->verify($item_name)) {
-
 						$this->items_information->Add($data);
 						$this->Parames->redirect($this->Url.'itemList/');
 					} else {
-						$this->parames['error'] = "";
+						$this->parames['error'] = $this->lang->line('commodity_itemAdd_ErrorMsg');
 					}
+				} else {
+					$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
 				}
-			}
-		} else {
-			if(isset($item_name) && isset($item_number) && isset($buy_price) && isset($sell_price) 
-			&& isset($safe_stock) && isset($bread_class) && isset($item_bonus) && isset($area_class) 
-			&& isset($category_second_class) && isset($freight_price) ) {
-				if(strlen($item_name) != 0 && strlen($item_number) != 0 && strlen($buy_price) != 0 && strlen($sell_price) != 0 
-				&& strlen($safe_stock) != 0 && strlen($bread_class) != 0 && strlen($item_bonus) != 0 && strlen($area_class) != 0 
-				&& strlen($category_second_class) != 0 && strlen($freight_price) != 0 )
-				{
+			} else {
+				if(strlen($item_name) !=0 && strlen($item_number) !=0 && strlen($buy_price) !=0 && strlen($sell_price) !=0 
+				&& strlen($safe_stock) !=0 && strlen($bread_class) !=0 && strlen($item_bonus) !=0 && strlen($area_class) !=0 
+				&& strlen($category_second_class) !=0 && strlen($freight_price) !=0) {
 					$data = array(
 					'item_name'				   => $item_name,
 					'item_number'			   => $item_number,
 					'buy_price'				   => $buy_price,
-					'sell_price'			   => $sell_price
-					,'safe_stock'			   => $safe_stock,
+					'sell_price'			   => $sell_price,
+					'safe_stock'			   => $safe_stock,
 					'bread_id'				   => $bread_class,
 					'item_bonus'			   => $item_bonus,
-					'area_id'				   => $area_class
-					,'category_second_id'	   => $category_second_class,
+					'area_id'				   => $area_class,
+					'category_second_id'	   => $category_second_class,
 					'freight_price'			   => $freight_price,
 					'special_commodity_status' => $special_commodity_status);
-				
 					$this->items_information->Update($id, $data);
 					$this->Parames->redirect($this->Url.'itemList/');
+				} else {
+					$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
 				}
 			}
 		}
@@ -652,60 +645,74 @@ class Commodity extends CI_Controller {
 		}
 		
 		$invoicing_status = $this->input->post('invoicing_status', TRUE );
-		
-		switch($invoicing_status){
-			case 0:
-				$stock_purchase_quantity = $this->input->post('stock_purchase_quantity', TRUE );
-				$total_quantity = $stock_purchase_quantity+$stock_quantity;
-				
-				if(isset($stock_purchase_quantity)) {
-					if(strlen($stock_purchase_quantity) != 0)
-					{
-						$data = array(
-						'item_id'			=> $item_id,
-						'original_quantity' => $stock_quantity,
-						'purchase_quantity' => $stock_purchase_quantity,
-						'total_quantity'	=> $total_quantity,
-						'user_id'			=> $user_id,
-						'datetime'			=> date(DateTime::ATOM, time()));
-						
-						$data_items = array('stock_quantity' => $total_quantity);
-						
-						$this->items_purchase->Add($data);
-						$this->items_information->Update($item_id, $data_items);
-						$this->Parames->redirect($this->Url.'itemList/');
+		if($this->input->post('edit', TRUE ) == 'edit') {
+			switch($invoicing_status){
+				case 0:
+					$stock_purchase_quantity = $this->input->post('stock_purchase_quantity', TRUE );
+					$total_quantity = $stock_purchase_quantity+$stock_quantity;
+					
+					if(isset($stock_purchase_quantity)) {
+						if(strlen($stock_purchase_quantity) != 0)
+						{
+							$data = array(
+							'item_id'			=> $item_id,
+							'original_quantity' => $stock_quantity,
+							'purchase_quantity' => $stock_purchase_quantity,
+							'total_quantity'	=> $total_quantity,
+							'user_id'			=> $user_id,
+							'datetime'			=> date(DateTime::ATOM, time()));
+							
+							$data_items = array('stock_quantity' => $total_quantity);
+							
+							$this->items_purchase->Add($data);
+							$this->items_information->Update($item_id, $data_items);
+							$this->Parames->redirect($this->Url.'itemList/');
+						} else {
+							$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
+						}
 					}
-				}
-				break;
-			case 1:
-				$stock_purchase_quantity = $this->input->post('stock_purchase_quantity', TRUE );
-				$stock_content			 = $this->input->post('stock_content', TRUE );
-				
-				if(isset($stock_purchase_quantity) && isset($stock_content)) {
-					if(strlen($stock_purchase_quantity) != 0 && strlen($stock_content) != 0)
-					{
-						$data = array(
-						'item_id'			=> $item_id,
-						'user_id'			=> $user_id,
-						'stock_content'		=> $stock_content,
-						'original_quantity' => $stock_quantity,
-						'stock_quantity'	=> $stock_purchase_quantity,
-						'datetime' => date(DateTime::ATOM, time()));
-						
-						$data_items = array('stock_quantity' => $stock_purchase_quantity);
-						
-						$this->items_stock->Add($data);
-						$this->items_information->Update($item_id, $data_items);
-						$this->Parames->redirect($this->Url.'itemList/');
+					break;
+				case 1:
+					$stock_purchase_quantity = $this->input->post('stock_purchase_quantity', TRUE );
+					$stock_content			 = $this->input->post('stock_content', TRUE );
+					
+					if(isset($stock_purchase_quantity) && isset($stock_content)) {
+						if(strlen($stock_purchase_quantity) != 0 && strlen($stock_content) != 0)
+						{
+							$data = array(
+							'item_id'			=> $item_id,
+							'user_id'			=> $user_id,
+							'stock_content'		=> $stock_content,
+							'original_quantity' => $stock_quantity,
+							'stock_quantity'	=> $stock_purchase_quantity,
+							'datetime' => date(DateTime::ATOM, time()));
+							
+							$data_items = array('stock_quantity' => $stock_purchase_quantity);
+							
+							$this->items_stock->Add($data);
+							$this->items_information->Update($item_id, $data_items);
+							$this->Parames->redirect($this->Url.'itemList/');
+						} else {
+							$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
+						}
 					}
-				}
-				break;
+					break;
+			}
 		}
 	}	
 	
 	/* onshelvesEditAdd on */
-	private function onshelvesEditAdd($items_id,$item_image) {
-	
+	private function onshelvesEditAdd($items_id) {
+		$img_dir 				 = './statics/img_commodity/main/';
+		$img_tmp_dir             = './statics/img_commodity/tmp/' ;
+		$config['upload_path']	 = $img_tmp_dir;
+		$config['allowed_types'] = 'gif|jpg|jpeg|png';
+        $config['max_size'] 	 = '0';
+        $config['max_width'] 	 = '0';
+        $config['max_height'] 	 = '0';
+		$this->load->library('upload',$config);
+		$this->upload->initialize($config);
+		
 		$cancel = $this->input->post('cancel', TRUE );
 		if(strlen($cancel)!=0) {
 			$this->Parames->redirect($this->Url.'shelvesList/');
@@ -714,17 +721,41 @@ class Commodity extends CI_Controller {
 		$item_content	  = $this->input->post('item_content', TRUE );
 		$item_fulltext	  = $this->input->post('item_fulltext', TRUE );
 		$on_off_sale 	  = $this->input->post('on_off_sale', TRUE );
-		if(isset($item_content) && isset($on_off_sale) && isset($item_image) && isset($item_fulltext)) {
-			if(strlen($item_content) != 0 && strlen($on_off_sale) != 0 && strlen($item_image) != 0 && strlen($item_fulltext) != 0)	{
-				$data = array(
-				'id'				=> $items_id,
-				'item_content'		=> $item_content,
-				'on_off_sale' 		=> $on_off_sale,
-				'item_image' 		=> $item_image,
-				'fulltext' 			=> $item_fulltext,);
-				
-				$this->items_information->Update($items_id, $data);
-				$this->Parames->redirect($this->Url.'shelvesList/');
+		$del_file_name 	  = '';
+		
+		if($this->input->post('add', TRUE ) == 'add') {
+			if(strlen($_FILES['userfile']['name']) != 0 && strlen($item_content) != 0 && strlen($item_fulltext) != 0)	{
+				$file_array = get_filenames($img_dir);
+				for($i=0 ; $i<count($file_array) ; $i++) {
+					$file_array_split = explode('.',$file_array[$i]);
+					if($file_array_split[0] == $items_id) {
+						unlink($img_dir.$file_array[$i]);
+						break;
+					}
+				}
+				if($this->upload->do_upload()) {
+					$data = array(
+					'id'				=> $items_id,
+					'item_content'		=> $item_content,
+					'on_off_sale' 		=> $on_off_sale,
+					'fulltext' 			=> $item_fulltext,);
+					
+					$file_info = $this->upload->data();
+					$file_info['image_type'];
+					$file_content = read_file($img_tmp_dir.$file_info['file_name']);
+					
+					if (write_file($img_dir.$items_id.'.'.$file_info['image_type'], $file_content)){
+						$this->items_information->Update($items_id, $data);
+						$this->Parames->redirect($this->Url.'shelvesList/');
+					} else {
+						$this->parames['error'] = $this->lang->line('commodity_doupload_ErrorMsg');
+					}
+					
+				} else {
+					$this->parames['error'] = $this->lang->line('commodity_doupload_ErrorMsg');
+				}
+			} else {
+				$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
 			}
 		}
 	}	
