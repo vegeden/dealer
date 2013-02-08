@@ -66,5 +66,5 @@
 	
 	/*	shelves  */
 	$lang['commodity_shelves_ErrorMsg']				= '設定失敗';
-	$lang['commodity_shelves_sale_status']			= '上架';
-	$lang['commodity_shelves_stop_status']			= '下架';
+	$lang['commodity_shelves_status0']				= '下架';
+	$lang['commodity_shelves_status1']				= '上架';

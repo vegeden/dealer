@@ -27,7 +27,7 @@
 			<dd>
 				<div class="fileupload fileupload-new" data-provides="fileupload">
 					<?php if($img_exist){ ?> 
-					<div class="fileupload-new thumbnail" style="width: <?php echo $img_wh[0]; ?>px; height: <?php echo $img_wh[1]; ?>px;"><img src="<?php echo '/dealer/statics/img_commodity/main/'.$img_name;?>" /></div>
+					<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="<?php echo '/dealer/statics/img_commodity/main/'.$img_name;?>" /></div>
 					<?php } else {?>
 					<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
 					<?php } ?>
