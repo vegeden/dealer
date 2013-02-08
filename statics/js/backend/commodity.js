@@ -104,6 +104,24 @@ $(function(){
 		} 
 	});
 
+	/*		shelvesList/		*/
+	$('table').on('click','div.lists ul.dropdown-menu li a', function(){
+		var opt 	= $(this);
+		var href 	= opt.attr('href');
+		var split 	= href.split(',');
+		var st 		= split[0];
+		var i 		= split[1];
+		
+		$.post('/dealer/backend/commodity/ajaxSetShelvesStatus/',{
+					'st' : st,
+					'i' : i
+				},function(request) {	
+					var clickName = opt.find('span').html();//opt.remove();
+					opt.parent().parent().parent().find('a.status').html(clickName).parent().parent().parent().remove();
+				});
+		return false;
+	});
+	
 	/*	shelvesEditAdd.php	*/
 	CKEDITOR.replace( 'item_fulltext',
     {

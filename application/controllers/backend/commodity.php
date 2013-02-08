@@ -759,6 +759,15 @@ class Commodity extends CI_Controller {
 			}
 		}
 	}	
+	public function ajaxSetShelvesStatus() {
+		$this->Parames->init('nav_commodity_ajaxSetShelvesStatus');
+		$id 	= $this->input->post('i', TRUE );
+		$status = $this->input->post('st', TRUE );
+		if( strlen($id) != 0 && strlen($status) != 0 ) {
+			$data = array('on_off_sale' => $status);
+			$this->items_information->Update($id, $data);
+		}
+	}	
 	public function ajaxGetLang() {
 		$this->Parames->init('nav_commodity_ajaxGetLang');
 		echo json_encode($this->lang);

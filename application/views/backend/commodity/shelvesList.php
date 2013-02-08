@@ -37,6 +37,8 @@
 						<li><a href="0,<?php echo $row->id;?>"><i class="icon-arrow-down"></i> <span><?php echo $lang->line('commodity_shelves_status0'); ?></span></a></li>
 						<?php } else {?>
 						<li><a href="1,<?php echo $row->id;?>"><i class="icon-arrow-up"></i> <span><?php echo $lang->line('commodity_shelves_status1'); ?></span></a></li>
+						<li class="divider"></li>
+						<li><a href="/dealer/backend/commodity/shelvesEditAdd/<?php echo $row->id;?>/"><i class="icon-pencil"></i> <?php echo $lang->line('edit'); ?></li>
 						<?php } ?>
 					</ul>
 				</div>
