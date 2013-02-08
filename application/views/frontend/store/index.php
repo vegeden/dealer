@@ -13,7 +13,6 @@
 				<h3 class="price"><?php echo $lang->line('store_dollar_sign'); ?> <?php echo $row->sell_price;?></h3>
 			</a>
 		</div>
-	
 	<?php 	if($key % $viewCount == $viewCount-1) { ?>
 	</div>
 	<?php 

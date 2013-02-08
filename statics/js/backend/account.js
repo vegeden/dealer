@@ -84,23 +84,19 @@ $(function(){
 	$('table').on('click','div.lists ul.dropdown-menu li a', function(){
 		var opt 	= $(this);
 		var href 	= opt.attr('href');
-		if(href.legnth == 1) {
-			var split 	= href.split(',');
-			var st 		= split[0];
-			var i 		= split[1];
-			
-			
-			 $.post('/dealer/backend/account/ajaxSetUserStatus/',{
-						'st' : st,
-						'i' : i
-					},function(request) {	
-						var clickName = opt.find('span').html();
-						opt.parent().parent().parent().find('a.status').html(clickName).parent().trigger('focus').trigger('click');
-					});
-			return false;
-		}
+		var split 	= href.split(',');
+		var st 		= split[0];
+		var i 		= split[1];
 		
 		
+		 $.post('/dealer/backend/account/ajaxSetUserStatus/',{
+					'st' : st,
+					'i' : i
+				},function(request) {	
+					var clickName = opt.find('span').html();
+					opt.parent().parent().parent().find('a.status').html(clickName).parent().trigger('focus').trigger('click');
+				});
+		return false;
 	});
 	
 	$("input#search_bar").search_easeOutQuart();

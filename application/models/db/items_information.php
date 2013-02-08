@@ -50,6 +50,13 @@ class Items_information extends CI_Model {
 		foreach($query->result() as $row) {
 			return $row;
 		}
+	}
+	
+	public function SWheres($data) {
+		foreach($data as $key => $val) {
+			$this->db->or_where('id', $key);
+		}	
+		return $this->db->get($this->tab);
 	}	
 	
 	public function SelectItem() {

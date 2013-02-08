@@ -11,30 +11,38 @@ class Cart extends CI_Controller {
 		$this->UserInfo = $this->Parames->getUserInfo();
 		
 		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
-	
+		
+		$this->load->model('db/items_information');
     }	
 	
 	public function index() {
 		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_Cart_index');
+		$this->Parames->init('nav_cart_index');
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
-		$this->parames['cart'] = $this->session->get('cart');
+		$cart = $this->session->get('cart');
+		$this->parames['cart'] = $cart;
+		$this->parames['items_information'] = $this->items_information->SWheres($cart);
+		
 		$this->load->view('index', $this->parames);
 	}
 	
 	public function add() {
-		$id	= $this->input->post('i', TRUE);
+		$id		= $this->input->post('i', TRUE);
+		$count 	= $this->input->post('c', TRUE);
+
 		if(!empty($id)) {
 			if(!$this->session->get('cart')) {
-				$cart = array();
-				$cart['id'] = array($id);
-				
+				$cart[$id] = 1;
 			} else {
 				$cart = $this->session->get('cart');
-				if(!in_array($id, $cart['id'])) {
-					array_push($cart['id'], $id);
+				if(isset($cart[$id]) && !empty($count)) {
+					$cart[$id] = $count;
+				} else if(isset($cart[$id])) {
+					$cart[$id]++;
+				} else {
+					$cart[$id] = 1;
 				}
 			}
 			$this->session->set('cart', $cart);
@@ -45,7 +53,7 @@ class Cart extends CI_Controller {
 		$id	= $this->input->post('i', TRUE);
 		if(!empty($id)) {
 			$cart = $this->session->get('cart');
-			array_splice($cart['id'], array_search($id, $cart['id']), 1);
+			unset($cart[$id]);
 			$this->session->set('cart', $cart);
 		}
 	}
