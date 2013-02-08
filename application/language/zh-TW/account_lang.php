@@ -22,7 +22,7 @@
 	
 	/*	level Add */
 	$lang['account_levelAdd_myself']			= '自己';
-	$lang['account_levelAdd_ErrorMsg']			= '類別重複';
+	$lang['account_levelAdd_ErrorMsg']			= '等級名稱重複';
 	
 	
 	/*	level Lists */

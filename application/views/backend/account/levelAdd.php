@@ -3,7 +3,7 @@
 	<div class="alert alert-error">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
 		<h4><?php echo $lang->line('account_levelAdd_Error'); ?></h4>
-		<?php echo $lang->line('account_levelAdd_ErrorMsg'); ?>
+		<?php echo $error; ?>
 	</div>
 	<?php } ?>
 	<form action="" method="POST">
@@ -28,7 +28,7 @@
 		</dl>
 		<div class="row">
 			<div class="span3 offset3">
-				<button type="submit" class="btn btn-primary"><?php echo $lang->line('add'); ?></button>
+				<button type="submit" class="btn btn-primary" name="submit" value="submit"><?php echo $lang->line('add'); ?></button>
 				<button type="submit" class="btn offset2" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
 			</div>
 		</div>

@@ -145,11 +145,14 @@ class Account extends CI_Controller {
 			$this->Parames->redirect($this->Url.'levelList/');
 		}
 		
+		$submit 	= $this->input->post('submit', TRUE );
 		$typeName 	= $this->input->post('typeName', TRUE );
 		$upper		= $this->input->post('upper', TRUE );
-		if(isset($typeName) && isset($upper)) {
-			if(strlen($typeName) != 0 && strlen($upper) != 0)
+		
+		if(!empty($submit)) {
+			if(!empty($typeName) && !empty($upper) ) {
 				if($this->user_type->verify($typeName) || strlen($id) != 0) {
+					
 					$data = array('type_name' =>$typeName, 'upper' =>$upper);
 					
 					if($upper == 1) {
@@ -167,8 +170,11 @@ class Account extends CI_Controller {
 					}
 					$this->Parames->redirect($this->Url.'levelList/');
 				} else {
-					$this->parames['error'] = "";
+					$this->parames['error'] = $this->lang->line('account_levelAdd_ErrorMsg');
 				}
+			} else {
+				$this->parames['error'] = $this->lang->line('account_error_notfull');
+			}
 		}
 	}
 	
