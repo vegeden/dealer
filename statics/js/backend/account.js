@@ -85,18 +85,19 @@ $(function(){
 		var opt 	= $(this);
 		var href 	= opt.attr('href');
 		var split 	= href.split(',');
-		var st 		= split[0];
-		var i 		= split[1];
-		
-		
-		 $.post('/dealer/backend/account/ajaxSetUserStatus/',{
-					'st' : st,
-					'i' : i
-				},function(request) {	
-					var clickName = opt.find('span').html();
-					opt.parent().parent().parent().find('a.status').html(clickName).parent().trigger('focus').trigger('click');
-				});
-		return false;
+		if(split.length == 2) {
+			var st 		= split[0];
+			var i 		= split[1];
+			
+			 $.post('/dealer/backend/account/ajaxSetUserStatus/',{
+						'st' : st,
+						'i' : i
+					},function(request) {	
+						var clickName = opt.find('span').html();
+						opt.parent().parent().parent().find('a.status').html(clickName).parent().trigger('focus').trigger('click');
+					});
+			return false;
+		}
 	});
 	
 	$("input#search_bar").search_easeOutQuart();
