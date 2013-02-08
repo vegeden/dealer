@@ -26,8 +26,8 @@
 			<dt><?php echo $lang->line('commodity_item_image'); ?></dt>
 			<dd>
 				<div class="fileupload fileupload-new" data-provides="fileupload">
-					<?php if(FALSE){ ?> 
-					<div class="fileupload-new thumbnail" style="width: <?php echo '800';?>px; height: <?php echo 600;?>px;"><img src="<?php echo './statics/img_commodity/12.png';?>" /></div>
+					<?php if($img_exist){ ?> 
+					<div class="fileupload-new thumbnail" style="width: <?php echo $img_wh[0]; ?>px; height: <?php echo $img_wh[1]; ?>px;"><img src="<?php echo '/dealer/statics/img_commodity/main/'.$img_name;?>" /></div>
 					<?php } else {?>
 					<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
 					<?php } ?>
@@ -42,7 +42,6 @@
 			<dd><textarea name="item_content" rows="5"><?php echo $itemList->item_content;?></textarea></dd>	
 			<dt><?php echo $lang->line('commodity_item_fulltext'); ?></dt>
 			<dd><textarea name="item_fulltext" rows="10"><?php echo $itemList -> fulltext;?></textarea></dd>
-			
 		</dl>
 		<div class="row">
 			<div class="span3 offset3">

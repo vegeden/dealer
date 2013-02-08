@@ -426,8 +426,17 @@ class Commodity extends CI_Controller {
 		/*	-------------------------------------------	*/
 		
 		$this->parames['itemList']		  = $this->items_information->SWhere($items_id);
-		// $this->parames['item_image_info'] = explode(',',$this->parames['itemList']->item_image);
-		
+		$this->parames['img_exist']		  = FALSE;
+		$file_array = get_filenames('./statics/img_commodity/main/');
+		for($i=0 ; $i<count($file_array) ; $i++) {
+			$file_array_split = explode('.',$file_array[$i]);
+			if($file_array_split[0] == $items_id) {
+				$this->parames['img_exist']	= TRUE;
+				$this->parames['img_name']  = $file_array[$i];
+				$this->parames['img_wh'] = getimagesize('./statics/img_commodity/main/'.$file_array[$i]);
+				break;
+			}
+		}
 		$on_off_sale = $this->parames['itemList']->on_off_sale;	
 		$this->onshelvesEditAdd($items_id);
 		$this->load->view('backend', $this->parames);
@@ -694,12 +703,13 @@ class Commodity extends CI_Controller {
 	
 	/* onshelvesEditAdd on */
 	private function onshelvesEditAdd($items_id) {
-	
-		$config['upload_path']	 = './statics/img_commodity/tmp/';
+		$img_dir 				 = './statics/img_commodity/main/';
+		$img_tmp_dir             = './statics/img_commodity/tmp/' ;
+		$config['upload_path']	 = $img_tmp_dir;
 		$config['allowed_types'] = 'gif|jpg|jpeg|png';
-        $config['max_size'] = '0';
-        $config['max_width'] = '0';
-        $config['max_height'] = '0';
+        $config['max_size'] 	 = '0';
+        $config['max_width'] 	 = '0';
+        $config['max_height'] 	 = '0';
 		$this->load->library('upload',$config);
 		$this->upload->initialize($config);
 		
@@ -710,27 +720,37 @@ class Commodity extends CI_Controller {
 		
 		$item_content	  = $this->input->post('item_content', TRUE );
 		$item_fulltext	  = $this->input->post('item_fulltext', TRUE );
-		$on_off_sale 	  = $this->input->post('on_off_sale', TRUE );		
+		$on_off_sale 	  = $this->input->post('on_off_sale', TRUE );
+		$del_file_name 	  = '';
 		
 		if($this->input->post('add', TRUE ) == 'add') {
-			if(strlen($item_content) != 0 && strlen($item_fulltext) != 0)	{
+			if(strlen($_FILES['userfile']['name']) != 0 && strlen($item_content) != 0 && strlen($item_fulltext) != 0)	{
+				$file_array = get_filenames($img_dir);
+				for($i=0 ; $i<count($file_array) ; $i++) {
+					$file_array_split = explode('.',$file_array[$i]);
+					if($file_array_split[0] == $items_id) {
+						unlink($img_dir.$file_array[$i]);
+						break;
+					}
+				}
 				if($this->upload->do_upload()) {
-				$data = array(
-				'id'				=> $items_id,
-				'item_content'		=> $item_content,
-				'on_off_sale' 		=> $on_off_sale,
-				'fulltext' 			=> $item_fulltext,);
-				
-				$this->items_information->Update($items_id, $data);
-				
-				$file_info = $this->upload->data();
-				$file_info['image_type'];
-				$file_content = read_file('./statics/img_commodity/'.$file_info['file_name']);
-					if (write_file('./statics/img_commodity/'.$items_id.'.'.$file_info['image_type'], $file_content)){
+					$data = array(
+					'id'				=> $items_id,
+					'item_content'		=> $item_content,
+					'on_off_sale' 		=> $on_off_sale,
+					'fulltext' 			=> $item_fulltext,);
+					
+					$file_info = $this->upload->data();
+					$file_info['image_type'];
+					$file_content = read_file($img_tmp_dir.$file_info['file_name']);
+					
+					if (write_file($img_dir.$items_id.'.'.$file_info['image_type'], $file_content)){
+						$this->items_information->Update($items_id, $data);
 						$this->Parames->redirect($this->Url.'shelvesList/');
 					} else {
 						$this->parames['error'] = $this->lang->line('commodity_doupload_ErrorMsg');
 					}
+					
 				} else {
 					$this->parames['error'] = $this->lang->line('commodity_doupload_ErrorMsg');
 				}
