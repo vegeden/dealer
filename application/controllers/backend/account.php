@@ -153,9 +153,9 @@ class Account extends CI_Controller {
 					$data = array('type_name' =>$typeName, 'upper' =>$upper);
 					
 					if($upper == 1) {
-						$data['haveUpper '] = 0;
+						$data['haveUpper'] = 0;
 					} else {
-						$data['haveUpper '] = 1;
+						$data['haveUpper'] = 1;
 					}
 					
 					if(strlen($id)==0) {

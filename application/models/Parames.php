@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Parames extends CI_Model {
-	private $parame, $UserInfo, $page;
+	private $parame, $UserInfo, $page, $InterfaceStatus;
 	public function __construct() {
 		parent::__construct();
 		
@@ -17,8 +17,12 @@ class Parames extends CI_Model {
 		/**		load Access Control List 		**/
 		$this->load->model('db/AccessControlList');
 		
-		/**		load SendEmail			**/
-		$this->load->model('Mail');
+		$this->load->helper('url');
+		if(preg_match('/backend/', uri_string())) {
+			$this->InterfaceStatus = 0;
+		} else {
+			$this->InterfaceStatus = 1;
+		}
 	}
 	
 	public function init($nav_page) {
@@ -31,9 +35,8 @@ class Parames extends CI_Model {
 		$this->loadlange($navSplit[1]);
 		$ArticlePage	= $navSplit[1].'\\'.$navSplit[2].'.php';
 		
-		$this->verifyFirstTime();
 		/** verify ACL	**/
-		// $this->verifyPage($nav_page);
+		if($this->InterfaceStatus == 0) $this->verifyPage($nav_page);
 		
 		$this->parame['UserInfo']		= $this->UserInfo;
 		$this->parame['js']				= $this->loadJS($navSplit[1]);
@@ -51,7 +54,15 @@ class Parames extends CI_Model {
 	
 	private function loadJS($fileName) {
 		$result = '';
-		$dir = "statics/js/backend/"; 
+		$dir = "statics/js/"; 
+		switch($this->InterfaceStatus) {
+			case 0:
+				$dir .= 'backend/';
+				break;
+			case 1:
+				$dir .= 'frontend/';
+				break;
+		}
 		
 		// Open a known directory, and proceed to read its contents 
 		if (is_dir($dir)) { 
@@ -77,7 +88,6 @@ class Parames extends CI_Model {
 		if( !$this->UserInfo && $_SERVER["REQUEST_URI"] != '/dealer/')
 			// $this->redirect('/dealer/');
 			show_404();
-		
 	}
 	
 	private function verifyPage($nav) {
@@ -86,13 +96,7 @@ class Parames extends CI_Model {
 			show_404();
 		}
 	}
-	
-	private function verifyFirstTime() {
-		if($this->UserInfo->user_status == 0 && !($this->page[1] == 'account' && $this->page[2] == 'editInfo') ) {
-			$this->redirect('/dealer/account/editInfo/');
-		}
-	}
-	
+		
 	public function redirect($url) {
 		header("Location:$url");
 		exit;
@@ -108,6 +112,9 @@ class Parames extends CI_Model {
 	}
 	
 	public function sendEMail($Type, $EmailInfo) {
+		/**		load SendEmail			**/
+		$this->load->model('Mail');
+		
 		// Email Notice
 		$Message = array(	'account' 	=> $this->UserInfo->account, 
 							'passwd' 	=> $newpassword

@@ -1,0 +1,53 @@
+body {
+}
+body, button{
+	font-family:Arial,"微軟正黑體", "Microsoft JhengHei",sans-serif;
+}
+footer {
+	text-align : center;
+}
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+dd { position:relative;padding-bottom:10px; }
+/*
+dt { padding-top:5px; }
+*/
+dt input[type="text"]{ padding:10px; }
+td.items { width : 55px;}
+td.option { width : 50px;}
+td.invoice { width : 25px;}
+td.justedit { width : 25px;}
+ul.nav-pills li a { background-color : #eee; }
+div.input-append span.add-on { padding-left : 10px;padding-right : 10px;}
+hr { border:0; height:1px; background-color:#d4d4d4; color:#d4d4d4	/* IE6 */}
+
+.center { text-align : center;}
+.left { text-align : left;}
+.right { text-align : right;}
+a.decorationNone { text-decoration: none;}
+
+/** 	store	**/
+.price {color : red;}
+article#store div.row .span2 { padding:30px 0;}
+
+/** 	cart	**/
+article#cart .hr{border-top: 2px dashed #ccc; padding-top:50px;}
+article#cart dl {height: 30px;}
+article#cart div.item { padding : 0 20px;}
+article#cart .padding-LeftRight {margin:0 20px}
+article#cart li.media {padding-left:30px; padding-right:30px}
+article#cart div.productInfo{border-bottom: 1px solid #ccc;}
+article#cart div.productInfo, article#cart div.productNum{padding: 10px 10px 0 0;}
+article#cart h4{padding-top: 10px;}
+article#cart span.one_price {}
+article#cart span.num {padding-left: 30px;}
+article#cart span.num  input[type="number"]{ width: 50px; margin-top: 7px;}
+article#cart span.total_price {padding-left: 20px;}
+article#cart span.haveNumb {padding-right:30px;}
+article#cart .row {padding-right:20px;}
+article#cart .row dl {border-top: 3px solid #ccc; padding-top:15px;}
+article#cart .row dt {width: auto;}
+article#cart .row dd {margin-left: 90px;font-size: 20px;}
+
