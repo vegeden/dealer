@@ -33,7 +33,7 @@ class Parames extends CI_Model {
 		$this->page 	= $navSplit;
 		
 		$this->loadlange($navSplit[1]);
-		$ArticlePage	= $navSplit[1].'\\'.$navSplit[2].'.php';
+		$ArticlePage	= $navSplit[1].'/'.$navSplit[2].'.php';
 		
 		/** verify ACL	**/
 		if($this->InterfaceStatus == 0) $this->verifyPage($nav_page);
