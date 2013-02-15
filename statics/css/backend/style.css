@@ -38,5 +38,6 @@ article#itemAdd select, article#itemEdit select{width : 225px;}
 /* 		 	shelvesEditAdd 	 	  */
 article#shelvesEditAdd textarea {width:98%;}
 
+.display {display:none;}
 
 

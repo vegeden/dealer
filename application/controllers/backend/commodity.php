@@ -578,7 +578,7 @@ class Commodity extends CI_Controller {
 		$area_class			   = $this->input->post('area_class', TRUE );
 		$category_second_class = $this->input->post('category_second_class', TRUE );
 		$freight_price		   = $this->input->post('freight_price', TRUE );
-		$special_commodity_status		   = 0;
+		$special_commodity_status = 0;
 		
 		if($this->input->post('add', TRUE ) == 'add' || $this->input->post('edit', TRUE ) == 'edit') {
 			if($this->input->post('special_commodity_status', TRUE )) {
