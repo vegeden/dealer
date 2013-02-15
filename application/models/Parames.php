@@ -15,7 +15,7 @@ class Parames extends CI_Model {
 		$this->parame 	= array( 'lang' => $this->lang );
 		
 		/**		load Access Control List 		**/
-		$this->load->model('db/AccessControlList');
+		$this->load->model('db/access_control_list');
 		
 		$this->load->helper('url');
 		if(preg_match('/backend/', uri_string())) {
@@ -40,7 +40,7 @@ class Parames extends CI_Model {
 		
 		$this->parame['UserInfo']		= $this->UserInfo;
 		$this->parame['js']				= $this->loadJS($navSplit[1]);
-		$this->parame['nav'] 			= $this->AccessControlList->getNav();
+		$this->parame['nav'] 			= $this->access_control_list->getNav();
 		$this->parame['nav_page'] 		= $nav_page;
 		$this->parame['topName'] 		= $topName;
 		$this->parame['ArticlePage'] 	= $ArticlePage;
@@ -91,7 +91,7 @@ class Parames extends CI_Model {
 	}
 	
 	private function verifyPage($nav) {
-		$verifyPage = $this->AccessControlList->verifyPage($this->UserInfo->type_id, $nav);
+		$verifyPage = $this->access_control_list->verifyPage($this->UserInfo->type_id, $nav);
 		if(!$verifyPage) {
 			show_404();
 		}

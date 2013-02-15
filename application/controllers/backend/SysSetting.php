@@ -12,7 +12,7 @@ class SysSetting extends CI_Controller {
 		
 		$this->Url = '/'.$this->lang->line('folder_name').'/backend/'.get_class($this).'/';
 		
-		$this->load->model('db/SysConfig');
+		$this->load->model('db/sys_config');
 		
     }	
 	
@@ -23,7 +23,7 @@ class SysSetting extends CI_Controller {
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
 		
-		$this->parames['SysConfig'] = $this->SysConfig->Select();
+		$this->parames['SysConfig'] = $this->sys_config->Select();
 		
 		$this->load->view('backend', $this->parames);
 	}
@@ -48,7 +48,7 @@ class SysSetting extends CI_Controller {
 		/*	-------------------------------------------	*/
 		
 		$this->onSysConfigEdit($id);
-		$this->parames['SysConfig'] = $this->SysConfig->SWhere($id);
+		$this->parames['SysConfig'] = $this->sys_config->SWhere($id);
 		
 		
 		$this->load->view('backend', $this->parames);
@@ -84,7 +84,7 @@ class SysSetting extends CI_Controller {
 						'directions'	=> $directions
 					);
 			
-			$this->SysConfig->Add($data);
+			$this->sys_config->Add($data);
 			$this->Parames->redirect($this->Url);
 		}
 		
@@ -103,7 +103,7 @@ class SysSetting extends CI_Controller {
 						'directions'	=> $directions
 					);
 					
-			$this->SysConfig->Update($id, $data);
+			$this->sys_config->Update($id, $data);
 			$this->Parames->redirect($this->Url);
 		}
 		
@@ -114,7 +114,7 @@ class SysSetting extends CI_Controller {
 		
 		$id = $this->input->post('uti', TRUE );
 		if(!empty($id)) {
-			$this->SysConfig->Del($id);
+			$this->sys_config->Del($id);
 		}
 	}
 }
