@@ -27,36 +27,19 @@
 		<?php } ?>
 	</head>
 	<body>
-		<?php require_once 'frontend/_header.php';?>
+		<?php require_once 'frontend/_header.php';?><a href="/dealer/backend/account/lists/" >backend</a>
 		<?php require_once 'frontend/_nav.php';?>
-		<!--
-		<div class="navbar navbar-inverse">
-			<div class="navbar-inner">
-				<div class="container">
-				
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</a>
-
-					<a class="brand" href="#">Project name</a>
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<li class="active"><a href="/<?php echo $lang->line('folder_name');?>/store/">Store</a></li>
-							<li><a href="/<?php echo $lang->line('folder_name');?>/cart/">Cart</a></li>
-							<li><a href="/<?php echo $lang->line('folder_name');?>/checkout/">Checkout</a></li>
-						</ul>
-						<ul class="nav pull-right">
-							<li><a href="/dealer/backend/account/lists/">backend</a></li>
-							<li><a href="/<?php echo $lang->line('folder_name');?>/home/logout/">logout</a></li>
-						</ul>
-					</div>
-
-				</div>
-			</div>
-		</div>
-		-->
-		<?php require_once 'frontend/'.$ArticlePage;?>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div id="menu" class="pull-left">
+					<?php require_once 'frontend/_menu.php';?>
+				</div><!--/span-->
+				<div class="pull-right" id="content">
+					<?php require_once 'frontend/'.$ArticlePage;?>
+				</div><!--/span-->
+			</div><!--/row-->
+			<hr>
+			<?php require_once 'frontend/_footer.php';?>
+		</div><!--/.fluid-container-->
 	</body>
 </html>
