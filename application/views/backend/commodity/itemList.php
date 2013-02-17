@@ -4,11 +4,16 @@
 			<a href="<?php echo $url.'../itemAdd/';?>"><?php echo $lang->line('nav_commodity_itemAdd');?></a>
 		</li>
 	</ul>
+	<div class="input-append pull-right">
+		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('account_name');?>">
+		<span class="add-on"><?php echo $lang->line('search');?></span>
+	</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info">
 			<td class="items"></td>
 			<td class="invoice"></td>
 			<td><?php echo $lang->line('commodity_item_name'); ?></td>
+			<td><?php echo $lang->line('commodity_item_barcode'); ?></td>
 			<td><?php echo $lang->line('commodity_item_number'); ?></td>
 			<td><?php echo $lang->line('commodity_item_buy_price'); ?></td>
 			<td><?php echo $lang->line('commodity_item_sell_price'); ?></td>
@@ -39,6 +44,7 @@
 				<a href="/dealer/backend/commodity/invoicingEditAdd/<?php echo $row->id;?>/" rel="tooltip" title="<?php echo $lang->line('commodity_invoicing_static1').$lang->line('commodity_invoicing_static0');?>"><img src="/dealer/statics/img/ic_invoice_24.png" width="24" height="24"/></a>
 			</td>			
 			<td><?php echo $row->item_name;?></td>
+			<td><?php echo $row->item_barcode;?></td>
 			<td><?php echo $row->item_number;?></td>
 			<td><?php echo $row->buy_price;?></td>
 			<td><?php echo $row->sell_price;?></td>

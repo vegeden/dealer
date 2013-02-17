@@ -96,14 +96,26 @@ $(function(){
 	});
 	$("input#search_bar").search_easeOutQuart();
 	
-	/*	itemEdit itemAdd	*/
-	$('input:checkbox').change(function() {
-		if($(this).is(':checked')){
-			$('#freight_price_dt').show();
-			$('#freight_price_dd').show();
+	/*	itemEdit */
+	$('#checkbox_Item_Edit').change(function() {
+		if($('input:checkbox').is(':checked')){
+			$('#fp_Edit_dt').show();
+			$('#fp_Edit_dd').show();
 		} else {
-			$('#freight_price_dt').hide();
-			$('#freight_price_dd').hide();
+			$('#fp_Edit_dt').hide();
+			$('#fp_Edit_dd').hide();
+		}
+	});
+	/*	itemAdd */
+	$("#fp_Add_dt").hide();
+	$("#fp_Add_dd").hide();
+	$('#checkbox_Item_Add').change(function() {
+		if($('input:checkbox').is(':checked')){
+			$('#fp_Add_dt').show();
+			$('#fp_Add_dd').show();
+		} else {
+			$('#fp_Add_dt').hide();
+			$('#fp_Add_dd').hide();
 		}
 	});
 	

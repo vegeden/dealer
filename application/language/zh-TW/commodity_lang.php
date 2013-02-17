@@ -45,7 +45,8 @@
 	$lang['commodity_itemAdd_ErrorMsg']				= '商品重複';
 	$lang['commodity_itemDel_ErrorMsg']				= '商品刪除失敗';	
 	$lang['commodity_item_name']					= '商品名稱';
-	$lang['commodity_item_number']					= '銷售數量';
+	$lang['commodity_item_barcode']					= '商品條碼';
+	$lang['commodity_item_number']					= '商品編號';
 	$lang['commodity_item_buy_price']				= '進價';
 	$lang['commodity_item_sell_price']				= '售價';
 	$lang['commodity_item_safe_stock']				= '安全庫存量';

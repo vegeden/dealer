@@ -299,7 +299,7 @@ class Commodity extends CI_Controller {
 		$this->parames 		  = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
-		
+		$this->parames['Special_Commodity_Status'] = 0;
 		$this->parames['BreadList']          = $this->items_bread->SelectBread();
 		$this->parames['AreaList']           = $this->items_area->SelectArea();
 		$this->parames['CategorySecondList'] = $this->items_category_second->SelectCategorySecond();
@@ -568,6 +568,7 @@ class Commodity extends CI_Controller {
 		}
 		
 		$item_name			   = $this->input->post('item_name', TRUE );
+		$item_barcode		   = $this->input->post('item_barcode', TRUE );
 		$item_number		   = $this->input->post('item_number', TRUE );
 		$buy_price			   = $this->input->post('buy_price', TRUE );
 		$sell_price			   = $this->input->post('sell_price', TRUE );
@@ -586,11 +587,12 @@ class Commodity extends CI_Controller {
 			}
 
 			if(strlen($id)==0) {
-				if(strlen($item_name) != 0 && strlen($item_number) !=0 && strlen($buy_price) !=0 && strlen($sell_price) !=0  
+				if(strlen($item_name) != 0 && strlen($item_barcode) != 0 && strlen($item_number) !=0 && strlen($buy_price) !=0 && strlen($sell_price) !=0  
 				&& strlen($safe_stock) !=0 && strlen($bread_class) !=0 && strlen($stock_quantity) && strlen($item_bonus) !=0
 				&& strlen($area_class) !=0 && strlen($category_second_class) !=0 && strlen($freight_price) !=0) {
 					$data = array(
 					'item_name'						=> $item_name,
+					'item_barcode'						=> $item_barcode,
 					'item_number'					=> $item_number,
 					'buy_price'						=> $buy_price,
 					'sell_price'					=> $sell_price,
@@ -612,11 +614,12 @@ class Commodity extends CI_Controller {
 					$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
 				}
 			} else {
-				if(strlen($item_name) !=0 && strlen($item_number) !=0 && strlen($buy_price) !=0 && strlen($sell_price) !=0 
+				if(strlen($item_name) !=0 && strlen($item_barcode) != 0 && strlen($item_number) !=0 && strlen($buy_price) !=0 && strlen($sell_price) !=0 
 				&& strlen($safe_stock) !=0 && strlen($bread_class) !=0 && strlen($item_bonus) !=0 && strlen($area_class) !=0 
 				&& strlen($category_second_class) !=0 && strlen($freight_price) !=0) {
 					$data = array(
 					'item_name'				   => $item_name,
+					'item_barcode'			   => $item_barcode,
 					'item_number'			   => $item_number,
 					'buy_price'				   => $buy_price,
 					'sell_price'			   => $sell_price,

@@ -11,7 +11,7 @@ class Items_information extends CI_Model {
 	public function Select($limit=array(0,50)) {
 		$this->db->limit($limit[1], $limit[0]);
 		
-		$this->db->select('item_A.id AS id, item_name, item_number, buy_price, sell_price,safe_stock,
+		$this->db->select('item_A.id AS id, item_name, item_barcode, item_number, buy_price, sell_price,safe_stock,
 		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
 		freight_price,special_commodity_status, on_off_sale, 
 		(SELECT (stock_quantity-safe_stock) FROM '.$this->tab.' AS item_B WHERE item_A.id = item_B.id) AS warn_stock');
@@ -30,7 +30,7 @@ class Items_information extends CI_Model {
 	public function SelectShelves($limit=array(0,50),$status) {
 		$this->db->limit($limit[1], $limit[0]);
 		
-		$this->db->select($this->tab.'.id AS id, item_name, item_number, buy_price, sell_price,safe_stock,
+		$this->db->select($this->tab.'.id AS id, item_name, item_barcode, item_number, buy_price, sell_price,safe_stock,
 		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
 		freight_price,special_commodity_status, on_off_sale, fulltext');
 		
@@ -84,6 +84,7 @@ class Items_information extends CI_Model {
 			$this->db->from('items_category_second,items_information');
 			$this->db->join('sale_item', 'items_information.id = sale_item.item_id', 'left');
 			$this->db->where('on_off_sale = 1');
+			$this->db->where('items_information.area_id != 17');
 			$this->db->where('items_category_second.category' , $category_id);
 			$this->db->where('items_category_second.id = items_information.category_second_id');
 			$this->db->where('items_category_second.id',$category_second_id);
@@ -95,6 +96,7 @@ class Items_information extends CI_Model {
 		if($store_level == 2){
 			$this->db->select('items_information.id AS id,item_name,sell_price');
 			$this->db->where('on_off_sale = 1');
+			$this->db->where('items_information.area_id != 17');
 			$this->db->where('items_category.id',$category_id);
 			$this->db->where('items_category_second.id ',$category_second_id);
 			$this->db->where('items_category_second.category = items_category.id');
@@ -102,6 +104,11 @@ class Items_information extends CI_Model {
 			$this->db->from($this->tab.', items_category_second, items_category');
 		}
 		return $this->db->get();
+	}
+	
+	public function SelectMostly() {
+		$this->db->where('area_id = 17');
+		return $this->db->get($this->tab);
 	}
 	
 	public function verify( $item_name ) {

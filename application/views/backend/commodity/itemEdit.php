@@ -10,8 +10,10 @@
 		<dl class="dl-horizontal dlform level">
 			<dt><?php echo $lang->line('commodity_item_name'); ?></dt>
 			<dd><input type="text" placeholder="" class="input-large" name="item_name" value="<?php echo $query->item_name;?>"></dd>
+			<dt><?php echo $lang->line('commodity_item_barcode'); ?></dt>
+			<dd><input type="text" placeholder="" class="input-large" name="item_barcode" value="<?php echo $query->item_barcode;?>"></dd>
 			<dt><?php echo $lang->line('commodity_item_number'); ?></dt>
-			<dd><input type="number" placeholder="" class="input-large" name="item_number" min="1" value="<?php echo $query->item_number;?>"></dd>	
+			<dd><input type="text" placeholder="" class="input-large" name="item_number" value="<?php echo $query->item_number;?>"></dd>	
 			<dt><?php echo $lang->line('commodity_item_buy_price'); ?></dt>					
 			<dd><input type="number" placeholder="" class="input-large" name="buy_price" min="0" value="<?php echo $query->buy_price;?>" ></dd>
 			<dt><?php echo $lang->line('commodity_item_sell_price'); ?></dt>					
@@ -55,7 +57,6 @@
 					<?php 
 						if($CategorySecondList->num_rows() > 0) {
 							foreach($CategorySecondList->result() as $row) {									
-								//if($row->id == $query->category_second_id) continue;
 					?>
 					<option value="<?php echo $row->id; ?>"  <?php if($query->category_second_id == $row->id) echo 'selected';?>><?php echo $row->category_second_name; ?></option>
 					<?php 
@@ -66,13 +67,13 @@
 			</dd>				
 			<dt><?php echo $lang->line('commodity_special_item'); ?></dt>
 			<dd>
-				<label class="checkbox">
+				<label id="checkbox_Item_Edit" class="checkbox">
 					<input type="checkbox" id="special_commodity_status" name="special_commodity_status" <?php if($query->special_commodity_status)echo 'checked';?>>
 					<?php echo $lang->line('commodity_special_explain'); ?>
 				</label>
 			</dd>
-			<dt id="freight_price_dt" class="<?php if(!$query->special_commodity_status) echo 'display'; ?>"><?php echo $lang->line('commodity_freight_price'); ?></dt>					
-			<dd id="freight_price_dd" class="<?php if(!$query->special_commodity_status) echo 'display'; ?>"><input type="number" placeholder="" id="freight_price" class="input-large" name="freight_price" min="0" value="<?php echo $query->freight_price;?>" ></dd>
+			<dt id="fp_Edit_dt" class="<?php if(!$query->special_commodity_status) echo 'display'; ?>"><?php echo $lang->line('commodity_freight_price'); ?></dt>					
+			<dd id="fp_Edit_dd" class="<?php if(!$query->special_commodity_status) echo 'display'; ?>"><input type="number" placeholder="" id="freight_price" class="input-large" name="freight_price" min="0" value="<?php echo $query->freight_price;?>" ></dd>
 		</dl>
 	
 		<div class="row">
