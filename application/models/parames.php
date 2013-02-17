@@ -22,6 +22,7 @@ class Parames extends CI_Model {
 			if(strlen(uri_string()) !=0) {
 				$this->InterfaceStatus = 1;
 				$this->lang->load('frontend','zh-TW');
+				$this->lang->load('menu','zh-TW');
 				$this->loadFrontendNav();
 			} else {
 				$this->lang->load('index','zh-TW');

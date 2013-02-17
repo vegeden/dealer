@@ -9,9 +9,9 @@
 				<div id="break"></div>
 				<div id="break-right">
 					<ul class="breadcrumb">
-						<li><a href="/<?php echo $lang->line('folder_name').'/home/logout/'; ?>"><?php echo $lang->line('UserInfo_logout'); ?></a> <span class="divider">|</span></li>
-						<li><a href="#"><?php echo $lang->line('UserInfo_Profile'); ?></a> <span class="divider">|</span></li>
-						<li><a href="/<?php echo $lang->line('folder_name').'/cart/'; ?>"><?php echo $lang->line('UserInfo_MyCart'); ?></a></li>
+						<li><a href="/<?php echo $lang->line('folder_name').'/profile/'; ?>"><?php echo $lang->line('UserInfo_Profile'); ?></a> <span class="divider">|</span></li>
+						<li><a href="/<?php echo $lang->line('folder_name').'/cart/'; ?>"><?php echo $lang->line('UserInfo_MyCart'); ?></a> <span class="divider">|</span></li>
+						<li><a href="/<?php echo $lang->line('folder_name').'/home/logout/'; ?>"><?php echo $lang->line('UserInfo_logout'); ?></a></li>
 					</ul>
 				</div>
 			</div>

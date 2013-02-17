@@ -1,6 +1,9 @@
 <?php
 	$lang['storedvalue_Error']					= 'Error!!';
 	
+	$lang['storedvalue_plus']					= '儲值金加值';
+	$lang['storedvalue_apply']					= '同意';
+	$lang['storedvalue_NotApply']				= '不同意';
 	$lang['storedvalue']						= '儲值';
 	$lang['storedvalue_price']					= '金額';
 	$lang['storedvalue_name']					= '姓名';
@@ -11,12 +14,12 @@
 	
 	/* apply */
 	$lang['storedvalue_method']					= '儲值方式';
-	$lang['storedvalue_method_ATM']				= 'ATM';
-	$lang['storedvalue_method_CreditCard']		= '信用卡';
-	
+	$lang['storedvalue_method_Remittance']		= $lang['storedvalue_status_1']		= '匯款';
+	$lang['storedvalue_method_ATM']				= $lang['storedvalue_status_2'] 	= 'ATM';
+	$lang['storedvalue_method_CreditCard']		= $lang['storedvalue_status_3']		= '信用卡';
 	
 	$lang['storedvalue_bank']					= '銀行';
-	$lang['storedvalue_bank_name']				= '花x銀行';
+	$lang['storedvalue_bank_name']				= '花花銀行';
 	$lang['storedvalue_bank_code']				= '銀行代碼';
 	$lang['storedvalue_bank_code_name']			= '999';
 	$lang['storedvalue_account']				= '帳戶';
@@ -25,6 +28,10 @@
 	$lang['storedvalue_ATM_bank_last5Num']		= '匯款帳號(末5碼)';
 	$lang['storedvalue_ATM_name']				= '姓名';
 	$lang['storedvalue_ATM_direction']			= '若已匯款請在底下輸入：';
+	
+	$lang['storedvalue_Error_last5Num']			= '請輸入匯款帳號(末5碼)';
+	$lang['storedvalue_Error_most500']			= '最低面額為500塊';
+	$lang['storedvalue_Error_message']			= '資料填寫不正確';
 	
 	/* CountLists */
 	$lang['storedvalue_status0']				= '未審核';

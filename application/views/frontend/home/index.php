@@ -1,0 +1,2 @@
+<article id="checkout">	
+</article>
