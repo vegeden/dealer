@@ -73,7 +73,6 @@ class Items_information extends CI_Model {
 	}
 	
 	public function SelectOnShell($category_id,$category_second_id,$store_level) {
-		// SELECT *,sum(sale_item.quantity) AS sale_item_sum FROM items_category_second,items_information LEFT JOIN sale_item ON items_information.id = sale_item.item_id WHERE on_off_sale = 1 AND items_category_second.category = 9 AND items_category_second.id = items_information.category_second_id GROUP BY items_information.id ORDER BY category_second_id ASC , sale_item_sum DESC 
 		if($store_level == 1) {
 			$this->db->select('items_information.id AS id,
 			items_category_second.category AS category_id,
@@ -92,7 +91,9 @@ class Items_information extends CI_Model {
 			$this->db->order_by("category_second_id", "ASC"); 
 			$this->db->order_by("sale_item_sum", "DESC");	
 			$this->db->limit(4);
-		} else {
+		}
+		if($store_level == 2){
+			$this->db->select('items_information.id AS id,item_name,sell_price');
 			$this->db->where('on_off_sale = 1');
 			$this->db->where('items_category.id',$category_id);
 			$this->db->where('items_category_second.id ',$category_second_id);
