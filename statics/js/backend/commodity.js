@@ -93,7 +93,9 @@ $(function(){
 					});
 		}
 		return false;
-	});	
+	});
+	$("input#search_bar").search_easeOutQuart();
+	
 	/*	itemEdit itemAdd	*/
 	$('input:checkbox').change(function() {
 		if($(this).is(':checked')){
