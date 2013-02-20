@@ -60,6 +60,7 @@ class Parames extends CI_Model {
 	
 	private function loadFrontendNav() {
 		$this->load->model('db/items_category');
+		$this->load->model('db/items_category_second');
 		$this->parame['nav'] = $this->items_category->Select();
 	}
 	
