@@ -1,8 +1,30 @@
 body {
+	min-width:1000px;
+	max-width:1200px;
+	width:1200px;
+	margin: 0 auto;
 }
 body, button{
 	font-family:Arial,"微軟正黑體", "Microsoft JhengHei",sans-serif;
 }
+header { height:100px;}
+header .breadcrumb{ margin:0; -webkit-border-radius:0;-moz-border-radius:0;border-radius:0; background-color:#fff; }
+header .breadcrumb .active, header .breadcrumb a, header .breadcrumb span.divider{color:#000;text-shadow:none;}
+header div#logo { float:left;padding-top:10px;}
+header div#nav { float:right;}
+header div#top { height:36px;}
+header div#top #UserName{ float:left;}
+header div#top div#UserInfo{ float:left;}
+header div#top div#UserInfo div#break{ float:left; background-image:url("../../img/id_01.gif"); width:30px;height:37px;}
+header div#top div#UserInfo div#break-right{ float:right;}
+header div#top div#UserInfo ul.breadcrumb{ background-color:#B3D5EA;height:21px;}
+header div#top div#About{ float:right;}
+header div#top div#About div#break{ float:left; background-image:url("../../img/id_03.gif"); width:30px;height:37px;margin-right:-1px;}
+header div#top div#About div#break-right{ float:right;}
+header div#top div#About ul.breadcrumb{ background-color:#9CBFD4;height:21px;}
+header div#search { margin:0;padding:15px 0;float: right;}
+header div#search input{background: white url("../../img/search_01.gif") left no-repeat; background-position: 6px 2px; background-repeat:no-repeat;  padding-left:40px;}
+
 footer {
 	text-align : center;
 }
