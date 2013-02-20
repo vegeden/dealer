@@ -703,9 +703,7 @@ class Commodity extends CI_Controller {
 	
 	/* onshelvesEditAdd on */
 	private function onshelvesEditAdd($items_id) {
-		$img_dir 				 = './statics/img_commodity/main/';
-		$img_tmp_dir             = './statics/img_commodity/tmp/' ;
-		$config['upload_path']	 = $img_tmp_dir;
+		$config['upload_path']	 = $this->lang->line('img_tmp_dir');
 		$config['allowed_types'] = 'gif|jpg|jpeg|png';
         $config['max_size'] 	 = '0';
         $config['max_width'] 	 = '0';
@@ -720,16 +718,15 @@ class Commodity extends CI_Controller {
 		
 		$item_content	  = $this->input->post('item_content', TRUE );
 		$item_fulltext	  = $this->input->post('item_fulltext', TRUE );
-		$on_off_sale 	  = $this->input->post('on_off_sale', TRUE );
 		$del_file_name 	  = '';
 		
 		if($this->input->post('add', TRUE ) == 'add') {
 			if(strlen($_FILES['userfile']['name']) != 0 && strlen($item_content) != 0 && strlen($item_fulltext) != 0)	{
-				$file_array = get_filenames($img_dir);
+				$file_array = get_filenames($this->lang->line('img_dir'));
 				for($i=0 ; $i<count($file_array) ; $i++) {
 					$file_array_split = explode('.',$file_array[$i]);
 					if($file_array_split[0] == $items_id) {
-						unlink($img_dir.$file_array[$i]);
+						unlink($this->lang->line('img_dir').$file_array[$i]);
 						break;
 					}
 				}
@@ -737,14 +734,13 @@ class Commodity extends CI_Controller {
 					$data = array(
 					'id'				=> $items_id,
 					'item_content'		=> $item_content,
-					'on_off_sale' 		=> $on_off_sale,
-					'fulltext' 			=> $item_fulltext,);
+					'fulltext' 			=> $item_fulltext);
 					
 					$file_info = $this->upload->data();
 					$file_info['image_type'];
-					$file_content = read_file($img_tmp_dir.$file_info['file_name']);
+					$file_content = read_file($this->lang->line('img_tmp_dir').$file_info['file_name']);
 					
-					if (write_file($img_dir.$items_id.'.'.$file_info['image_type'], $file_content)){
+					if (write_file($this->lang->line('img_dir').$items_id.'.'.$file_info['image_type'], $file_content)){
 						$this->items_information->Update($items_id, $data);
 						$this->Parames->redirect($this->Url.'shelvesList/');
 					} else {
@@ -758,6 +754,34 @@ class Commodity extends CI_Controller {
 				$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
 			}
 		}
+	}	
+	public function ajaxSetShelvesStatus() {
+		$this->Parames->init('nav_commodity_ajaxSetShelvesStatus');
+		$id 		= $this->input->post('i', TRUE );
+		$status 	= $this->input->post('st', TRUE );
+		$itemList	= $this->items_information->SWhere($id);
+		$img_exist 	= FALSE;
+		
+		$file_array = get_filenames($this->lang->line('img_dir'));
+		for($i=0 ; $i<count($file_array) ; $i++) {
+			$file_array_split = explode('.',$file_array[$i]);
+			if($file_array_split[0] == $id) {
+				$img_exist = TRUE;
+				break;
+			}
+		}
+		
+		if( strlen($id) != 0 && strlen($status) != 0 &&
+		strlen($itemList -> item_content) != 0 &&
+		strlen($itemList -> fulltext) != 0 &&
+		$img_exist) {
+			$data = array('on_off_sale' => $status);
+			$this->items_information->Update($id, $data);
+			echo json_encode(array('error' => FALSE));
+		} else {
+			echo json_encode(array('error' => $this->lang->line('commodity_shelvesON_ErrorMsg')));
+		}
+		
 	}	
 	public function ajaxGetLang() {
 		$this->Parames->init('nav_commodity_ajaxGetLang');

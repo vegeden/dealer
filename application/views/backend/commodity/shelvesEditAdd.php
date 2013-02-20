@@ -9,25 +9,12 @@
 	<form method="POST" action="" enctype="multipart/form-data" />
 		<dl class="dl-horizontal dlform level">
 			<dt><?php echo $lang->line('commodity_item_name'); ?></dt>
-			<dd><?php echo $itemList -> item_name;?></dd>
-			<dt><?php echo $lang->line('commodity_item_stop_sale_status'); ?></dt>
-			<dd>
-				<select name="on_off_sale" id="on_off_sale">
-					<?php if($itemList->on_off_sale == 0) {;
-					?>
-					<option value="0"><?php echo $lang->line('commodity_item_stop_status'); ?></option>
-					<option value="1"><?php echo $lang->line('commodity_item_sale_status'); ?></option>
-					<?php } else {?>
-					<option value="1"><?php echo $lang->line('commodity_item_sale_status'); ?></option>
-					<option value="0"><?php echo $lang->line('commodity_item_stop_status'); ?></option>
-					<?php }?>
-				</select>			
-			</dd>	
+			<dd><?php echo $itemList -> item_name;?></dd>	
 			<dt><?php echo $lang->line('commodity_item_image'); ?></dt>
 			<dd>
 				<div class="fileupload fileupload-new" data-provides="fileupload">
 					<?php if($img_exist){ ?> 
-					<div class="fileupload-new thumbnail" style="width: <?php echo $img_wh[0]; ?>px; height: <?php echo $img_wh[1]; ?>px;"><img src="<?php echo '/dealer/statics/img_commodity/main/'.$img_name;?>" /></div>
+					<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="<?php echo '/dealer/statics/img_commodity/main/'.$img_name;?>" /></div>
 					<?php } else {?>
 					<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
 					<?php } ?>
@@ -54,3 +41,11 @@
 <script src="/dealer/statics/js/lib/ckeditor/ckeditor.js"></script>
 <script src="/dealer/statics/js/lib/ckfinder/ckfinder.js"></script>
 <script src="/dealer/statics/js/lib/bootstrap/bootstrap-fileupload.js"></script>
+<script>
+	/*	shelvesEditAdd.php	*/
+	CKEDITOR.replace( 'item_fulltext',
+    {
+        filebrowserBrowseUrl : '/dealer/statics/js/lib/ckfinder/ckfinder.html',
+		filebrowserImageUploadUrl : '/dealer/statics/js/lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+    });	
+</script>
