@@ -16,7 +16,6 @@ class Parames extends CI_Model {
 		/**		load Access Control List 		**/
 		$this->load->model('db/access_control_list');
 		
-		
 		$this->load->helper('url');
 		if(preg_match('/backend/', uri_string())) {
 			$this->InterfaceStatus = 0;
@@ -41,7 +40,7 @@ class Parames extends CI_Model {
 		$topName 		= $this->lang->line($nav_page);
 		$this->page 	= $navSplit;
 		
-		$this->loadlange($navSplit[1]);
+		$this->loadlang($navSplit[1]);
 		$ArticlePage	= $navSplit[1].'/'.$navSplit[2].'.php';
 		
 		/** verify ACL	**/
@@ -56,7 +55,7 @@ class Parames extends CI_Model {
 	}
 	
 	/** 	load different page lagnuage	**/
-	public function loadlange($kind) {
+	public function loadlang($kind) {
 		$this->lang->load($kind, 'zh-TW');
 	}
 	
