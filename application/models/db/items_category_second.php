@@ -24,6 +24,11 @@ class Items_category_second extends CI_Model {
 		}
 	}
 	
+	public function SWhereCategory($category) {
+		$this->db->where('category', $category);
+		return $this->db->get($this->tab);
+	}
+	
 	public function SelectCategorySecond() {
 		return $this->db->get($this->tab);
 	}
