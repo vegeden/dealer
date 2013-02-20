@@ -12,18 +12,17 @@ class Parames extends CI_Model {
 		
 		/**		load basic lagnuage 		**/
 		$this->lang->load('basic','zh-TW');
-		
-		/**		load Access Control List 		**/
-		$this->load->model('db/access_control_list');
-		
+				
 		$this->load->helper('url');
 		if(preg_match('/backend/', uri_string())) {
 			$this->InterfaceStatus = 0;
 			$this->lang->load('backend','zh-TW');
+			$this->loadBackendNav();
 		} else {
 			if(strlen(uri_string()) !=0) {
 				$this->InterfaceStatus = 1;
 				$this->lang->load('frontend','zh-TW');
+				$this->loadFrontendNav();
 			} else {
 				$this->lang->load('index','zh-TW');
 			}
@@ -47,11 +46,21 @@ class Parames extends CI_Model {
 		if($this->InterfaceStatus == 0) $this->verifyPage($nav_page);
 		
 		$this->parame['js']				= $this->loadJS($navSplit[1]);
-		$this->parame['nav'] 			= $this->access_control_list->getNav();
 		$this->parame['nav_page'] 		= $nav_page;
 		$this->parame['topName'] 		= $topName;
 		$this->parame['ArticlePage'] 	= $ArticlePage;
 		
+	}
+	
+	private function loadBackendNav() {
+		/**		load Access Control List 		**/
+		$this->load->model('db/access_control_list');
+		$this->parame['nav'] = $this->access_control_list->getNav();
+	}
+	
+	private function loadFrontendNav() {
+		$this->load->model('db/items_category');
+		$this->parame['nav'] = $this->items_category->Select();
 	}
 	
 	/** 	load different page lagnuage	**/
