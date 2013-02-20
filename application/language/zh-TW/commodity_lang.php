@@ -66,5 +66,10 @@
 	
 	/*	shelves  */
 	$lang['commodity_shelves_ErrorMsg']				= '設定失敗';
+	$lang['commodity_shelvesON_ErrorMsg']			= '上架失敗 請修改上架設定';
 	$lang['commodity_shelves_status0']				= '下架';
 	$lang['commodity_shelves_status1']				= '上架';
+	
+	/* url */
+	$lang['img_dir']								= './statics/img_commodity/main/';
+	$lang['img_tmp_dir']							= './statics/img_commodity/tmp/';
