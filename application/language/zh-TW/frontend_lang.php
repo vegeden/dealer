@@ -4,6 +4,7 @@ $lang['web_title']							= '蔬食伊甸園-經銷網';
 
 $lang['backFrontend']						= '後台管理';
 
+/**		header		**/
 $lang['Welcome']							= ' 您好!';
 
 $lang['UserInfo_logout']					= '會員登出';
@@ -17,9 +18,9 @@ $lang['About_us']							= '關於蔬食伊旬園';
 $lang['search_bar_placeholder']				= '請輸入品名或編號';
 
 
-
-
-
+/**		nav		**/
+$lang['icash_save']							= '儲值金加值';
+$lang['mostly']								= '量販專區';
 
 
 
