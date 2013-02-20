@@ -27,6 +27,7 @@
 		<?php } ?>
 	</head>
 	<body>
+		<?php require_once 'frontend/_header.php';?>
 		<div class="navbar navbar-inverse">
 			<div class="navbar-inner">
 				<div class="container">
