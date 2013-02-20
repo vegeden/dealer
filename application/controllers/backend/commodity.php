@@ -720,7 +720,6 @@ class Commodity extends CI_Controller {
 		
 		$item_content	  = $this->input->post('item_content', TRUE );
 		$item_fulltext	  = $this->input->post('item_fulltext', TRUE );
-		$on_off_sale 	  = $this->input->post('on_off_sale', TRUE );
 		$del_file_name 	  = '';
 		
 		if($this->input->post('add', TRUE ) == 'add') {
@@ -737,8 +736,7 @@ class Commodity extends CI_Controller {
 					$data = array(
 					'id'				=> $items_id,
 					'item_content'		=> $item_content,
-					'on_off_sale' 		=> $on_off_sale,
-					'fulltext' 			=> $item_fulltext,);
+					'fulltext' 			=> $item_fulltext);
 					
 					$file_info = $this->upload->data();
 					$file_info['image_type'];
@@ -765,8 +763,9 @@ class Commodity extends CI_Controller {
 		$status = $this->input->post('st', TRUE );
 		if( strlen($id) != 0 && strlen($status) != 0 ) {
 			$data = array('on_off_sale' => $status);
-			$this->items_information->Update($id, $data);
+			// $this->items_information->Update($id, $data);
 		}
+		echo json_encode(array('aaa' => 'asd'));
 	}	
 	public function ajaxGetLang() {
 		$this->Parames->init('nav_commodity_ajaxGetLang');

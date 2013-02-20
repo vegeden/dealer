@@ -13,7 +13,6 @@
 	</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info firstRow">
-			<td class="justedit"></td>
 			<td><?php echo $lang->line('commodity_item_stop_sale_status');?></td>
 			<td><?php echo $lang->line('commodity_item_name');?></td>
 			<td><?php echo $lang->line('commodity_item_content');?></td>
@@ -23,9 +22,6 @@
 				foreach($items_information_shelvers->result() as $row) {
 		?>
 		<tr class="info">		
-			<td>
-				<a href="/dealer/backend/commodity/shelvesEditAdd/<?php echo $row->id;?>/"  rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
-			</td>
 			<td>
 				<div class="btn-group lists">
 					<a class="btn status" id="user<?php echo $row->id;?>" href="#">

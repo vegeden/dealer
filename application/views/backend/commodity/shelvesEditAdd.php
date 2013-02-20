@@ -9,20 +9,7 @@
 	<form method="POST" action="" enctype="multipart/form-data" />
 		<dl class="dl-horizontal dlform level">
 			<dt><?php echo $lang->line('commodity_item_name'); ?></dt>
-			<dd><?php echo $itemList -> item_name;?></dd>
-			<dt><?php echo $lang->line('commodity_item_stop_sale_status'); ?></dt>
-			<dd>
-				<select name="on_off_sale" id="on_off_sale">
-					<?php if($itemList->on_off_sale == 0) {;
-					?>
-					<option value="0"><?php echo $lang->line('commodity_item_stop_status'); ?></option>
-					<option value="1"><?php echo $lang->line('commodity_item_sale_status'); ?></option>
-					<?php } else {?>
-					<option value="1"><?php echo $lang->line('commodity_item_sale_status'); ?></option>
-					<option value="0"><?php echo $lang->line('commodity_item_stop_status'); ?></option>
-					<?php }?>
-				</select>			
-			</dd>	
+			<dd><?php echo $itemList -> item_name;?></dd>	
 			<dt><?php echo $lang->line('commodity_item_image'); ?></dt>
 			<dd>
 				<div class="fileupload fileupload-new" data-provides="fileupload">

@@ -111,23 +111,27 @@ $(function(){
 		var split 	= href.split(',');
 		var st 		= split[0];
 		var i 		= split[1];
-		
-		$.post('/dealer/backend/commodity/ajaxSetShelvesStatus/',{
-					'st' : st,
-					'i' : i
-				},function(request) {	
-					var clickName = opt.find('span').html();//opt.remove();
-					opt.parent().parent().parent().find('a.status').html(clickName).parent().parent().parent().remove();
-				});
-		return false;
+		var con 	= split[2];
+		if(split.length == 2) {
+			$.post('/dealer/backend/commodity/ajaxSetShelvesStatus/',{
+						'st' : st,
+						'i' : i
+					},function(request) {	
+						lang = JSON.parse(request);
+						console.log(lang);
+						// var clickName = opt.find('span').html();//opt.remove();
+						// opt.parent().parent().parent().find('a.status').html(clickName).parent().parent().parent().remove();
+					});
+			return false;
+		}
 	});
 	
 	/*	shelvesEditAdd.php	*/
-	CKEDITOR.replace( 'item_fulltext',
-    {
-        filebrowserBrowseUrl : '/dealer/statics/js/lib/ckfinder/ckfinder.html',
-		filebrowserImageUploadUrl : '/dealer/statics/js/lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
-    });	
+	// CKEDITOR.replace( 'item_fulltext',
+    // {
+        // filebrowserBrowseUrl : '/dealer/statics/js/lib/ckfinder/ckfinder.html',
+		// filebrowserImageUploadUrl : '/dealer/statics/js/lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+    // });	
 	
 	/* Lang */
 	function getLang() {
