@@ -8,10 +8,10 @@ body, button{
 	font-family:Arial,"微軟正黑體", "Microsoft JhengHei",sans-serif;
 }
 header { height:100px;}
-header .breadcrumb{ margin:0; -webkit-border-radius:0;-moz-border-radius:0;border-radius:0; background-color:#fff; }
+
 header .breadcrumb .active, header .breadcrumb a, header .breadcrumb span.divider{color:#000;text-shadow:none;}
 header div#logo { float:left;padding-top:10px;}
-header div#nav { float:right;}
+header #nav { float:right;}
 header div#top { height:36px;}
 header div#top #UserName{ float:left;}
 header div#top div#UserInfo{ float:left;}
@@ -23,14 +23,31 @@ header div#top div#About div#break{ float:left; background-image:url("../../img/
 header div#top div#About div#break-right{ float:right;}
 header div#top div#About ul.breadcrumb{ background-color:#9CBFD4;height:21px;}
 header div#search { margin:0;padding:15px 0;float: right;}
+header div#search form{ margin:0;padding:0;}
 header div#search input{background: white url("../../img/search_01.gif") left no-repeat; background-position: 6px 2px; background-repeat:no-repeat;  padding-left:40px;}
 
-footer {
-	text-align : center;
-}
-.sidebar-nav {
-	padding: 9px 0;
-}
+nav .breadcrumb .active, nav .breadcrumb a, nav .breadcrumb span.divider{color:#fff;text-shadow:none;}
+nav { height:46px; background-image:url("../../img/top_link_04.gif");margin-top:10px;}
+nav div#left { float:left; height:46px; width:14px; background-image:url("../../img/top_link_01.gif");}
+nav div#hot { float:left; height:46px; width:23px; background-image:url("../../img/top_link_hot.gif");}
+nav div#main { float:left; width:49%;}
+nav div#main ul { padding:15px 0 0 0; height:31px; background-image:url("../../img/top_link_02.gif");}
+nav div#main ul li{ font-size: 16px; padding:0 10px 0 5px;}
+nav div#main ul li:hover nav div#main ul{ background-image:url("../../img/top_link_mouse.gif");}
+nav div#main ul li a:hover{ text-decoration:none; color:#C5DF8C;}
+
+nav ul ul {display: none;}
+
+nav div#right { float:left; height:46px; width:15px; background-image:url("../../img/top_link_03.gif");}
+nav div#icash_save a{float:left; height:46px; width:118px; background-image:url("../../img/top_link_cash_mouse_02.gif"); background-repeat:no-repeat;}
+nav div#icash_save a:hover{background-position:-118px 0;}
+nav div#mostly a{float:left; height:46px; width:118px; background-image:url("../../img/top_link_discount_02.gif"); background-repeat:no-repeat;}
+nav div#mostly a:hover{background-position:-118px 0;}
+
+footer { text-align : center;}
+
+.breadcrumb{ margin:0; -webkit-border-radius:0;-moz-border-radius:0;border-radius:0; background-color:#fff; }
+.sidebar-nav { padding: 9px 0;}
 
 dd { position:relative;padding-bottom:10px; }
 /*
