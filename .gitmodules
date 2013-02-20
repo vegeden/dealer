@@ -1,0 +1,9 @@
+[submodule "statics/css/lib/animate.css"]
+	path = statics/css/lib/animate.css
+	url = git@github.com:daneden/animate.css.git
+[submodule "statics/js/lib/holder"]
+	path = statics/js/lib/holder
+	url = git@github.com:imsky/holder.git
+[submodule "statics/js/lib/Jquery-Price-Format"]
+	path = statics/js/lib/Jquery-Price-Format
+	url = git@github.com:jiunjiun/Jquery-Price-Format.git

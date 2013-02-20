@@ -10,19 +10,28 @@ class Parames extends CI_Model {
 		$this->UserInfo = $this->session->get('UserInfo');
 		$this->verifyLogin();
 		
-		/**		load main lagnuage 		**/
-		$this->lang->load('backend','zh-TW');
-		$this->parame 	= array( 'lang' => $this->lang );
+		/**		load basic lagnuage 		**/
+		$this->lang->load('basic','zh-TW');
 		
 		/**		load Access Control List 		**/
-		$this->load->model('db/AccessControlList');
+		$this->load->model('db/access_control_list');
+		
 		
 		$this->load->helper('url');
 		if(preg_match('/backend/', uri_string())) {
 			$this->InterfaceStatus = 0;
+			$this->lang->load('backend','zh-TW');
 		} else {
-			$this->InterfaceStatus = 1;
+			if(strlen(uri_string()) !=0) {
+				$this->InterfaceStatus = 1;
+				$this->lang->load('frontend','zh-TW');
+			} else {
+				$this->lang->load('index','zh-TW');
+			}
 		}
+
+		$this->parame['lang'] 		= $this->lang;
+		$this->parame['UserInfo']	= $this->UserInfo;
 	}
 	
 	public function init($nav_page) {
@@ -33,14 +42,13 @@ class Parames extends CI_Model {
 		$this->page 	= $navSplit;
 		
 		$this->loadlange($navSplit[1]);
-		$ArticlePage	= $navSplit[1].'\\'.$navSplit[2].'.php';
+		$ArticlePage	= $navSplit[1].'/'.$navSplit[2].'.php';
 		
 		/** verify ACL	**/
 		if($this->InterfaceStatus == 0) $this->verifyPage($nav_page);
 		
-		$this->parame['UserInfo']		= $this->UserInfo;
 		$this->parame['js']				= $this->loadJS($navSplit[1]);
-		$this->parame['nav'] 			= $this->AccessControlList->getNav();
+		$this->parame['nav'] 			= $this->access_control_list->getNav();
 		$this->parame['nav_page'] 		= $nav_page;
 		$this->parame['topName'] 		= $topName;
 		$this->parame['ArticlePage'] 	= $ArticlePage;
@@ -91,7 +99,7 @@ class Parames extends CI_Model {
 	}
 	
 	private function verifyPage($nav) {
-		$verifyPage = $this->AccessControlList->verifyPage($this->UserInfo->type_id, $nav);
+		$verifyPage = $this->access_control_list->verifyPage($this->UserInfo->type_id, $nav);
 		if(!$verifyPage) {
 			show_404();
 		}

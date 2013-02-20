@@ -23,8 +23,8 @@ class Cart extends CI_Controller {
 		/*	-------------------------------------------	*/
 		$cart = $this->session->get('cart');
 		$this->parames['cart'] = $cart;
-		$this->parames['items_information'] = $this->items_information->SWheres($cart);
-		
+		if($cart) $this->parames['items_information'] = $this->items_information->SWheres($cart);
+	
 		$this->load->view('index', $this->parames);
 	}
 	

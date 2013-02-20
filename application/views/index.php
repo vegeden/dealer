@@ -53,6 +53,6 @@
 				</div>
 			</div>
 		</div>
-		<?php require_once '/frontend/'.$ArticlePage;?>
+		<?php require_once 'frontend/'.$ArticlePage;?>
 	</body>
 </html>

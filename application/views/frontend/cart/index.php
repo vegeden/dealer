@@ -1,5 +1,8 @@
 <?php $sum = 0; ?>
 <article id="cart">
+	<?php 
+		if(isset($items_information)) {
+	?>
 	<div class="row">
 		<div class="pull-right continueBuy">
 			<a class="btn btn-success" href="<?php echo $url; ?>../../store/"><?php echo $lang->line('continueBuy'); ?></a>
@@ -48,4 +51,7 @@
 	</div>
 	<link href="/dealer/statics/css/lib/animate.css/animate.min.css" rel="stylesheet">
 	<script src="/dealer/statics/js/lib/Jquery-Price-Format/jquery.price_format.js"></script>
+	<?php } else { ?>
+	
+	<?php } ?>
 </article>

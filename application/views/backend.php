@@ -41,7 +41,7 @@
 				</div><!--/span-->
 				<div class="span10">
 					<?php require_once 'backend/_main_top.php';?>
-					<?php require_once '/backend/'.$ArticlePage;?>
+					<?php require_once 'backend/'.$ArticlePage;?>
 				</div><!--/span-->
 			</div><!--/row-->
 
