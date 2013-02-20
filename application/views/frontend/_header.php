@@ -1,5 +1,5 @@
 <header>
-	<div id="logo"><img src="/dealer/statics/img/logo.gif"></div>
+	<div id="logo"><a href="/<?php echo $lang->line('folder_name').'/home/'; ?>"><img src="/dealer/statics/img/logo.gif"></a></div>
 	<div id="nav">
 		<div id="top">
 			<ul id="UserName" class="breadcrumb">
@@ -9,9 +9,9 @@
 				<div id="break"></div>
 				<div id="break-right">
 					<ul class="breadcrumb">
-						<li><a href="#"><?php echo $lang->line('UserInfo_logout'); ?></a> <span class="divider">|</span></li>
+						<li><a href="/<?php echo $lang->line('folder_name').'/home/logout/'; ?>"><?php echo $lang->line('UserInfo_logout'); ?></a> <span class="divider">|</span></li>
 						<li><a href="#"><?php echo $lang->line('UserInfo_Profile'); ?></a> <span class="divider">|</span></li>
-						<li class="active"><?php echo $lang->line('UserInfo_MyCart'); ?></li>
+						<li><a href="/<?php echo $lang->line('folder_name').'/cart/'; ?>"><?php echo $lang->line('UserInfo_MyCart'); ?></a></li>
 					</ul>
 				</div>
 			</div>
