@@ -1,6 +1,3 @@
-[submodule "statics/css/lib"]
-	path = statics/css/lib
-	url = git@github.com:daneden/animate.css.git
 [submodule "statics/css/lib/animate.css"]
 	path = statics/css/lib/animate.css
 	url = git@github.com:daneden/animate.css.git
