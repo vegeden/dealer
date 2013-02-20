@@ -28,6 +28,8 @@
 	</head>
 	<body>
 		<?php require_once 'frontend/_header.php';?>
+		<?php require_once 'frontend/_nav.php';?>
+		<!--
 		<div class="navbar navbar-inverse">
 			<div class="navbar-inner">
 				<div class="container">
@@ -54,6 +56,7 @@
 				</div>
 			</div>
 		</div>
+		-->
 		<?php require_once 'frontend/'.$ArticlePage;?>
 	</body>
 </html>
