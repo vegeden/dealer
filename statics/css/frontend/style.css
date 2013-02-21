@@ -38,21 +38,23 @@ nav div#main ul li a:hover{ text-decoration:none; color:#C5DF8C;}
 
 nav ul ul {display: none;}
 nav ul li:hover > ul { display: block;}
-nav div#main ul li ul {	list-style: none; background-image: none;padding-top:17px;margin-left:-10px;	position: absolute; top: 30px;}
+nav div#main ul li ul {	list-style: none; background-image: none;padding-top:16px;margin-left:-10px;	position: absolute; top: 30px;}
 nav div#main ul li ul li { border:1px solid #227EB9; border-top:0;background: #fff; border-bottom:1px dotted #227EB9;background: #fff; padding:5px 10px;}
 nav div#main ul li ul li.last { border-bottom:1px solid #227EB9;}
 nav div#main ul li ul li a{ color:#227EB9;}
 nav div#main ul li ul li a:hover{}
-
-	
 nav div#right { float:left; height:46px; width:15px; background-image:url("../../img/top_link_03.gif");}
-nav div#icash_save a{float:left; height:46px; width:118px; background-image:url("../../img/top_link_cash_mouse_02.gif"); background-repeat:no-repeat;}
-nav div#icash_save a:hover{background-position:-118px 0;}
+nav div#icash_store a{float:left; height:46px; width:118px; background-image:url("../../img/top_link_cash_mouse_02.gif"); background-repeat:no-repeat;}
+nav div#icash_store a:hover{background-position:-118px 0;}
 nav div#mostly a{float:left; height:46px; width:118px; background-image:url("../../img/top_link_discount_02.gif"); background-repeat:no-repeat;}
 nav div#mostly a:hover{background-position:-118px 0;}
 
+div#menu {width:180px;}
+div#content {width:1020px;}
+
 footer { text-align : center;}
 
+.container-fluid {padding:0;}
 .breadcrumb{ margin:0; -webkit-border-radius:0;-moz-border-radius:0;border-radius:0; background-color:#fff; }
 .sidebar-nav { padding: 9px 0;}
 
