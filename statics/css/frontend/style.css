@@ -53,7 +53,8 @@ div#menu {width:180px;}
 div#content {width:1020px;}
 
 footer {}
-footer div#logo {padding-right:20px;}
+footer div#logo {width:130px; float:left; }
+footer blockquote {margin-left:130px; border-left-color:#b3d5ea;}
 
 .container-fluid {padding:0;}
 .breadcrumb{ margin:0; -webkit-border-radius:0;-moz-border-radius:0;border-radius:0; background-color:#fff; }

@@ -1,12 +1,14 @@
 		<footer>
-			<div id="logo" class="pull-left">
+			<div id="logo" class="pull-left;">
 				<img src="/<?php echo $lang->line('folder_name').'/statics/img/logo_below.gif';?>">
 			</div>
-			<div class="">
-				<p><?php echo $lang->line('company_name');?></p>
-				<p><?php echo $lang->line('company_phone');?></p>
-				<p><?php echo $lang->line('company_address');?></p>
-				<p></p>
-				<p><?php echo $lang->line('company_copyright');?></p>
+			<div id="">
+				<blockquote>
+					<p><?php echo $lang->line('company_name');?></p>
+					<p><?php echo $lang->line('company_phone');?></p>
+					<p><?php echo $lang->line('company_address');?></p>
+					<p></p>
+					<p><?php echo $lang->line('company_copyright');?></p>
+				</blockquote>
 			</div>
 		</footer>
