@@ -7,7 +7,6 @@
 					<p><?php echo $lang->line('company_name');?></p>
 					<p><?php echo $lang->line('company_phone');?></p>
 					<p><?php echo $lang->line('company_address');?></p>
-					<p></p>
 					<p><?php echo $lang->line('company_copyright');?></p>
 				</blockquote>
 			</div>

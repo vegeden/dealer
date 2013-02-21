@@ -49,37 +49,19 @@ nav div#icash_store a:hover{background-position:-118px 0;}
 nav div#mostly a{float:left; height:46px; width:118px; background-image:url("../../img/top_link_discount_02.gif"); background-repeat:no-repeat;}
 nav div#mostly a:hover{background-position:-118px 0;}
 
-div#menu {width:180px;}
+div#menu {width:180px; }
+div#menu div#nav_second{border:1px solid #bbb; margin-bottom:7px;}
+div#menu div#nav_second div#title{font-size:14px; background-color:#ddd; padding:3px 0 3px 10px; color:#227eb9; font-weight: bold;}
+div#menu div#nav_second ul {list-style:none; margin:0;}
+div#menu div#nav_second ul li {padding:5px 0;padding-left:10px;border-bottom:1px dotted #227EB9; color:#227eb9;}
+div#menu div#nav_second ul li.last {border-bottom:0;}
 div#content {width:1020px;}
 
 footer {}
 footer div#logo {width:130px; float:left; }
-footer blockquote {margin-left:130px; border-left-color:#b3d5ea;}
+footer blockquote {margin-left:130px; border-left-color:#b3d5ea; height:100px;}
+footer blockquote p{font-size:14px;}
 
-.container-fluid {padding:0;}
-.breadcrumb{ margin:0; -webkit-border-radius:0;-moz-border-radius:0;border-radius:0; background-color:#fff; }
-.sidebar-nav { padding: 9px 0;}
-
-dd { position:relative;padding-bottom:10px; }
-/*
-dt { padding-top:5px; }
-*/
-dt input[type="text"]{ padding:10px; }
-td.items { width : 55px;}
-td.option { width : 50px;}
-td.invoice { width : 25px;}
-td.justedit { width : 25px;}
-ul.nav-pills li a { background-color : #eee; }
-div.input-append span.add-on { padding-left : 10px;padding-right : 10px;}
-hr { border:0; height:1px; background-color:#d4d4d4; color:#d4d4d4	/* IE6 */}
-
-.center { text-align : center;}
-.left { text-align : left;}
-.right { text-align : right;}
-a.decorationNone { text-decoration: none;}
-
-/** 	store	**/
-.price {color : red;}
 article#store div.row .span2 { padding:30px 0;}
 
 /** 	cart	**/
@@ -118,4 +100,36 @@ article#cart .row .checkout {
 }
 
 
+/**	bootstrap **/
+.container-fluid {padding:0;margin-top:7px;}
+.breadcrumb{ margin:0; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; background-color:#fff; }
+.sidebar-nav { padding:9px 0;}
 
+dd { position:relative;padding-bottom:10px; }
+dt input[type="text"]{ padding:10px; }
+td.items { width : 55px;}
+td.option { width : 50px;}
+td.invoice { width : 25px;}
+td.justedit { width : 25px;}
+ul.nav-pills li a { background-color : #eee; }
+div.input-append span.add-on { padding-left : 10px;padding-right : 10px;}
+hr { border:0; height:1px; background-color:#d4d4d4; color:#d4d4d4	/* IE6 */}
+
+.center { text-align : center;}
+.left { text-align : left;}
+.right { text-align : right;}
+a.decorationNone { text-decoration: none;}
+
+.price {color : red;}
+
+/** http://www.colorzilla.com/gradient-editor/	**/
+.gradient_BlackWhite {
+background: rgb(242,245,246); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,245,246,1)), color-stop(37%,rgba(227,234,237,1)), color-stop(100%,rgba(200,215,220,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+}
