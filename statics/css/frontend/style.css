@@ -55,7 +55,7 @@ div#menu div#nav_second div#title{font-size:14px; background-color:#ddd; padding
 div#menu div#nav_second ul {list-style:none; margin:0;}
 div#menu div#nav_second ul li {padding:5px 0;padding-left:10px;border-bottom:1px dotted #227EB9; color:#227eb9;}
 div#menu div#nav_second ul li.last {border-bottom:0;}
-div#content {width:1020px;}
+div#content {width:1013px;}
 
 footer {}
 footer div#logo {width:130px; float:left; }
