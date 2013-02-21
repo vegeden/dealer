@@ -52,7 +52,8 @@ nav div#mostly a:hover{background-position:-118px 0;}
 div#menu {width:180px;}
 div#content {width:1020px;}
 
-footer { text-align : center;}
+footer {}
+footer div#logo {padding-right:20px;}
 
 .container-fluid {padding:0;}
 .breadcrumb{ margin:0; -webkit-border-radius:0;-moz-border-radius:0;border-radius:0; background-color:#fff; }

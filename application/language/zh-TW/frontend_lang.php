@@ -22,6 +22,13 @@ $lang['search_bar_placeholder']				= '請輸入品名或編號';
 $lang['icash_save']							= '儲值金加值';
 $lang['mostly']								= '量販專區';
 
+/**		footer		**/
+$lang['company_name']						= '光量生技股份有限公司';
+$lang['company_phone']						= '電話：07-8602825';
+$lang['company_address']					= '地址：高雄市前鎮區新衙路286-1號6F之1';
+$lang['company_copyright']					= '版權所有 Copyright © 2013 Supernelody Biotech Co., Ltd. All Rights Reserved.';
+
+
 
 
 
