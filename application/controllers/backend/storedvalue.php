@@ -49,27 +49,6 @@ class Storedvalue extends CI_Controller {
 		return $remittance_status;
 	}
 	
-	private function onApply() {
-		$this->onCancel('profiles/');
-		
-		$pay_kind 	= $this->input->post('pay_kind', TRUE );
-		$last5Num 	= $this->input->post('last5Num', TRUE );
-		$name 		= $this->input->post('name', TRUE );
-		$price 		= $this->input->post('price', TRUE );
-		if(isset($pay_kind) && isset($last5Num) && isset($name) && isset($price)) {
-			if(strlen($pay_kind) > 0 && strlen($last5Num) > 0 && strlen($name) > 0 && strlen($price) > 0 ) {
-				$data = array(
-								'user_id' 			=> $this->UserInfo->id, 
-								'bank_num' 			=> $last5Num,
-								'apply_name' 		=> $name, 								
-								'apply_price' 		=> $price, 
-								'apply_datetime' 	=> date(DateTime::ATOM, time())
-							);
-				$this->icash_apply->Add($data);
-			}
-		}
-	}
-	
 	private function onCancel($redirectUrl) {
 		$cancel = $this->input->post('cancel', TRUE );
 		if(strlen($cancel)!= 0) {

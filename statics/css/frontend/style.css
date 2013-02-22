@@ -99,6 +99,12 @@ article#cart .row .checkout {
     animation-iteration-count: infinite;
 }
 
+article#storedvalue {margin-left:30px;}
+article#storedvalue div#declaration{margin-top:30px;}
+article#storedvalue div#declaration textarea{width:80%;}
+article#storedvalue div#submit{padding-top:20px;}
+article#storedvalue div#submit button.btn-success{margin-left: 50px;}
+
 
 /**	bootstrap **/
 .container-fluid {padding:0;margin-top:7px;}

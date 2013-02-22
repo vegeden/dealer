@@ -1,6 +1,9 @@
 <?php
 	$lang['storedvalue_Error']					= 'Error!!';
 	
+	$lang['storedvalue_plus']					= '儲值金加值';
+	$lang['storedvalue_apply']					= '同意';
+	$lang['storedvalue_NotApply']				= '不同意';
 	$lang['storedvalue']						= '儲值';
 	$lang['storedvalue_price']					= '金額';
 	$lang['storedvalue_name']					= '姓名';
