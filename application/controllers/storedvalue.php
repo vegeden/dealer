@@ -50,17 +50,27 @@ class Storedvalue extends CI_Controller {
 		$last5Num 	= $this->input->post("last5Num$pay_kind", TRUE );
 		$name 		= $this->input->post("name$pay_kind", TRUE );
 		$price 		= $this->input->post("price$pay_kind", TRUE );
-		if(isset($pay_kind) && isset($last5Num) && isset($name) && isset($price)) {
-			if(strlen($pay_kind) > 0 && strlen($last5Num) > 0 && strlen($name) > 0 && strlen($price) > 0 ) {
-				$data = array(
-								'user_id' 			=> $this->UserInfo->id, 
-								'apply_status'		=> $pay_kind,
-								'bank_num' 			=> $last5Num,
-								'apply_name' 		=> $name, 								
-								'apply_price' 		=> $price, 
-								'apply_datetime' 	=> date(DateTime::ATOM, time())
-							);
-				$this->icash_apply->Add($data);
+		$submit = $this->input->post('submit', TRUE );
+		if(!empty($submit)) {
+			if(!empty($pay_kind) && !empty($last5Num) && !empty($name) && !empty($price)) {
+				if(strlen($last5Num) != 5) {
+					$this->parames['error'] = $this->lang->line('storedvalue_Error_most500');
+				} else if($price < 500) {
+					$this->parames['error'] = $this->lang->line('storedvalue_Error_most500');
+				} else {
+					$data = array(
+									'user_id' 			=> $this->UserInfo->id, 
+									'apply_status'		=> $pay_kind,
+									'bank_num' 			=> $last5Num,
+									'apply_name' 		=> $name, 								
+									'apply_price' 		=> $price, 
+									'apply_datetime' 	=> date(DateTime::ATOM, time())
+								);
+					$this->icash_apply->Add($data);
+					$this->Parames->redirect($this->Url.'lists/');
+				}
+			} else {
+				$this->parames['error'] = $this->lang->line('storedvalue_Error_message');
 			}
 		}
 	}

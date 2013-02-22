@@ -1,5 +1,12 @@
 <article id="storedvalue-apply" class="storedvalue">
 	<h2><?php echo $lang->line('storedvalue_plus');?></h2>
+	<?php if(isset($error)) {?>
+	<div class="alert alert-error">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4><?php echo $lang->line('account_levelAdd_Error'); ?></h4>
+		<?php echo $error; ?>
+	</div>
+	<?php } ?>
 	<div class="center" >
 		<div id="btn-group" data-toggle="buttons-radio">
 			<button type="button" class="btn btn-large" value="Remittance"><?php echo $lang->line('storedvalue_method_Remittance');?></button>
