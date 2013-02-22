@@ -14,12 +14,12 @@
 	
 	/* apply */
 	$lang['storedvalue_method']					= '儲值方式';
-	$lang['storedvalue_method_ATM']				= 'ATM';
-	$lang['storedvalue_method_CreditCard']		= '信用卡';
-	
+	$lang['storedvalue_method_Remittance']		= $lang['storedvalue_status_1']		= '匯款';
+	$lang['storedvalue_method_ATM']				= $lang['storedvalue_status_2'] 	= 'ATM';
+	$lang['storedvalue_method_CreditCard']		= $lang['storedvalue_status_3']		= '信用卡';
 	
 	$lang['storedvalue_bank']					= '銀行';
-	$lang['storedvalue_bank_name']				= '花x銀行';
+	$lang['storedvalue_bank_name']				= '花花銀行';
 	$lang['storedvalue_bank_code']				= '銀行代碼';
 	$lang['storedvalue_bank_code_name']			= '999';
 	$lang['storedvalue_account']				= '帳戶';
