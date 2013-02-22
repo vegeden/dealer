@@ -29,6 +29,10 @@
 	$lang['storedvalue_ATM_name']				= '姓名';
 	$lang['storedvalue_ATM_direction']			= '若已匯款請在底下輸入：';
 	
+	$lang['storedvalue_Error_last5Num']			= '請輸入匯款帳號(末5碼)';
+	$lang['storedvalue_Error_most500']			= '最低面額為500塊';
+	$lang['storedvalue_Error_message']			= '資料填寫不正確';
+	
 	/* CountLists */
 	$lang['storedvalue_status0']				= '未審核';
 	$lang['storedvalue_status1']				= '已審核';
