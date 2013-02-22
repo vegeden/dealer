@@ -31,7 +31,7 @@ class Storedvalue extends CI_Controller {
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
-		
+		$this->onApply();
 		$this->load->view('index', $this->parames);
 	}
 	
@@ -43,16 +43,18 @@ class Storedvalue extends CI_Controller {
 	}
 	
 	private function onApply() {
-		$this->onCancel('profiles/');
+		$cancel = $this->input->post('cancel', TRUE );
+		if(strlen($cancel)!= 0) $this->Parames->redirect('/'.$this->lang->line('folder_name'));
 		
 		$pay_kind 	= $this->input->post('pay_kind', TRUE );
-		$last5Num 	= $this->input->post('last5Num', TRUE );
-		$name 		= $this->input->post('name', TRUE );
-		$price 		= $this->input->post('price', TRUE );
+		$last5Num 	= $this->input->post("last5Num$pay_kind", TRUE );
+		$name 		= $this->input->post("name$pay_kind", TRUE );
+		$price 		= $this->input->post("price$pay_kind", TRUE );
 		if(isset($pay_kind) && isset($last5Num) && isset($name) && isset($price)) {
 			if(strlen($pay_kind) > 0 && strlen($last5Num) > 0 && strlen($name) > 0 && strlen($price) > 0 ) {
 				$data = array(
 								'user_id' 			=> $this->UserInfo->id, 
+								'apply_status'		=> $pay_kind,
 								'bank_num' 			=> $last5Num,
 								'apply_name' 		=> $name, 								
 								'apply_price' 		=> $price, 
@@ -60,13 +62,6 @@ class Storedvalue extends CI_Controller {
 							);
 				$this->icash_apply->Add($data);
 			}
-		}
-	}
-	
-	private function onCancel($redirectUrl) {
-		$cancel = $this->input->post('cancel', TRUE );
-		if(strlen($cancel)!= 0) {
-			$this->Parames->redirect($this->Url.$redirectUrl);
 		}
 	}
 }

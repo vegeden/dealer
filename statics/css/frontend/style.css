@@ -99,11 +99,17 @@ article#cart .row .checkout {
     animation-iteration-count: infinite;
 }
 
-article#storedvalue {margin-left:30px;}
-article#storedvalue div#declaration{margin-top:30px;}
-article#storedvalue div#declaration textarea{width:80%;}
-article#storedvalue div#submit{padding-top:20px;}
-article#storedvalue div#submit button.btn-success{margin-left: 50px;}
+article.storedvalue {margin-left:30px;}
+article#storedvalue-index div#declaration{margin-top:30px;}
+article#storedvalue-index div#declaration textarea{width:80%;}
+article#storedvalue-index div#submit{padding-top:20px;}
+article#storedvalue-index div#submit button.btn-success{margin-left: 50px;}
+article#storedvalue-apply #btn-group button{padding:20px 50px; font-size:28px; margin-right:50px;}
+article#storedvalue-apply div.detail{}
+article#storedvalue-apply div.detail div{margin-top:50px; text-align:left;}
+article#storedvalue-apply div.detail dl{font-size:22px; margin-left:220px;}
+article#storedvalue-apply div.detail dl dt{overflow:visible;}
+article#storedvalue-apply div.detail dl > dt, dd{padding-top:15px;}
 
 
 /**	bootstrap **/
@@ -125,6 +131,7 @@ hr { border:0; height:1px; background-color:#d4d4d4; color:#d4d4d4	/* IE6 */}
 .left { text-align : left;}
 .right { text-align : right;}
 a.decorationNone { text-decoration: none;}
+.displaynNone {display: none;}
 
 .price {color : red;}
 
