@@ -20,11 +20,12 @@
 			<?php if($kind == 1){ ?>
 			<td><?php echo $lang->line('storedvalue_user_level');?></td>
 			<?php } ?>
+			<td><?php echo $lang->line('storedvalue_method');?></td>
 			<td><?php echo $lang->line('storedvalue_name');?></td>
 			<td><?php echo $lang->line('storedvalue_account');?></td>
 			<td><?php echo $lang->line('storedvalue_price');?></td>
 			<td><?php echo $lang->line('storedvalue_apply_time');?></td>
-			<?php if($kind == 1 ){ ?>
+			<?php if($kind == 1 ) { ?>
 			<td><?php echo $lang->line('storedvalue_admin');?></td>
 			<td><?php echo $lang->line('storedvalue_audit_time');?></td>
 			<?php } ?>
@@ -48,7 +49,6 @@
 						<li><a href="2,<?php echo $row->id;?>"><i class="icon-remove"></i> <span><?php echo $lang->line('storedvalue_status2'); ?></span></a></li>
 					</ul>
 				</div>
-				
 				<?php 
 					} else { 
 				?>
@@ -63,15 +63,14 @@
 				<a class="cancel" href="<?php echo $row->id;?>" rel="tooltip" data-original-title="<?php echo $lang->line('storedvalue_cancel');?>"><img src="/dealer/statics/img/ic_action_remove.png" width="20" height="20" /></a>
 					<?php
 						} 
-					?>
-				<?php
 					} 
 				?>
 				
 			</td>
-			<?php if($kind == 1){ ?>
+			<?php if($kind == 1) { ?>
 			<td><?php echo $row->type_name;?></td>
 			<?php } ?>
+			<td><?php echo $lang->line('storedvalue_status_'.$row->apply_status);?></td>
 			<td><?php echo $row->apply_name;?></td>
 			<td><?php echo $row->bank_num;?></td>
 			<td><?php echo $row->apply_price;?></td>
