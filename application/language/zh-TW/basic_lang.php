@@ -18,10 +18,11 @@ $lang['item_up']							= '庫調';
 $lang['class']								= '類別';
 
 $lang['name']								= '姓名';
-$lang['eail']								= 'Email';
 $lang['gender']								= '性別';
+$lang['gender_1']							= '男';
+$lang['gender_2']							= '女';
 $lang['phone']								= '電話';
-
+$lang['email']								= 'Email';
 
 
 
