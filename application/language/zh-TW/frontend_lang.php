@@ -23,6 +23,7 @@ $lang['icash_save']							= '儲值金加值';
 $lang['mostly']								= '量販專區';
 
 /**		menu		**/
+$lang['my_profile']							= '我的帳戶';
 $lang['specialoffer']						= '特惠活動';
 $lang['nav_class']							= '商品分類';
 
