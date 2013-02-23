@@ -13,7 +13,6 @@
 	$lang['storedvalue_status']					= '狀態';
 	
 	/* apply */
-	$lang['storedvalue_method']					= '儲值方式';
 	$lang['storedvalue_method_Remittance']		= $lang['storedvalue_status_1']		= '匯款';
 	$lang['storedvalue_method_ATM']				= $lang['storedvalue_status_2'] 	= 'ATM';
 	$lang['storedvalue_method_CreditCard']		= $lang['storedvalue_status_3']		= '信用卡';
