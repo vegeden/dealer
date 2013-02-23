@@ -62,7 +62,12 @@ footer div#logo {width:130px; float:left; }
 footer blockquote {margin-left:130px; border-left-color:#b3d5ea; height:100px;}
 footer blockquote p{font-size:14px;}
 
+article{margin-left:30px;}
+article dl{font-size:22px; }
+article dl dt{overflow:visible;}
+article dl > dt, dd{padding-top:15px;}
 article#store div.row .span2 { padding:30px 0;}
+article input.input-large{margin:0}
 
 /** 	cart	**/
 article#cart .hr{border-top: 2px dashed #ccc; padding-top:50px;}
@@ -99,20 +104,25 @@ article#cart .row .checkout {
     animation-iteration-count: infinite;
 }
 
-article.storedvalue {margin-left:30px;}
 article#storedvalue-index div#declaration{margin-top:30px;}
 article#storedvalue-index div#declaration textarea{width:80%;}
 article#storedvalue-index div#submit{padding-top:20px;}
 article#storedvalue-index div#submit button.btn-success{margin-left: 50px;}
 article#storedvalue-apply #btn-group button{padding:20px 50px; font-size:28px; margin-right:50px;}
 article#storedvalue-apply div.detail{}
-article#storedvalue-apply div.detail div{margin-top:50px; text-align:left;}
-article#storedvalue-apply div.detail dl{font-size:22px; margin-left:220px;}
-article#storedvalue-apply div.detail dl dt{overflow:visible;}
-article#storedvalue-apply div.detail dl > dt, dd{padding-top:15px;}
+article#storedvalue-apply div.detail div{margin-top:50px;}
+article#storedvalue-apply div.detail dl{margin-left:220px;}
+
+article#profile-editProfile label {width:100px;font-size:20px;}
+article#profile-editProfile label.gender_Male {}
+article#profile-editProfile label.gender_Female {overflow:hidden;}
+article#profile-editProfile div#submit {margin-left: 70px;}
+article#profile-editPwd div#submit {margin-left: 70px;}
+
 
 
 /**	bootstrap **/
+blockquote { border-left-color:#9cbfd4;}
 .container-fluid {padding:0;margin-top:7px;}
 .breadcrumb{ margin:0; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; background-color:#fff; }
 .sidebar-nav { padding:9px 0;}
