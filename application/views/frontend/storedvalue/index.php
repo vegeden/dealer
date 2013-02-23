@@ -1,5 +1,4 @@
 <article id="storedvalue-index" class="storedvalue">
-	<h2><?php echo $lang->line('storedvalue_plus');?></h2>
 	<div id="declaration" class="center">
 		<textarea class="editor" rows="15" readonly>
 453453454we45345
