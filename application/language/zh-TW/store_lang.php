@@ -7,3 +7,4 @@
 	$lang['store_special_explain']			= '(該商品將設定為獨立運費)';
 	$lang['store_add_Cart']					= '加入購物車';
 	
+	$lang['store_top4']						= '熱門商品';

@@ -1,41 +1,7 @@
-<article id="storedvalue-index" class="storedvalue">
+<article id="profile-index" class="profile">
+	<h2><?php echo $lang->line('storedvalue_plus');?></h2>
 	<div id="declaration" class="center">
-		<textarea class="editor" rows="15" readonly>
-453453454we45345
-345
-345
-34
-534
-534
-53
-45
-345
-345345345345345345
-345
-34
-534
-534
-53
-45
-345
-345345345345345345
-345
-34
-534
-534
-53
-45
-345
-345345345345345345
-345
-34
-534
-534
-53
-45
-345
-345345345345345
-		</textarea>
+		
 	</div>
 	<div id="submit" class="center" >
 		<form method="POST" action="">

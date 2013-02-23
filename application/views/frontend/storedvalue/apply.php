@@ -1,5 +1,4 @@
 <article id="storedvalue-apply" class="storedvalue">
-	<h2><?php echo $lang->line('storedvalue_plus');?></h2>
 	<?php if(isset($error)) {?>
 	<div class="alert alert-error">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -15,7 +14,7 @@
 		</div>
 		<form method="POST" action="">
 			<div id="Remittance" class="displaynNone detail">
-				<div>
+				<div class="left">
 					<dl class="dl-horizontal">
 						<dt><?php echo $lang->line('storedvalue_bank');?></dt>
 						<dd><?php echo $lang->line('storedvalue_bank_name');?></dd>
@@ -38,7 +37,7 @@
 				<button type="submit" class="btn offset2 btn-large" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
 			</div>
 			<div id="ATM" class="displaynNone detail">
-				<div>
+				<div class="left">
 					<dl class="dl-horizontal">
 						<dt><?php echo $lang->line('storedvalue_bank');?></dt>
 						<dd><?php echo $lang->line('storedvalue_bank_name');?></dd>
@@ -61,7 +60,7 @@
 				<button type="submit" class="btn offset2 btn-large" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
 			</div>
 			<div id="CreditCard" class="displaynNone detail">
-				<div>
+				<div class="left">
 					<dl class="dl-horizontal">
 						<dt><?php echo $lang->line('storedvalue_ATM_name');?></dt>
 						<dd><input type="text" placeholder="<?php echo $lang->line('storedvalue_ATM_name');?>" class="input-large" name="name3" value=""></dd>

@@ -38,7 +38,7 @@ nav div#main ul li a:hover{ text-decoration:none; color:#C5DF8C;}
 
 nav ul ul {display: none;}
 nav ul li:hover > ul { display: block;}
-nav div#main ul li ul {	list-style: none; background-image: none;padding-top:16px;margin-left:-10px;	position: absolute; top: 30px;}
+nav div#main ul li ul {	list-style: none; background-image: none;padding-top:16px;margin-left:-10px; position: absolute; top: 30px;}
 nav div#main ul li ul li { border:1px solid #227EB9; border-top:0;background: #fff; border-bottom:1px dotted #227EB9;background: #fff; padding:5px 10px;}
 nav div#main ul li ul li.last { border-bottom:1px solid #227EB9;}
 nav div#main ul li ul li a{ color:#227EB9;}
@@ -62,7 +62,11 @@ footer div#logo {width:130px; float:left; }
 footer blockquote {margin-left:130px; border-left-color:#b3d5ea; height:100px;}
 footer blockquote p{font-size:14px;}
 
-article#store div.row .span2 { padding:30px 0;}
+article{margin-left:15px;}
+article dl{font-size:22px; }
+article dl dt{overflow:visible;}
+article dl > dt, dd{padding-top:15px;}
+article input.input-large{margin:0}
 
 /** 	cart	**/
 article#cart .hr{border-top: 2px dashed #ccc; padding-top:50px;}
@@ -99,20 +103,41 @@ article#cart .row .checkout {
     animation-iteration-count: infinite;
 }
 
-article.storedvalue {margin-left:30px;}
 article#storedvalue-index div#declaration{margin-top:30px;}
 article#storedvalue-index div#declaration textarea{width:80%;}
 article#storedvalue-index div#submit{padding-top:20px;}
 article#storedvalue-index div#submit button.btn-success{margin-left: 50px;}
 article#storedvalue-apply #btn-group button{padding:20px 50px; font-size:28px; margin-right:50px;}
 article#storedvalue-apply div.detail{}
-article#storedvalue-apply div.detail div{margin-top:50px; text-align:left;}
-article#storedvalue-apply div.detail dl{font-size:22px; margin-left:220px;}
-article#storedvalue-apply div.detail dl dt{overflow:visible;}
-article#storedvalue-apply div.detail dl > dt, dd{padding-top:15px;}
+article#storedvalue-apply div.detail div{margin-top:50px;}
+article#storedvalue-apply div.detail dl{margin-left:220px;}
 
+article#profile-editProfile label {width:100px;font-size:20px;}
+article#profile-editProfile label.gender_Male {}
+article#profile-editProfile label.gender_Female {overflow:hidden;}
+article#profile-editProfile div#submit {margin-left: 70px;}
+article#profile-editPwd div#submit {margin-left: 70px;}
+
+article#store ul li > a{text-decoration: none;}
+article#store div.side{border:1px solid #ddd;}
+article#store div.side{overflow:auto;}
+article#store div.side #title{color:#0088cc; padding:5px 0; padding-left:15px; font-size:16px; border-bottom:1px solid #ddd;}
+article#store div#top4 ul {list-style: none;margin:0;}
+article#store div#top4 ul li{width:239px; height:auto; float:left; padding:10px 5px;}
+article#store div#top4 ul li #name{padding:10px 0; font-size:16px;}
+article#store div#top4 ul li .price{font-size:16px;padding-bottom:5px;}
+article#store div#order{ margin:10px 0;overflow:auto;padding:5px 0;padding-left:10px;}
+article#store div#order ul{list-style: none;margin:0;}
+article#store div#order ul li{float:left;}
+article#store div#order ul li > a.select{font-weight: bold;}
+
+article#store div.content{width:998px;overflow:auto;}
+article#store div.content ul{list-style: none;margin:0;margin-left:3px;}
+article#store div.content ul li{float:left;padding:10px 3px;}
+article#store div.content ul li > a.select{font-weight: bold;}
 
 /**	bootstrap **/
+blockquote { border-left-color:#9cbfd4;}
 .container-fluid {padding:0;margin-top:7px;}
 .breadcrumb{ margin:0; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; background-color:#fff; }
 .sidebar-nav { padding:9px 0;}

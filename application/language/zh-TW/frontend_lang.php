@@ -27,6 +27,15 @@ $lang['my_profile']							= '我的帳戶';
 $lang['specialoffer']						= '特惠活動';
 $lang['nav_class']							= '商品分類';
 
+/**		article	title	**/	
+$lang['nav_storedvalue_index']				= '儲值金加值';
+$lang['nav_storedvalue_apply']				= '儲值金加值';
+
+$lang['nav_profile_editProfile']			= '個人資料修改';
+$lang['nav_profile_editPwd']				= '密碼修改';
+
+
+
 /**		footer		**/
 $lang['company_name']						= '光量生技股份有限公司';
 $lang['company_phone']						= '電話：07-8602825';

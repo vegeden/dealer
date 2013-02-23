@@ -1,4 +1,4 @@
 <ul>
-	<li></li>
-	<li class="last"></li>
+	<li>nav</li>
+	<li class="last">second</li>
 </ul>
