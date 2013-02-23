@@ -63,16 +63,16 @@
 						}
 					?>
 				</select>
-			</dd>
-			<dt><?php echo $lang->line('commodity_freight_price'); ?></dt>					
-			<dd><input type="number" placeholder="" class="input-large" name="freight_price" min="0" value="<?php echo $query->freight_price;?>" ></dd>						
+			</dd>				
 			<dt><?php echo $lang->line('commodity_special_item'); ?></dt>
 			<dd>
 				<label class="checkbox">
-					<input type="checkbox" name="special_commodity_status" <?php if($query->special_commodity_status){echo 'checked';}?>>
+					<input type="checkbox" id="special_commodity_status" name="special_commodity_status" <?php if($query->special_commodity_status)echo 'checked';?>>
 					<?php echo $lang->line('commodity_special_explain'); ?>
 				</label>
 			</dd>
+			<dt id="freight_price_dt" class="<?php if(!$query->special_commodity_status) echo 'display'; ?>"><?php echo $lang->line('commodity_freight_price'); ?></dt>					
+			<dd id="freight_price_dd" class="<?php if(!$query->special_commodity_status) echo 'display'; ?>"><input type="number" placeholder="" id="freight_price" class="input-large" name="freight_price" min="0" value="<?php echo $query->freight_price;?>" ></dd>
 		</dl>
 	
 		<div class="row">

@@ -93,7 +93,19 @@ $(function(){
 					});
 		}
 		return false;
-	});		
+	});
+	$("input#search_bar").search_easeOutQuart();
+	
+	/*	itemEdit itemAdd	*/
+	$('input:checkbox').change(function() {
+		if($(this).is(':checked')){
+			$('#freight_price_dt').show();
+			$('#freight_price_dd').show();
+		} else {
+			$('#freight_price_dt').hide();
+			$('#freight_price_dd').hide();
+		}
+	});
 	
 	/*	invoicingEditAdd.php	*/
 	$('#invoicing_status').change(function() {

@@ -578,7 +578,7 @@ class Commodity extends CI_Controller {
 		$area_class			   = $this->input->post('area_class', TRUE );
 		$category_second_class = $this->input->post('category_second_class', TRUE );
 		$freight_price		   = $this->input->post('freight_price', TRUE );
-		$special_commodity_status		   = 0;
+		$special_commodity_status = 0;
 		
 		if($this->input->post('add', TRUE ) == 'add' || $this->input->post('edit', TRUE ) == 'edit') {
 			if($this->input->post('special_commodity_status', TRUE )) {
@@ -783,6 +783,25 @@ class Commodity extends CI_Controller {
 		}
 		
 	}	
+	
+	public function ajaxFindItemName() {
+		$this->Parames->init('nav_commodity_ajaxFindItemName');
+		$result['count'] = 0;
+		$name = $this->input->post('n', TRUE );
+		
+		if( !empty($name) ) {
+			$query = $this->items_information->FindItemName($this->UserInfo->id, $name);
+			if($query->num_rows() > 0) {
+				$result['count'] = 1;
+				$result['type_id'] = $this->UserInfo->type_id;
+				foreach($query->result() as $row) {
+					$result['user_information'][] = $row;
+				}
+			}
+		}
+		echo json_encode($result);
+	}
+	
 	public function ajaxGetLang() {
 		$this->Parames->init('nav_commodity_ajaxGetLang');
 		echo json_encode($this->lang);

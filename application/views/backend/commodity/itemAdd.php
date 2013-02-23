@@ -64,15 +64,15 @@
 					?>
 				</select>
 			</dd>	
-			<dt><?php echo $lang->line('commodity_freight_price'); ?></dt>					
-			<dd><input type="number" placeholder="" class="input-large" name="freight_price" min="0" value="0" ></dd>			
 			<dt><?php echo $lang->line('commodity_special_item'); ?></dt>
 			<dd>
 				<label class="checkbox">
-				  <input type="checkbox" name="special_commodity_status">
+				  <input type="checkbox" id="special_commodity_status" name="special_commodity_status">
 				  <?php echo $lang->line('commodity_special_explain'); ?>
 				</label>
 			</dd>
+			<dt id="freight_price_dt"><?php echo $lang->line('commodity_freight_price'); ?></dt>					
+			<dd id="freight_price_dd"><input type="number" placeholder="" class="input-large" name="freight_price" min="0" value="0" ></dd>			
 		</dl>
 		<div class="row">
 			<div class="span3 offset3">
