@@ -46,12 +46,13 @@ class Storedvalue extends CI_Controller {
 		$cancel = $this->input->post('cancel', TRUE );
 		if(strlen($cancel)!= 0) $this->Parames->redirect('/'.$this->lang->line('folder_name'));
 		
-		$pay_kind 	= $this->input->post('pay_kind', TRUE );
-		$last5Num 	= $this->input->post("last5Num$pay_kind", TRUE );
-		$name 		= $this->input->post("name$pay_kind", TRUE );
-		$price 		= $this->input->post("price$pay_kind", TRUE );
 		$submit = $this->input->post('submit', TRUE );
 		if(!empty($submit)) {
+			$pay_kind 	= $this->input->post('pay_kind', TRUE );
+			$last5Num 	= $this->input->post("last5Num$pay_kind", TRUE );
+			$name 		= $this->input->post("name$pay_kind", TRUE );
+			$price 		= $this->input->post("price$pay_kind", TRUE );
+			
 			if(!empty($pay_kind) && !empty($last5Num) && !empty($name) && !empty($price)) {
 				if(strlen($last5Num) != 5) {
 					$this->parames['error'] = $this->lang->line('storedvalue_Error_most500');
