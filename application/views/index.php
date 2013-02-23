@@ -35,6 +35,7 @@
 					<?php require_once 'frontend/_menu.php';?>
 				</div><!--/span-->
 				<div id="content" class="pull-right">
+					<?php require_once 'frontend/_article_title.php';?>
 					<?php require_once 'frontend/'.$ArticlePage;?>
 				</div><!--/span-->
 			</div><!--/row-->
