@@ -50,8 +50,9 @@
 		</div>
 	</div>
 	<link href="/dealer/statics/css/lib/animate.css/animate.min.css" rel="stylesheet">
-	<script src="/dealer/statics/js/lib/Jquery-Price-Format/jquery.price_format.js"></script>
+	
 	<?php } else { ?>
 	
 	<?php } ?>
 </article>
+<script src="/dealer/statics/js/lib/Jquery-Price-Format/jquery.price_format.js"></script>
