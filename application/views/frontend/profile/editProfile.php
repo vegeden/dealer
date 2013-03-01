@@ -2,7 +2,7 @@
 	<?php if(isset($error)) {?>
 	<div class="alert alert-error">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<h4>12333333</h4>
+		<h4></h4>
 		<?php echo $error; ?>
 	</div>
 	<?php } ?>
