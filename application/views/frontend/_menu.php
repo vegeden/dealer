@@ -1,7 +1,7 @@
 <div id="nav_second">
 	<div id="title" class="gradient_BlackWhite">
 		<?php 
-			if(preg_match('/^store$/', uri_string())) {
+			if(preg_match('/store\/index*/', uri_string())) {
 				echo $lang->line('nav_class');
 			} else if(preg_match('/profile\/*/', uri_string()) || preg_match('/^storedvalue$/', uri_string())) {
 				echo $lang->line('my_profile');
@@ -11,7 +11,7 @@
 		?>
 	</div>
 	<?php
-		if(preg_match('/^store$/', uri_string())) {
+		if(preg_match('/store\/index*/', uri_string())) {
 			require_once '_menu_nav_second.php';
 		} else if(preg_match('/profile\/*/', uri_string()) || preg_match('/^storedvalue$/', uri_string())) {
 			require_once '_menu_profile.php';
