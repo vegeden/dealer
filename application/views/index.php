@@ -35,8 +35,10 @@
 					<?php require_once 'frontend/_menu.php';?>
 				</div><!--/span-->
 				<div id="content" class="pull-right">
-					<?php require_once 'frontend/_article_title.php';?>
-					<?php require_once 'frontend/'.$ArticlePage;?>
+				<?php 
+					if(!preg_match('/store\/index*/', uri_string()) && !preg_match('/store\/commodity*/', uri_string())) require_once 'frontend/_article_title.php';
+					require_once 'frontend/'.$ArticlePage;
+				?>
 				</div><!--/span-->
 			</div><!--/row-->
 			<hr>
