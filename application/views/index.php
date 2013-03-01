@@ -27,7 +27,7 @@
 		<?php } ?>
 	</head>
 	<body>
-		<?php require_once 'frontend/_header.php';?><a href="/dealer/backend/account/lists/" >backend</a>
+		<?php require_once 'frontend/_header.php';?>
 		<?php require_once 'frontend/_nav.php';?>
 		<div class="container-fluid">
 			<div class="row-fluid">

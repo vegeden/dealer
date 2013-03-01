@@ -1,5 +1,6 @@
 <?php
 	/**		menu user setting	**/
+	$lang['menu_profile_title']				= '會員資料';
 	$lang['menu_profile']					= '個人資料';
 	$lang['menu_account_settings']			= '密碼修改';
 	

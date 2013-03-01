@@ -7,9 +7,10 @@ $lang['backFrontend']						= '後台管理';
 /**		header		**/
 $lang['Welcome']							= ' 您好!';
 
-$lang['UserInfo_logout']					= '會員登出';
+$lang['Backend_management']					= '後台管理';
 $lang['UserInfo_Profile']					= '我的帳戶';
 $lang['UserInfo_MyCart']					= '購物車';
+$lang['UserInfo_logout']					= '會員登出';
 
 $lang['About_CustomerService']				= '客戶服務';
 $lang['About_BuyDirections']				= '購物說明';
@@ -31,9 +32,11 @@ $lang['nav_class']							= '商品分類';
 $lang['nav_storedvalue_index']				= '儲值金加值';
 $lang['nav_storedvalue_apply']				= '儲值金加值';
 
+$lang['nav_profile_index']					= '我的帳戶';
 $lang['nav_profile_editProfile']			= '個人資料修改';
 $lang['nav_profile_editPwd']				= '密碼修改';
 
+$lang['nav_cart_index']						= '購物車';
 
 
 /**		footer		**/
