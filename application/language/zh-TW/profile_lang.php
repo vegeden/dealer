@@ -11,7 +11,15 @@
 	$lang['Message_Error_pssswdNotReal']		= '密碼不確正';
 	$lang['Message_Error_passwdNotMatch']		= '密碼不相符';
 	
+	/**		menu user setting	**/
+	$lang['profile_title']						= '會員資料';
+	$lang['profile_myself']						= '個人資料';
+	$lang['profile_account_settings']			= '密碼修改';
 	
+	$lang['storedvalue_title']					= '儲值金';
+	$lang['storedvalue_list']					= '儲值金列表';
+	$lang['storedvalue_plus']					= '儲值金加值';
 	
-	
+	$lang['buy_title']							= '購買資料';
+	$lang['buy_list']							= '購買紀錄';
 	
