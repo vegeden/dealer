@@ -8,3 +8,5 @@
 	$lang['store_add_Cart']					= '加入購物車';
 	
 	$lang['store_top4']						= '熱門商品';
+	
+	$lang['content_title']					= '商品內容';
