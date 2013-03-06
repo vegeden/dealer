@@ -7,9 +7,10 @@ $lang['backFrontend']						= '後台管理';
 /**		header		**/
 $lang['Welcome']							= ' 您好!';
 
-$lang['UserInfo_logout']					= '會員登出';
+$lang['Backend_management']					= '後台管理';
 $lang['UserInfo_Profile']					= '我的帳戶';
 $lang['UserInfo_MyCart']					= '購物車';
+$lang['UserInfo_logout']					= '會員登出';
 
 $lang['About_CustomerService']				= '客戶服務';
 $lang['About_BuyDirections']				= '購物說明';
