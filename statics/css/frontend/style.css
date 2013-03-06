@@ -50,7 +50,7 @@ nav div#mostly a{float:left; height:46px; width:118px; background-image:url("../
 nav div#mostly a:hover{background-position:-118px 0;}
 
 div#menu {width:180px; }
-div#menu div#nav_second{border:1px solid #bbb; margin-bottom:7px;}
+div#menu div#nav_second{border:1px solid #ddd; margin-bottom:7px;}
 div#menu div#nav_second div#title{font-size:14px; background-color:#ddd; padding:3px 0 3px 10px; color:#227eb9; font-weight: bold;}
 div#menu div#nav_second ul {list-style:none; margin:0;}
 div#menu div#nav_second ul li {padding:5px 0;padding-left:10px;border-bottom:1px dotted #227EB9; color:#227eb9;}
@@ -69,12 +69,11 @@ article dl > dt, dd{padding-top:15px;}
 article input.input-large{margin:0}
 
 /** 	cart	**/
-article#cart .hr{border-top: 2px dashed #ccc; padding-top:50px;}
+article#cart .hr{border-top: 2px dashed #ccc; padding-top:50px; }
 article#cart div.continueBuy {padding:20px 0;}
 article#cart dl {height: 30px;}
 article#cart div.item { padding : 0 20px;}
-article#cart .padding-LeftRight {margin:0 20px}
-article#cart li.media {padding-left:30px; padding-right:30px}
+article#cart li.media {padding-left:30px; padding-bottom:30px;}
 article#cart div.productInfo{border-bottom: 1px solid #ccc;}
 article#cart div.productInfo, article#cart div.productNum{padding: 10px 10px 0 0;}
 article#cart h4{padding-top: 10px;}
@@ -83,25 +82,10 @@ article#cart span.num {padding-left: 30px;}
 article#cart span.num  input[type="number"]{ width: 50px; margin-top: 7px;}
 article#cart span.total_price {padding-left: 20px;}
 article#cart span.haveNumb {padding-right:30px;}
-article#cart .row {padding-right:20px;}
 article#cart .row dl {border-top: 3px solid #ccc; padding-top:15px;}
 article#cart .row dt {width: auto;}
 article#cart .row dd {margin-left: 90px;font-size: 20px;}
 article#cart .row .checkout {padding:10px 30px 0 0;}
-article#cart .row .checkout {
-    -webkit-animation-duration: 5s;
-    -webkit-animation-delay: 2s;
-    -webkit-animation-iteration-count: infinite;
-	-moz-animation-duration: 5s;
-    -moz-animation-delay: 2s;
-    -moz-animation-iteration-count: infinite;
-	-o-animation-duration: 5s;
-    -o-animation-delay: 2s;
-    -o-animation-iteration-count: infinite;
-	animation-duration: 5s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-}
 
 article#storedvalue-index div#declaration{margin-top:30px;}
 article#storedvalue-index div#declaration textarea{width:80%;}
@@ -111,6 +95,13 @@ article#storedvalue-apply #btn-group button{padding:20px 50px; font-size:28px; m
 article#storedvalue-apply div.detail{}
 article#storedvalue-apply div.detail div{margin-top:50px;}
 article#storedvalue-apply div.detail dl{margin-left:220px;}
+
+article#profile-index {}
+article#profile-index ul{list-style: none;margin:0;}
+article#profile-index ul li{width:282px;float:left;padding:0 25px;}
+article#profile-index ul li ul li{padding:0;padding-top: 8px;}
+article#profile-index ul li div.header{border-top:4px dashed #cde7f7; border-bottom:4px dashed #cde7f7;}
+article#profile-index ul li > a{text-decoration: none;}
 
 article#profile-editProfile label {width:100px;font-size:20px;}
 article#profile-editProfile label.gender_Male {}
@@ -135,6 +126,11 @@ article#store div.content{width:998px;overflow:auto;}
 article#store div.content ul{list-style: none;margin:0;margin-left:3px;}
 article#store div.content ul li{float:left;padding:10px 3px;}
 article#store div.content ul li > a.select{font-weight: bold;}
+
+article#store-commodity div#goods_pic {margin-right:20px;}
+article#store-commodity div#price_info {overflow:auto;height:300px;}
+article#store-commodity div#content_title {margin:10px 0; padding:10px; background-color:#cde6f4; font-size:16px; color:#227eb9;font-weight: bold;}
+article#store-commodity div#commodity_content {}
 
 /**	bootstrap **/
 blockquote { border-left-color:#9cbfd4;}
