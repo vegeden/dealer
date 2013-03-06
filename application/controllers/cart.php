@@ -22,7 +22,8 @@ class Cart extends CI_Controller {
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
 		$cart = $this->session->get('cart');
-		$this->parames['cart'] = $cart;
+		$this->parames['cart'] 	= $cart;
+		$this->parames['sum'] 	= 0;
 		if($cart) $this->parames['items_information'] = $this->items_information->SWheres($cart);
 	
 		$this->load->view('index', $this->parames);
