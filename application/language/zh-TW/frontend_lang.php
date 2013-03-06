@@ -31,9 +31,11 @@ $lang['nav_class']							= '商品分類';
 $lang['nav_storedvalue_index']				= '儲值金加值';
 $lang['nav_storedvalue_apply']				= '儲值金加值';
 
+$lang['nav_profile_index']					= '我的帳戶';
 $lang['nav_profile_editProfile']			= '個人資料修改';
 $lang['nav_profile_editPwd']				= '密碼修改';
 
+$lang['nav_cart_index']						= '購物車';
 
 
 /**		footer		**/
