@@ -1,4 +1,3 @@
-<?php $sum = 0; ?>
 <article id="cart">
 	<?php 
 		if(isset($items_information)) {
@@ -8,7 +7,7 @@
 			<a class="btn btn-success" href="<?php echo $url; ?>../../store/"><?php echo $lang->line('continueBuy'); ?></a>
 		</div>
 	</div>
-	<ul class="media-list padding-LeftRight">
+	<ul class="media-list">
 		<?php 
 			if($items_information->num_rows() > 0)
 			foreach($items_information->result() as $key => $rows) {
@@ -49,8 +48,6 @@
 			<a class="btn btn-danger btn-large" href="<?php echo $url; ?>../../checkout/"><?php echo $lang->line('checkout'); ?></a>
 		</div>
 	</div>
-	<link href="/dealer/statics/css/lib/animate.css/animate.min.css" rel="stylesheet">
-	
 	<?php } else { ?>
 	
 	<?php } ?>
