@@ -46,6 +46,9 @@ class Parames extends CI_Model {
 		/** verify ACL	**/
 		if($this->InterfaceStatus == 0) $this->verifyPage($nav_page);
 		
+		/** verify ACL	**/
+		if($this->UserInfo->user_status == 0  && !($navSplit[1] = 'profile' && $navSplit[2] == 'editProfile')) $this->verifyUserReg();
+		
 		$this->parame['js']				= $this->loadJS($navSplit[1]);
 		$this->parame['nav_page'] 		= $nav_page;
 		$this->parame['topName'] 		= $topName;
@@ -115,6 +118,10 @@ class Parames extends CI_Model {
 		}
 	}
 		
+	private function verifyUserReg() {
+		$this->redirect('/dealer/profile/EditProfile/');
+	}
+	
 	public function redirect($url) {
 		header("Location:$url");
 		exit;
