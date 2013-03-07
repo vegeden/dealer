@@ -14,7 +14,7 @@
 				<h3><?php echo $lang->line('storedvalue_title'); ?></h3>
 			</div>
 			<ul>
-				<li class="center"><a href=""><h4><?php echo $lang->line('storedvalue_list'); ?></h4></a></li>
+				<li class="center"><a href="/<?php echo $lang->line('folder_name').'/storedvalue/lists/';?>"><h4><?php echo $lang->line('storedvalue_list'); ?></h4></a></li>
 				<li class="center"><a href="/<?php echo $lang->line('folder_name').'/storedvalue/';?>"><h4><?php echo $lang->line('storedvalue_plus'); ?></h4></a></li>
 			</ul>
 		</li>
