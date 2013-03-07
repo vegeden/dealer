@@ -31,6 +31,7 @@ $lang['nav_class']							= '商品分類';
 /**		article	title	**/	
 $lang['nav_storedvalue_index']				= '儲值金加值';
 $lang['nav_storedvalue_apply']				= '儲值金加值';
+$lang['nav_storedvalue_lists']				= '儲值金列表';
 
 $lang['nav_profile_index']					= '我的帳戶';
 $lang['nav_profile_editProfile']			= '個人資料修改';
