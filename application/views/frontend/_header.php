@@ -3,13 +3,15 @@
 	<div id="nav">
 		<div id="top">
 			<ul id="UserName" class="breadcrumb">
-				<li><b><?php echo $UserInfo->name.$lang->line('Welcome'); ?></b></li>
+				<li><b><?php if($UserInfo->user_status != 0) echo $UserInfo->name.$lang->line('Welcome'); ?></b></li>
 			</ul>
 			<div id="UserInfo">
 				<div id="break"></div>
 				<div id="break-right">
 					<ul class="breadcrumb">
+						<?php if($UserInfo->type_id != 4) { ?>
 						<li><a href="/<?php echo $lang->line('folder_name').'/backend/account/lists/'; ?>"><?php echo $lang->line('Backend_management'); ?></a> <span class="divider">|</span></li>
+						<?php } ?>
 						<li><a href="/<?php echo $lang->line('folder_name').'/profile/'; ?>"><?php echo $lang->line('UserInfo_Profile'); ?></a> <span class="divider">|</span></li>
 						<li><a href="/<?php echo $lang->line('folder_name').'/cart/'; ?>"><?php echo $lang->line('UserInfo_MyCart'); ?></a> <span class="divider">|</span></li>
 						<li><a href="/<?php echo $lang->line('folder_name').'/home/logout/'; ?>"><?php echo $lang->line('UserInfo_logout'); ?></a></li>
