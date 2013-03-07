@@ -140,6 +140,7 @@ blockquote { border-left-color:#9cbfd4;}
 
 dd { position:relative;padding-bottom:10px; }
 dt input[type="text"]{ padding:10px; }
+table tr.firstRow td{font-weight: bold;}
 td.items { width : 55px;}
 td.option { width : 50px;}
 td.invoice { width : 25px;}
