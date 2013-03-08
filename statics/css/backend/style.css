@@ -12,6 +12,7 @@ footer {
 	padding: 9px 0;
 }
 
+table tr.firstRow td{font-weight: bold;}
 dd { position:relative;padding-bottom:10px; }
 dt { padding-top:5px; }
 td.items { width : 55px;}
