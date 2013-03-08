@@ -13,7 +13,7 @@
 	</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info firstRow">
-			<td><?php echo $lang->line('commodity_item_stop_sale_status');?></td>
+			<td class="option"><?php echo $lang->line('commodity_item_stop_sale_status');?></td>
 			<td><?php echo $lang->line('commodity_item_name');?></td>
 			<td><?php echo $lang->line('commodity_item_content');?></td>
 		</tr>
