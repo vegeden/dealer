@@ -9,12 +9,12 @@ $(function(){
 	/**		search_bar		**/
 	$.fn.search_easeOutQuart = function() {
 		$(this).on('focus', function(){
-			$(this).animate({ 
+			$(this).stop().animate({ 
 				width: "120px",
 			  }, "slow", "easeOutQuart" );
 		})
 		.on('blur',function() {
-			$(this).animate({ 
+			$(this).stop().animate({ 
 				width: "70px",
 			}, "slow", "easeOutQuart" );
 		});
