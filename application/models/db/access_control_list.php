@@ -8,6 +8,33 @@ class Access_Control_List extends CI_Model {
 		$this->tab = strtolower(get_class($this));
 	}
 	
+	public function Select() {
+		$this->db->order_by('group','ASC');
+		return $this->db->get($this->tab);
+	}
+	
+	public function SWhere($id) {
+		$this->db->where('id', $id);
+		$query =  $this->db->get($this->tab);
+		foreach($query->result() as $row) {
+			return $row;
+		}
+	}
+	
+	public function Add($data) {
+		$this->db->insert($this->tab, $data);
+	}
+	
+	public function Update($id, $data) {
+		$this->db->where('id', $id);
+		$this->db->update($this->tab, $data);
+	}
+	
+	public function Del($id) {
+		$this->db->where('id', $id);
+		$this->db->delete($this->tab); 
+	}
+	
 	public function getNav($type_id) {		
 		$this->type_id = $type_id;
 		if($this->type_id != 1) {
