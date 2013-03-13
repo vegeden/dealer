@@ -37,7 +37,7 @@
 		<?php } ?>
 			<td>
 				<a href="/dealer/backend/commodity/itemEdit/<?php echo $row->id;?>/"  rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
-				<a href="<?php echo $row->id;?>/" class="itemDel"  rel="tooltip" title="<?php echo $lang->line('del'); ?>"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
+				<a href="<?php echo $row->id;?>" class="itemDel"  rel="tooltip" title="<?php echo $lang->line('del'); ?>"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
 			</td>
 			<td>
 				<a href="/dealer/backend/commodity/invoicingEditAdd/<?php echo $row->id;?>/" rel="tooltip" title="<?php echo $lang->line('commodity_invoicing_static1').$lang->line('commodity_invoicing_static0');?>"><img src="/dealer/statics/img/ic_invoice_24.png" width="24" height="24"/></a>
