@@ -31,6 +31,9 @@ article#register select#NameList{display : none;top : 0;left : 170px;position : 
 article#register button.dropdown-toggle{width : 68px;}
 article#register input#prependedDropdownButton{width : 157px;}
 
+/* 		 	adminEdit 	 	  */
+article#adminEdit span.label-success{cursor:pointer;cursor:hand;}
+
 
 /* 		 	commodity 	 	  */
 /* 		 	itemAdd 	 	  */
