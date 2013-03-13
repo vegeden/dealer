@@ -24,6 +24,8 @@ $lang['gender_2']							= '女';
 $lang['phone']								= '電話';
 $lang['email']								= 'Email';
 
+$lang['web_DoYouWantDel']					= '確定刪除?';
+
 
 
 
