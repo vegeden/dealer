@@ -4,9 +4,15 @@
 			<dt><?php echo $lang->line('SysSetting_access'); ?></dt>
 			<dd><input type="text" placeholder="" class="input-large" name="access" value="<?php if(!empty($ACL->access))echo $ACL->access;?>"></dd>
 			<dt><?php echo $lang->line('SysSetting_permission'); ?></dt>
-			<dd><input type="text" placeholder="" class="input-large" name="permission" value="<?php if(!empty($ACL->permission))echo $ACL->permission;?>"></dd>
+			<dd>
+				<input type="text" placeholder="" class="input-large" name="permission" value="<?php if(!empty($ACL->permission))echo $ACL->permission;?>">
+				<span class="help-inline"><?php echo $lang->line('SysSetting_permission_note'); ?></span>
+			</dd>
 			<dt><?php echo $lang->line('SysSetting_publicPage'); ?></dt>
-			<dd><input type="text" placeholder="" class="input-large" name="publicPage" value="<?php if(isset($ACL->publicPage))echo $ACL->publicPage;?>"></dd>
+			<dd>
+				<input type="text" placeholder="" class="input-large" name="publicPage" value="<?php if(isset($ACL->publicPage))echo $ACL->publicPage;?>">
+				<span class="help-inline"><?php echo $lang->line('SysSetting_publicPage_note'); ?></span>
+			</dd>
 		</dl>
 		<div class="row">
 			<div class="span3 offset3">
