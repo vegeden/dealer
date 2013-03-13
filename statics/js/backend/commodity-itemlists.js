@@ -70,10 +70,12 @@ $(function() {
 						
 					}
 					$("[rel='tooltip']").tooltip();
+					$("div.pagination").hide();
 				}
 			});
 		} else {
 			$('table').html(originalTable.html());
+			$("div.pagination").show();
 		}
 	});
 	
