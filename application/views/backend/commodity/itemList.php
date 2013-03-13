@@ -4,8 +4,12 @@
 			<a href="<?php echo $url.'../itemAdd/';?>"><?php echo $lang->line('nav_commodity_itemAdd');?></a>
 		</li>
 	</ul>
+	<div class="input-append pull-right">
+		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('commodity_item_name');?>">
+		<span class="add-on"><?php echo $lang->line('search');?></span>
+	</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
-		<tr class="info">
+		<tr class="info firstRow">
 			<td class="items"></td>
 			<td class="invoice"></td>
 			<td><?php echo $lang->line('commodity_item_name'); ?></td>
@@ -33,7 +37,7 @@
 		<?php } ?>
 			<td>
 				<a href="/dealer/backend/commodity/itemEdit/<?php echo $row->id;?>/"  rel="tooltip" title="<?php echo $lang->line('edit'); ?>"><img src="/dealer/statics/img/ic_action_edit.png"/></a>
-				<a href="<?php echo $row->id;?>" class="itemDel"  rel="tooltip" title="<?php echo $lang->line('del'); ?>"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
+				<a href="<?php echo $row->id;?>/" class="itemDel"  rel="tooltip" title="<?php echo $lang->line('del'); ?>"><img src="/dealer/statics/img/ic_action_remove.png"/></a>
 			</td>
 			<td>
 				<a href="/dealer/backend/commodity/invoicingEditAdd/<?php echo $row->id;?>/" rel="tooltip" title="<?php echo $lang->line('commodity_invoicing_static1').$lang->line('commodity_invoicing_static0');?>"><img src="/dealer/statics/img/ic_invoice_24.png" width="24" height="24"/></a>
@@ -79,3 +83,4 @@
 		</ul>
 	</div>
 </article>
+<script src="/dealer/statics/js/backend/commodity-itemlists.js"></script>

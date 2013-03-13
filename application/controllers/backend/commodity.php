@@ -790,12 +790,11 @@ class Commodity extends CI_Controller {
 		$name = $this->input->post('n', TRUE );
 		
 		if( !empty($name) ) {
-			$query = $this->items_information->FindItemName($this->UserInfo->id, $name);
+			$query = $this->items_information->FindItemName($name);
 			if($query->num_rows() > 0) {
 				$result['count'] = 1;
-				$result['type_id'] = $this->UserInfo->type_id;
 				foreach($query->result() as $row) {
-					$result['user_information'][] = $row;
+					$result['items_information'][] = $row;
 				}
 			}
 		}
