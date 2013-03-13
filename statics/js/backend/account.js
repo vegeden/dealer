@@ -103,7 +103,7 @@ $(function(){
 		}
 	});
 	
-	$("input#search_bar").search_easeOutQuart();
+	$("input#search_bar").search_easeOutQuart($(this));
 	
 	/*		repasswd/		*/
 	$("small cite span.label").click(function() {

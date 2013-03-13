@@ -52,7 +52,7 @@ $(function(){
 		return false;
 	});
 	
-	$("input#search_bar").search_easeOutQuart();
+	$("input#search_bar").search_easeOutQuart($(this));
 	
 	$(".cancel").click(function(){
 		var opt = $(this);
