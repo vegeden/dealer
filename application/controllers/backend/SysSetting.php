@@ -13,7 +13,7 @@ class SysSetting extends CI_Controller {
 		$this->Url = '/'.$this->lang->line('folder_name').'/backend/'.get_class($this).'/';
 		
 		$this->load->model('db/sys_config');
-		
+		$this->load->model('db/access_control_list');
     }	
 	
 	public function index() {
@@ -60,6 +60,34 @@ class SysSetting extends CI_Controller {
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
+		
+		$this->parames['ACL'] = $this->access_control_list->Select();
+		
+		$this->load->view('backend', $this->parames);
+	}
+	
+	public function ACLAdd() {
+		/*	-------------------------------------------	*/
+		$this->Parames->init('nav_SysSetting_ACLAdd');
+		$this->parames = $this->Parames->getParams();
+		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
+		/*	-------------------------------------------	*/
+		
+		$this->onACLAdd();
+		
+		$this->load->view('backend', $this->parames);
+	}
+	
+	public function ACLEdit($id) {
+		/*	-------------------------------------------	*/
+		$this->Parames->init('nav_SysSetting_ACLEdit');
+		$this->parames = $this->Parames->getParams();
+		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
+		/*	-------------------------------------------	*/
+		
+		$this->onACLEdit($id);
+		$this->parames['ACL'] = $this->access_control_list->SWhere($id);
+		
 		
 		$this->load->view('backend', $this->parames);
 	}
@@ -115,6 +143,61 @@ class SysSetting extends CI_Controller {
 		$id = $this->input->post('uti', TRUE );
 		if(!empty($id)) {
 			$this->sys_config->Del($id);
+		}
+	}
+	
+	private function onACLAdd() {
+		$this->onCancel('ACL/');
+		
+		$group 			= $this->input->post('group', TRUE );
+		$access 		= $this->input->post('access', TRUE );
+		$permission 	= $this->input->post('permission', TRUE );
+		$publicPage 	= $this->input->post('publicPage', TRUE );
+		
+		if(!empty($group) && !empty($access) && !empty($permission) && isset($publicPage)) {
+			if($publicPage == '0' || $publicPage == '1') {
+				$data = array(
+							'group' 		=> $group, 
+							'access'		=> $access,
+							'permission'	=> $permission,
+							'publicPage'	=> $publicPage
+						);
+				
+				$this->access_control_list->Add($data);
+				$this->Parames->redirect($this->Url.'ACL/');
+			}
+		} 		
+	}
+	
+	private function onACLEdit($id) {
+		$this->onCancel('ACL/');
+		
+		$group 			= $this->input->post('group', TRUE );
+		$access 		= $this->input->post('access', TRUE );
+		$permission 	= $this->input->post('permission', TRUE );
+		$publicPage 	= $this->input->post('publicPage', TRUE );
+		
+		if(!empty($group) && !empty($access) && !empty($permission) && isset($publicPage)) {
+			if($publicPage == '0' || $publicPage == '1') {
+				$data = array(
+							'group' 		=> $group, 
+							'access'		=> $access,
+							'permission'	=> $permission,
+							'publicPage'	=> $publicPage
+						);
+				
+				$this->access_control_list->Add($data);
+				$this->Parames->redirect($this->Url.'ACL/');
+			}
+		} 		
+	}
+	
+	public function ajaxACLDel() {		
+		$this->Parames->init('nav_account_ajaxACLDel');
+		
+		$id = $this->input->post('uti', TRUE );
+		if(!empty($id)) {
+			$this->access_control_list->Del($id);
 		}
 	}
 }
