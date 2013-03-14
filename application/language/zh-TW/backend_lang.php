@@ -38,6 +38,12 @@ $lang['nav_commodity_categorySecondAdd']	= '小類新增';
 $lang['nav_commodity_categorySecondEdit']	= '小類修改';
 $lang['nav_commodity_categorySecondDel']	= '小類刪除';
 
+$lang['nav_mostly']							= '量販專區管理';
+$lang['nav_mostly_lists']					= '量販商品列表';
+$lang['nav_mostly_add']						= '量販商品新增';
+$lang['nav_mostly_edit']					= '量販商品修改';
+$lang['nav_mostly_del']						= '量販商品刪除';
+
 $lang['nav_account']						= '會員管理';
 $lang['nav_account_lists']					= '會員列表';
 $lang['nav_account_register']				= '會員新增';

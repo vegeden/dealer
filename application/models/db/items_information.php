@@ -106,11 +106,6 @@ class Items_information extends CI_Model {
 		return $this->db->get();
 	}
 	
-	public function SelectMostly() {
-		$this->db->where('area_id = 17');
-		return $this->db->get($this->tab);
-	}
-	
 	public function verify( $item_name ) {
 		$this->db->where('item_name', $item_name);
 		$query = $this->db->get($this->tab);
