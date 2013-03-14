@@ -12,6 +12,7 @@ footer {
 	padding: 9px 0;
 }
 
+table tr.firstRow td{font-weight: bold;}
 dd { position:relative;padding-bottom:10px; }
 dt { padding-top:5px; }
 td.items { width : 55px;}
@@ -29,6 +30,9 @@ input#search_bar{width : 70px;}
 article#register select#NameList{display : none;top : 0;left : 170px;position : absolute;margin-left : 70px; width : 205px;z-index : 2;}
 article#register button.dropdown-toggle{width : 68px;}
 article#register input#prependedDropdownButton{width : 157px;}
+
+/* 		 	adminEdit 	 	  */
+article#adminEdit span.label-success{cursor:pointer;cursor:hand;}
 
 
 /* 		 	commodity 	 	  */

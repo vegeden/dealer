@@ -22,19 +22,34 @@ class Store extends CI_Controller {
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
+<<<<<<< HEAD
 		// print_r($this->parames);
 		$this->parames['viewCount'] = 4;
 		if($category == '' && $category == '') {
 			$this->Parames->redirect('/dealer/');
 		} else if($category != '' && $category_second == '') {
 			$this->parames['store_level'] 	  = 1;
+=======
+		$this->parames['viewCount'] = 4;		
+		if(!empty($category) && empty($category_second)){
+			$this->parames['store_level'] = 1;
+>>>>>>> 3651f3ff8449723620031218553c89a6a1a72216
 			$this->parames['category_second'] = $this->items_category_second->SWhereCategory($category);
 			foreach($this->parames['category_second']->result() as $key => $row) {
 				$this->parames['store'.$row->id] = $this->items_information->SelectOnShell($category,$row->id,$this->parames['store_level']);
 			}
+<<<<<<< HEAD
 		} else if($category != '' && $category_second != '') {	
 			$this->parames['store_level'] = 2;
 			$this->parames['store'] 	  = $this->items_information->SelectOnShell($category,$category_second,$this->parames['store_level']);
+=======
+		} else if(!empty($category) && !empty($category_second)){			
+			$this->parames['store_level'] = 2;
+			$this->parames['store'] 	= $this->items_information->SelectOnShell($category,$category_second,$this->parames['store_level']);
+		} else {
+			$this->parames['store_level'] = 0;
+			$this->Parames->redirect('/dealer/');
+>>>>>>> 3651f3ff8449723620031218553c89a6a1a72216
 		}
 		$this->load->view('index', $this->parames);
 	}

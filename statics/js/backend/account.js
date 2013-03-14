@@ -36,11 +36,14 @@ $(function(){
 							break;
 					}
 				});
-				
+		
+		
 		$("button.dropdown-toggle")
+			.width( 42 + (type_name.length - 3 ) * 14)
 			.html(type_name)
 			.addClass('btn-success')
 			.parent().parent().find("input#prependedDropdownButton")
+			.width( 143 - (type_name.length - 3 ) * 14)
 			.trigger('focus')
 			.trigger('click');
 			
@@ -100,7 +103,7 @@ $(function(){
 		}
 	});
 	
-	$("input#search_bar").search_easeOutQuart();
+	$("input#search_bar").search_easeOutQuart($(this));
 	
 	/*		repasswd/		*/
 	$("small cite span.label").click(function() {

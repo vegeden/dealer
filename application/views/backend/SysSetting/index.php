@@ -1,4 +1,4 @@
-<article id="shelvesEditAdd">
+<article id="syssetting-list">
 	<ul class="nav nav-pills pull-left">
 		<li class="">
 			<a href="<?php echo $url.'../SysConfigAdd/';?>"><?php echo $lang->line('add');?></a>

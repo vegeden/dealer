@@ -21,6 +21,7 @@ class Checkout extends CI_Controller {
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
+		$this->parames['cart'] = $this->session->get('cart');
 		$this->load->view('index', $this->parames);
 	}
 }

@@ -13,6 +13,7 @@ class Storedvalue extends CI_Controller {
 		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
 		
 		$this->load->model('db/icash_apply');
+		$this->load->model('pages');
     }	
 	
 	public function index() {
@@ -32,6 +33,19 @@ class Storedvalue extends CI_Controller {
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
 		$this->onApply();
+		$this->load->view('index', $this->parames);
+	}
+	
+	public function lists($page=1) {
+		/*	-------------------------------------------	*/
+		$this->Parames->init('nav_storedvalue_lists');
+		$this->parames = $this->Parames->getParams();
+		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
+		/*	-------------------------------------------	*/
+		
+		$count = $this->icash_apply->SelectCount($this->UserInfo->id);
+		$limit = $this->pages->init($count, $page);
+		$this->parames['icash_apply'] 	= $this->icash_apply->SelectList($this->UserInfo->id, $limit);
 		$this->load->view('index', $this->parames);
 	}
 	

@@ -13,7 +13,15 @@
 			<dt><?php echo $lang->line('NewPasswd');?></dt>
 			<dd><input type="password" placeholder="" class="input-large" name="NewPasswd" value=""></dd>
 			<dt><?php echo $lang->line('againNewPasswd');?></dt>
-			<dd><input type="password" min="0" placeholder="" class="input-large" name="againNewPasswd" value=""></dd>
+			<dd>
+				<div class="control-group againNewPasswd">
+					<div class="controls">
+						<input type="password" min="0" placeholder="" class="input-large" name="againNewPasswd" value="">
+						<span class="help-inline anim-refresh displaynNone"></span>
+						<span class="help-inline message displaynNone"><h5>123</h5></span>
+					</div>
+				</div>
+			</dd>
 		</dl>
 		<div id="submit">
 			<button class="btn btn-large offset1" type="sumbit" name="cancel" value="cancel"><?php echo $lang->line('cancel');?></button>

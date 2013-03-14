@@ -5,11 +5,15 @@
 		</li>
 	</ul>
 	<div class="input-append pull-right">
+<<<<<<< HEAD
 		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('account_name');?>">
+=======
+		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('commodity_item_name');?>">
+>>>>>>> 3651f3ff8449723620031218553c89a6a1a72216
 		<span class="add-on"><?php echo $lang->line('search');?></span>
 	</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
-		<tr class="info">
+		<tr class="info firstRow">
 			<td class="items"></td>
 			<td class="invoice"></td>
 			<td><?php echo $lang->line('commodity_item_name'); ?></td>
@@ -85,3 +89,4 @@
 		</ul>
 	</div>
 </article>
+<script src="/dealer/statics/js/backend/commodity-itemlists.js"></script>

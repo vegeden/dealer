@@ -59,7 +59,7 @@ class Parames extends CI_Model {
 	private function loadBackendNav() {
 		/**		load Access Control List 		**/
 		$this->load->model('db/access_control_list');
-		$this->parame['nav'] = $this->access_control_list->getNav();
+		$this->parame['nav'] = $this->access_control_list->getNav($this->UserInfo->type_id);
 	}
 	
 	private function loadFrontendNav() {
@@ -112,7 +112,7 @@ class Parames extends CI_Model {
 	}
 	
 	private function verifyPage($nav) {
-		$verifyPage = $this->access_control_list->verifyPage($this->UserInfo->type_id, $nav);
+		$verifyPage = $this->access_control_list->verifyPage($nav);
 		if(!$verifyPage) {
 			show_404();
 		}

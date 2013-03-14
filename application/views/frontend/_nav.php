@@ -24,6 +24,6 @@
 	</div>
 	<div id="right"></div>
 	<div id="icash_store"><a href="/<?php echo $lang->line('folder_name').'/storedvalue/';?>"></a></div>
-	<div id="mostly"><a href="#"></a></div>
+	<div id="mostly"><a href="/<?php echo $lang->line('folder_name').'/mostly/';?>"></a></div>
 </nav>
 					

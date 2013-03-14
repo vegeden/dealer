@@ -8,7 +8,7 @@ class Icash_apply extends CI_Model {
 		$this->tab = strtolower(get_class($this));
 	}
 		
-	public function SelectList($id, $kind, $limit=array(1,0)) {
+	public function SelectAdminList($id, $kind, $limit=array(1,0)) {
 		$level = $this->getUserStatus($id);
 
 		if($level != '') {
@@ -53,7 +53,7 @@ class Icash_apply extends CI_Model {
 		
 	}
 	
-	public function SelectCount($id, $kind) {
+	public function SelectAdminCount($id, $kind) {
 		$count = 0;		
 		$level = '';
 		$level = $this->getUserStatus($id);
@@ -73,6 +73,24 @@ class Icash_apply extends CI_Model {
 					break;
 			}
 		}
+		return $count;
+	}
+	
+	public function SelectList($id, $limit=array(1,0)) {
+		$this->db->select("icash_apply.remittance_status, icash_apply.apply_status, icash_apply.bank_num, icash_apply.apply_name, icash_apply.apply_price, icash_apply.apply_datetime, icash_apply.audit_datetime");
+		$this->db->from($this->tab);
+		$this->db->join('user_information', "user_information.id = icash_apply.user_id");
+		$this->db->where('icash_apply.user_id', $id);
+		$this->db->order_by("apply_datetime", "desc"); 
+		$this->db->limit($limit[1], $limit[0]);
+		return $this->db->get();
+	}
+	
+	public function SelectCount($id) {
+		$count = 0;		
+		$this->db->from($this->tab);
+		$this->db->where('user_id', $id);
+		$count = $this->db->count_all_results();
 		return $count;
 	}
 	

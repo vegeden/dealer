@@ -27,9 +27,9 @@ class Storedvalue extends CI_Controller {
 		
 		
 		$this->parames['kind'] = $kind;
-		$count = $this->icash_apply->SelectCount($this->UserInfo->id, $kind);
+		$count = $this->icash_apply->SelectAdminCount($this->UserInfo->id, $kind);
 		$limit = $this->pages->init($count, $page);
-		$this->parames['icash_apply'] 	= $this->icash_apply->SelectList($this->UserInfo->id, $kind, $limit);
+		$this->parames['icash_apply'] 	= $this->icash_apply->SelectAdminList($this->UserInfo->id, $kind, $limit);
 		
 		$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
 		$this->parames['page_previous'] 	= $this->pages->getPrevious();

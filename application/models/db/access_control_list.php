@@ -8,7 +8,35 @@ class Access_Control_List extends CI_Model {
 		$this->tab = strtolower(get_class($this));
 	}
 	
-	public function getNav() {		
+	public function Select() {
+		$this->db->order_by('group','ASC');
+		return $this->db->get($this->tab);
+	}
+	
+	public function SWhere($id) {
+		$this->db->where('id', $id);
+		$query =  $this->db->get($this->tab);
+		foreach($query->result() as $row) {
+			return $row;
+		}
+	}
+	
+	public function Add($data) {
+		$this->db->insert($this->tab, $data);
+	}
+	
+	public function Update($id, $data) {
+		$this->db->where('id', $id);
+		$this->db->update($this->tab, $data);
+	}
+	
+	public function Del($id) {
+		$this->db->where('id', $id);
+		$this->db->delete($this->tab); 
+	}
+	
+	public function getNav($type_id) {		
+		$this->type_id = $type_id;
 		if($this->type_id != 1) {
 			// 一次篩選
 			$this->db->like('permission', $this->type_id);
@@ -43,13 +71,12 @@ class Access_Control_List extends CI_Model {
 		return $nav;
 	}
 	
-	public function verifyPage($type_id, $page) {
-		if($type_id != 1) {
-			$this->type_id = $type_id;
+	public function verifyPage($page) {
+		if($this->type_id != 1) {
 			
 			$splitPage = preg_split('/_/', $page);
 			$this->db->where('access',$splitPage[2]);
-			$this->db->like('permission', $type_id); 
+			$this->db->like('permission', $this->type_id); 
 			$query = $this->db->get($this->tab);
 			
 			$access = array();
@@ -60,7 +87,7 @@ class Access_Control_List extends CI_Model {
 				}
 			}
 			
-			if( array_search($type_id, $access) === false ) {
+			if( array_search($this->type_id, $access) === false ) {
 				return false;
 			}
 		}

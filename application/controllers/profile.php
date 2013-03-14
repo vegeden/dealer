@@ -124,6 +124,11 @@ class Profile extends CI_Controller {
 			}
 		}
 	}
+	
+	public function ajaxGetLang() {
+		$this->Parames->init('nav_profile_ajaxGetLang');
+		echo json_encode($this->lang);
+	}
 }
 
 

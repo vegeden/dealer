@@ -1,7 +1,15 @@
 
 $(function() {
-	var lang;
-	getLang();
+	var lang = function() {
+		var response = '123';
+		$.get('/dealer/backend/commodity/ajaxGetLang/',{
+		},function(request) {	
+			// return JSON.parse(request);
+		}).done(function(request){
+			lang = JSON.parse(request);
+		});
+	}();
+
 	var originalTable = $('table').clone();
 	/*		lists/		*/
 	$('input#search_bar').keyup(function() {
@@ -14,75 +22,62 @@ $(function() {
 					n: 	n,
 				},
 				error: function(xhr) {
-					// alert('Ajax request µo¥Í¿ù»~');
+					// alert('Ajax request ç™¼ç”ŸéŒ¯èª¤');
 				},
 				success: function(request) {
 					json = JSON.parse(request);
-					console.log(json);
 					
 					var table = $('table');
 					table.html('').append('<tr class="info firstRow">'+ originalTable.find('tr.firstRow').html() +'</tr>');
 					if(json.count == 1) {
-						for(var i=0;i<json.user_information.length;i++) {
-							
+						for(var i=0;i<json.items_information.length;i++) {
 							var rows = '';
-							rows += '<tr class="info">';
-							rows += 	'<td>';
-							if(json.type_id == 1) {
-							rows += 		'<div class="btn-group lists">';
-							rows += 			'<a class="btn status">';
-							rows += 				lang.language['account_status'+json.user_information[i].user_status];
-							rows += 			'</a>';
-							rows += 			'<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>';
-							rows += 			'<ul class="dropdown-menu">';
-							rows += 				'<li><a href="0,'+json.user_information[i].id+'"><i class="icon-remove"></i> <span>'+lang.language['account_status0']+'</span></a></li>';
-							rows += 				'<li><a href="1,'+json.user_information[i].id+'"><i class="icon-ok"></i> <span>'+lang.language['account_status1']+'</span></a></li>';
-							rows += 				'<li><a href="2,'+json.user_information[i].id+'"><i class="icon-lock"></i> <span>'+lang.language['account_status2']+'</span></a></li>';
-							rows += 				'<li class="divider"></li>';
-							rows += 				'<li><a href="/dealer/backend/account/adminEdit/'+json.user_information[i].id+'/"><i class="icon-pencil"></i> '+lang.language['edit']+'</li>';
-							rows += 			'</ul>';
-							rows += 		'</div>';
+							if(json.items_information[i].warn_stock > 0) {
+								rows += '<tr class="info">';
 							} else {
-							rows += 		lang.language['account_status'+json.user_information[i].user_status];
+								rows += '<tr class="error">';
 							}
-							rows += 	'</td>';
-							rows += 	'<td>'+json.user_information[i].account+'</td>';
-							rows += 	'<td>'+json.user_information[i].name+'</td>';
-							rows += 	'<td>'+json.user_information[i].email+'</td>';
-							rows += 	'<td>'+lang.language['account_gender'+json.user_information[i].gender]+'</td>';
-							rows += 	'<td>'+json.user_information[i].phone+'</td>';
-							rows += 	'<td>'+json.user_information[i].address+'</td>';
 							
-							if(json.type_id == 1) {
-							rows += 	'<td>'+json.user_information[i].type_id+'</td>';
-								if(json.user_information[i].upper_id != null) {
-									rows += 	'<td>'+json.user_information[i].upper_id+'</td>';
-								} else {
-									rows += 	'<td></td>';
-								}
+							
+							rows += 	'<td>';
+							rows += 		'<a href="/dealer/backend/commodity/itemEdit/'+json.items_information[i].id+'/"  rel="tooltip" title="'+lang.language['edit']+'"><img src="/dealer/statics/img/ic_action_edit.png"/></a>';
+							rows += 		'<a href="'+json.items_information[i].id+'/" class="itemDel"  rel="tooltip" title="'+lang.language['del']+'"><img src="/dealer/statics/img/ic_action_remove.png"/></a>';
+							rows += 	'</td>';
+							rows += 	'<td>';
+							rows += 		'<a href="/dealer/backend/commodity/invoicingEditAdd/'+json.items_information[i].id+'/" rel="tooltip" title="'+lang.language['commodity_invoicing_static1']+lang.language['commodity_invoicing_static0']+'"><img src="/dealer/statics/img/ic_invoice_24.png" width="24" height="24"/></a>';
+							rows += 	'</td>';
+							rows += 	'<td>'+json.items_information[i].item_name+'</td>';
+							rows += 	'<td>'+json.items_information[i].item_number+'</td>';
+							rows += 	'<td>'+json.items_information[i].buy_price+'</td>';
+							rows += 	'<td>'+json.items_information[i].sell_price+'</td>';
+							rows += 	'<td>'+json.items_information[i].safe_stock+'</td>';
+							rows += 	'<td>'+json.items_information[i].bread_name+'</td>';
+							rows += 	'<td>'+json.items_information[i].stock_quantity+'</td>';
+							rows += 	'<td>'+json.items_information[i].item_bonus+'</td>';
+							rows += 	'<td>'+json.items_information[i].area_name+'</td>';
+							rows += 	'<td>'+json.items_information[i].category_second_name+'</td>';
+							rows += 	'<td>'+json.items_information[i].category_name+'</td>';
+							rows += 	'<td>'+json.items_information[i].freight_price+'</td>';
+							if(json.items_information[i].special_commodity_status != 0) {
+								rows += 	'<td>'+lang.language['commodity_yes']+'</td>';
+							} else {
+								rows += 	'<td>'+lang.language['commodity_no']+'</td>';
 							}
 							rows += '<tr>';
 							table.append(rows);
 						}
 					} else {
-					
+						
 					}
+					$("[rel='tooltip']").tooltip();
+					$("div.pagination").hide();
 				}
 			});
 		} else {
 			$('table').html(originalTable.html());
-			
+			$("div.pagination").show();
 		}
 	});
-
-	function getLang() {
-		$.post('/dealer/backend/commodity/ajaxGetLang/',{
-		},function(request) {	
-			// return JSON.parse(request);
-		}).done(function(request){
-			lang = JSON.parse(request);
-		});
-	}
 	
 	$('table').on('click','div.lists ul.dropdown-menu li a', function(){
 		var opt = $(this);

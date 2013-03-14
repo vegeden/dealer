@@ -1,7 +1,15 @@
 
 $(function() {
-	var lang;
-	getLang();
+	var lang = function() {
+		var response = '123';
+		$.get('/dealer/backend/account/ajaxGetLang/',{
+		},function(request) {	
+			// return JSON.parse(request);
+		}).done(function(request){
+			lang = JSON.parse(request);
+		});
+	}();
+	
 	var originalTable = $('table').clone();
 	/*		lists/		*/
 	$('input#search_bar').keyup(function() {
@@ -75,15 +83,6 @@ $(function() {
 		}
 	});
 
-	function getLang() {
-		$.post('/dealer/backend/account/ajaxGetLang/',{
-		},function(request) {	
-			// return JSON.parse(request);
-		}).done(function(request){
-			lang = JSON.parse(request);
-		});
-	}
-	
 	$('table').on('click','div.lists ul.dropdown-menu li a', function(){
 		var opt = $(this);
 		var href = opt.attr('href');

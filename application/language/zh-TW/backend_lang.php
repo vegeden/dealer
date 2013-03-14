@@ -72,6 +72,8 @@ $lang['nav_SysSetting']						= '系統設定';
 $lang['nav_SysSetting_index']				= '基本設定';
 $lang['nav_SysSetting_SysConfigEdit']		= '基本設定';
 $lang['nav_SysSetting_ACL']					= 'Access Controller List';
+$lang['nav_SysSetting_ACLAdd']				= '新增 ACL';
+$lang['nav_SysSetting_ACLEdit']				= '修改 ACL';
 
 // web footer
 $lang['footer']								= '蔬食伊甸園 版權所有 © 2012 VegEden All Rights Reserved.';

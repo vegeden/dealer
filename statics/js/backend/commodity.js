@@ -94,7 +94,7 @@ $(function(){
 		}
 		return false;
 	});
-	$("input#search_bar").search_easeOutQuart();
+	$("input#search_bar").search_easeOutQuart($(this));
 	
 	/*	itemEdit */
 	$('#checkbox_Item_Edit').change(function() {
