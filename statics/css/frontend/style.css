@@ -126,6 +126,7 @@ article#store div.content{width:998px;overflow:auto;}
 article#store div.content ul{list-style: none;margin:0;margin-left:3px;}
 article#store div.content ul li{float:left;padding:10px 3px;}
 article#store div.content ul li > a.select{font-weight: bold;}
+article#store div.content ul li a{width:181px;}
 
 article#store-commodity div#goods_pic {margin-right:20px;}
 article#store-commodity div#price_info {overflow:auto;height:300px;}
