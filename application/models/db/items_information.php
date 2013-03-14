@@ -91,7 +91,7 @@ class Items_information extends CI_Model {
 			$this->db->group_by('items_information.id');
 			$this->db->order_by("category_second_id", "ASC"); 
 			$this->db->order_by("sale_item_sum", "DESC");	
-			$this->db->limit(4);
+			$this->db->limit(5);
 		}
 		if($store_level == 2){
 			$this->db->select('items_information.id AS id,item_name,sell_price');
