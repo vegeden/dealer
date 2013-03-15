@@ -10,3 +10,5 @@
 	$lang['store_top4']						= '熱門商品';
 	
 	$lang['content_title']					= '商品內容';
+	
+	$lang['add_cart']						= '已加入購物車';
