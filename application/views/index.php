@@ -8,15 +8,15 @@
 		<meta name="author" content="">
 		
 		<link href="/dealer/statics/css/normalize.css" rel="stylesheet" />
-		<link href="/dealer/statics/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+		<link href="/dealer/statics/lib/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
 		<link href="/dealer/statics/css/frontend/style.css" rel="stylesheet" />
-		<link href="/dealer/statics/css/lib/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+		<link href="/dealer/statics/lib/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet"/>
 		
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script src="/dealer/statics/js/lib/bootstrap/bootstrap.min.js"></script>
-		<script src="/dealer/statics/js/lib/holder/holder.js"></script>
-		<script src="/dealer/statics/js/lib/jquery.easing/jquery.easing.1.3.js"></script>
+		<script src="/dealer/statics/lib/bootstrap/docs/assets/js/bootstrap.min.js"></script>
+		<script src="/dealer/statics/lib/holder/holder.js"></script>
+		<script src="/dealer/statics/lib/jquery.easing/jquery.easing.1.3.js"></script>
 		<script src="/dealer/statics/js/frontend/script.js"></script>
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
