@@ -39,6 +39,7 @@ class Store extends CI_Controller {
 		}
 		$this->load->view('index', $this->parames);
 	}
+	
 	public function commodity($id) {
 		if(empty($id)) $this->Parames->redirect($this->Url);
 		/*	-------------------------------------------	*/
@@ -49,5 +50,10 @@ class Store extends CI_Controller {
 		$this->parames['commodity'] = $this->items_information->SWhere($id);
 		$this->load->view('index', $this->parames);
 		
+	}
+	
+	public function ajaxGetLang() {
+		$this->Parames->init('nav_store_ajaxGetLang');
+		echo json_encode($this->lang);
 	}
 }
