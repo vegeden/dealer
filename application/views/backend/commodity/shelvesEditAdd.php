@@ -38,14 +38,14 @@
 		</div>
 	</form>
 </article>
-<script src="/dealer/statics/js/lib/ckeditor/ckeditor.js"></script>
-<script src="/dealer/statics/js/lib/ckfinder/ckfinder.js"></script>
-<script src="/dealer/statics/js/lib/bootstrap/bootstrap-fileupload.js"></script>
+<script src="/dealer/statics/lib/ckeditor/ckeditor.js"></script>
+<script src="/dealer/statics/lib/ckfinder/ckfinder.js"></script>
+<script src="/dealer/statics/lib/bootstrap/bootstrap-fileupload.js"></script>
 <script>
 	/*	shelvesEditAdd.php	*/
 	CKEDITOR.replace( 'item_fulltext',
     {
-        filebrowserBrowseUrl : '/dealer/statics/js/lib/ckfinder/ckfinder.html',
-		filebrowserImageUploadUrl : '/dealer/statics/js/lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+        filebrowserBrowseUrl : '/dealer/statics/lib/ckfinder/ckfinder.html',
+		filebrowserImageUploadUrl : '/dealer/statics/lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
     });	
 </script>
