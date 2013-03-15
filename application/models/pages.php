@@ -5,7 +5,7 @@ class Pages extends CI_Model {
 	public function __construct() {
 		parent::__construct();
 		
-		$this->displayNum = 30;
+		$this->displayNum = 20;
 	}
 	
 	public function init($total, $page) {
