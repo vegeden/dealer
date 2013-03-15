@@ -6,4 +6,6 @@
 	$lang['continueBuy']					= '繼續購買';
 	$lang['checkout']						= '結帳';
 	
+	$lang['no_data']						= '您的購物車中沒有任何項目。';
+	
 	
