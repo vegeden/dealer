@@ -72,36 +72,38 @@ class Items_information extends CI_Model {
 		return $this->db->count_all($this->tab);
 	}
 	
-	public function SelectOnShell($category_id,$category_second_id,$store_level) {
-		if($store_level == 1) {
-			$this->db->select('items_information.id AS id,
-			items_category_second.category AS category_id,
-			items_category_second.id AS category_second_id,
-			items_information.item_name,
-			category_second_name,
-			items_information.sell_price,
-			sum(sale_item.quantity) AS sale_item_sum');
-			$this->db->from('items_category_second,items_information');
-			$this->db->join('sale_item', 'items_information.id = sale_item.item_id', 'left');
-			$this->db->where('on_off_sale = 1');
-			$this->db->where('items_information.area_id != 17');
-			$this->db->where('items_category_second.category' , $category_id);
-			$this->db->where('items_category_second.id = items_information.category_second_id');
-			$this->db->where('items_category_second.id',$category_second_id);
-			$this->db->group_by('items_information.id');
-			$this->db->order_by("category_second_id", "ASC"); 
-			$this->db->order_by("sale_item_sum", "DESC");	
-			$this->db->limit(5);
-		}
-		if($store_level == 2){
-			$this->db->select('items_information.id AS id,item_name,sell_price');
-			$this->db->where('on_off_sale = 1');
-			$this->db->where('items_information.area_id != 17');
-			$this->db->where('items_category.id',$category_id);
-			$this->db->where('items_category_second.id ',$category_second_id);
-			$this->db->where('items_category_second.category = items_category.id');
-			$this->db->where('items_information.category_second_id = items_category_second.id');
-			$this->db->from($this->tab.', items_category_second, items_category');
+	public function SelectOnSell($category_id, $category_second_id, $store_level) {
+		switch($store_level) {
+			case 1:
+				$this->db->select('items_information.id AS id,
+				items_category_second.category AS category_id,
+				items_category_second.id AS category_second_id,
+				items_information.item_name,
+				category_second_name,
+				items_information.sell_price,
+				sum(sale_item.quantity) AS sale_item_sum');
+				$this->db->from('items_category_second,items_information');
+				$this->db->join('sale_item', 'items_information.id = sale_item.item_id', 'left');
+				$this->db->where('on_off_sale = 1');
+				$this->db->where('items_information.area_id != 17');
+				$this->db->where('items_category_second.category', $category_id);
+				$this->db->where('items_category_second.id = items_information.category_second_id');
+				$this->db->where('items_category_second.id', $category_second_id);
+				$this->db->group_by('items_information.id');
+				$this->db->order_by("category_second_id", "ASC"); 
+				$this->db->order_by("sale_item_sum", "DESC");	
+				$this->db->limit(5);
+				break;
+			case 2:
+				$this->db->select('items_information.id AS id,item_name,sell_price');
+				$this->db->where('on_off_sale = 1');
+				$this->db->where('items_information.area_id != 17');
+				$this->db->where('items_category.id',$category_id);
+				$this->db->where('items_category_second.id ',$category_second_id);
+				$this->db->where('items_category_second.category = items_category.id');
+				$this->db->where('items_information.category_second_id = items_category_second.id');
+				$this->db->from($this->tab.', items_category_second, items_category');
+				break;
 		}
 		return $this->db->get();
 	}
