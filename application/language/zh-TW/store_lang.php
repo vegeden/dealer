@@ -12,3 +12,9 @@
 	$lang['content_title']					= '商品內容';
 	
 	$lang['add_cart']						= '已加入購物車';
+	
+	$lang['store_special_offer']			= '特價：';
+	$lang['store_order']					= '排序：';
+	$lang['store_new_store']				= '最新上架';
+	$lang['store_order_low_to_hight']		= '售價低到高';
+	$lang['store_order_hight_to_low']		= '售價高到低';
