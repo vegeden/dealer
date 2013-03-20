@@ -23,13 +23,12 @@ class Store extends CI_Controller {
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
 		$this->parames['viewCount'] = 4;		
-		if(!empty($category) && empty($category_second)){
+		if(!empty($category) && empty($category_second)) {
 			$this->parames['store_level'] = 1;
 			$this->parames['category_second'] = $this->items_category_second->SWhereCategory($category);
-			foreach($this->parames['category_second']->result() as $key => $row) {
+			foreach($this->parames['category_second']->result() as $key => $row)
 				$this->parames['store'.$row->id] = $this->items_information->SelectOnSell($category, $row->id, $this->parames['store_level']);
-			}
-		} else if(!empty($category) && !empty($category_second)){			
+		} else if(!empty($category) && !empty($category_second)) {
 			$this->parames['store_level'] = 2;
 			$this->parames['store_hot'] = $this->items_information->SelectOnSell($category, $category_second, 1);
 			$this->parames['store'] 	= $this->items_information->SelectOnSell($category, $category_second, $this->parames['store_level']);
