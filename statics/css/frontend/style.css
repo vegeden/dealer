@@ -112,7 +112,7 @@ article#profile-editPwd div#submit {margin-left: 70px;}
 article#store ul li > a{text-decoration: none;}
 article#store div.side{border:1px solid #ddd;}
 article#store div.side{overflow:auto;}
-article#store div.side #title{color:#0088cc; padding:5px 0; padding-left:15px; font-size:16px; border-bottom:1px solid #ddd;}
+article#store div.side #title{color:#0088cc; padding:5px 0; padding-left:15px; font-size:16px;}
 article#store div#top4 ul {list-style: none;margin:0;}
 article#store div#top4 ul li{width:239px; height:auto; float:left; padding:10px 5px;}
 article#store div#top4 ul li #name{padding:10px 0; font-size:16px;}
