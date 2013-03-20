@@ -16,7 +16,7 @@
 					<img src="" data-src="holder.js/220x220" alt="">
 					<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 					<div class="price center">
-						<span>特價：</span>
+						<span><?php echo $lang->line('store_special_offer'); ?></span>
 						<span class="price-num"><?php echo number_format($row_store->sell_price) ;?></span>
 					</div>
 				</a>
@@ -34,10 +34,10 @@
 	</div>
 	<div id="order" class="side">
 		<ul>
-			<li>排序：</li>
-			<li><a class="select" href="#">最新上架</a><span class="divider"> |&nbsp;</span></li>
-			<li><a href="#">售價低到高</a><span class="divider"> |&nbsp;</span></li>
-			<li><a href="#">售價高到低</a></li>
+			<li><?php echo $lang->line('store_order'); ?></li>
+			<li><a class="select" href="#"><?php echo $lang->line('store_new_store'); ?></a><span class="divider"> |&nbsp;</span></li>
+			<li><a href="#"><?php echo $lang->line('store_order_low_to_hight'); ?></a><span class="divider"> |&nbsp;</span></li>
+			<li><a href="#"><?php echo $lang->line('store_order_hight_to_low'); ?></a></li>
 		</ul>
 	</div>
 	<?php 
@@ -63,7 +63,7 @@
 							<img src="" data-src="holder.js/180x180" alt="">
 							<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 							<div class="price center">
-								<span>特價：</span>
+								<span><?php echo $lang->line('store_special_offer'); ?></span>
 								<span class="price-num"><?php echo number_format($row_store->sell_price); ?></span>
 							</div>
 						</a>
@@ -98,7 +98,7 @@
 					<img src="" data-src="holder.js/220x220" alt="">
 					<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 					<div class="price center">
-						<span>特價：</span>
+						<span><?php echo $lang->line('store_special_offer'); ?></span>
 						<span class="price-num"><?php echo number_format($row_store->sell_price) ;?></span>
 					</div>
 				</a>
@@ -113,10 +113,10 @@
 	</div>
 	<div id="order" class="side">
 		<ul>
-			<li>排序：</li>
-			<li><a class="select" href="#">最新上架</a><span class="divider"> |&nbsp;</span></li>
-			<li><a href="#">售價低到高</a><span class="divider"> |&nbsp;</span></li>
-			<li><a href="#">售價高到低</a></li>
+			<li><?php echo $lang->line('store_order'); ?></li>
+			<li><a class="select" href="#"><?php echo $lang->line('store_new_store'); ?></a><span class="divider"> |&nbsp;</span></li>
+			<li><a href="#"><?php echo $lang->line('store_order_low_to_hight'); ?></a><span class="divider"> |&nbsp;</span></li>
+			<li><a href="#"><?php echo $lang->line('store_order_hight_to_low'); ?></a></li>
 		</ul>
 	</div>	
 	<div class="content">
@@ -131,7 +131,7 @@
 							<img src="" data-src="holder.js/180x180" alt="">
 							<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 							<div class="price center">
-								<span>特價：</span>
+								<span><?php echo $lang->line('store_special_offer'); ?></span>
 								<span class="price-num"><?php echo number_format($row_store->sell_price); ?></span>
 							</div>
 						</a>
