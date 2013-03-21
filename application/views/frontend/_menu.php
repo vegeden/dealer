@@ -23,3 +23,6 @@
 <div class="advertisement">
 	<img src="/<?php echo $lang->line('folder_name').'/statics/img_advertisement/ad_left.jpg';?>">
 </div>
+<div class="facebook_fans">
+	<iframe src="http://www.facebook.com/plugins/likebox.php?href=http://www.facebook.com/pages/%E8%94%AC%E9%A3%9F%E4%BC%8A%E7%94%B8%E5%9C%92/195272967164333?width=200&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=355&amp;width=180" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:180px; height:355px;" allowtransparency="true"></iframe>
+</div>
