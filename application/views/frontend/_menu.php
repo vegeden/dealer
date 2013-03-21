@@ -1,5 +1,5 @@
 <div id="nav_second">
-	<div id="title" class="gradient_BlackWhite">
+	<p id="title" class="gradient_BlackWhite">
 		<?php 
 			if(preg_match('/store\/index*/', uri_string())) {
 				echo $lang->line('nav_class');
@@ -9,7 +9,7 @@
 				echo $lang->line('specialoffer');
 			}
 		?>
-	</div>
+	</p>
 	<?php
 		if(preg_match('/store\/index*/', uri_string())) {
 			require_once '_menu_nav_second.php';
