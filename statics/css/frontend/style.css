@@ -56,6 +56,7 @@ div#menu div#nav_second{border:1px solid #ddd;margin-bottom:9px;}
 div#menu div#nav_second ul {list-style:none; margin:0;}
 div#menu div#nav_second ul li {padding:5px 0;padding-left:10px;border-bottom:1px dotted #227EB9; color:#227eb9;}
 div#menu div#nav_second ul li.last {border-bottom:0;}
+div#menu div#nav_second p.title-list{border-top:1px solid #ddd;}
 div#content {width:1013px;}
 
 footer {}
