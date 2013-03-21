@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/dealer/statics/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<link href="/dealer/statics/lib/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
 <link href="/dealer/statics/css/frontend/login.css" rel="stylesheet" type="text/css" />
 <title><?php echo $lang->line('web_title'); ?></title>
 <style type="text/css">
