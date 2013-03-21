@@ -50,8 +50,9 @@ nav div#mostly a{float:left; height:46px; width:118px; background-image:url("../
 nav div#mostly a:hover{background-position:-118px 0;}
 
 div#menu {width:180px; }
-div#menu div#nav_second{border:1px solid #ddd; margin-bottom:7px;}
-div#menu div#nav_second div#title{font-size:14px; background-color:#ddd; padding:3px 0 3px 10px; color:#227eb9; font-weight: bold;}
+div#menu div{margin-bottom:9px;}
+div#menu div#nav_second p#title{font-size:14px; padding:3px 0 3px 10px; color:#227eb9; font-weight: bold;margin:0;}
+div#menu div#nav_second{border:1px solid #ddd;margin-bottom:9px;}
 div#menu div#nav_second ul {list-style:none; margin:0;}
 div#menu div#nav_second ul li {padding:5px 0;padding-left:10px;border-bottom:1px dotted #227EB9; color:#227eb9;}
 div#menu div#nav_second ul li.last {border-bottom:0;}
