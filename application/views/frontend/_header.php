@@ -24,7 +24,7 @@
 					<ul class="breadcrumb">
 						<li><a href="#"><?php echo $lang->line('About_CustomerService'); ?></a> <span class="divider">|</span></li>
 						<li><a href="#"><?php echo $lang->line('About_BuyDirections'); ?></a> <span class="divider">|</span></li>
-						<li><a href="#"><?php echo $lang->line('About_us'); ?></a></li>
+						<li><a href="/<?php echo $lang->line('folder_name').'/about/'; ?>"><?php echo $lang->line('About_us'); ?></a></li>
 					</ul>
 				</div>
 			</div>
