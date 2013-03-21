@@ -135,6 +135,15 @@ article#store-commodity div#price_info {overflow:auto;height:300px;}
 article#store-commodity div#content_title {margin:10px 0; padding:10px; background-color:#cde6f4; font-size:16px; color:#227eb9;font-weight: bold;}
 article#store-commodity div#commodity_content {}
 
+article#about-index div#content {margin:30px 0;}
+article#about-index div#content h3.title{color:#0066CC;font-weight: bold;}
+article#about-index div#content p{font-size:16px;}
+article#about-index div.footer {}
+article#about-index div.footer div{float:left;margin-left:220px;padding-right:10px;}
+article#about-index div.footer blockquote{overflow:auto;}
+article#about-index div.footer ul{list-style: none;margin:0;}
+article#about-index div.footer ul li{padding:0;}
+
 /**	bootstrap **/
 blockquote { border-left-color:#9cbfd4;}
 .container-fluid {padding:0;margin-top:7px;}
