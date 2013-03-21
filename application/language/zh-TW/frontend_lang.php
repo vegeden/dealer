@@ -39,6 +39,8 @@ $lang['nav_profile_editPwd']				= '密碼修改';
 
 $lang['nav_cart_index']						= '購物車';
 
+$lang['nav_about_index']					= '關於蔬食伊甸園';
+
 
 /**		footer		**/
 $lang['company_name']						= '光量生技股份有限公司';
