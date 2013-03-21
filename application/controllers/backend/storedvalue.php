@@ -153,7 +153,7 @@ class Storedvalue extends CI_Controller {
 		$kind 		= $this->input->post('k', TRUE );
 		$bank_num 	= $this->input->post('bn', TRUE );
 		if( strlen($kind) != 0 && strlen($bank_num) != 0 ) {
-			$query = $this->icash_apply->FindBankCode($kind, $bank_num);
+			$query = $this->icash_apply->FindBankCode($this->UserInfo->id, $kind, $bank_num);
 		}
 		if($query->num_rows > 0) {
 			$result['count'] = 1;

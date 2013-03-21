@@ -52,6 +52,7 @@ $(function() {
 							rows += 	'<td>'+lang.language['storedvalue_status'+json.icash_apply[i].remittance_status]+'</td>';
 							rows += 	'<td>'+json.icash_apply[i].type_name+'</td>';
 							}
+							rows += 	'<td>'+lang.language['storedvalue_status_'+json.icash_apply[i].apply_status]+'</td>';
 							rows += 	'<td>'+json.icash_apply[i].apply_name+'</td>';
 							rows += 	'<td>'+json.icash_apply[i].bank_num+'</td>';
 							rows += 	'<td>'+json.icash_apply[i].apply_price+'</td>';
