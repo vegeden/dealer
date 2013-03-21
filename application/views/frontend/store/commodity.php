@@ -23,5 +23,3 @@
 		<div id="commodity_content"></div>
 	</div>
 </article>
-<link href="/dealer/statics/lib/toastr/toastr.css" rel="stylesheet" />
-<script src="/dealer/statics/lib/toastr/toastr.min.js"></script>
