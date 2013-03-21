@@ -60,4 +60,4 @@
 		<?php } ?>
 	</div>
 </article>
-<script src="/dealer/statics/js/lib/Jquery-Price-Format/jquery.price_format.js"></script>
+<script src="/dealer/statics/lib/Jquery-Price-Format/jquery.price_format.js"></script>
