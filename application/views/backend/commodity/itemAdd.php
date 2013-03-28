@@ -36,8 +36,8 @@
 			</dd>						
 			<dt><?php echo $lang->line('commodity_item_stock_quantity'); ?></dt>					
 			<dd><input type="number" placeholder="" class="input-large" name="stock_quantity" min="1" value="1" ></dd>			
-			<dt><?php echo $lang->line('commodity_item_bonus'); ?></dt>
-			<dd><input type="number" placeholder="" class="input-large" name="item_bonus" min="0" value="0" ></dd>						
+			<dt><?php echo $lang->line('commodity_dividend'); ?></dt>
+			<dd><input type="number" placeholder="" class="input-large" name="dividend" min="0" value="0" ></dd>						
 			<dt><?php echo $lang->line('commodity_area_name'); ?></dt>
 			<dd>
 				<select name="area_class" id="area_class">

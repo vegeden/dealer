@@ -20,7 +20,7 @@
 			<td><?php echo $lang->line('commodity_item_safe_stock'); ?></td>
 			<td><?php echo $lang->line('commodity_bread_name'); ?></td>
 			<td><?php echo $lang->line('commodity_item_stock_quantity'); ?></td>
-			<td><?php echo $lang->line('commodity_item_bonus'); ?></td>
+			<td><?php echo $lang->line('commodity_dividend'); ?></td>
 			<td><?php echo $lang->line('commodity_area_name'); ?></td>
 			<td><?php echo $lang->line('commodity_categorySecond_name'); ?></td>
 			<td><?php echo $lang->line('commodity_categoryFirst_name'); ?></td>
@@ -51,7 +51,7 @@
 			<td><?php echo $row->safe_stock;?></td>
 			<td><?php echo $row->bread_name;?></td>
 			<td><?php echo $row->stock_quantity;?></td>
-			<td><?php echo $row->item_bonus;?></td>
+			<td><?php echo $row->dividend;?></td>
 			<td><?php echo $row->area_name;?></td>
 			<td><?php echo $row->category_second_name;?></td>
 			<td><?php echo $row->category_name;?></td>

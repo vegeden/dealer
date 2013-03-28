@@ -575,7 +575,7 @@ class Commodity extends CI_Controller {
 		$safe_stock			   = $this->input->post('safe_stock', TRUE );
 		$bread_class		   = $this->input->post('bread_class', TRUE );
 		$stock_quantity		   = $this->input->post('stock_quantity', TRUE );
-		$item_bonus			   = $this->input->post('item_bonus', TRUE );
+		$dividend			   = $this->input->post('dividend', TRUE );
 		$area_class			   = $this->input->post('area_class', TRUE );
 		$category_second_class = $this->input->post('category_second_class', TRUE );
 		$freight_price		   = $this->input->post('freight_price', TRUE );
@@ -588,18 +588,18 @@ class Commodity extends CI_Controller {
 
 			if(strlen($id)==0) {
 				if(strlen($item_name) != 0 && strlen($item_barcode) != 0 && strlen($item_number) !=0 && strlen($buy_price) !=0 && strlen($sell_price) !=0  
-				&& strlen($safe_stock) !=0 && strlen($bread_class) !=0 && strlen($stock_quantity) && strlen($item_bonus) !=0
+				&& strlen($safe_stock) !=0 && strlen($bread_class) !=0 && strlen($stock_quantity) && strlen($dividend) !=0
 				&& strlen($area_class) !=0 && strlen($category_second_class) !=0 && strlen($freight_price) !=0) {
 					$data = array(
 					'item_name'						=> $item_name,
-					'item_barcode'						=> $item_barcode,
+					'item_barcode'					=> $item_barcode,
 					'item_number'					=> $item_number,
 					'buy_price'						=> $buy_price,
 					'sell_price'					=> $sell_price,
 					'safe_stock'					=> $safe_stock,
 					'bread_id'						=> $bread_class,
 					'stock_quantity'				=> $stock_quantity,
-					'item_bonus'					=> $item_bonus,
+					'dividend'						=> $dividend,
 					'area_id'						=> $area_class,
 					'category_second_id'			=> $category_second_class,
 					'freight_price'					=> $freight_price,
@@ -615,7 +615,7 @@ class Commodity extends CI_Controller {
 				}
 			} else {
 				if(strlen($item_name) !=0 && strlen($item_barcode) != 0 && strlen($item_number) !=0 && strlen($buy_price) !=0 && strlen($sell_price) !=0 
-				&& strlen($safe_stock) !=0 && strlen($bread_class) !=0 && strlen($item_bonus) !=0 && strlen($area_class) !=0 
+				&& strlen($safe_stock) !=0 && strlen($bread_class) !=0 && strlen($dividend) !=0 && strlen($area_class) !=0 
 				&& strlen($category_second_class) !=0 && strlen($freight_price) !=0) {
 					$data = array(
 					'item_name'				   => $item_name,
@@ -625,7 +625,7 @@ class Commodity extends CI_Controller {
 					'sell_price'			   => $sell_price,
 					'safe_stock'			   => $safe_stock,
 					'bread_id'				   => $bread_class,
-					'item_bonus'			   => $item_bonus,
+					'dividend'			   	   => $dividend,
 					'area_id'				   => $area_class,
 					'category_second_id'	   => $category_second_class,
 					'freight_price'			   => $freight_price,
