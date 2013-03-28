@@ -99,33 +99,39 @@ class Icash_apply extends CI_Model {
 		return $this->db->get($this->tab);
 	}
 	
-	public function FindBankCode($kind, $bank_num) {
+	public function FindBankCode($id, $kind, $bank_num) {
+		$level = $this->getUserStatus($id);
+		
 		$this->db->where('remittance_status ', $kind);
 		$this->db->like('bank_num', $bank_num, 'after'); 
 		
-		switch($kind) {
-			case '0':
-				$this->db->select("icash_apply.id, icash_apply.user_id, icash_apply.remittance_status, icash_apply.admin_id, icash_apply.bank_num, icash_apply.apply_name, icash_apply.apply_price, icash_apply.apply_datetime, icash_apply.audit_datetime, user_type.type_name");
-				$this->db->from($this->tab);
-				$this->db->join('user_information', "user_information.id = icash_apply.user_id");
-				$this->db->join('user_type ', "user_information.type_id = user_type.id");
-				$this->db->where('remittance_status', $kind);
-				$this->db->like('bank_num', $bank_num, 'after'); 
-				$this->db->order_by("apply_datetime", "desc"); 
-				$this->db->order_by("apply_datetime", "desc"); 
-				$query = $this->db->get();
+		if($level != '') {
+			switch($level) {
+				case '1':
+					switch($kind) {
+						case '0':
+							$this->db->select("icash_apply.id, icash_apply.apply_status, icash_apply.user_id, icash_apply.remittance_status, icash_apply.admin_id, icash_apply.bank_num, icash_apply.apply_name, icash_apply.apply_price, icash_apply.apply_datetime, icash_apply.audit_datetime, user_type.type_name");
+							$this->db->from($this->tab);
+							$this->db->join('user_information', "user_information.id = icash_apply.user_id");
+							$this->db->join('user_type ', "user_information.type_id = user_type.id");
+							$this->db->where('remittance_status', $kind);
+							$this->db->order_by("apply_datetime", "desc");
+					
+							$query = $this->db->get();
+							break;
+						case '1':
+							$query = $this->db->query("SELECT icash_apply.apply_status, `icash_apply`.`id`, `icash_apply`.`user_id`, `icash_apply`.`remittance_status`, (select name from user_information where id = `icash_apply`.`admin_id`) as admin_name
+														, `icash_apply`.`bank_num`, `icash_apply`.`apply_name`, `icash_apply`.`apply_price`, `icash_apply`.`apply_datetime`, `icash_apply`.`audit_datetime`, `user_type`.`type_name` 
+														FROM (`icash_apply`) 
+														JOIN `user_information` ON `user_information`.`id` = `icash_apply`.`user_id` 
+														JOIN `user_type` ON `user_information`.`type_id` = `user_type`.`id` 
+														WHERE `remittance_status` = '$kind' ORDER BY `audit_datetime` desc");
+							break;
+					}
 				break;
-			case '1':
-				$query = $this->db->query("SELECT `icash_apply`.`id`, `icash_apply`.`user_id`, `icash_apply`.`remittance_status`, (select name from user_information where id = `icash_apply`.`admin_id`) as admin_name
-											, `icash_apply`.`bank_num`, `icash_apply`.`apply_name`, `icash_apply`.`apply_price`, `icash_apply`.`apply_datetime`, `icash_apply`.`audit_datetime`, `user_type`.`type_name` 
-											FROM (`icash_apply`) 
-											JOIN `user_information` ON `user_information`.`id` = `icash_apply`.`user_id` 
-											JOIN `user_type` ON `user_information`.`type_id` = `user_type`.`id` 
-											WHERE `remittance_status` = '$kind' AND bank_num LIKE '$bank_num%'
-											ORDER BY `apply_datetime` desc");
-				break;
+			}
+			return $query;
 		}
-		return $query;
 	}
 	
 	public function Add($data) {

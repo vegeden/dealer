@@ -77,4 +77,4 @@
 		</form>
 	</div>
 </article>
-<script src="/dealer/statics/js/lib/bootstrap/bootstrap-inputmask.min.js"></script>
+<script src="/dealer/statics/lib/bootstrap/docs/assets/js/bootstrap-inputmask.js"></script>
