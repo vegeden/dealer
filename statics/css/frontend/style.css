@@ -96,6 +96,11 @@ article#storedvalue-apply div.detail{}
 article#storedvalue-apply div.detail div{margin-top:50px;}
 article#storedvalue-apply div.detail dl{margin-left:220px;}
 
+article#checkout-index #btn-group button{padding:20px 50px; font-size:28px; margin-right:50px;}
+article#checkout-index div.detail{}
+article#checkout-index div.detail div{margin-top:50px;}
+article#checkout-index div.detail dl{margin-left:220px;}
+
 article#profile-index {}
 article#profile-index ul{list-style: none;margin:0;}
 article#profile-index ul li{width:282px;float:left;padding:0 25px;}

@@ -33,6 +33,10 @@ $lang['nav_storedvalue_index']				= '儲值金加值';
 $lang['nav_storedvalue_apply']				= '儲值金加值';
 $lang['nav_storedvalue_lists']				= '儲值金列表';
 
+$lang['nav_checkout_index']					= '結帳-儲值金扣款';
+$lang['nav_checkout_type']					= '結帳-付款類型';
+
+
 $lang['nav_profile_index']					= '我的帳戶';
 $lang['nav_profile_editProfile']			= '個人資料修改';
 $lang['nav_profile_editPwd']				= '密碼修改';

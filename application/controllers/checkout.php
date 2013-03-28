@@ -13,6 +13,7 @@ class Checkout extends CI_Controller {
 		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
 		
 		$this->load->model('db/items_information');
+		$this->load->model('db/sale');
     }	
 	
 	public function index() {
@@ -24,4 +25,14 @@ class Checkout extends CI_Controller {
 		$this->parames['cart'] = $this->session->get('cart');
 		$this->load->view('index', $this->parames);
 	}
+	public function type() {
+		/*	-------------------------------------------	*/
+		$this->Parames->init('nav_checkout_index');
+		$this->parames = $this->Parames->getParams();
+		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
+		/*	-------------------------------------------	*/
+		$this->parames['cart'] = $this->session->get('cart');
+		$this->load->view('index', $this->parames);
+	}
+	
 }
