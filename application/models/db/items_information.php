@@ -12,7 +12,7 @@ class Items_information extends CI_Model {
 		$this->db->limit($limit[1], $limit[0]);
 		
 		$this->db->select('item_A.id AS id, item_name, item_barcode, item_number, buy_price, sell_price,safe_stock,
-		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
+		bread_name, stock_quantity, item_content, dividend,area_name, category_second_name, category_name,
 		freight_price,special_commodity_status, on_off_sale, 
 		(SELECT (stock_quantity-safe_stock) FROM '.$this->tab.' AS item_B WHERE item_A.id = item_B.id) AS warn_stock');
 		
@@ -31,7 +31,7 @@ class Items_information extends CI_Model {
 		$this->db->limit($limit[1], $limit[0]);
 		
 		$this->db->select($this->tab.'.id AS id, item_name, item_barcode, item_number, buy_price, sell_price,safe_stock,
-		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
+		bread_name, stock_quantity, item_content, dividend,area_name, category_second_name, category_name,
 		freight_price,special_commodity_status, on_off_sale, fulltext');
 		
 		$this->db->where($this->tab.'.area_id = items_area.id');
@@ -136,7 +136,7 @@ class Items_information extends CI_Model {
 	
 	public function FindItemName($name) {
 		$this->db->select('item_A.id AS id, item_name, item_number, buy_price, sell_price,safe_stock,
-		bread_name, stock_quantity, item_content, item_bonus,area_name, category_second_name, category_name,
+		bread_name, stock_quantity, item_content, dividend,area_name, category_second_name, category_name,
 		freight_price,special_commodity_status, on_off_sale, 
 		(SELECT (stock_quantity-safe_stock) FROM '.$this->tab.' AS item_B WHERE item_A.id = item_B.id) AS warn_stock');
 		
