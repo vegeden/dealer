@@ -23,14 +23,6 @@
 			?>
 		</ul>
 	</div>
-	<div id="order" class="side">
-		<ul>
-			<li><?php echo $lang->line('store_order'); ?></li>
-			<li><a class="select" href="#"><?php echo $lang->line('store_new_store'); ?></a><span class="divider"> |&nbsp;</span></li>
-			<li><a href="#"><?php echo $lang->line('store_order_low_to_hight'); ?></a><span class="divider"> |&nbsp;</span></li>
-			<li><a href="#"><?php echo $lang->line('store_order_hight_to_low'); ?></a></li>
-		</ul>
-	</div>
 	<?php 
 		if($category_second->num_rows() > 0) {
 			foreach($category_second->result() as $row) {
@@ -134,7 +126,6 @@
 			</li>
 		</ul>
 	</div>
-	<?php } ?>
 	<div class="pagination pagination-centered pagination-large">
 		<ul>
 			<li class="disabled"><a href="#">&laquo;</a></li>
@@ -144,4 +135,5 @@
 			<li><a href="#">&raquo;</a></li>
 		</ul>
 	</div>
+	<?php } ?>
 </article>
