@@ -441,6 +441,7 @@ class Commodity extends CI_Controller {
 		$this->onshelvesEditAdd($items_id);
 		$this->load->view('backend', $this->parames);
 	}	
+
 	
 	/* Action on Click */	
 	/* area on */

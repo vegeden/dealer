@@ -9,7 +9,6 @@ class Home extends CI_Controller {
 		
 		$this->load->model('Parames');
 		$this->UserInfo = $this->Parames->getUserInfo();
-		
 		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
 		
 

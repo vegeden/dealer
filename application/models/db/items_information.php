@@ -72,7 +72,7 @@ class Items_information extends CI_Model {
 		return $this->db->count_all($this->tab);
 	}
 	
-	public function SelectOnShell($category_id, $category_second_id, $store_level) {
+	public function SelectOnSell($category_id, $category_second_id, $store_level) {
 		switch($store_level) {
 			case 1:
 				$this->db->select('items_information.id AS id,
@@ -108,7 +108,7 @@ class Items_information extends CI_Model {
 		return $this->db->get();
 	}
 	
-	public function SelectOnShellHot($category_id) {	
+	public function SelectOnSellHot($category_id) {	
 		$this->db->select('items_information.id AS id,
 		item_name,
 		sell_price,

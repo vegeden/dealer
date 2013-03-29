@@ -12,7 +12,37 @@
 				foreach($cart as $key => $row)	{
 					echo $key.','.$row.'</br>';
 				}
+				print_r($UserInfo);
 			?>
+			<div class="accordion" id="accordion2">
+			  <div class="accordion-group">
+				<div class="accordion-heading">
+				  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+					Collapsible Group Item #1
+				  </a>
+				</div>
+				<div id="collapseOne" class="accordion-body collapse in">
+				  <div class="accordion-inner">
+					Anim pariatur cliche...
+				  </div>
+				</div>
+			  </div>
+			  <div class="accordion-group">
+				<div class="accordion-heading">
+				  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+					Collapsible Group Item #2
+				  </a>
+				</div>
+				<div id="collapseTwo" class="accordion-body collapse">
+				  <div class="accordion-inner">
+					Anim pariatur cliche...
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="pull-right checkout">
+				<a class="btn btn-danger btn-large" href="<?php echo $url; ?>../../checkout/"><?php echo $lang->line('checkout'); ?></a>
+			</div>
 		</form>
 	</div>
 </article>

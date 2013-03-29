@@ -27,7 +27,7 @@ class Checkout extends CI_Controller {
 	}
 	public function type() {
 		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_checkout_index');
+		$this->Parames->init('nav_checkout_type');
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/

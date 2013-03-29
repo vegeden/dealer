@@ -27,9 +27,9 @@ class Store extends CI_Controller {
 			$this->nav_second($category);
 			$this->parames['store_level'] = 1;
 			$this->parames['category_second'] = $this->items_category_second->SWhereCategory($category);
-			$this->parames['store_hot'] = $this->items_information->SelectOnShellHot($category);
+			$this->parames['store_hot'] = $this->items_information->SelectOnSellHot($category);
 			foreach($this->parames['category_second']->result() as $key => $row) {
-				$this->parames['store'.$row->id] = $this->items_information->SelectOnShell($category,$row->id,$this->parames['store_level']);
+				$this->parames['store'.$row->id] = $this->items_information->SelectOnSell($category,$row->id,$this->parames['store_level']);
 			}
 		} else if(!empty($category) && !empty($category_second)) {
 			$this->nav_second($category);
