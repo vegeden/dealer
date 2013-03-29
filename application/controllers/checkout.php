@@ -13,7 +13,7 @@ class Checkout extends CI_Controller {
 		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
 		
 		$this->load->model('db/items_information');
-		$this->load->model('db/sale');
+		// $this->load->model('db/sale');
     }	
 	
 	public function index() {

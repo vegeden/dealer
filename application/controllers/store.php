@@ -35,7 +35,6 @@ class Store extends CI_Controller {
 			$this->parames['store_hot'] = $this->items_information->SelectOnShell($category,$category_second,1);
 			$this->parames['store'] 	= $this->items_information->SelectOnShell($category,$category_second,$this->parames['store_level']);
 		} else {
-			$this->parames['store_level'] = 0;
 			$this->Parames->redirect('/dealer/');
 		}
 		$this->load->view('index', $this->parames);
