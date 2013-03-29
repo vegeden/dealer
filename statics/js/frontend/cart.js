@@ -3,18 +3,7 @@ $(function(){
 	$('a.remove').click(function() {
 		var opt = $(this);
 		var i = $(this).attr('href');
-		$.post('/dealer/cart/remove/',{
-			'i' : i
-		},function(request){
-			var org = $('ul.media-list li').first().find('dl a').attr('href');
-			opt.parent().parent().parent().parent().parent().remove();
-			if(org == i) $('ul.media-list li');//.first().removeClass('hr');	
-			if($('ul.media-list li').size() == 0) {
-				$('article#cart div#cart-info').html('');
-				$('div#no_data').removeClass('displaynNone');
-			}
-		});
-		
+		removeProduct(opt, i);
 		return false;
 	});
 	
@@ -23,11 +12,12 @@ $(function(){
 		var one_price 	= $(this).parent().parent().find('.one_price').attr('data-price');
 		var number 		= $(this).val();
 		
-		// input buffer lock
 		opt.prop('disabled', true);
 		setTimeout(function() {
 			if(number == 0) {
-				opt.parent().parent().parent().parent().parent().find('a.remove').trigger('click');
+				var removeOpt = opt.parent().parent().parent().parent().find('a.remove');
+				var i = removeOpt.attr('href');
+				removeProduct(removeOpt, i);
 			} else {
 				// update price
 				var pull_pot = opt.parent().parent();
@@ -43,10 +33,9 @@ $(function(){
 				var i = pull_pot.parent().parent().find('dl dd a').attr('href');
 				// update data
 				$.post('/dealer/cart/add/',{'i' : i, 'c' : number});
-				
-				// input buffer open
-				opt.prop('disabled', false);
 			}
+			// input buffer open
+			opt.prop('disabled', false);
 		}, 400);
 	});
 	
@@ -54,6 +43,20 @@ $(function(){
 	$('article#cart .row .checkout').on('mouseenter', function(){
 		$(this).removeClass('animated shake');
 	});
+	
+	function removeProduct(opt, i) {
+		$.post('/dealer/cart/remove/',{
+			'i' : i
+		},function(request) {
+			var org = $('ul.media-list li').first().find('dl a').attr('href');
+			opt.parent().parent().parent().parent().parent().remove();
+			if(org == i) $('ul.media-list li');	
+			if(document.getElementsByClassName("media").length == 0) {
+				$('article#cart div#cart-info').html('');
+				$('div#no_data').removeClass('displaynNone');
+			}
+		});
+	}
 });
 
 
