@@ -4,13 +4,8 @@
 		<div id="title" class="gradient_BlackWhite"><?php echo $lang->line('store_top4');?></div>
 		<ul>
 			<?php 
-			if($category_second->num_rows() > 0) {
-				foreach($category_second->result() as $row) {
-					if($viewCount == 1) {
-						break;
-					} else {
-						if(${'store'.$row->id}->num_rows() > 0) {
-							foreach(${'store'.$row->id}->result() as $row_store) {
+			if($store_hot->num_rows() > 0) {
+				foreach($store_hot->result() as $row_store) {
 			?>
 			<li>
 				<a class="thumbnail" href="../../commodity/<?php echo $row_store->id ;?>/">
@@ -23,11 +18,6 @@
 				</a>
 			</li>
 			<?php 
-								break;
-							}
-						}
-					}
-					$viewCount--;
 				}
 			}
 			?>

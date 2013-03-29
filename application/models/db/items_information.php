@@ -72,7 +72,7 @@ class Items_information extends CI_Model {
 		return $this->db->count_all($this->tab);
 	}
 	
-	public function SelectOnSell($category_id, $category_second_id, $store_level) {
+	public function SelectOnShell($category_id, $category_second_id, $store_level) {
 		switch($store_level) {
 			case 1:
 				$this->db->select('items_information.id AS id,
@@ -106,6 +106,24 @@ class Items_information extends CI_Model {
 				break;
 		}
 		return $this->db->get();
+	}
+	
+	public function SelectOnShellHot($category_id) {	
+		$this->db->select('items_information.id AS id,
+		item_name,
+		sell_price,
+		sum(sale_item.quantity) AS sale_item_sum');
+		$this->db->from('items_category_second,items_information');
+		$this->db->join('sale_item', 'items_information.id = sale_item.item_id', 'left');
+		$this->db->where('on_off_sale = 1');
+		$this->db->where('items_information.area_id != 17');
+		$this->db->where('items_category_second.category', $category_id);
+		$this->db->where('items_category_second.id = items_information.category_second_id');
+		$this->db->group_by('items_information.id');
+		$this->db->order_by("sale_item_sum", "DESC");
+		$this->db->order_by("category_second_id", "ASC"); 	
+		$this->db->limit(4);
+		return $this->db->get();		
 	}
 	
 	public function verify( $item_name ) {
