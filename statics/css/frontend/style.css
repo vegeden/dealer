@@ -117,11 +117,7 @@ article#profile-editProfile div#submit {margin-left: 70px;}
 article#profile-editPwd div#submit {margin-left: 70px;}
 
 article#store ul li > a{text-decoration: none;}
-<<<<<<< HEAD
 article#store div.side{border:1px solid #ddd;overflow:auto;margin-bottom:10px;}
-=======
-article#store div.side{border:1px solid #ddd;overflow:auto; margin-bottom:10px;}
->>>>>>> 10d49d48cb4ba8407a1f5790b3d9f2e84aae9af7
 article#store div.side #title{color:#0088cc; padding:5px 0; padding-left:15px; font-size:16px;}
 article#store div#top4 ul {list-style: none;margin:0;}
 article#store div#top4 ul li{width:239px; height:auto; float:left; padding:10px 5px;}
