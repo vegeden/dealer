@@ -8,8 +8,8 @@
 				foreach($store_hot->result() as $row_store) {
 			?>
 			<li>
-				<a class="thumbnail" href="../../commodity/<?php echo $row_store->id ;?>/">
-					<img src="" data-src="holder.js/220x220" alt="">
+				<a class="thumbnail" href="/dealer/store/commodity/<?php echo $row_store->id ;?>/">
+					<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="">
 					<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 					<div class="price center">
 						<span><?php echo $lang->line('store_special_offer'); ?></span>
@@ -36,13 +36,13 @@
 				<ul>
 					<?php 
 						foreach(${'store'.$row->id}->result() as $row_store) {
-							if($viewCount ==1) {
+							if($viewCount == 0) {
 								break;
 							} else {
 					?>
 					<li>
-						<a class="thumbnail" href="../../commodity/<?php echo $row_store->id ;?>/">
-							<img src="" data-src="holder.js/180x180" alt="">
+						<a class="thumbnail" href="/dealer/store/commodity/<?php echo $row_store->id ;?>/">
+							<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="">
 							<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 							<div class="price center">
 								<span><?php echo $lang->line('store_special_offer'); ?></span>
@@ -51,8 +51,8 @@
 						</a>
 					</li>
 					<?php
-								$viewCount--;
-							}
+								
+							}$viewCount--;
 						}
 					?>
 				</ul>
@@ -77,8 +77,8 @@
 						} else {
 			?>
 			<li>
-				<a class="thumbnail" href="../../../commodity/<?php echo $row_store->id ;?>/">
-					<img src="" data-src="holder.js/220x220" alt="">
+				<a class="thumbnail" href="/dealer/store/commodity/<?php echo $row_store->id ;?>/">
+					<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="">
 					<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 					<div class="price center">
 						<span><?php echo $lang->line('store_special_offer'); ?></span>
@@ -110,8 +110,8 @@
 						foreach($store->result() as $row_store) {
 					?>
 					<li>
-						<a class="thumbnail" href="../../../commodity/<?php echo $row_store->id ;?>/">
-							<img src="" data-src="holder.js/180x180" alt="">
+						<a class="thumbnail" href="/dealer/store/commodity/<?php echo $row_store->id ;?>/">
+							<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="">
 							<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 							<div class="price center">
 								<span><?php echo $lang->line('store_special_offer'); ?></span>

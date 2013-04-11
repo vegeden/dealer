@@ -1,7 +1,7 @@
 <article id="store-commodity">
 	<div id="goods_price_info">
 		<div id="goods_pic" class="pull-left">
-			<img class="media-object" data-src="holder.js/300x300" alt="100x100">
+			<img src="/dealer/img/store/<?php echo $commodity->id; ?>" alt="">
 		</div>
 		<div id="price_info">
 			<h3><?php echo $commodity->item_name; ?></h3>
