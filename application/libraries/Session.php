@@ -37,6 +37,7 @@
 		}
 		
 		function _destroy(){
+			session_unset();
 			session_destroy();
 		}
 	}
