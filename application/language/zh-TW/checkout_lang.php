@@ -1,5 +1,6 @@
 <?php
 	$lang['checkout_Error']					= 'Error!!';
+	$lang['checkout_Error_Session']			= '紀錄不存在!!';
 	
 	$lang['checkout']						= '結帳';
 	$lang['checkout_price']					= '金額';
@@ -7,6 +8,30 @@
 	$lang['checkout_email']					= 'Email';
 	$lang['checkout_phone']					= '電話';
 	$lang['checkout_status']				= '狀態';
+	
+	/* 交易明細 */
+	$lang['checkout_detailed_ItemName']		= '商品名稱';
+	$lang['checkout_detailed_SellPrice']	= '單價';
+	$lang['checkout_detailed_Num']			= '數量';
+	$lang['checkout_detailed_Special']		= '特殊運費';
+	$lang['checkout_detailed_Sum']			= '合計';
+	$lang['checkout_detailed_SubTotal']		= '小記';
+	$lang['checkout_detailed_Freight']		= '運費';
+	$lang['checkout_detailed_Total']		= '總計';
+	
+	$lang['checkout_detailed_Total']		= '總記';
+	$lang['checkout_detailed_addressee']	= '收件人是否使用帳戶預設地址';
+	$lang['checkout_detailed_yes']			= '是';
+	$lang['checkout_detailed_no']			= '否';
+	
+	$lang['checkout_detailed_Name']			= '姓名';
+	$lang['checkout_detailed_Email']		= 'e-mail';
+	$lang['checkout_detailed_Phone']		= '手機';
+	$lang['checkout_detailed_Address']		= '地址';
+	$lang['checkout_detailed_Next']			= '下一步';
+	$lang['checkout_detailed_Cancel']		= '取消';
+	
+	
 	
 	/* apply */
 	$lang['checkout_method']				= '結帳方式';

@@ -5,7 +5,7 @@ $lang['web_title']							= '蔬食伊甸園-經銷網';
 $lang['backFrontend']						= '後台管理';
 
 /**		header		**/
-$lang['Welcome']							= ' 您好!';
+$lang['Welcome']							= '您好!';
 
 $lang['Backend_management']					= '後台管理';
 $lang['UserInfo_Profile']					= '我的帳戶';
@@ -33,7 +33,7 @@ $lang['nav_storedvalue_index']				= '儲值金加值';
 $lang['nav_storedvalue_apply']				= '儲值金加值';
 $lang['nav_storedvalue_lists']				= '儲值金列表';
 
-$lang['nav_checkout_index']					= '結帳-儲值金扣款';
+$lang['nav_checkout_index']					= '結帳-交易明細&收件人';
 $lang['nav_checkout_type']					= '結帳-付款類型';
 
 
