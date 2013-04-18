@@ -7,7 +7,7 @@
 	</div>
 	<?php } ?>
 	<div class="center" >
-		<form method="POST" action="type">
+		<form method="POST" action="">
 			<table class="table table-hover">
 				<caption></caption>
 				<thead>
@@ -47,26 +47,26 @@
 			<?php
 				}
 			?>
-			<tr><td colspan="3"></td><td><?php echo $this->lang->line('checkout_detailed_SubTotal'); ?></td><td><?php echo $sum; ?></td></tr>
-			<tr><td style="border-style: none;" colspan="3"></td><td><?php echo $this->lang->line('checkout_detailed_Freight'); ?></td><td><?php echo $freight; ?></td></tr>
-			<tr><td style="border-style: none;" colspan="3"></td><td><?php echo $this->lang->line('checkout_detailed_Total'); ?></td><td><?php echo $sum+$freight; ?></td></tr>
+				<tr><td colspan="3"></td><td><?php echo $this->lang->line('checkout_detailed_SubTotal'); ?></td><td><?php echo $sum; ?></td></tr>
+				<tr><td style="border-style: none;" colspan="3"></td><td><?php echo $this->lang->line('checkout_detailed_Freight'); ?></td><td><?php echo $freight; ?></td></tr>
+				<tr><td style="border-style: none;" colspan="3"></td><td><?php echo $this->lang->line('checkout_detailed_Total'); ?></td><td><?php echo $sum+$freight; ?></td></tr>
 			</table>
-			<pre>
-				<?php echo $this->lang->line('checkout_detailed_addressee'); ?>
-				<div class="btn-group" data-toggle="buttons-radio">
-				  <button type="button" class="btn btn-large btn-info" value="yes" checked><?php echo $this->lang->line('checkout_detailed_yes'); ?></button>
-				  <button type="button" class="btn btn-large btn-success" value="no"><?php echo $this->lang->line('checkout_detailed_no'); ?></button>
-				</div >
-			</pre>
+
+			<p><?php echo $this->lang->line('checkout_detailed_addressee'); ?></p>
+			<input type="radio" name="freight_user" value="" checked>
+			<p><?php echo $this->lang->line('checkout_detailed_yes'); ?></p>
+			<input type="radio" name="freight_user" value="freight_user">
+			<p><?php echo $this->lang->line('checkout_detailed_no'); ?></p>
+
 			<dl>
 				<dt><?php echo $lang->line('checkout_detailed_Name');?></dt>
-				<dd><input type="text" placeholder="<?php echo $lang->line('checkout_detailed_Name');?>" class="input-large"></dd>
+				<dd><input type="text" name="freight_name" placeholder="<?php echo $lang->line('checkout_detailed_Name');?>" class="input-large"></dd>
 				<dt><?php echo $lang->line('checkout_detailed_Email');?></dt>
-				<dd><input type="email" placeholder="<?php echo $lang->line('checkout_detailed_Email');?>" class="input-large"></dd>
+				<dd><input type="email" name="freight_email" placeholder="<?php echo $lang->line('checkout_detailed_Email');?>" class="input-large"></dd>
 				<dt><?php echo $lang->line('checkout_detailed_Phone');?></dt>
-				<dd><input type="tel" placeholder="<?php echo $lang->line('checkout_detailed_Phone');?>" class="input-large"></dd>
+				<dd><input type="tel" name="freight_phone" placeholder="<?php echo $lang->line('checkout_detailed_Phone');?>" class="input-large"></dd>
 				<dt><?php echo $lang->line('checkout_detailed_Address');?></dt>
-				<dd><input type="text" placeholder="<?php echo $lang->line('checkout_detailed_Address');?>" class="input-xlarge"></dd>			
+				<dd><input type="text" name="freight_address" placeholder="<?php echo $lang->line('checkout_detailed_Address');?>" class="input-xlarge"></dd>			
 			</dl>
 			<button type="submit" class="btn btn-primary btn-large" name="submit" value="submit"><?php echo $lang->line('checkout_detailed_Next'); ?></button>
 			<button type="submit" class="btn offset2 btn-large" name="cancel" value="cancel"><?php echo $lang->line('checkout_detailed_Cancel'); ?></button>

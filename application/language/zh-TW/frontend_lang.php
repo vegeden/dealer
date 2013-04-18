@@ -34,7 +34,7 @@ $lang['nav_storedvalue_apply']				= '儲值金加值';
 $lang['nav_storedvalue_lists']				= '儲值金列表';
 
 $lang['nav_checkout_index']					= '結帳-交易明細&收件人';
-$lang['nav_checkout_type']					= '結帳-付款類型';
+$lang['nav_checkout_classification']		= '結帳-付款類型';
 
 
 $lang['nav_profile_index']					= '我的帳戶';

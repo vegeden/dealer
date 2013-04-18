@@ -25,13 +25,12 @@ class Checkout extends CI_Controller {
 		$this->parames['cart'] = $this->session->get('cart');
 		$this->parames['sum']  = 0;
 		$this->parames['freight']  = 0;
-		onareaAddEdit
+		$this->onIndex();
 		if (!empty($this->parames['cart'])) {
 			foreach($this->parames['cart'] as $key => $row)	{
 				$this->parames['item'.$key] = array();
 				$item = $this->items_information->SWhere($key);
 				array_push($this->parames['item'.$key], $item->id);
-				// array_push($this->parames['item'.$key], $item->freight_price);
 				array_push($this->parames['item'.$key], $item->item_name);
 				array_push($this->parames['item'.$key], $item->special_commodity_status);
 				array_push($this->parames['item'.$key], $row);
@@ -47,43 +46,51 @@ class Checkout extends CI_Controller {
 		} else {
 			$this->parames['error'] = $this->lang->line('checkout_Error_Session');
 		}
+		$data = array('freight_price'=> $this->parames['freight'],'sum'=> $this->parames['sum']);
+		$this->session->set('sale_info',$data);
 		$this->load->view('index', $this->parames);
 	}
 	
-	public function type() {
+	public function classification() {
 		/*	-------------------------------------------	*/
-		$this->Parames->init('nav_checkout_type');
+		$this->Parames->init('nav_checkout_classification');
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
 		$this->parames['cart'] = $this->session->get('cart');
+		$this->parames['freight_info'] = $this->session->get('freight_info');
 		$this->load->view('index', $this->parames);
 	}
 	
-	private function onindex($id='') {
-		$cancel = $this->input->post('cancel', TRUE );
+	private function onIndex() {
+		$cancel 		= $this->input->post('cancel', TRUE );
+		$submit 		= $this->input->post('submit', TRUE ) ;
+		$freight_user 	= $this->input->post('freight_user', TRUE );
 		if(strlen($cancel)!=0) {
-			$this->Parames->redirect($this->Url.'dealer/cart/');
+			$this->Parames->redirect($this->Url.'../cart/');
 		}
-		
-		$areaName 	= $this->input->post('areaName', TRUE );
-		
-		if($this->input->post('add', TRUE ) == 'add' || $this->input->post('edit', TRUE ) == 'edit') {
-			if(strlen($areaName) != 0) {
-			$data = array('area_Name' =>$areaName);
-				if(strlen($id)==0) {
-					if($this->items_area->verify($areaName)) {
-						$this->items_area->Add($data);
-						$this->Parames->redirect($this->Url.'areaList/');
-					} else {
-						$this->parames['error'] = $this->lang->line('commodity_areaAdd_ErrorMsg');
-					}
+		if(strlen($submit)!=0) {
+			if(strlen($freight_user)!=0) {
+				$freight_name 		= $this->input->post('freight_name', TRUE );
+				$freight_email 		= $this->input->post('freight_email', TRUE );
+				$freight_phone 		= $this->input->post('freight_phone', TRUE );
+				$freight_address 	= $this->input->post('freight_address', TRUE );
+				
+				if(strlen($freight_name) != 0 && strlen($freight_email) != 0 && strlen($freight_phone) != 0 && strlen($freight_address) != 0) {
+					
+					$data = array(
+						'freight_name' 		=> $freight_name,
+						'freight_email' 	=> $freight_email,
+						'freight_phone' 	=> $freight_phone,
+						'freight_address' 	=> $freight_address);
+					$this->session->set('freight_info',$data);
+					$this->Parames->redirect($this->Url.'classification');
+					
 				} else {
-					$this->items_area->Update($id, $data);
-					$this->Parames->redirect($this->Url.'areaList/');
+					$this->parames['error'] = $this->lang->line('checkout_Error_Input');
 				}
 			} else {
-				$this->parames['error'] = $this->lang->line('commodity_error_incomplete');
+				$this->Parames->redirect($this->Url.'classification');
 			}
 		}
 	}

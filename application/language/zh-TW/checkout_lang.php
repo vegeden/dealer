@@ -1,6 +1,7 @@
 <?php
 	$lang['checkout_Error']					= 'Error!!';
 	$lang['checkout_Error_Session']			= '紀錄不存在!!';
+	$lang['checkout_Error_Input']			= '輸入錯誤!!';
 	
 	$lang['checkout']						= '結帳';
 	$lang['checkout_price']					= '金額';
@@ -33,7 +34,8 @@
 	
 	
 	
-	/* apply */
+	/* classification */
+	$lang['checkout_method_Icash-Divddend'] = 'icash&紅利扣款';
 	$lang['checkout_method']				= '結帳方式';
 	$lang['checkout_method_Remittance']		= '匯款';
 	$lang['checkout_method_ATM']			= 'ATM';
