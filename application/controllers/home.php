@@ -22,10 +22,5 @@ class Home extends CI_Controller {
 		/*	-------------------------------------------	*/
 		
 		$this->load->view('index', $this->parames);
-	}
-	
-	public function logout() {
-		$this->session->_destroy();
-		$this->Parames->redirect('/'.$this->lang->line('folder_name'));
-	}
+	}	
 }
