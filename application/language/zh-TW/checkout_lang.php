@@ -16,11 +16,11 @@
 	$lang['checkout_detailed_Num']			= '數量';
 	$lang['checkout_detailed_Special']		= '特殊運費';
 	$lang['checkout_detailed_Sum']			= '合計';
-	$lang['checkout_detailed_SubTotal']		= '小記';
+	$lang['checkout_detailed_SubTotal']		= '小計';
 	$lang['checkout_detailed_Freight']		= '運費';
 	$lang['checkout_detailed_Total']		= '總計';
 	
-	$lang['checkout_detailed_Total']		= '總記';
+	$lang['checkout_detailed_Total']		= '總額';
 	$lang['checkout_detailed_addressee']	= '收件人是否使用帳戶預設地址';
 	$lang['checkout_detailed_yes']			= '是';
 	$lang['checkout_detailed_no']			= '否';
@@ -31,6 +31,7 @@
 	$lang['checkout_detailed_Address']		= '地址';
 	$lang['checkout_detailed_Next']			= '下一步';
 	$lang['checkout_detailed_Cancel']		= '取消';
+	$lang['checekou_fieight_title']			= '運送地址';
 	
 	
 	
@@ -55,3 +56,4 @@
 	$lang['checkout_Error_last5Num']		= '請輸入匯款帳號(末5碼)';
 	$lang['checkout_Error_most500']			= '最低面額為500塊';
 	$lang['checkout_Error_message']			= '資料填寫不正確';
+
