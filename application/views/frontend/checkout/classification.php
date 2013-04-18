@@ -80,9 +80,9 @@
 						<dd><input type="number" min="0" placeholder="<?php echo $lang->line('checkout_price');?>" class="input-large" name="price3" value="0"></dd>
 					</dl>
 				</div>
-				<button type="submit" class="btn btn-primary btn-large" name="submit" value="submit"><?php echo $lang->line('submit'); ?></button>
 				<button type="submit" class="btn offset2 btn-large" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
-			</div>
+				<button type="submit" class="btn btn-primary btn-large" name="submit" value="submit"><?php echo $lang->line('submit'); ?></button>
+				</div>
 			<input type="hidden" name="pay_kind" id="type" value="0">
 		</form>
 	</div>
