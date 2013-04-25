@@ -25,6 +25,8 @@ hr { border:0; height:1px; background-color:#d4d4d4; color:#d4d4d4	/* IE6 */}
 
 input#search_bar{width : 70px;}
 
+div#menu-control {overflow: auto;}
+
 /* 		 	account 	 	  */
 /* 		 	register 	 	  */
 article#register select#NameList{display : none;top : 0;left : 170px;position : absolute;margin-left : 70px; width : 205px;z-index : 2;}
