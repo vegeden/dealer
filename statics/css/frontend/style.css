@@ -86,7 +86,7 @@ article#cart span.total_price {padding-left: 20px;}
 article#cart span.haveNumb {padding-right:30px;}
 article#cart .row dl {border-top: 3px solid #ccc; padding-top:15px;}
 article#cart .row dt {width: auto;}
-article#cart .row dd {margin-left: 90px;font-size: 20px;}
+article#cart .row dd {margin-left: 120px;font-size: 20px;width:auto;}
 article#cart .row .checkout {padding:10px 30px 0 0;}
 
 article#storedvalue-index div#declaration{margin-top:30px;}
