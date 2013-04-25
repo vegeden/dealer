@@ -13,7 +13,8 @@ class Checkout extends CI_Controller {
 		$this->Url = '/'.$this->lang->line('folder_name').'/'.strtolower(get_class($this)).'/';
 		
 		$this->load->model('db/items_information');
-		// $this->load->model('db/sale');
+		$this->load->model('db/icash_deposit');
+		$this->load->model('db/dividend');
     }	
 	
 	public function index() {
@@ -30,12 +31,9 @@ class Checkout extends CI_Controller {
 			foreach($this->parames['cart'] as $key => $row)	{
 				$this->parames['item'.$key] = array();
 				$item = $this->items_information->SWhere($key);
-				array_push($this->parames['item'.$key], $item->id);
-				array_push($this->parames['item'.$key], $item->item_name);
-				array_push($this->parames['item'.$key], $item->special_commodity_status);
-				array_push($this->parames['item'.$key], $row);
-				array_push($this->parames['item'.$key], $item->sell_price);
-				array_push($this->parames['item'.$key], ($item->sell_price * $row));
+				$item->row 	 			 = $row;
+				$item->sell_price_sum 	 = $item->sell_price * $row;
+				$this->parames['item'][] = $item;
 				if($item->special_commodity_status == 1) {
 					$this->parames['freight'] = $this->parames['freight'] + $item->freight_price;
 				} else {
@@ -46,7 +44,7 @@ class Checkout extends CI_Controller {
 		} else {
 			$this->parames['error'] = $this->lang->line('checkout_Error_Session');
 		}
-		$data = array('freight_price'=> $this->parames['freight'],'sum'=> $this->parames['sum']);
+		$data = array('freight_price'=> $this->parames['freight'],'item_price_sum'=> $this->parames['sum']);
 		$this->session->set('sale_info',$data);
 		$this->load->view('index', $this->parames);
 	}
@@ -57,8 +55,13 @@ class Checkout extends CI_Controller {
 		$this->parames = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
-		$this->parames['cart'] = $this->session->get('cart');
-		$this->parames['freight_info'] = $this->session->get('freight_info');
+		$this->parames['cart'] 		= $this->session->get('cart');
+		$this->parames['sale_info'] = $this->session->get('sale_info');
+		$this->parames['userinfo']  = $this->session->get('UserInfo');
+	
+		$this->parames['icash_deposit_price'] 	 = $this->icash_deposit->deposit_price($this->parames['userinfo'] -> id);
+		$this->parames['dividend_deposit_price'] = $this->dividend->deposit_price($this->parames['userinfo'] -> id);
+		$this->onClassification();
 		$this->load->view('index', $this->parames);
 	}
 	
@@ -95,4 +98,14 @@ class Checkout extends CI_Controller {
 		}
 	}
 	
+	private function onClassification() {
+		$cancel 		= $this->input->post('cancel', TRUE );
+		$submit 		= $this->input->post('submit', TRUE ) ;		
+		if(strlen($cancel)!=0) {
+			$this->Parames->redirect($this->Url.'../checkout/');
+		}
+		if(strlen($submit)!=0) {
+			
+		}
+	}
 }

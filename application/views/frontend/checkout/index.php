@@ -21,29 +21,15 @@
 				</thead>
 				<tbody>
 			<?php 
-				foreach($cart as $key => $row)	{
+				foreach($item as $row) {
 			?>
-					<tr>
-			<?php
-					for($i=1;$i<count(${'item'.$key});$i++) {
-			?>
-						<td>
-						<?php 
-							if($i == 2) {
-								if(${'item'.$key}[$i] == 1) {
-						?>
-								<i class="icon-ok"></i>
-						<?php
-								}
-							} else {
-								echo ${'item'.$key}[$i]; 
-							}
-						?>
-						</td>
-			<?php
-					}
-			?>
-					</tr>
+				<tr>
+					<td><?php echo $row->item_name; ?></td>
+					<td><?php if($row->special_commodity_status == 1) { ?><i class="icon-ok"></i><?php } ?></td>
+					<td><?php echo $row->row; ?></td>
+					<td><?php echo $row->sell_price; ?></td>
+					<td><?php echo number_format($row->sell_price_sum); ?></td>
+				</tr>
 			<?php
 				}
 			?>

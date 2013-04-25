@@ -30,13 +30,17 @@
 	$lang['checkout_detailed_Phone']		= '手機';
 	$lang['checkout_detailed_Address']		= '地址';
 	$lang['checkout_detailed_Next']			= '下一步';
+	$lang['checkout_detailed_Upper']		= '上一步';
 	$lang['checkout_detailed_Cancel']		= '取消';
 	$lang['checekou_fieight_title']			= '運送地址';
 	
 	
 	
 	/* classification */
-	$lang['checkout_method_Icash-Divddend'] = 'icash&紅利扣款';
+	$lang['checkout_method_Icash-Divddend'] = '儲值金&紅利扣款';
+	$lang['checkout_method_Icash'] 			= '儲值金';
+	$lang['checkout_method_Divddend'] 		= '紅利';
+	$lang['checkout_method_Currently'] 		= '目前';
 	$lang['checkout_method']				= '結帳方式';
 	$lang['checkout_method_Remittance']		= '匯款';
 	$lang['checkout_method_ATM']			= 'ATM';

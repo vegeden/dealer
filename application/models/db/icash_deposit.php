@@ -55,4 +55,15 @@ class Icash_deposit extends CI_Model {
 			return false;
 		}
 	}
+	public function deposit_price($id) {
+		$this->db->where('user_id', $id);
+		$query = $this->db->get($this->tab);
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row){
+				return  $row->deposit_price; 
+			}
+		} else {
+			return 0;
+		}
+	}
 }
