@@ -1,4 +1,5 @@
 <article>
+		<div id="menu-control">
 	<ul class="nav nav-pills pull-left">
 		<li class="">
 			<a href="<?php echo $url.'../itemAdd/';?>"><?php echo $lang->line('nav_commodity_itemAdd');?></a>
@@ -8,6 +9,7 @@
 		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('commodity_item_name');?>">
 		<span class="add-on"><?php echo $lang->line('search');?></span>
 	</div>
+		</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info firstRow">
 			<td class="items"></td>

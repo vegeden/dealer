@@ -1,4 +1,5 @@
 <article id="storedvalue-lists">
+		<div id="menu-control">
 	<ul class="nav nav-pills pull-left">
 		<li <?php if($kind == 0) { ?> class="active" <?php } ?>>
 			<a href="<?php echo $url.'0/';?>"><?php echo $lang->line('commodity_invoicing_static0');?></a>
@@ -7,6 +8,7 @@
 			<a href="<?php echo $url.'1/';?>"><?php echo $lang->line('commodity_invoicing_static1');?></a>
 		</li>
 	</ul>	
+		</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info firstRow">
 			<td><?php echo $lang->line('commodity_item_name');?></td>

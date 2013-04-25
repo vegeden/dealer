@@ -1,9 +1,11 @@
 <article id="syssetting-list">
+		<div id="menu-control">
 	<ul class="nav nav-pills pull-left">
 		<li class="">
 			<a href="<?php echo $url.'../SysConfigAdd/';?>"><?php echo $lang->line('add');?></a>
 		</li>
 	</ul>
+		</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info">
 			<td class="items"></td>

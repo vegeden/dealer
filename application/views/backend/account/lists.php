@@ -1,14 +1,16 @@
-<article>
-	<?php if($UserInfo->type_id == 1) { ?>
-	<ul class="nav nav-pills pull-left">
-		<li class="">
-			<a href="<?php echo $url.'../register/';?>"><?php echo $lang->line('nav_account_register');?></a>
-		</li>
-	</ul>
-	<div class="input-append pull-right">
-		<input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('account_name');?>">
-		<span class="add-on"><?php echo $lang->line('search');?></span>
-	</div>
+<article id="lists">
+    <?php if($UserInfo->type_id == 1) { ?>
+    <div id="menu-control">
+        <ul class="nav nav-pills pull-left">
+            <li class="">
+                <a href="<?php echo $url.'../register/';?>"><?php echo $lang->line('nav_account_register');?></a>
+            </li>
+        </ul>
+        <div class="input-append pull-right">
+            <input class="" id="search_bar" type="text" name="search" placeholder="<?php echo $lang->line('account_name');?>">
+            <span class="add-on"><?php echo $lang->line('search');?></span>
+        </div>
+    </div>
 	<?php } ?>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info firstRow">

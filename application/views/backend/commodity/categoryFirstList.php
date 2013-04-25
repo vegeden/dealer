@@ -1,9 +1,11 @@
 <article>
+		<div id="menu-control">
 	<ul class="nav nav-pills pull-left">
 		<li class="">
 			<a href="<?php echo $url.'../categoryFirstAdd/';?>"><?php echo $lang->line('nav_commodity_categoryFirstAdd');?></a>
 		</li>
 	</ul>
+		</div>
 	<table class="table table-condensed table-bordered table-hover table-striped">
 		<tr class="info">
 			<td></td>
