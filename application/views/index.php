@@ -13,7 +13,7 @@
 		<link href="/dealer/statics/lib/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet"/>
 		
 		
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="/dealer/statics/lib/bootstrap/docs/assets/js/bootstrap.min.js"></script>
 		<script src="/dealer/statics/lib/holder/holder.js"></script>
 		<script src="/dealer/statics/lib/jquery.easing/jquery.easing.1.3.js"></script>
@@ -48,7 +48,7 @@
 				</div><!--/span-->
 				<div id="content" class="pull-right">
 				<?php 
-					if(!preg_match('/store\/index*/', uri_string()) && !preg_match('/store\/commodity*/', uri_string())) require_once 'frontend/_article_title.php';
+					if(!preg_match('/store\/index/', uri_string()) && !preg_match('/store\/commodity/', uri_string())) require_once 'frontend/_article_title.php';
 					require_once 'frontend/'.$ArticlePage;
 				?>
 				</div><!--/span-->
@@ -58,3 +58,5 @@
 		</div><!--/.fluid-container-->
 	</body>
 </html>
+
+
