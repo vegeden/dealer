@@ -27,10 +27,14 @@ $(function(){
 				
 				// update sum price;
 				var sum = $('div.row dl dd').attr('data-price')-old+(one_price*number);
-				$('div.row dl dd').attr('data-price',sum).val(sum).priceFormat({prefix: '', centsSeparator: ',', centsLimit: 3});
+				$('div.row dl dd')
+						.prop('data-price',sum)
+						.val(sum)
+						.priceFormat({prefix: '', centsSeparator: ',', centsLimit: 3})
+						.html('$ '+ $('div.row dl dd').html());
 
 				// find id;
-				var i = pull_pot.parent().parent().find('dl dd a').attr('href');
+				var i = pull_pot.parent().parent().find('dl dd a').prop('href');
 				// update data
 				$.post('/dealer/cart/add/',{'i' : i, 'c' : number});
 			}
