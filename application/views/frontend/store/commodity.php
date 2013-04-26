@@ -5,6 +5,8 @@
 		</div>
 		<div id="price_info">
 			<h3><?php echo $commodity->item_name; ?></h3>
+			<p><?php echo $commodity->item_content; ?></p>
+			<p><?php echo $this->lang->line('store_commodity_id'). $commodity->item_number; ?></p>
 			<hr>
 			<dl class="dl-horizontal dlform level">
 				<dt><?php echo $lang->line('store_sell'); ?></dt>
