@@ -12,11 +12,11 @@
 				<caption></caption>
 				<thead>
 					<tr>
-						<th><?php echo $this->lang->line('checkout_detailed_ItemName'); ?></th>
+						<th class="commodity_name"><?php echo $this->lang->line('checkout_detailed_ItemName'); ?></th>
 						<th><?php echo $this->lang->line('checkout_detailed_Special'); ?></th>
-						<th><?php echo $this->lang->line('checkout_detailed_Num'); ?></th>
-						<th><?php echo $this->lang->line('checkout_detailed_SellPrice'); ?></th>
-						<th><?php echo $this->lang->line('checkout_detailed_Sum'); ?></th>
+						<th class="center"><?php echo $this->lang->line('checkout_detailed_Num'); ?></th>
+						<th class="center"><?php echo $this->lang->line('checkout_detailed_SellPrice'); ?></th>
+						<th class="right"><?php echo $this->lang->line('checkout_detailed_Sum'); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -25,10 +25,10 @@
 			?>
 				<tr>
 					<td><?php echo $row->item_name; ?></td>
-					<td><?php if($row->special_commodity_status == 1) { ?><i class="icon-ok"></i><?php } ?></td>
-					<td><?php echo $row->row; ?></td>
-					<td><?php echo $row->sell_price; ?></td>
-					<td><?php echo number_format($row->sell_price_sum); ?></td>
+					<td class="center"><?php if($row->special_commodity_status == 1) { ?><i class="icon-ok"></i><?php } ?></td>
+					<td class="center"><?php echo $row->row; ?></td>
+					<td class="center"><?php echo $row->sell_price; ?></td>
+					<td class="right"><?php echo number_format($row->sell_price_sum); ?></td>
 				</tr>
 			<?php
 				}
