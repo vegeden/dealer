@@ -47,12 +47,14 @@ class Store extends CI_Controller {
 		if(empty($id)) $this->Parames->redirect($this->Url);
 		/*	-------------------------------------------	*/
 		$this->Parames->init('nav_store_commodity');
-		$this->parames = $this->Parames->getParams();
+		$this->parames        = $this->Parames->getParams();
 		$this->parames['url'] = $this->Url.__FUNCTION__.'/';
 		/*	-------------------------------------------	*/
-		$this->parames['commodity'] = $this->items_information->SWhere($id);
+		$commodity                  = $this->items_information->SWhere($id);
+		$category                   = $this->items_category_second->SWhere($commodity->category_second_id)->category;
+		$this->parames['commodity'] = $commodity;
+		$this->nav_second($category);
 		$this->load->view('index', $this->parames);
-
 	}
 
 	public function ajaxGetLang() {

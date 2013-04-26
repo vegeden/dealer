@@ -110,6 +110,7 @@ article#checkout-index div.total_sell table tr#total{border-top:1px solid #ccc;}
 article#checkout-index div.total_sell table tr#total td.sell_field{font-size:18px;color:red;padding:10px 0;font-weight: bold;}
 article#checkout-index div.total_sell table tr#total td{font-size:18px;color:red;padding-top:5px;font-weight: bold;}
 article#checkout-index h3#detailed_title{width:370px;}
+article#checkout-index table th.commodity_name{width:700px;}
 
 article#profile-index {}
 article#profile-index ul{list-style: none;margin:0;}
@@ -131,6 +132,7 @@ article#store div#top4 ul {list-style: none;margin:0;}
 article#store div#top4 ul li{width:239px; height:auto; float:left; padding:10px 5px;}
 article#store div#top4 ul li #name{padding:10px 0; font-size:16px;}
 article#store div#top4 ul li .price{font-size:16px;padding-bottom:5px;}
+article#store div#top4 img {width:220px;height:220px;}
 article#store div#order{ margin:10px 0;overflow:auto;padding:5px 0;padding-left:10px;}
 article#store div#order ul{list-style: none;margin:0;}
 article#store div#order ul li{float:left;}
@@ -141,11 +143,12 @@ article#store div.content ul{list-style: none;margin:0;margin-left:3px;}
 article#store div.content ul li{float:left;padding:5px 3px;}
 article#store div.content ul li > a.select{font-weight: bold;}
 article#store div.content ul li a{width:181px;}
+article#store div.content img{width:150px;height:150px;}
 
 article#store-commodity div#goods_pic {margin-right:20px;}
 article#store-commodity div#price_info {overflow:auto;height:300px;}
 article#store-commodity div#content_title {margin:10px 0; padding:10px; background-color:#cde6f4; font-size:16px; color:#227eb9;font-weight: bold;}
-article#store-commodity div#commodity_content {}
+article#store-commodity div#goods_pic img{width:300px;height:300px;}
 
 article#about-index div#content {margin:30px 0;}
 article#about-index div#content h3.title{color:#0066CC;font-weight: bold;}
@@ -174,9 +177,9 @@ ul.nav-pills li a { background-color : #eee; }
 div.input-append span.add-on { padding-left : 10px;padding-right : 10px;}
 hr { border:0; height:1px; background-color:#d4d4d4; color:#d4d4d4	/* IE6 */}
 
-.center { text-align : center;}
-.left { text-align : left;}
-.right { text-align : right;}
+body .center { text-align : center;}
+body .left { text-align : left;}
+body .right { text-align : right;}
 a.decorationNone { text-decoration: none;}
 .displaynNone {display: none;}
 

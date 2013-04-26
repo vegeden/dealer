@@ -9,7 +9,7 @@
 			?>
 			<li>
 				<a class="thumbnail" href="/dealer/store/commodity/<?php echo $row_store->id ;?>/">
-					<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="" width="220" height="220">
+					<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="">
 					<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 					<div class="price center">
 						<span><?php echo $lang->line('store_special_offer'); ?></span>
@@ -63,8 +63,7 @@
 				}
 			}
 		}
-	}
-	else if(!empty($store_hot)) {
+	} else if(!empty($store_hot)) {
 	?>
 	<div id="top4" class="side">
 		<div id="title" class="gradient_BlackWhite"><?php echo $lang->line('store_top4');?></div>
