@@ -1,7 +1,8 @@
 <?php
 	$lang['commodity_Error']						= 'Error!!';
-	$lang['commodity_error_incomplete']				= '請輸入';
+	$lang['commodity_error_incomplete']				= '欄位不可空白';
 	$lang['commodity_doupload_ErrorMsg']			= '上傳失敗';
+	$lang['commodity_image_ErrorMsg']				= '圖片轉換有誤';
 	$lang['commodity_account']						= '操作者';
 	$lang['commodity_IP']					 	 	= 'IP位址';
 	$lang['commodity_yes']							= '是';
@@ -52,7 +53,7 @@
 	$lang['commodity_item_safe_stock']				= '安全庫存量';
 	$lang['commodity_item_stock_quantity']			= '庫存數量';
 	$lang['commodity_item_content']					= '商品簡介';
-	$lang['commodity_item_bonus']					= '商品紅利';
+	$lang['commodity_item_dividend']					= '商品紅利';
 	$lang['commodity_item_stop_sale_status']		= '上下架狀態';
 	$lang['commodity_freight_price']				= '運費';
 	$lang['commodity_special_item']					= '特殊商品';

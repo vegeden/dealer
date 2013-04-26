@@ -401,14 +401,12 @@ class Commodity extends CI_Controller {
 		$this->parames['kind'] = $kind;
 		if($kind == 0) { 
 			$this->parames['items_information_shelvers'] = $this->items_information->SelectShelves($limit,$kind);
-			
 			$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
 			$this->parames['page_previous']		= $this->pages->getPrevious();
 			$this->parames['page_next']			= $this->pages->getNext();
 			$this->load->view('backend', $this->parames);
 		} else if($kind == 1) { 
 			$this->parames['items_information_shelvers'] = $this->items_information->SelectShelves($limit,$kind);
-			
 			$this->parames['page_TotalPageNum'] = $this->pages->getTotalPageNum();
 			$this->parames['page_previous']		= $this->pages->getPrevious();
 			$this->parames['page_next']			= $this->pages->getNext();
@@ -723,36 +721,46 @@ class Commodity extends CI_Controller {
 		$item_content	  = $this->input->post('item_content', TRUE );
 		$item_fulltext	  = $this->input->post('item_fulltext', TRUE );
 		$del_file_name 	  = '';
+		$file_exist 	  = False;
 		
 		if($this->input->post('add', TRUE ) == 'add') {
-			if(strlen($_FILES['userfile']['name']) != 0 && strlen($item_content) != 0 && strlen($item_fulltext) != 0)	{
-				$file_array = get_filenames($this->lang->line('img_dir'));
-				for($i=0 ; $i<count($file_array) ; $i++) {
-					$file_array_split = explode('.',$file_array[$i]);
-					if($file_array_split[0] == $items_id) {
-						unlink($this->lang->line('img_dir').$file_array[$i]);
-						break;
-					}
+			$file_array = get_filenames($this->lang->line('img_dir'));
+			for($i=0 ; $i<count($file_array) ; $i++) {
+				$file_array_split = explode('.',$file_array[$i]);
+				if($file_array_split[0] == $items_id) {
+					$file_exist = TRUE;
+					break;
 				}
-				if($this->upload->do_upload()) {
+			}
+			/*strlen($_FILES['userfile']['name']) != 0*/ 
+			if(strlen($item_content) != 0 && strlen($item_fulltext) != 0) {
+				if($file_exist && strlen($_FILES['userfile']['name']) == 0) {
 					$data = array(
-					'id'				=> $items_id,
-					'item_content'		=> $item_content,
-					'fulltext' 			=> $item_fulltext);
-					
-					$file_info = $this->upload->data();
-					$file_info['image_type'];
-					$file_content = read_file($this->lang->line('img_tmp_dir').$file_info['file_name']);
-					
-					if (write_file($this->lang->line('img_dir').$items_id.'.'.$file_info['image_type'], $file_content)){
-						$this->items_information->Update($items_id, $data);
-						$this->Parames->redirect($this->Url.'shelvesList/');
+						'item_content'		=> $item_content,
+						'fulltext' 			=> $item_fulltext);
+					$this->items_information->Update($items_id, $data);	
+					$this->Parames->redirect($this->Url.'shelvesList/');
+				} else {
+					if($this->upload->do_upload()) {
+						$data = array(
+						'id'				=> $items_id,
+						'item_content'		=> $item_content,
+						'fulltext' 			=> $item_fulltext);
+						
+						$file_info = $this->upload->data();
+						$file_info['image_type'];
+						$file_content = read_file($this->lang->line('img_tmp_dir').$file_info['file_name']);
+						
+						if (write_file($this->lang->line('img_dir').$items_id.'.'.$file_info['image_type'], $file_content)){
+							$this->items_information->Update($items_id, $data);
+							$this->Parames->redirect($this->Url.'shelvesList/');
+						} else {
+							$this->parames['error'] = $this->lang->line('commodity_image_ErrorMsg');
+						}
+						
 					} else {
 						$this->parames['error'] = $this->lang->line('commodity_doupload_ErrorMsg');
 					}
-					
-				} else {
-					$this->parames['error'] = $this->lang->line('commodity_doupload_ErrorMsg');
 				}
 			} else {
 				$this->parames['error'] = $this->lang->line('commodity_error_incomplete');

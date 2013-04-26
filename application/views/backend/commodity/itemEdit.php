@@ -34,7 +34,7 @@
 					?>
 				</select>
 			</dd>	
-			<dt><?php echo $lang->line('commodity_dividend'); ?></dt>
+			<dt><?php echo $lang->line('commodity_item_dividend'); ?></dt>
 			<dd><input type="number" placeholder="" class="input-large" name="dividend" min="0" value="<?php echo $query->dividend;?>" ></dd>						
 			<dt><?php echo $lang->line('commodity_area_name'); ?></dt>
 			<dd>

@@ -20,6 +20,8 @@
 			<h4><a href="<?php echo $commodity->id; ?>"><?php echo $lang->line('store_add_Cart'); ?></a></h4>
 		</div>
 		<div id="content_title"><?php echo $lang->line('content_title');?></div>
-		<div id="commodity_content"></div>
+		<div id="commodity_content">
+		<?php echo $commodity->fulltext; ?>
+		</div>
 	</div>
 </article>

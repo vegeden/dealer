@@ -22,7 +22,7 @@
 			<td><?php echo $lang->line('commodity_item_safe_stock'); ?></td>
 			<td><?php echo $lang->line('commodity_bread_name'); ?></td>
 			<td><?php echo $lang->line('commodity_item_stock_quantity'); ?></td>
-			<td><?php echo $lang->line('commodity_dividend'); ?></td>
+			<td><?php echo $lang->line('commodity_item_dividend'); ?></td>
 			<td><?php echo $lang->line('commodity_area_name'); ?></td>
 			<td><?php echo $lang->line('commodity_categorySecond_name'); ?></td>
 			<td><?php echo $lang->line('commodity_categoryFirst_name'); ?></td>
