@@ -9,7 +9,7 @@
 			?>
 			<li>
 				<a class="thumbnail" href="/dealer/store/commodity/<?php echo $row_store->id ;?>/">
-					<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="">
+					<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="" width="220" height="220">
 					<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 					<div class="price center">
 						<span><?php echo $lang->line('store_special_offer'); ?></span>
@@ -42,7 +42,7 @@
 					?>
 					<li>
 						<a class="thumbnail" href="/dealer/store/commodity/<?php echo $row_store->id ;?>/">
-							<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="">
+							<img src="/dealer/img/store/<?php echo $row_store->id ;?>" alt="" width="150" height="150">
 							<div id="name" class="center"><?php echo $row_store->item_name ;?></div>
 							<div class="price center">
 								<span><?php echo $lang->line('store_special_offer'); ?></span>
