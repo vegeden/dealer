@@ -146,9 +146,9 @@ article#store div.content ul li a{width:181px;}
 article#store div.content img{width:150px;height:150px;}
 
 article#store-commodity div#goods_pic {margin-right:20px;}
-article#store-commodity div#price_info {overflow:auto;height:300px;}
+article#store-commodity div#price_info {overflow:auto;height:320px;}
 article#store-commodity div#content_title {margin:10px 0; padding:10px; background-color:#cde6f4; font-size:16px; color:#227eb9;font-weight: bold;}
-article#store-commodity div#goods_pic img{width:300px;height:300px;}
+article#store-commodity div#goods_pic img{width:320px;height:320px;}
 
 article#about-index div#content {margin:30px 0;}
 article#about-index div#content h3.title{color:#0066CC;font-weight: bold;}
