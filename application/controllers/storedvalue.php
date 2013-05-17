@@ -50,9 +50,27 @@ class Storedvalue extends CI_Controller {
     }
 
     public function CreditCard() {
-        echo "output: ";
-        echo "<br />";
-        print_r($_POST);
+        $status = $this->input->post('status', TRUE );
+        $price  = $this->input->post('authAmt', TRUE );
+        if(isset($status)) {
+            if($status === '0') {
+                $data = array(
+                            'user_id'           => $this->UserInfo->id,
+                            'apply_status'      => 3,
+                            'apply_name'        => $this->UserInfo->name,
+                            'apply_price'       => $price,
+                            'remittance_status' => 1,
+                            'apply_datetime'    => date('Y-m-d H:i:s', time()),
+                            'audit_datetime'    => date('Y-m-d H:i:s', time())
+                        );
+                $this->icash_apply->Add($data);
+
+                $this->load->model('db/icash_deposit');
+                $this->icash_deposit->Save($this->UserInfo->id, $price);
+
+                $this->Parames->redirect($this->Url.'lists/');
+            }
+        }
     }
 
     private function onIndex() {
