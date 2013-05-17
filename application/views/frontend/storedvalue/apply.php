@@ -36,15 +36,6 @@
                 <button type="submit" class="btn btn-large" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
                 <button type="submit" class="btn offset2 btn-primary btn-large" name="submit" value="submit"><?php echo $lang->line('submit'); ?></button>
             </div>
-        </form>
-        <form name="checkout_confirmation" action="https://www.ezpos.fisc.com.tw/SSLAuthUI.cgi" method="post">
-            <input type="hidden" name="merID" value="1367">
-            <input type="hidden" name="MerchantName" value="VEGEDEN">
-            <input type="hidden" name="MerchantID" value="004245036369001">
-            <input type="hidden" name="TerminalID" value="90010001">
-            <input type="hidden" name="customize" value="1">
-            <input type="hidden" name="AuthResURL" value="http://211.72.100.45/dealer/storedvalue/CreditCard/">
-            <input type="hidden" name="lidm" value="<?php echo time();?>">
             <div id="ATM" class="displaynNone detail">
                 <div class="left">
                     <dl class="dl-horizontal">
@@ -65,20 +56,29 @@
                         <dd><input type="number" min="0" placeholder="<?php echo $lang->line('storedvalue_price');?>" class="input-large" name="price2" value="0"></dd>
                     </dl>
                 </div>
-                <button type="submit" class="btn btn-primary btn-large" name="submit" value="submit"><?php echo $lang->line('submit'); ?></button>
-                <button type="submit" class="btn offset2 btn-large" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
-            </div>
-                <div id="CreditCard" class="displaynNone detail">
-                    <div class="left">
-                        <dl class="dl-horizontal">
-                            <dt><?php echo $lang->line('storedvalue_price');?></dt>
-                            <dd><input type="number" min="0" placeholder="<?php echo $lang->line('storedvalue_price');?>" class="input-large" name="price3" value="0"></dd>
-                        </dl>
-                    </div>
                 <button type="submit" class="btn btn-large" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
                 <button type="submit" class="btn offset2 btn-primary btn-large" name="submit" value="submit"><?php echo $lang->line('submit'); ?></button>
-                </div>
+            </div>
             <input type="hidden" name="pay_kind" id="type" value="0">
+        </form>
+        <form name="checkout_confirmation" action="https://www.ezpos.fisc.com.tw/SSLAuthUI.cgi" method="post">
+            <input type="hidden" name="merID" value="1367">
+            <input type="hidden" name="MerchantName" value="VEGEDEN">
+            <input type="hidden" name="MerchantID" value="004245036369001">
+            <input type="hidden" name="TerminalID" value="90010001">
+            <input type="hidden" name="customize" value="1">
+            <input type="hidden" name="AuthResURL" value="http://211.72.100.45/dealer/storedvalue/CreditCard/">
+            <input type="hidden" name="lidm" value="<?php echo time();?>">
+            <div id="CreditCard" class="displaynNone detail">
+                <div class="left">
+                    <dl class="dl-horizontal">
+                        <dt><?php echo $lang->line('storedvalue_price');?></dt>
+                        <dd><input type="number" min="0" placeholder="<?php echo $lang->line('storedvalue_price');?>" class="input-large" name="purchAmt" value="0"></dd>
+                    </dl>
+                </div>
+                <button type="submit" class="btn btn-large" name="cancel" value="cancel"><?php echo $lang->line('cancel'); ?></button>
+                <button type="submit" class="btn offset2 btn-primary btn-large" name="submit" value="submit"><?php echo $lang->line('submit'); ?></button>
+            </div>
         </form>
     </div>
 </article>
